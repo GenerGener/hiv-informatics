@@ -1,0 +1,243 @@
+Chapter 1: ch01.docx
+  ch01: recovered Word chart from PDF page 50
+Chapter 2: ch02.docx
+  ch02: body fix 'is market by qualitative' -> 'is marked by qualitative'
+Chapter 3: ch03.docx
+  ch03: body fix 'unknown unknows' -> 'unknown unknowns'
+  ch03: heading fix 'HIV’s known unknown' -> 'HIV’s known unknowns'
+  ch03: heading fix 'Cautionary tails' -> 'Cautionary tales'
+  ch03: promoted bold caption to heading: Chapter 3 Figure 1: HIV Informatics is a framework
+  ch03: promoted bold caption to heading: Chapter 3 Figure 2: Uncoordinated approaches to st
+  ch03: promoted bold caption to heading: Chapter 3 Figure 3: HIV Informatic framework
+  ch03: promoted bold caption to heading: Chapter 3 Figure 4: Nef epitopes
+Chapter 4: ch04.docx
+Chapter 5: ch05.docx
+  ch05: relabeled repeat as legend: Figure 1
+  ch05: relabeled repeat as legend: Figure 2
+  ch05: promoted bold caption to heading: Supplemental Figure 1: Unbiased nanopore DNA seque
+  ch05: promoted bold caption to heading: Supplemental Figure 3E: HIV single nucleotide vari
+  ch05: relabeled repeat as legend: Supplemental Figure 4A
+  ch05: relabeled repeat as legend: Supplemental Figure 4B
+  ch05: relabeled repeat as legend: Supplemental Figure 4C
+  ch05: promoted bold caption to heading: Supplemental Figure 5C: Continuous 2H Absolute Dif
+  ch05: promoted bold caption to heading: Supplemental Figure 5D: Discontinuous 2H counts in
+  ch05: promoted bold caption to heading: Supplemental Figure 5E: Discontinuous 2H Absolute 
+  ch05: promoted bold caption to heading: Supplemental Figure 5G: Continuous 3H Absolute Dif
+  ch05: promoted bold caption to heading: Supplemental Figure 5H: Discontinuous 3H counts in
+  ch05: promoted bold caption to heading: Supplemental Figure 5I: Discontinuous 3H Absolute 
+  ch05: promoted bold caption to heading: Supplemental Figure 5J: Dimer run counts in unpoli
+  ch05: relabeled repeat as legend: Supplemental Figure 6
+Chapter 6: ch06.docx
+  ch06: numbered Figure 1: UTR (A) predicted UTR RNA 2º structure
+  ch06: numbered Figure 2: MSTRG.2.4 (unspliced HIV-1 NL4-3 with new ORFs)
+  ch06: relabeled repeat as legend: Figure 2
+  ch06: numbered Figure 3: MSTRG.2.16 (GENER1A, GENER1B, GENER13, GENER14, GENER15)
+  ch06: numbered Figure 4: GENER1A-p17 amino acid sequence.
+  ch06: promoted bold caption to heading: Figure Legend : GENER1A-p17 amino acid sequence.
+  ch06: numbered Figure 5: GENER1A-p17 predicted protein structure.
+  ch06: numbered Figure 6: GENER15-Protease amino acid sequence.
+  ch06: numbered Figure 7: GENER15-Protease a predicted protein structure.
+  ch06: numbered Figure 8: MSTRG.2.32
+  ch06: numbered Figure 9: MSTRG.2.33 (GENER2)
+  ch06: numbered Figure 10: GENER2 amino acid sequence.
+  ch06: numbered Figure 11: GENER2 predicted protein structure.
+  ch06: numbered Figure 12: MSTRG.2.38 (GENER3)
+  ch06: promoted bold caption to heading: Figure Legend: MSTRG.2.38 (GENER3)
+  ch06: numbered Figure 13: GENER3 amino acid sequence.
+  ch06: numbered Figure 14: GENER3 predicted protein structure.
+  ch06: numbered Figure 15: MSTRG.2.34 (GENER4) IN-rev-long
+  ch06: promoted bold caption to heading: Figure : MSTRG.2.34 (GENER4) IN-rev-long
+  ch06: relabeled repeat as legend: Figure 15
+  ch06: numbered Figure 16: GENER4 amino acid sequence.
+  ch06: numbered Figure 17: GENER4-integrase predicted protein structure.
+  ch06: numbered Figure 18: MSTRG.2.37 (GENER5) IN-rev-short
+  ch06: numbered Figure 19: GENER5-Gag-Pol amino acid sequence.
+  ch06: numbered Figure 20: GENER5-integrase predicted protein structure.
+  ch06: numbered Figure 21: MSTRG.2.31 (GENER6: IN-vif; GENER13, GENER14)
+  ch06: numbered Figure 22: GENER6-Gag-Pol amino acid sequence.
+  ch06: numbered Figure 23: GENER6-integrase predicted protein structure.
+  ch06: numbered Figure 24: MSTRG.2.35 (GENER7) IN-vif-novel
+  ch06: numbered Figure 25: GENER7-Gag-Pol amino acid sequence.
+  ch06: numbered Figure 26: GENER7-integrase predicted protein structure.
+  ch06: numbered Figure 27: MSTRG.2.36 (GENER8) = GENER6; IN-vif
+  ch06: numbered Figure 28: GENER8-Gag-Pol amino acid sequence.
+  ch06: numbered Figure 29: MSTRG.2.40 (GENER9)
+  ch06: promoted bold caption to heading: Figure : GENER9-Gag-Pol amino acid sequence.
+  ch06: numbered Figure 30: GENER9-Gag-Pol amino acid sequence.
+  ch06: promoted bold caption to heading: Figure : GENER9-integrase predicted protein struct
+  ch06: numbered Figure 31: GENER9-integrase predicted protein structure.
+  ch06: numbered Figure 32: UTR (B) predicted UTR RNA 2º structure
+  ch06: numbered Figure 33: MSTRG.2.26 (GENER10)
+  ch06: numbered Figure 34: GENER10 amino acid sequence.
+  ch06: numbered Figure 35: GENER10 predicted protein structure.
+  ch06: numbered Figure 36: UTR (C) predicted UTR RNA 2º structure
+  ch06: numbered Figure 37: MSTRG.2.5 (GENER13, GENER14)
+  ch06: numbered Figure 38: GENER13 and GENER14 amino acid sequences.
+  ch06: numbered Figure 39: GENER13 and GENER14 predicted protein structure.
+  ch06: numbered Figure 40: MSTRG.2.19
+  ch06: numbered Figure 41: MSTRG.2.39 (GENER11)
+  ch06: numbered Figure 42: GENER11 amino acid sequence.
+  ch06: numbered Figure 43: GENER11 predicted protein structure.
+  ch06: numbered Figure 44: UTR (D) predicted UTR RNA 2º structure
+  ch06: numbered Figure 45: UTR (D) contains a predicted pseudoknot
+  ch06: numbered Figure 46: MSTRG.2.1
+  ch06: numbered Figure 47: MSTRG.2.2
+  ch06: numbered Figure 48: UTR (E) predicted UTR RNA 2º structure
+  ch06: numbered Figure 49: MSTRG.2.9
+  ch06: numbered Figure 50: MSTRG.2.17
+  ch06: numbered Figure 51: UTR (F) predicted UTR RNA 2º structure
+  ch06: numbered Figure 52: MSTRG.2.6
+  ch06: numbered Figure 53: MSTRG.2.7
+  ch06: numbered Figure 54: UTR (G) predicted UTR RNA 2º structure
+  ch06: numbered Figure 55: MSTRG.2.25
+  ch06: numbered Figure 56: MSTRG.2.30 (GENER13, GENER14)
+  ch06: numbered Figure 57: UTR (H) predicted UTR RNA 2º structure
+  ch06: numbered Figure 58: MSTRG.2.3 (GENER13, GENER14)
+  ch06: numbered Figure 59: MSTRG.2.18
+  ch06: numbered Figure 60: UTR (I) predicted UTR RNA 2º structure
+  ch06: numbered Figure 61: MSTRG.2.15
+  ch06: numbered Figure 62: MSTRG.2.24 (GENER13, GENER14)
+  ch06: numbered Figure 63: UTR (J) predicted UTR RNA 2º structure
+  ch06: numbered Figure 64: MSTRG.2.11
+  ch06: numbered Figure 65: MSTRG.2.14 (GENER13, GENER14)
+  ch06: numbered Figure 66: UTR (K) predicted UTR RNA 2º structure
+  ch06: numbered Figure 67: MSTRG.2.23
+  ch06: numbered Figure 68: MSTRG.2.29 (GENER13, GENER14)
+  ch06: numbered Figure 69: UTR (L) predicted UTR RNA 2º structure
+  ch06: numbered Figure 70: MSTRG.2.12
+  ch06: numbered Figure 71: MSTRG.2.21 (GENER13, GENER14)
+  ch06: numbered Figure 72: UTR (M) predicted UTR RNA 2º structure
+  ch06: numbered Figure 73: UTR (M) contains a predicted pseudoknot
+  ch06: numbered Figure 74: MSTRG.2.8
+  ch06: numbered Figure 75: MSTRG.2.10
+  ch06: numbered Figure 76: UTR (N) predicted UTR RNA 2º structure
+  ch06: numbered Figure 77: MSTRG.2.13 (GENER13, GENER14)
+  ch06: numbered Figure 78: UTR (O) predicted UTR RNA 2º structure
+  ch06: numbered Figure 79: MSTRG.2.28 (GENER12)
+  ch06: numbered Figure 80: GENER12 amino acid sequence.
+  ch06: numbered Figure 81: GENER12 predicted protein structure.
+  ch06: numbered Figure 82: UTR (P) predicted UTR RNA 2º structure
+  ch06: numbered Figure 83: MSTRG.2.20
+  ch06: numbered Figure 84: MSTRG.2.27 (GENER13, GENER14)
+  ch06: numbered Figure 85: UTR (Q) predicted UTR RNA 2º structure
+  ch06: numbered Figure 86: MSTRG.2.22
+  ch06: numbered Table 1: HIV-1 NL4-3 transcript models, segment content, UTR and ORF 
+  ch06: numbered Figure 87: HIV-1 NL4-3 UTRs exhibit RNA binding protein motifs
+  ch06: promoted bold caption to heading: Figure legend : HIV-1 NL4-3 UTRs exhibit RNA bindi
+  ch06: numbered Figure 88: HIV-1 mRNAs are polycistronic
+  ch06: promoted bold caption to heading: Figure legend : HIV-1 mRNAs are polycistronic.
+  ch06: numbered Table 2: Predicted protein domains conserved across in new HIV-1 NL4-
+  ch06: numbered Figure 89: Putative ORFs retain relative synonymous codon usage
+  ch06: numbered Table 3: HIV-1, SIV<sub>cpz</sub>, and SIV<sub>gor</sub> genomic sequ
+  ch06: numbered Figure 90: GENER1A-p17 is conserved across HIV-1, SIV<sub>cpz</sub>, an
+  ch06: promoted bold caption to heading: Figure Legend : GENER1A-p17 is conserved across HI
+  ch06: numbered Figure 91: GENER2 is conserved across HIV-1, SIV<sub>cpz</sub> and SIV<
+  ch06: promoted bold caption to heading: Figure Legend : GENER2 is conserved across HIV-1, 
+  ch06: numbered Figure 92: GENER3 is conserved across HIV-1, SIV<sub>cpz</sub> and SIV<
+  ch06: numbered Figure 93: p31 integrase (IN) is conserved across HIV-1, SIV<sub>cpz</s
+  ch06: promoted bold caption to heading: Figure Legend : p31 integrase (IN) is conserved ac
+  ch06: numbered Figure 94: GENER4-IN is conserved across HIV-1, SIV<sub>cpz</sub> and S
+  ch06: numbered Figure 95: GENER5-IN is conserved across HIV-1, SIV<sub>cpz</sub> and S
+  ch06: numbered Figure 96: GENER6/8-IN is conserved across HIV-1, SIV<sub>cpz</sub> and
+  ch06: numbered Figure 97: GENER7-IN is conserved across HIV-1, SIV<sub>cpz</sub> and S
+  ch06: numbered Figure 98: GENER9-IN is conserved across HIV-1, SIV<sub>cpz</sub> and S
+  ch06: numbered Figure 99: GENER10 is conserved across HIV-1, SIV<sub>cpz</sub> and SIV
+  ch06: numbered Figure 100: GENER11 is conserved across HIV-1, SIV<sub>cpz</sub> and SIV
+  ch06: numbered Figure 101: GENER12 is conserved across HIV-1, SIV<sub>cpz</sub> and SIV
+  ch06: numbered Figure 102: GENER13 is conserved across HIV-1, SIV<sub>cpz</sub> and SIV
+  ch06: promoted bold caption to heading: Figure Legend : GENER13 is conserved across HIV-1,
+  ch06: numbered Figure 103: GENER14 is conserved across HIV-1, SIV<sub>cpz</sub> and SIV
+  ch06: promoted bold caption to heading: Figure Legend : GENER14 is conserved across HIV-1,
+  ch06: numbered Figure 104: GENER15-PR is conserved across HIV-1, SIV<sub>cpz</sub> and 
+  ch06: promoted bold caption to heading: Figure Legend : GENER15-PR is conserved across HIV
+  ch06: numbered Figure 105: Gag is conserved across HIV-1, SIV<sub>cpz</sub> and SIV<sub
+  ch06: promoted bold caption to heading: Figure Legend : Gag is conserved across HIV-1, SIV
+  ch06: numbered Figure 106: Vif is conserved across HIV-1, SIV<sub>cpz</sub> and SIV<sub
+  ch06: numbered Figure 107: Vpr is conserved across HIV-1, SIV<sub>cpz</sub> and SIV<sub
+  ch06: numbered Figure 108: Vpu is conserved across HIV-1, SIV<sub>cpz</sub> and SIV<sub
+  ch06: promoted bold caption to heading: Figure Legend : Vpu is conserved across HIV-1, SIV
+  ch06: numbered Figure 109: Env is conserved across HIV-1, SIV<sub>cpz</sub> and SIV<sub
+  ch06: promoted bold caption to heading: Figure Legend : Env is conserved across HIV-1, SIV
+  ch06: numbered Figure 110: Nef is conserved across HIV-1, SIV<sub>cpz</sub> and SIV<sub
+  ch06: promoted bold caption to heading: Figure Legend : Nef is conserved across HIV-1, SIV
+  ch06: numbered Figure 111: ASP is conserved across HIV-1, SIV<sub>cpz</sub> and SIV<sub
+  ch06: promoted bold caption to heading: Figure Legend : ASP is conserved across HIV-1, SIV
+  ch06: numbered Supplemental Table 1: HIV-1 NL4-3 genes and their corresponding transcripts
+  ch06: numbered Supplemental Table 2: HIV-1 NL4-3 genes and their corresponding products
+  ch06: numbered Supplemental Table 3: HIV-1 NL4-3 gene product metrics and their predicted locatio
+  ch06: numbered Supplemental Table 4: HIV-1 NL4-3 segment to splice donor/acceptor conversion tabl
+  ch06: numbered Supplemental Table 5: Putative HIV-1 GENER-Gag-Pol-integrase proteins supported in
+Chapter 7: ch07.docx
+Chapter 8: ch08.docx
+  ch08: promoted bold caption to heading: Table 1: CD4+ T cell allele count at AF324493.2:9,
+Chapter 9: ch09.docx
+  ch09: numbered Table 1: Mapping to bespoke or sample-specific reference as opposed t
+  ch09: numbered Figure 1: Mapping strategies matter.
+  ch09: numbered Figure 2: HIV-1_mhbb629, a complete HIV-1 genome assembled from a pati
+  ch09: numbered Figure 3: HIV-1_010017, a complete HIV-1 genome assembled from a patie
+  ch09: numbered Figure 4: HIV-1_010070, a complete HIV-1 genome assembled from a patie
+  ch09: numbered Figure 5: High coverage after removing PCR duplicates enabled detectio
+  ch09: numbered Figure 6: Variants detected AFTER maximizing HIV information supports 
+Chapter 10: ch10.docx
+  ch10: body fix 'HIV liner reference genomes' -> 'HIV linear reference genomes'
+  ch10: numbered Table 1: Newer bioinformatics methods like Graph Reference Genomes ke
+  ch10: numbered Figure 1: 40 HIV-1 NL4-3 mRNA models
+  ch10: numbered Figure 2: Sashimi plot of synthetic HIV-1 NL4-3 approximates a transcr
+  ch10: promoted bold caption to heading: Figure : HIV linear reference genomes deposited as
+  ch10: numbered Figure 3: HIV linear reference genomes deposited as provirus, transcri
+  ch10: promoted bold caption to heading: Figure Legend : HIV linear reference genomes depos
+  ch10: promoted bold caption to heading: Figure : Native RNA sequencing established TSS-3’ 
+  ch10: numbered Figure 4: Native RNA sequencing established TSS-3’ R as canonical viri
+  ch10: promoted bold caption to heading: Figure : Native RNA sequencing established TSS-3’ 
+  ch10: relabeled repeat as legend: Figure 4
+  ch10: promoted bold caption to heading: Figure : Nucleobase Graph Reference Genomes with p
+  ch10: numbered Figure 5: Nucleobase Graph Reference Genomes with pruned HIV-1 referen
+  ch10: promoted bold caption to heading: Figure : Nucleobase Graph Reference Genomes with p
+  ch10: relabeled repeat as legend: Figure 5
+  ch10: promoted bold caption to heading: Figure : Approximate k-mer Graph Reference Genomes
+  ch10: numbered Figure 6: Approximate k-mer Graph Reference Genomes of HIV
+  ch10: promoted bold caption to heading: Figure Legend : Approximate k-mer Graph Reference 
+  ch02: cross-references resolved 1, unresolved 0
+  ch03: UNRESOLVED reference 'Table : select anti-nef (jr6) publications'
+  ch03: cross-references resolved 1, unresolved 1
+  ch06: cross-references resolved 24, unresolved 0
+  ch09: cross-references resolved 4, unresolved 0
+  ch10: cross-references resolved 6, unresolved 0
+  ch01: 6 figures formatted, 6 moved next to their first mention, 0 left in place
+  ch03: figure-1 is never cited; placed before figure-4
+  ch03: figure-2 is never cited; placed after figure-1
+  ch03: figure-3 is never cited; placed after figure-2
+  ch03: figure-5 is never cited; placed after figure-4
+  ch03: 5 figures formatted, 5 moved next to their first mention, 0 left in place
+  ch05: 29 figures formatted, 9 moved next to their first mention, 20 left in place
+  ch06: 119 figures formatted, 0 moved next to their first mention, 119 left in place
+  ch07: table-1 rendered as a real table
+  ch07: 11 figures formatted, 11 moved next to their first mention, 0 left in place
+  ch08: table-1 rendered as a real table
+  ch08: table-2 rendered as a real table
+  ch08: table-3 rendered as a real table
+  ch08: 10 figures formatted, 10 moved next to their first mention, 0 left in place
+  ch09: table-1 rendered as a real table
+  ch09: table-1 is never cited; placed before figure-2
+  ch09: figure-1 is never cited; placed after table-1
+  ch09: figure-5 is never cited; placed after figure-4
+  ch09: figure-6 is never cited; placed after figure-5
+  ch09: 7 figures formatted, 7 moved next to their first mention, 0 left in place
+  ch10: figure-3 is never cited; placed after figure-2
+  ch10: 7 figures formatted, 7 moved next to their first mention, 0 left in place
+  ch01: linked 6 in-text figure references
+  ch02: linked 1 in-text figure references
+  ch03: linked 1 in-text figure references
+  ch05: linked 62 in-text figure references
+  ch06: linked 24 in-text figure references
+  ch07: linked 34 in-text figure references
+  ch08: linked 13 in-text figure references
+  ch09: linked 3 in-text figure references
+  ch10: linked 7 in-text figure references
+  removed unused image assets/ch07/media/image1.png
+  removed unused image assets/ch08/media/image1.png
+  removed unused image assets/ch08/media/image2.png
+  removed unused image assets/ch08/media/image3.png
+  removed unused image assets/ch09/media/image1.png
+Wrote index.md
+Wrote /home/claude/hiv-informatics/nav.yml

@@ -1,0 +1,15 @@
+nav:
+  - Home: index.md
+  - "Part One: HIV, HIV (re)sequencing, and a new framework to maximize HIV information from samples":
+      - "1. What we believe about HIV": 01-what-we-believe-about-hiv.md
+      - "2. How we know what we know about HIV": 02-how-we-know-what-we-know.md
+      - "3. HIV Informatics is a framework to advance the study of HIV": 03-hiv-informatics-framework.md
+      - "4. Problems and Challenges addressed by HIV Informatics": 04-problems-and-challenges.md
+  - "Part Two: Maximizing HIV sequencing information from control samples and model systems":
+      - "5. Advancing HIV informatics in the DNA space": 05-dna-space.md
+      - "6. Advancing HIV informatics in the RNA space: HIV mRNA models": 06-rna-space-mrna-models.md
+      - "7. Advancing HIV informatics in the RNA space: HIV virion mRNA": 07-rna-space-virion-mrna.md
+      - "8. Advancing HIV informatics in the RNA space: On “transductions”": 08-rna-space-transductions.md
+  - "Part Three: Maximizing HIV sequence information from heterogeneous samples":
+      - "9. Maximizing HIV sequence information from heterogeneous samples": 09-heterogeneous-samples.md
+      - "10. Conclusions and future directions": 10-conclusions.md

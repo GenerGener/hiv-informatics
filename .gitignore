@@ -1,0 +1,6 @@
+# Built site (published by mike to the gh-pages branch, never committed to main)
+site/
+__pycache__/
+*.pyc
+.DS_Store
+~$*.docx

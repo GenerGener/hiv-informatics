@@ -1,0 +1,65 @@
+# Publish a versioned release of the book to GitHub Pages with mike.
+#
+#   git tag v1.0 && git push origin v1.0      -> publishes /1.0/ and points /latest/ at it
+#   Actions tab -> "Publish book" -> Run       -> publish any version label by hand
+#
+# Readers land on the latest release; older releases stay available in the
+# version dropdown in the site header.
+name: Publish book
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version label (e.g. 1.1). Leave blank to publish 'dev' without moving 'latest'."
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gh-pages
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # mike needs the gh-pages branch history
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install MkDocs, Material, mike
+        run: pip install -r requirements.txt
+
+      - name: Configure git author
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Check the site builds cleanly
+        run: mkdocs build --strict
+
+      - name: Publish release (tag push)
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          mike deploy --push --update-aliases "$VERSION" latest
+          mike set-default --push latest
+
+      - name: Publish manual version
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          if [ -n "${{ inputs.version }}" ]; then
+            mike deploy --push --update-aliases "${{ inputs.version }}" latest
+            mike set-default --push latest
+          else
+            mike deploy --push dev
+          fi

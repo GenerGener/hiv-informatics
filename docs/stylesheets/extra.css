@@ -1,0 +1,166 @@
+/* Figures: scale to the text column, centered, on a white card so
+   diagrams with transparent or white backgrounds stay legible in dark mode. */
+.md-typeset img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1rem auto;
+  background: #fff;
+  border-radius: 4px;
+}
+
+/* Figure / table caption headings read as captions, not section titles. */
+.md-typeset h4,
+.md-typeset h5 {
+  font-size: 0.85rem;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* Wide tables from the dissertation scroll instead of breaking the layout. */
+.md-typeset table:not([class]) {
+  display: block;
+  overflow-x: auto;
+  font-size: 0.7rem;
+}
+
+/* Reference lists are long; tighten their spacing slightly. */
+.md-typeset p {
+  overflow-wrap: anywhere;
+}
+
+/* Inline figures: image, then a left-aligned caption with the full legend. */
+.md-typeset figure.book-figure {
+  margin: 1.5rem 0;
+  max-width: 100%;
+}
+.md-typeset figure.book-figure figcaption {
+  max-width: 100%;
+  margin-top: 0.4rem;
+  text-align: left;
+  font-style: normal;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  color: var(--md-default-fg-color--light);
+}
+.md-typeset figure.book-figure figcaption p {
+  margin: 0.4em 0;
+}
+.md-typeset figure.book-figure figcaption strong:first-child {
+  color: var(--md-default-fg-color);
+}
+
+/* Tables from the dissertation: caption above, the table itself scrolls sideways
+   on narrow screens rather than squeezing the columns. */
+.md-typeset figure.book-table {
+  margin: 1.5rem 0;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.md-typeset figure.book-table figcaption {
+  max-width: 100%;
+  margin: 0 0 0.5rem;
+  text-align: left;
+  font-style: normal;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  color: var(--md-default-fg-color--light);
+}
+.md-typeset figure.book-table figcaption strong:first-child {
+  color: var(--md-default-fg-color);
+}
+.md-typeset figure.book-table table:not([class]) {
+  display: table;
+  width: 100%;
+  font-size: 0.68rem;
+}
+.md-typeset figure.book-table mark {
+  background: #fff6b0;
+  color: inherit;
+}
+
+/* ===================================================================
+   Heelbent brand
+   Gradient runs red #F80309 (left) to fuchsia #FA01F9 (right).
+   =================================================================== */
+
+:root {
+  --hb-red: #f80309;
+  --hb-fuchsia: #fa01f9;
+  --hb-gradient: linear-gradient(90deg, var(--hb-red) 0%, var(--hb-fuchsia) 100%);
+}
+
+/* Header and nav colours. Link/accent colours are darkened (light mode) or
+   lightened (dark mode) off the brand fuchsia so body links stay readable. */
+[data-md-color-primary="custom"] {
+  --md-primary-fg-color: #f80309;
+  --md-primary-fg-color--light: #fa01f9;
+  --md-primary-fg-color--dark: #c2008f;
+  --md-primary-bg-color: #fff;
+  --md-primary-bg-color--light: #ffffffb3;
+}
+[data-md-color-accent="custom"] {
+  --md-accent-fg-color: #c2008f;
+  --md-accent-fg-color--transparent: #c2008f1a;
+  --md-accent-bg-color: #fff;
+  --md-accent-bg-color--light: #ffffffb3;
+}
+[data-md-color-scheme="slate"][data-md-color-accent="custom"] {
+  --md-accent-fg-color: #ff5cd0;
+  --md-accent-fg-color--transparent: #ff5cd01a;
+}
+[data-md-color-scheme="slate"][data-md-color-primary="custom"] {
+  --md-typeset-a-color: #ff5cd0;
+}
+
+/* The brand gradient, on the header. */
+.md-header {
+  background-image: var(--hb-gradient);
+}
+
+/* The mobile navigation drawer has its own header; give it the gradient too.
+   On desktop the same element is a plain sidebar label and is left alone. */
+@media screen and (max-width: 76.1875em) {
+  .md-nav--primary .md-nav__title[for="__drawer"] {
+    background-image: var(--hb-gradient);
+  }
+}
+
+/* The logo mark carries its own red-to-fuchsia gradient, so it is given a
+   white chip to sit on; without it the mark dissolves into the header. */
+.md-header__button.md-logo {
+  padding: 0.2rem;
+  margin-right: 0.2rem;
+}
+.md-header__button.md-logo img,
+.md-nav__button.md-logo img {
+  object-fit: contain;
+  background: #fff;
+  border-radius: 4px;
+  padding: 3px;
+  box-sizing: content-box;
+}
+.md-header__button.md-logo img {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+.md-nav__button.md-logo img {
+  width: 2rem;
+  height: 2rem;
+}
+
+/* Footer wordmark. The PNG is black on transparent, so it is used as a mask
+   and painted in the footer's own text colour: white here, and correct in
+   either colour scheme without a second file. */
+.footer-wordmark {
+  display: block;
+  width: 7rem;
+  height: 1.15rem;
+  margin: 0 0 0.35rem;
+  background-color: var(--md-footer-fg-color);
+  -webkit-mask: url("../assets/brand/heelbent-wordmark.png") left center / contain no-repeat;
+  mask: url("../assets/brand/heelbent-wordmark.png") left center / contain no-repeat;
+}
+.md-copyright {
+  width: 100%;
+}
