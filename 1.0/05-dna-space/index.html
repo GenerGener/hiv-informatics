@@ -1,0 +1,2052 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="HIV Informatics: a framework unifying HIV models, nucleic acid (re)sequencing, bioinformatics, and validation to maximize HIV information from samples.">
+      
+      
+        <meta name="author" content="Alejandro Rafael Gener">
+      
+      
+        <link rel="canonical" href="https://genergener.github.io/hiv-informatics/1.0/05-dna-space/">
+      
+      
+        <link rel="prev" href="../04-problems-and-challenges/">
+      
+      
+        <link rel="next" href="../06-rna-space-mrna-models/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/brand/logo-mark.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>5. Advancing HIV informatics in the DNA space - HIV Informatics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-5-advancing-hiv-informatics-in-the-dna-space" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="HIV Informatics" class="md-header__button md-logo" aria-label="HIV Informatics" data-md-component="logo">
+      
+  <img src="../assets/brand/logo-mark.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            HIV Informatics
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              5. Advancing HIV informatics in the DNA space
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/GenerGener/hiv-informatics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GenerGener/hiv-informatics
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="HIV Informatics" class="md-nav__button md-logo" aria-label="HIV Informatics" data-md-component="logo">
+      
+  <img src="../assets/brand/logo-mark.png" alt="logo">
+
+    </a>
+    HIV Informatics
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/GenerGener/hiv-informatics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GenerGener/hiv-informatics
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part One: HIV, HIV (re)sequencing, and a new framework to maximize HIV information from samples
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part One: HIV, HIV (re)sequencing, and a new framework to maximize HIV information from samples
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-what-we-believe-about-hiv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. What we believe about HIV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-how-we-know-what-we-know/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. How we know what we know about HIV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-hiv-informatics-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. HIV Informatics is a framework to advance the study of HIV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-problems-and-challenges/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Problems and Challenges addressed by HIV Informatics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part Two: Maximizing HIV sequencing information from control samples and model systems
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part Two: Maximizing HIV sequencing information from control samples and model systems
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Advancing HIV informatics in the DNA space
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Advancing HIV informatics in the DNA space
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter abstract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-plasmid-phxb2_d-is-an-hiv-1-molecular-clone-with-identical-ltrs-and-one-integration-site-indicative-of-an-hiv-1-provirus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference plasmid pHXB2_D is an HIV-1 molecular clone with identical LTRs and one integration site indicative of an HIV-1 provirus
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reference plasmid pHXB2_D is an HIV-1 molecular clone with identical LTRs and one integration site indicative of an HIV-1 provirus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discussion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#declarations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Declarations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supplemental-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supplemental Information
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supplemental-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supplemental Tables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supplemental-figures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supplemental Figures
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-rna-space-mrna-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Advancing HIV informatics in the RNA space: HIV mRNA models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-rna-space-virion-mrna/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Advancing HIV informatics in the RNA space: HIV virion mRNA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-rna-space-transductions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Advancing HIV informatics in the RNA space: On “transductions”
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part Three: Maximizing HIV sequence information from heterogeneous samples
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part Three: Maximizing HIV sequence information from heterogeneous samples
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-heterogeneous-samples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Maximizing HIV sequence information from heterogeneous samples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-conclusions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Conclusions and future directions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter abstract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-plasmid-phxb2_d-is-an-hiv-1-molecular-clone-with-identical-ltrs-and-one-integration-site-indicative-of-an-hiv-1-provirus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference plasmid pHXB2_D is an HIV-1 molecular clone with identical LTRs and one integration site indicative of an HIV-1 provirus
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reference plasmid pHXB2_D is an HIV-1 molecular clone with identical LTRs and one integration site indicative of an HIV-1 provirus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discussion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#declarations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Declarations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supplemental-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supplemental Information
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supplemental-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supplemental Tables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supplemental-figures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supplemental Figures
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/GenerGener/hiv-informatics/edit/main/docs/05-dna-space.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="chapter-5-advancing-hiv-informatics-in-the-dna-space">Chapter 5: Advancing HIV informatics in the DNA space<a class="headerlink" href="#chapter-5-advancing-hiv-informatics-in-the-dna-space" title="Permanent link">&para;</a></h1>
+<h2 id="chapter-abstract">Chapter abstract<a class="headerlink" href="#chapter-abstract" title="Permanent link">&para;</a></h2>
+<p>In <strong>Chapter 5</strong>, we sought to evaluate long- and short-read DNA-seq methods for recovering information from control HIV samples: 1.) a plasmid believed to contain the reference plasmid of HIV-1 HXB2, and 2.) a plasmid known to contain sequences based on NL4-3, the most common lab strain of HIV. The main text of this chapter is formatted as a manuscript in its current form that is in the process of being transferred for peer-review. It is available online as a preprint:</p>
+<p><strong>Gener, Alejandro R.,</strong> Wei Zou, Brian T. Foley, Deborah P. Hyink, and Paul E. Klotman. 2021. “Reference Plasmid PHXB2_D Is an HIV-1 Molecular Clone That Exhibits Identical LTRs and a Single Integration Site Indicative of an HIV Provirus.” <em>BioRxiv</em> 611848.</p>
+<p>In this work, I evaluated 2<sup>nd</sup> (Illumina) and 3<sup>rd</sup> generation (Oxford Nanopore) nucleic acid sequencing platforms to define the reference clone for HXB2, the reference strain of HIV-1. I validated the clone as a <em>bona fide</em> provirus, enabling its future use by investigators. In so doing, I was the first to cover an HIV provirus in its entirety in a single read, and first to unambiguously define a complete HIV haplotype with long-read DNA-seq (as opposed to quasispecies or partial gene model-based haplotypes from short-read DNA-seq).</p>
+<h2 id="reference-plasmid-phxb2_d-is-an-hiv-1-molecular-clone-with-identical-ltrs-and-one-integration-site-indicative-of-an-hiv-1-provirus">Reference plasmid pHXB2_D is an HIV-1 molecular clone with identical LTRs and one integration site indicative of an HIV-1 provirus<a class="headerlink" href="#reference-plasmid-phxb2_d-is-an-hiv-1-molecular-clone-with-identical-ltrs-and-one-integration-site-indicative-of-an-hiv-1-provirus" title="Permanent link">&para;</a></h2>
+<p>Alejandro R. Gener<sup>1,2,3,4*</sup>, Wei Zou<sup>5</sup>, Brian T. Foley<sup>6</sup>, Deborah P. Hyink<sup>2</sup></p>
+<p><sup>1</sup>Integrative Molecular and Biomedical Sciences Program, Baylor College of Medicine, Houston, Texas, USA</p>
+<p><sup>2</sup>Margaret M. and Albert B. Alkek Department of Medicine, Nephrology, Baylor College of Medicine, Houston, Texas, USA</p>
+<p><sup>3</sup>Department of Genetics, MD Anderson Cancer Center, Houston, Texas, USA</p>
+<p><sup>4</sup>School of Medicine, Universidad Central del Caribe, Bayamón, Puerto Rico, USA</p>
+<p><sup>5</sup>Division of Infectious Diseases, the 1<sup>st</sup> Affiliated Hospital of Nanchang University, Nanchang, Jiangxi, China</p>
+<p><sup>6</sup>Theoretical Biology and Biophysics Group T-6, Los Alamos National Laboratory, Los Alamos, New Mexico, USA</p>
+<p><sup>*</sup>Corresponding author: Alejandro R. Gener</p>
+<p>One Baylor Plaza</p>
+<p>Mail Stop 710</p>
+<p>Houston, Texas, 77030, USA</p>
+<p>9045715562</p>
+<p><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#103;&#101;&#110;&#101;&#114;&#64;&#98;&#99;&#109;&#46;&#101;&#100;&#117;">&#103;&#101;&#110;&#101;&#114;&#64;&#98;&#99;&#109;&#46;&#101;&#100;&#117;</a> ; <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#105;&#116;&#115;&#112;&#114;&#111;&#110;&#111;&#117;&#110;&#99;&#101;&#100;&#104;&#101;&#110;&#110;&#101;&#114;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#105;&#116;&#115;&#112;&#114;&#111;&#110;&#111;&#117;&#110;&#99;&#101;&#100;&#104;&#101;&#110;&#110;&#101;&#114;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></p>
+<p><strong>Keywords:</strong> HIV-1, reagent verification, nanopore DNA sequencing, provirus, plasmid, sequence variability, resequencing, LTR phasing</p>
+<h3 id="abstract">Abstract<a class="headerlink" href="#abstract" title="Permanent link">&para;</a></h3>
+<p>Sequence-verified molecular clones of HIV-1 reference HXB2 were thought lost. We sought to verify the identity of plasmid pHXB2_D, believed to contain a full-length copy of HIV-1 HXB2 model provirus, and a control plasmid pNL4-3_gag-pol(del1443-4553)_EGFP. We compared long- and short-read DNA sequencing, evaluating sample variability with resequencing (sequencing and mapping to reference) and de novo viral genome assembly. We obtained full-length HIV-1 and plasmid backbone with flanking host sequences supporting a single HXB2 integration event. We discovered 20 single nucleotide variants in pHXB2_D compared to reference HXB2, verified by short-read DNA sequencing. Contrary to the reference sequence, pHXB2_D had identical LTRs. No variants were detected in the HIV-1 segments of pNL4-3_gag-pol(del1443-4553)_EGFP, which retained distinct LTRs. Nanopore sequencing performed as expected, phasing LTRs, and covering full-length HIV. The discovery of variants in a reference plasmid demonstrates the need for sequence verification moving forward, in line with calls from funding agencies for reagent verification. These results illustrate the utility of long-read DNA sequencing to advance the study of HIV at single integration site resolution.</p>
+<h3 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h3>
+<p>Much of what we know about human acquired immunodeficiency syndrome (AIDS) came after isolating the causative agent, the human immunodeficiency virus type 1 (HIV-1), and describing the viral genome information content. The HIV-1 isolate HXB2, also known as HTLV-III and HIV-1<sub>LAI</sub> or LAV/BRU (Barré-Sinoussi et al. 1983; Wain-Hobson et al. 1991), was the first full-length replication-competent HIV genome sequenced (Ratner et al. 1985). Derivative clones commonly called “HXB2” are still used for <em>in vitro</em> infection assays, including RNA (almost always cDNA (Gener and Kimata 2019)) sequencing (<strong><a href="#figure-1">Figure 1A</a></strong> and <strong>Supplemental</strong> <strong><a href="#table-1">Table 1</a></strong>). Despite the availability of the HXB2 HIV-1 reference sequence (Ratner et al. 1985), no sequence is available for any complete and readily available HXB2 clone.</p>
+<figure class="book-figure" id="figure-1">
+<p><img alt="Figure 1: HIV information in pHXB2_D is recovered by long-read sequencing and mapping." loading="lazy" src="../assets/ch05/media/image3.png" /></p>
+<figcaption>
+<p><strong>Figure 1: HIV information in pHXB2_D is recovered by long-read sequencing and mapping.</strong></p>
+<p><strong>Figure 1A: HXB2 is still a commonly used resource.</strong> It is the reference HIV-1 genome, derived from one of the earliest clinical isolates. While older HIV samples are occasionally rediscovered, they are not made routinely available to researchers. All public HIV-1 RNA-seq datasets were obtained from the NCBI SRA with the following search phrase: “HIV-1” AND “RNA-seq”. Metadata from these 2527 runs (number current as of 7/21/2020) were used to make a pie chart summary.</p>
+<p><strong>Figure 1B: HIV sequence sources.</strong> HIV information comes from three main sources: proviruses (HIV sandwiched between two assumedly identical full-length long terminal repeats (LTRs)), unspliced HIV mRNAs (also known as viral genomes) starting from the transcription start site and ending in the 3’ LTR (Gener and Kimata 2019), and engineered proviruses recovered in their entirety or stitched together from multiple isolates like NL4-3 (Adachi et al. 1986).</p>
+<p><strong>Figure 1C: ONT library prep pipeline.</strong> Tagmentation cleaves double-stranded DNA, ligating barcoded PCR adapters (magenta). PCR-adapted DNA may be amplified. After amplification and cleanup, ONT sequencing adapters (green) are ligated. Barcoded samples may be pooled and sequenced.</p>
+<p><strong>Figure 1D: Newer basecallers increase read mean quality.</strong> Median (big dash) and quartiles (little dash). Effect of enzyme version was not statistically significant.</p>
+<p><strong>Figure 1E: Read stats with different callers/aligners.</strong> Median (big dash) and quartiles (little dash). Read lengths increase with higher fidelity Taq.</p>
+<p><strong>Figure 1F: Sequencing coverage with long- vs. short-read single-end 150 bp (trimmed to 142 bp) DNA sequencing.</strong> Long-read sequencing covers ambiguously mappable areas missed by short-read in HXB2 reference GenBank:K03455.1 (<strong>Supplemental Figures 3D,3E</strong>), but at the expense of accuracy near homopolymers longer than about 4 nucleobases (<strong>Supplemental Figure 5</strong>). Short-read mapping fails at repetitive elements longer than their read lengths (<strong>Supplemental Figures 3D,3E</strong>). Long read Minimap2 settings: map-ont -k15. Short read Minimap2 settings: Short reads without splicing (-k21 -w11 --sr -F800 -A2 -B8 -O12,32 -E2,1 -r50 -p.5 -N20 -f1000,5000 -n2 -m20 -s40 -g200 -2K50m --heap-sort=yes --secondary=no) (sr).</p>
+</figcaption>
+</figure>
+<figure class="book-table" id="table-1">
+<figcaption>
+<p><strong>Table 1: Summary of pHXB2 sample divergence from reference HXB2.</strong></p>
+<p>Coverage numbers vary by input (albacore, guppy, FlipFlop basecalled FASTQ) and mapping method (Minimap2 vs. BWA-MEM). This information is provided as Supplemental Digital Content. Base-1 (first base is numbered 1, 2<sup>nd</sup> 2, etc.), relative to HXB2, Genbank:K03455.1. Changed base represented as upper-case. Annotated as codon if in protein-coding region. No deletions or insertions were predicted from manual inspection or supported by short-read sequencing. Abbreviations, ASP: antisense protein, RRE: rev-response element, NA: not applicable. Syn: synonymous mutation. Non: non-synonymous mutation. Stop: stop codon/non-sense mutation. LTR: long terminal repeat. RT: reverse transcriptase. IN: integrase. LANL: Los Alamos National Laboratory HIV Sequence Database. Data from three separate sequencing experiments on the same plasmid sample support these 20 sites. Note site 1-8 variants in 5’LTR have been previously reported (LANL), albethey ambiguously. These may also be incorrectly annotated as variants in nef.</p>
+</figcaption>
+<p><img alt="Table 1: Summary of pHXB2 sample divergence from reference HXB2." loading="lazy" src="../assets/ch05/media/image2.png" /></p>
+</figure>
+<p>HIV clones were originally made by digesting DNA from infected host cells with non-cutter restriction enzymes sparing HIV-1 sequence followed by ligation into an <em>E. coli</em> plasmid cloning vector (<strong><a href="#figure-1">Figure 1B</a></strong>), allowing for low-error propagation (Shaw et al. 1984). Trace flanking host sequences were retained. These clones became available before tractable sequencing methods permitted routine sequence verification. As such, it was uncommon to sequence them. While funding agencies now require investigators to include in their proposals plans to validate their key reagents, these funders tend to leave the process up to investigators and may not always follow up on whether a given reagent is ever actually validated or revalidated between changes of hand. Investigators do not regularly validate their clones, in part because there is no universally accepted standard. Instead, a common practice is to assume a given clone, often kindly gifted from a colleague, is as reported. As such, we often do not truly know what we have been working with for 35+ years.</p>
+<p>Making sense of the information from HIV sequencing experiments is complicated by many factors, including the cycling that all orterviruses (Krupovic et al. 2018) undergo between two major states (as infectious virion RNA and integrated proviral DNA <strong><a href="#figure-1">Figure 1B</a></strong>), repetitive viral sequences like long terminal repeats (LTRs), non-integrated forms (Graf et al. 2011), rarity of integration events <em>in vivo</em> (reviewed in (Ito et al. 2017)), and alternative splicing of viral mRNAs (Cuesta et al. 2016). Short-read DNA sequencing provides some information, but analyses require high coverage and/or extensive effort (non-exhaustive examples (Bruner et al. 2019; Wymant et al. 2018)). These factors limit the ability to assign variants to specific loci within each provirus, as well as at the proviral integration site(s) (reviewed in (Pinzone and O’Doherty 2018)). Despite progress in the HIV DNA (Einkauf et al. 2019) and HIV RNA (Bonsall et al. 2018), (Banin et al. 2019), (Nguyen Quang et al. 2020), spaces, researchers have yet to observe the genome of HIV-1 as complete full-length provirus of integrated HIV DNA in a single read, hindering locus-specific studies. Complete here is defined from the beginning of the HIV 5’ LTR to the end of the 3’ LTR (<a href="#figure-1">Figure 1B</a>). To this end, current long-read DNA sequencing clearly surpasses the limitations of read length of leading next-generation/short-read sequencing platforms. Here we used the MinION sequencer to sequence unknown HIV-1 plasmid pHXB2_D and a control known plasmid pNL4-3_gag-pol(del1443-4553)_EGFP in a pilot study focusing on coverage acquisition (as opposed to full-length sequencing), with the goal of evaluating the technology for future applications.</p>
+<h3 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h3>
+<h4 id="hiv-1-plasmids">HIV-1 plasmids<a class="headerlink" href="#hiv-1-plasmids" title="Permanent link">&para;</a></h4>
+<p>A plasmid, “pHXB2_D” (alternate names pHXB2, pHXB-2D), believed to contain the HIV-1 reference strain HXB2 (Fisher et al. 1985) was acquired from the NIH AIDS Reagent and Reference Program (ARP) via BioServe. pHXB2_D was believed to be a molecular clone (likely a restriction product of HXB2 proviral DNA inserted into an unknown cloning plasmid backbone) from one of the earliest clinical “HXB2” HIV-1 isolates. At the time of this work, it was unknown whether this plasmid was ever sequence-verified before or after the reference sequence for HXB2 was deposited.</p>
+<p>The provenance of pNL4-3_gag-pol(del1443-4553)_EGFP, a reporter construct of pNL4-3 with a gag-pol deletion between base 1443 and 4553 is known. HIV-1 NL4-3 (pNL4-3) was a fusion of NY5 and LAV/HXB2 plasmids (Adachi et al. 1986) that to our knowledge are not readily available. pEVd1443 (Dickie et al. 1991) was a deletion construct made from pNL4-3 used to make several HIV-1 transgenic animals, including the FVB/N-Tg(HIV)26Aln/PkltJ (The Jackson Laboratory stock No: 022354) “Tg26” mouse. The deletion in pEVd1443 was made by SphI cutting between base 1443 and 1444 with binding site 1443-1448 and cutting at a BalI site at 4551-4556 with blunt cutting between 4553 and 4554. The EGFP cassette includes additional sequence upstream and downstream of EGFP coding sequence. SphI and BalI may still be used to excise EGFP cassette. A reporter construct was designed mimicking the pEVd1443 deletion: pNL4-3: ΔG/P-EGFP (Husain 2002). Dr. Wei Zou rederived pNL4-3: ΔG/P-EGFP at BCM (Li et al. 2018). Both constructs (plasmid and mouse) retained parts of gag and pol, with limited effects on protein-coding capacity, such as expression of p17 (Curreli et al. 2013). Bioinformatic resources do not regularly include non-ASCII characters such as “Δ”, occasionally converting these to the word “delta”. “Δ/delta” are historical abstractions away from wanting to convey a deletion relative to a sequence’s reference. Using Addgene naming conventions, we suggest pNL4-3_gag-pol(del1443-4553)_EGFP to replace the previous name pNL4-3: ΔG/P-EGFP for clarity.</p>
+<h4 id="hiv-1-reference-sequences">HIV-1 reference sequences<a class="headerlink" href="#hiv-1-reference-sequences" title="Permanent link">&para;</a></h4>
+<p>The reference sequence of HXB2 is from the National Center for Biotechnology Information (NCBI), Genbank accession number K03455.1. It runs from the beginning of the 5’ LTR to the end of the 3’ LTR, and is 9,719 bp. This is similar to another HIV-1 reference that NCBI uses, AF033819.3. This is a 9,181 base HXB2-like sequence that starts at the 97 bp repeat in the 5’LTR, continues with the 5’UTR (U5), extends past the 3’UTR (U3) to the end of the 97 bp repeat in 3’LTR, with one SNV at the <em>vpu</em> start codon aTg to aCg at position AF033819.3:560 or K03455.1:6063. The reference sequence of NL4-3 is as a plasmid with accession number AF324493.1. It runs from the beginning of the 5’ LTR to the end of the 3’ LTR, spanning 9,709 bp, and includes plasmid backbone with total length 14,825 bp.</p>
+<h4 id="long-read-dna-sequencing">Long-read DNA sequencing<a class="headerlink" href="#long-read-dna-sequencing" title="Permanent link">&para;</a></h4>
+<p>A plasmid containing HXB2 was sequence-verified with long-read nanopore sequencing on a MinION Mk1B (Oxford Nanopore Technologies (ONT), Oxford, United Kingdom). Unless otherwise noted, reagents and software were obtained from ONT. Briefly, stock plasmid was diluted to 5 ng final amount in ultrapure water (as two samples) and processed with Rapid PCR Barcoding kit SQK-RPB004 along with 10 other barcoded samples (not discussed further in this manuscript) following ONT protocol RPB_9059_V1_REVA_08MAR2018 (<strong><a href="#figure-1">Figure 1C</a></strong>), <a href="https://store.nanoporetech.com/us/sample-prep/rapid-pcr-barcoding-kit.html">https://store.nanoporetech.com/us/sample-prep/rapid-pcr-barcoding-kit.html</a>. Two DNA polymerases were evaluated (barcode 10 used high-fidelity LA (for “long amplicon”) Taq (Takara); barcode 11 Taq (Sigma-Aldrich). Libraries were loaded onto a MinION flow cell version R9.4.1 and a 48-hour sequencing run was completed with MinKNOW (version 1.10.11). Residual reads from subsequent runs were pooled for final analyses. Long read data for pNL4-3_gag-pol(del1443-4553)_EGFP was generated in other barcoded experiments (not shown).</p>
+<p>Raw data was basecalled (converted from FAST5 to FASTQ format) with Albacore version 2.3.4 (older basecaller), Guppy version 2.3.1 (current official at time of work), and FlipFlop (Guppy development config). Mapping to reference was done with Minimap2 (Li 2018) and BWA-MEM (Li and Durbin 2010), implemented in Galaxy (usegalaxy.org) (Afgan et al. 2016). Alignments (.bam and .bai files) were visualized in the Integrative Genomics Viewer (Robinson et al. 2011) unless otherwise noted. For <em>de novo</em> assembly, demultiplexed basecalled reads were fed into Canu version 1.8 (Walenz et al. 2017). Genome size was estimated to be 16 Kb from agarose gel of undigested, but naturally degraded linearized pHXB2_D (data not shown). SnapGene version 4.3.4 was used to manually annotate contigs from Canu. Blastn (NCBI) was used to identify unknown regions of pHXB2_D. Polishing was performed on ONT-only assemblies with Medaka (<a href="https://github.com/nanoporetech/medaka">https://github.com/nanoporetech/medaka</a>), in Galaxy. Medaka models: r941_min_fast_g303, r941_min_high_g303, r941_min_high_g330. Inference batch size (-b) = 100. The final pHXB2_D assembly and other full-length HIV clones from the ARP were aligned to the most recent human reference genome (hg38) with Minimap2 in Galaxy with the following parameters: Long assembly to reference mapping (-k19 -w19 -A1 -B19 -O39,81 -E3,1 -s200 -z200 --min-occ-floor=100).</p>
+<h4 id="statistics">Statistics<a class="headerlink" href="#statistics" title="Permanent link">&para;</a></h4>
+<p>Two-tailed Mann-Whitney U tests were used to compare distributions in long-read data. P-values are reported over brackets delineating relevant comparisons. Calculations and graphing were done with GraphPad Prism for macOS version 8.0.2.</p>
+<h4 id="short-read-dna-sequencing">Short-read DNA sequencing<a class="headerlink" href="#short-read-dna-sequencing" title="Permanent link">&para;</a></h4>
+<p>pHXB2_D and control pNL4-3_gag-pol(del1443-4553)_EGFP were provided as 35 ul at ~63 ng/ul to the Center for Computational &amp; Integrative Biology DNA Core at Massachusetts General Hospital, an external DNA sequencing core specializing in high-throughput next generation (short-read) plasmid sequencing and assembly. Neither HXB2/pNL4-3 reference sequences nor pHXB2_D/pNL4-3_gag-pol(del1443-4553)_EGFP draft assemblies (from this work) were provided to core staff at the time of sequencing so that testing would remain masked. While the core’s exact library prep is proprietary, multiplexed library prep and 150 single-end ILMN sequencing were most likely performed on a MiSeq with platform-specific reagents (V2 chemistry, per their website) and barcoding. Data was returned as FASTQ. FASTQC (Andrews n.d.) was used in Galaxy for in-house data quality control, and read lengths were all 142 bp per this tool. Mapping as above.</p>
+<h4 id="sequence-comparisons">Sequence comparisons<a class="headerlink" href="#sequence-comparisons" title="Permanent link">&para;</a></h4>
+<p>We used MAFFT v7.475 (Katoh, Rozewicki, and Yamada 2017; Katoh and Standley 2013) to compare the LTR sequences of pHXB2_D and HXB2, and pNL4-3 and pNL4-3_gag-pol(del1443-4553)_EGFP. For cladistics, we used BLAST at HIV-DB (<a href="https://www.hiv.lanl.gov/content/sequence/BASIC_BLAST/basic_blast.html">https://www.hiv.lanl.gov/content/sequence/BASIC_BLAST/basic_blast.html</a>) to find other HXB2-like genomes. The top 50 BLAST hits included many sequences of pNL4-3 clones. pNL4-3 is an artificial recombinant of the NY5 clone with LAV and/or the HXB2 clone (Adachi et al. 1986). The recombination point is marked by an EcoRI restriction site. We then made a multi-sequence alignment with the final pHXB2_D assembly, the top BLAST hits, and the HIV-1 M group subtype reference set using GeneCutter (<a href="https://www.hiv.lanl.gov/content/sequence/GENE_CUTTER/cutter.html">https://www.hiv.lanl.gov/content/sequence/GENE_CUTTER/cutter.html</a>), and built the maximum likelihood tree using IQ-tree (<a href="https://www.hiv.lanl.gov/content/sequence/IQTREE/iqtree.html">https://www.hiv.lanl.gov/content/sequence/IQTREE/iqtree.html</a>). pNL4-3_gag-pol(del1443-4553)_EGFP was not included in the above trees because of absence of divergence from pNL4-3 sequences outside of the EGFP cassette.</p>
+<h3 id="results">Results<a class="headerlink" href="#results" title="Permanent link">&para;</a></h3>
+<h4 id="read-length-and-ltr-phasing">Read length and LTR phasing<a class="headerlink" href="#read-length-and-ltr-phasing" title="Permanent link">&para;</a></h4>
+<p>Viewing mapped data from both pHXB2_D ONT experiments in IGV, the long reads had median read lengths &gt;2000 bp, (<strong><a href="#figure-1">Figure 1E</a>)</strong> clearly covering each LTR (<strong><a href="#figure-1">Figure 1F</a>, <a href="#supplemental-figure-1">Supplemental Figures 1</a></strong>, <strong>3</strong>). This unambiguously enabled LTR phasing by physically linking each LTR to its respective location. Long reads &lt;700 bp and short reads collapsed into one of either LTR (<strong><a href="#figure-1">Figure 1F</a>, <a href="#supplemental-figure-3d">Supplemental Figures 3D</a>,3E</strong>). Mappers BWA-MEM and Minimap2 were chosen based on their ability to handle long and short reads. Other mappers were not evaluated. BWA-MEM mapped more ambiguously, piling partially mapped reads between each LTR; Minimap2 mapped with higher fidelity to reference without splitting reads. Coverage as sequencing depth was higher and more even from the higher fidelity LA Taq library (<strong><a href="#supplemental-figure-1">Supplemental Figure 1</a></strong>). pNL4-3 was believed to have distinct LTRs because it was a synthetic recombinant. The higher variant density in NL4-3 LTRs enabled mapping and phasing from short-read data only (<strong><a href="#supplemental-figure-2">Supplemental Figure 2</a></strong>).</p>
+<h4 id="single-nucleotide-variants-snvs">Single nucleotide variants (SNVs)<a class="headerlink" href="#single-nucleotide-variants-snvs" title="Permanent link">&para;</a></h4>
+<p>We counted 20 single nucleotide variants (SNVs) in this reference clone of HXB2 (<strong><a href="#table-1">Table 1</a>, <a href="#supplemental-table-3">Supplemental Table 3</a>, <a href="#supplemental-figure-3e">Supplemental Figure 3E</a></strong>). These mismatches were seen in all Canu assemblies (<strong><a href="#supplemental-figure-4a">Supplemental Figures 4A</a>,4B</strong>), verified in IGV and/or SnapGene, and were orthogonally verified by short-read sequencing performed by the external core given masked samples (<strong><a href="#supplemental-figure-3e">Supplemental Figure 3E</a></strong>). These mismatches represent a ~0.21% divergence from reference HXB2 K03455.1 (20/9719), which was assumed to have perfect identity or 0% divergence. Transitions were more common (14/20) (<strong><a href="#table-1">Table 1</a></strong>), coinciding with a previous report of increased transitions over transversions in infection models, because transversions are more likely to be deleterious to viral replication (i.e.: to cause protein-coding changes) (Lyons and Lauring 2017). Indeed, almost half (9/20) of the observed SNVs occurred in protein-coding regions, even though 92% of HXB2 is coding (791/9719). Of those 9 SNVs in protein-coding regions, 4 caused non-synonymous mutations. One of those occurs in a region overlapping both gag and pol regions, however only pol exhibited a non-synonymous change from valine to isoleucine in p6, at base 2259 relative to HXB2. Other non-synonymous variants occurred at base 4609 (in p31 integrase, arginine to lysine), base 7823 (in ASP antisense protein, glycine to arginine), and base 9253 (in nef, isoleucine to valine). 11/20 SNVs were in LTRs (see <strong>Supplemental Figure</strong> <strong>3</strong> for counting based on mapping); 8/20 of these would have been missed with mapping-only variant calling or consensus. The longest HIV-mapping read (<strong><a href="#figure-2">Figure 2</a></strong>) phased 16/20 SNVs (failed at sites 2,8,10,12, <strong><a href="#table-1">Table 1</a></strong>). pNL4-3_gag-pol(del1443-4553)_EGFP did not have HIV-1 or plasmid backbone variants supported by long and short reads outside of the EGFP cassette.</p>
+<figure class="book-figure" id="figure-2">
+<p><img alt="Figure 2: Longest read containing complete full-length HIV-1 reference HXB2" loading="lazy" src="../assets/ch05/media/image4.png" /></p>
+<figcaption>
+<p><strong>Figure 2: Longest read containing complete full-length HIV-1 reference HXB2.</strong></p>
+<p>The 5<sup>th</sup> longest read in the barcode 10 set (read ID 6fbf0205-5195-460e-8e28-930db50e5d79) contained full-length HIV-1. Query (full read) blastn against HIV (taxid:11676) returned 92.95% identity to HIV-1, complete genome (GenBank:AF033819.3). Limiting query to HXB2 (red) blastn against Nucleotide collection nr/nt returned 100% coverage and 93.02% identity to HIV-1 HXB2. This read was 11,487 bases long, with mean quality score 11.984396. Basecalled using Guppy 2.3.1 with FlipFlop config.</p>
+</figcaption>
+</figure>
+<h4 id="assembling-hiv-1-plasmids">Assembling HIV-1 plasmids<a class="headerlink" href="#assembling-hiv-1-plasmids" title="Permanent link">&para;</a></h4>
+<p>We assembled the previously undefined plasmid pHXB2_D (<strong><a href="#supplemental-figure-4a">Supplemental Figures 4A</a>,4B</strong>). Canu’s final output was a set of contiguous DNA sequences (contigs) as FASTA files. A consequence of assembling plasmid sequences with this tool was partial redundancy at contig ends (<strong><a href="#supplemental-figure-4c">Supplemental Figure 4C</a>)</strong>. Manual end-trimming of contigs was performed in SnapGene based on an estimated length of 16 kb. Top blastn hits from barcode 10/LA Taq pHXB2 basecalled with FlipFlop were as follows: for the main backbone with origin of replication and antibiotic selection cassette for cloning, shuttle vector pTB101-CM DNA, complete sequence (based on pBR322), from 4352-8340; for the upstream element (relative to 5’ LTR), Homo sapiens chromosome 3 clone RP11-83E7 map 3p, complete sequence from 58,052 to 59,165; for the downstream element, cloning vector pNHG-CapNM from 10,204 to 11,666. Other identified elements included Enterobacteria phage SP6, complete sequence from 39,683 to 39,966. This was identified as the SP6 promoter, per SnapGene’s “Detect common features” feature. Identities of query to HXB2 and hits were all approximately 99%. The MGH CCIB DNA Core’s proprietary <em>de novo</em> UltraCycler v1.0 assembler (Brian Seed and Huajun Wang, unpublished) was able to assemble both 5’ and 3’ LTRs with short-read data only but may have collapsed SNVs into an artificial single consensus. Long-read mapping and assembly (and polished assemblies) orthogonally validated LTRs and supported a single HIV-1 HXB2_D haplotype (<strong><a href="#supplemental-figure-4a">Supplemental Figure 4</a>,6</strong>). A final LTR-phased and annotated assembly leveraging short and long reads is provided as pHXB2_D Genbank:MW079479 (embargoed until publication). Importantly, for pHXB2_D, each LTR was identical, which is distinct from the current HXB2 (K03455.1) (<strong><a href="#figure-3a">Figure 3A</a></strong>). Compared to pNL4-3_gag-pol(del1443-4553)_EGFP Genbank:MW928609 (embargoed until publication) , each LTR was distinct, but identical to pNL4-3’s distinct 5’ and 3’ LTRs (AF324493.1) (<strong><a href="#figure-3b">Figures 3B</a>,6</strong>).</p>
+<figure class="book-figure" id="figure-3a">
+<figcaption>
+<p><strong>Figure 3A: pHXB2_D (GenBank Accession MW079479) has identical LTRs, resolving likely errors in HXB2 (K03455.1).</strong></p>
+<p>CLUSTAL format alignment by MAFFT (v7.475)</p>
+<p>K03455.1_5LTR  tggaagggctaattcactcccaacgaagacaagatatccttgatctgtggatctaccaca</p>
+<p>MW079479_5LTR   tggaagggctaattcactcccaaagaagacaagatatccttgatctgtggatctaccaca</p>
+<p>MW079479_3LTR tggaagggctaattcactcccaaagaagacaagatatccttgatctgtggatctaccaca</p>
+<p>K03455.1_3LTR  tggaagggctaattcactcccaaagaagacaagatatccttgatctgtggatctaccaca</p>
+<p>*********************** ************************************</p>
+<p>K03455.1_5LTR  cacaaggctacttccctgattagcagaactacacaccagggccagggatcagatatccac</p>
+<p>pHXB2_D_5LTR   cacaaggctacttccctgattagcagaactacacaccagggccaggggtcagatatccac</p>
+<p>MW079479_3LTR cacaaggctacttccctgattagcagaactacacaccagggccaggggtcagatatccac</p>
+<p>K03455.1_3LTR  cacaaggctacttccctgattagcagaactacacaccagggccaggggtcagatatccac</p>
+<p>***********************************************.************</p>
+<p>K03455.1_5LTR  tgacctttggatggtgctacaagctagtaccagttgagccagagaagttagaagaagcca</p>
+<p>pHXB2_D_5LTR   tgacctttggatggtgctacaagctagtaccagttgagccagataaggtagaagaggcca</p>
+<p>MW079479_3LTR tgacctttggatggtgctacaagctagtaccagttgagccagataaggtagaagaggcca</p>
+<p>K03455.1_3LTR  tgacctttggatggtgctacaagctagtaccagttgagccagataagatagaagaggcca</p>
+<p>******************************************* *** *******.****</p>
+<p>K03455.1_5LTR  acaaaggagagaacaccagcttgttacaccctgtgagcctgcatggaatggatgacccgg</p>
+<p>pHXB2_D_5LTR   ataaaggagagaacaccagcttgttacaccctgtgagcctgcatgggatggatgacccgg</p>
+<p>MW079479_3LTR ataaaggagagaacaccagcttgttacaccctgtgagcctgcatgggatggatgacccgg</p>
+<p>K03455.1_3LTR  ataaaggagagaacaccagcttgttacaccctgtgagcctgcatgggatggatgacccgg</p>
+<p>*.********************************************.*************</p>
+<p>K03455.1_5LTR  agagagaagtgttagagtggaggtttgacagccgcctagcatttcatcacatggcccgag</p>
+<p>pHXB2_D_5LTR   agagagaagtgttagagtggaggtttgacagccgcctagcatttcatcacgtggcccgag</p>
+<p>MW079479_3LTR agagagaagtgttagagtggaggtttgacagccgcctagcatttcatcacgtggcccgag</p>
+<p>K03455.1_3LTR  agagagaagtgttagagtggaggtttgacagccgcctagcatttcatcacgtggcccgag</p>
+<p>**************************************************.*********</p>
+<p>K03455.1_5LTR  agctgcatccggagtacttcaagaactgctgacatcgagcttgctacaagggactttccg</p>
+<p>pHXB2_D_5LTR   agctgcatccggagtacttcaagaactgctgatatcgagcttgctacaagggactttccg</p>
+<p>MW079479_3LTR agctgcatccggagtacttcaagaactgctgatatcgagcttgctacaagggactttccg</p>
+<p>K03455.1_3LTR  agctgcatccggagtacttcaagaactgctgacatcgagcttgctacaagggactttccg</p>
+<p>********************************.***************************</p>
+<p>K03455.1_5LTR  ctggggactttccagggaggcgtggcctgggcgggactggggagtggcgagccctcagat</p>
+<p>pHXB2_D_5LTR   ctggggactttccagggaggcgtggcctgggcgggactggggagtggcgagccctcagat</p>
+<p>MW079479_3LTR ctggggactttccagggaggcgtggcctgggcgggactggggagtggcgagccctcagat</p>
+<p>K03455.1_3LTR  ctggggactttccagggaggcgtggcctgggcgggactggggagtggcgagccctcagat</p>
+<p>************************************************************</p>
+<p>K03455.1_5LTR  cctgcatataagcagctgctttttgcctgtactgggtctctctggttagaccagatctga</p>
+<p>pHXB2_D_5LTR   cctgcatataagcagctgctttttgcctgtactgggtctctctggttagaccagatctga</p>
+<p>MW079479_3LTR cctgcatataagcagctgctttttgcctgtactgggtctctctggttagaccagatctga</p>
+<p>K03455.1_3LTR  cctgcatataagcagctgctttttgcctgtactgggtctctctggttagaccagatctga</p>
+<p>************************************************************</p>
+<p>K03455.1_5LTR  gcctgggagctctctggctaactagggaacccactgcttaagcctcaataaagcttgcct</p>
+<p>pHXB2_D_5LTR   gcctgggagctctctggctaactagggaacccactgcttaagcctcaataaagcttgcct</p>
+<p>MW079479_3LTR gcctgggagctctctggctaactagggaacccactgcttaagcctcaataaagcttgcct</p>
+<p>K03455.1_3LTR  gcctgggagctctctggctaactagggaacccactgcttaagcctcaataaagcttgcct</p>
+<p>************************************************************</p>
+<p>K03455.1_5LTR  tgagtgcttcaagtagtgtgtgcccgtctgttgtgtgactctggtaactagagatccctc</p>
+<p>pHXB2_D_5LTR   tgagtgcttcaagtagtgtgtgcccgtctgttgtgtgactctggtaactagagatccctc</p>
+<p>MW079479_3LTR tgagtgcttcaagtagtgtgtgcccgtctgttgtgtgactctggtaactagagatccctc</p>
+<p>K03455.1_3LTR  tgagtgcttcaagtagtgtgtgcccgtctgttgtgtgactctggtaactagagatccctc</p>
+<p>************************************************************</p>
+<p>K03455.1_5LTR  agacccttttagtcagtgtggaaaatctctagca</p>
+<p>pHXB2_D_5LTR   agacccttttagtcagtgtggaaaatctctagca</p>
+<p>MW079479_3LTR agacccttttagtcagtgtggaaaatctctagca</p>
+<p>K03455.1_3LTR  agacccttttagtcagtgtggaaaatctctagca</p>
+<p>**********************************</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-3b">
+<figcaption>
+<p><strong>Figure 3B: pNL4-3_gag-pol(del1443-4553)_EGFP (MW928609) has distinct LTRs, consistent with pNL4-3 (AF324493.1).</strong></p>
+<p>CLUSTAL format alignment by MAFFT (v7.475)</p>
+<p>AF324493.1_5LTR tggaagggctaatttggtcccaaaaaagacaagagatccttgatctgtggatctaccaca</p>
+<p>MW928609_5LTR tggaagggctaatttggtcccaaaaaagacaagagatccttgatctgtggatctaccaca</p>
+<p>AF324493.1_3LTR tggaagggctaattcactcccaaagaagacaagatatccttgatctgtggatctaccaca</p>
+<p>MW928609_3LTR tggaagggctaattcactcccaaagaagacaagatatccttgatctgtggatctaccaca</p>
+<p>**************.. *******.********* *************************</p>
+<p>AF324493.1_5LTR cacaaggctacttccctgattggcagaactacacaccagggccagggatcagatatccac</p>
+<p>MW928609_5LTR cacaaggctacttccctgattggcagaactacacaccagggccagggatcagatatccac</p>
+<p>AF324493.1_3LTR cacaaggctacttccctgattggcagaactacacaccagggccaggggtcagatatccac</p>
+<p>MW928609_3LTR cacaaggctacttccctgattggcagaactacacaccagggccaggggtcagatatccac</p>
+<p>***********************************************.************</p>
+<p>AF324493.1_5LTR tgacctttggatggtgcttcaagttagtaccagttgaaccagagcaagtagaagaggcca</p>
+<p>MW928609_5LTR tgacctttggatggtgcttcaagttagtaccagttgaaccagagcaagtagaagaggcca</p>
+<p>AF324493.1_3LTR tgacctttggatggtgctacaagctagtaccagttgagccagataaggtagaagaggcca</p>
+<p>MW928609_3LTR tgacctttggatggtgctacaagctagtaccagttgagccagataaggtagaagaggcca</p>
+<p>****************** ****.*************.***** *.*************</p>
+<p>AF324493.1_5LTR atgaaggagagaacaacagcttgttacaccctatgagccagcatgggatggaggacccgg</p>
+<p>MW928609_5LTR atgaaggagagaacaacagcttgttacaccctatgagccagcatgggatggaggacccgg</p>
+<p>AF324493.1_3LTR ataaaggagagaacaccagcttgttacaccctgtgagcctgcatggaatggatgaccctg</p>
+<p>MW928609_3LTR ataaaggagagaacaccagcttgttacaccctgtgagcctgcatggaatggatgaccctg</p>
+<p>**.************ ****************.****** ******.***** ***** *</p>
+<p>AF324493.1_5LTR agggagaagtattagtgtggaagtttgacagcctcctagcatttcgtcacatggcccgag</p>
+<p>MW928609_5LTR agggagaagtattagtgtggaagtttgacagcctcctagcatttcgtcacatggcccgag</p>
+<p>AF324493.1_3LTR agagagaagtgttagagtggaggtttgacagccgcctagcatttcatcacgtggcccgag</p>
+<p>MW928609_3LTR agagagaagtgttagagtggaggtttgacagccgcctagcatttcatcacgtggcccgag</p>
+<p>**.*******.**** *****.*********** ***********.****.*********</p>
+<p>AF324493.1_5LTR agctgcatccggagtactacaaagactgctgacatcgagctttctacaagggactttccg</p>
+<p>MW928609_5LTR agctgcatccggagtactacaaagactgctgacatcgagctttctacaagggactttccg</p>
+<p>AF324493.1_3LTR agctgcatccggagtacttcaagaactgctgacatcgagcttgctacaagggactttccg</p>
+<p>MW928609_3LTR agctgcatccggagtacttcaagaactgctgacatcgagcttgctacaagggactttccg</p>
+<p>****************** ***..****************** *****************</p>
+<p>AF324493.1_5LTR ctggggactttccagggaggtgtggcctgggcgggactggggagtggcgagccctcagat</p>
+<p>MW928609_5LTR ctggggactttccagggaggtgtggcctgggcgggactggggagtggcgagccctcagat</p>
+<p>AF324493.1_3LTR ctggggactttccagggaggcgtggcctgggcgggactggggagtggcgagccctcagat</p>
+<p>MW928609_3LTR ctggggactttccagggaggcgtggcctgggcgggactggggagtggcgagccctcagat</p>
+<p>********************.***************************************</p>
+<p>AF324493.1_5LTR gctacatataagcagctgctttttgcctgtactgggtctctctggttagaccagatctga</p>
+<p>MW928609_5LTR gctacatataagcagctgctttttgcctgtactgggtctctctggttagaccagatctga</p>
+<p>AF324493.1_3LTR gctgcatataagcagctgctttttgcctgtactgggtctctctggttagaccagatctga</p>
+<p>MW928609_3LTR gctgcatataagcagctgctttttgcctgtactgggtctctctggttagaccagatctga</p>
+<p>***.********************************************************</p>
+<p>AF324493.1_5LTR gcctgggagctctctggctaactagggaacccactgcttaagcctcaataaagcttgcct</p>
+<p>MW928609_5LTR gcctgggagctctctggctaactagggaacccactgcttaagcctcaataaagcttgcct</p>
+<p>AF324493.1_3LTR gcctgggagctctctggctaactagggaacccactgcttaagcctcaataaagcttgcct</p>
+<p>MW928609_3LTR gcctgggagctctctggctaactagggaacccactgcttaagcctcaataaagcttgcct</p>
+<p>************************************************************</p>
+<p>AF324493.1_5LTR tgagtgctcaaagtagtgtgtgcccgtctgttgtgtgactctggtaactagagatccctc</p>
+<p>MW928609_5LTR tgagtgctcaaagtagtgtgtgcccgtctgttgtgtgactctggtaactagagatccctc</p>
+<p>AF324493.1_3LTR tgagtgcttcaagtagtgtgtgcccgtctgttgtgtgactctggtaactagagatccctc</p>
+<p>MW928609_3LTR tgagtgcttcaagtagtgtgtgcccgtctgttgtgtgactctggtaactagagatccctc</p>
+<p>********. **************************************************</p>
+<p>AF324493.1_5LTR agacccttttagtcagtgtggaaaatctctagca</p>
+<p>MW928609_5LTR agacccttttagtcagtgtggaaaatctctagca</p>
+<p>AF324493.1_3LTR agacccttttagtcagtgtggaaaatctctagca</p>
+<p>MW928609_3LTR agacccttttagtcagtgtggaaaatctctagca</p>
+<p>**********************************</p>
+</figcaption>
+</figure>
+<h4 id="provenance-of-phxb2_d">Provenance of pHXB2_D<a class="headerlink" href="#provenance-of-phxb2_d" title="Permanent link">&para;</a></h4>
+<p>To determine whether pHXB2_D was an isolated provirus (as opposed to a cDNA clone), the pHXB2_D assembly was aligned to the current human reference hg38, returning a single complete insertion site on 3p24.3 (<strong><a href="#figure-4a">Figure 4A</a>, <a href="#supplemental-table-2">Supplemental Table 2</a></strong>). As expected, our pNL4-3_gag-pol(del1443-4553)_EGFP had homology arms from two chromosomes (<strong><a href="#figure-4b">Figures 4B</a>,6, <a href="#supplemental-table-2">Supplemental Table 2</a></strong>). We sought to put our pHXB2_D assembly into context of other HXB2-like references available (<strong><a href="#figure-5">Figure 5</a></strong>). pHXB2_D (red) clusters closely with HXB2 reference (K03455.1) and related clone sequences (green). pNL4-3 clones in blue. The LTR-masked HIV-spanning segment of pHXB2_D is most homologous to B.FR.1983.DM461230 and B.FR.1983.CS793683, which are identical except for areas in nef and a GFP insertion (verified by blastn). This finding suggests they were from the same stock. HIV-1 M group subtype reference set (HIV Sequence Database) was added to put HXB2s and pNL4-3 clones into perspective. HXB2 (believed to be a complete isolate) and NL4-3 (synthetic clone based on two early isolates (Adachi et al. 1986)) are examples of HIV type 1 (HIV-1), group M, subgroup B.</p>
+<figure class="book-figure" id="figure-4a">
+<p><img alt="Figure 4A: HXB2 integration site" loading="lazy" src="../assets/ch05/media/image5.png" /></p>
+<figcaption>
+<p><strong>Figure 4A: HXB2 integration site.</strong></p>
+<p><strong>HXB2 integration site; Figure 4B: NL4-3 integration sites</strong></p>
+<p>Figure 4A: pHXB2_D’s, and therefore HXB2’s, integration site is unambiguously singular (falls outside of annotated repeat), and in the same orientation (minus strand relative to hg38) as target gene TBC1D5. Alignment quality is 60 for both homology arms (<strong>Supplemental Table 2</strong>). Features captured by homology arms in pHXB2_D and other clones verified as proviruses in the present study are consistent with HIV-1 integration behavior (Lucic et al. 2018). Visualized in UCSC Genome Browser (Kent et al. 2002). Figure 4B: pNL4-3_gag-pol(del1443-4553)_EGFP’s, and therefore NL4-3’s, integration sites fall on annotated repeats, the longer reads help to locate both sites. Alignment quality is 60 for both homology arms (<strong>Supplemental Table 2</strong>). These integration sites would likely be missed by any method leveraging reads shorter than the homology arms.</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-4b">
+<p><img alt="Figure 4B: NL4-3 integration sites" loading="lazy" src="../assets/ch05/media/image6.png" /></p>
+<p><img alt="Figure 4B: NL4-3 integration sites" loading="lazy" src="../assets/ch05/media/image7.png" /></p>
+<figcaption>
+<p><strong>Figure 4B: NL4-3 integration sites.</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-5">
+<p><img alt="Figure 5: pHXB2_D provenance and top 50 neighbors" loading="lazy" src="../assets/ch05/media/image8.png" /></p>
+<figcaption>
+<p><strong>Figure 5: pHXB2_D provenance and top 50 neighbors.</strong></p>
+</figcaption>
+</figure>
+<h4 id="ont-read-variability">ONT read variability<a class="headerlink" href="#ont-read-variability" title="Permanent link">&para;</a></h4>
+<p>As previously reported (Loman, Quick, and Simpson 2015), per-read variability in ONT data was higher near homopolymers (runs of the same base) (<strong><a href="#supplemental-figure-5">Supplemental Figure 5A</a></strong>). For the datasets generated in the present study, homopolymers were counted and classified as continuous or an unbroken run of a given nucleobase vs. discontinuous or broken run of a given nucleobase (<strong><a href="#supplemental-figure-5">Supplemental Figures 5B</a>,5D,5F,5H</strong>). A/T (2 hydrogen bonds; 2H) and G/C (3 hydrogen bonds; 3H) were evaluated. Because runs longer than 4 or 5 were rare in these datasets, it was impossible to evaluate longer homopolymers. A simple calculation Abs(Δ)=Abs(#homopolymers<sub>reference</sub> - #homopolymers<sub>assembly</sub>) helped to evaluate the performance of basecallers, such that better basecallers had smaller Abs(Δ) (<strong><a href="#supplemental-figure-5">Supplemental Figures 5C</a>,5E,5G,5I,5K</strong>). At the level of consensus made from sequences mapped to reference HXB2, homopolymers contributed few, if any, obvious errors. A special case of homopolymer, dimer runs, was noted to cause persistent errors regardless of ONT basecaller (<strong><a href="#supplemental-figure-5j">Supplemental Figures 5J</a>,5K</strong>). While dips occurred at certain points near homopolymers, the consensus did not change much at the sequencing depth used in this study for either barcoded pHXB2_D samples (<strong><a href="#supplemental-figure-1">Supplemental Figures 1</a>,3,4</strong>). Another interpretation is that homopolymers tend to seem truncated with ONT, with more reads in support of shorter homopolymers. Canu assemblies showed basecaller-dependent variability (<strong><a href="#supplemental-table-3">Supplemental Table 3</a></strong>). That said, newer basecallers tended to produce fewer and smaller per-read truncations. Assemblies without polishing did not correct all homopolymer truncations (<strong><a href="#supplemental-figure-4a">Supplemental Figure 4A</a></strong>). Polishing assemblies tended to correct these toward the final pHXB2_D assembly (<strong><a href="#supplemental-figure-4b">Supplemental Figures 4B</a>,6</strong>). Data from polished ONT-only assemblies and short-read sequencing do not support the truncations (gaps relative to reference) suggested by unpolished ONT-only assemblies, representing a known current limitation of ONT. These are not the same as the 20 SNVs supported by BOTH long- and short-read sequencing performed in this study. The ratio of per-read deletions to per-read insertions (DEL/INS) was much higher for SNVs occurring at homopolymers and near the same base, and this difference was maintained between all basecallers used (<strong><a href="#supplemental-figure-5">Supplemental Figure 5L</a></strong>). These changes created more problematic (longer) homopolymers. Read quality (<strong><a href="#figure-1">Figure 1D</a></strong>) did not differ much between lower and higher fidelity Taq libraries.</p>
+<h3 id="discussion">Discussion<a class="headerlink" href="#discussion" title="Permanent link">&para;</a></h3>
+<p>This work represents the first instance of complete and unambiguous sequencing of HIV-1 provirus as plasmid and contributed to the identification of single nucleotide variants which may not have been easily determined using other sequencing modalities, illustrating the importance of validating molecular reagents in their entirety, and with complementary approaches. Nanopore sequencing surpassed the read length limitations of traditional sequencing modalities used for HIV such as Sanger sequencing and sequencing-by-synthesis by at least two orders of magnitude. Sequencing-by-synthesis range was &lt;150 bases (bp) long in most reported HIV sequencing experiments, but up to 500 bp for either Illumina (ILMN). Sanger sequencing and chain termination sequencing-related methods are typically &lt;1,000 bp. Other long-read DNA sequencing technologies such as PacBio’s zero-mode waveguide DNA sequencing were not evaluated in this work, but in principle would be interchangeable for nanopore sequencing. Paired-end sequencing as either DNA-seq or RNA-seq was not evaluated in this work, but has shown promise phasing LTRs in our hands (A. Gener et al. 2020; A. R. Gener et al. 2020; Alejandro R. Gener et al. 2020).</p>
+<h4 id="first-complete-pass-over-all-hiv-information-in-reference-plasmid-phxb2_d">First complete pass over all HIV information in reference plasmid pHXB2_D<a class="headerlink" href="#first-complete-pass-over-all-hiv-information-in-reference-plasmid-phxb2_d" title="Permanent link">&para;</a></h4>
+<p>HIV provirus is believed to occur naturally as one or a few copies of reverse-transcribed DNA forms integrated into the host nuclear genome. Depending on where integration occurs, local GC or AT content might cause problems for detecting integrants with PCR. HIV also has conserved transitions from areas of higher GC content (~60%) to content approximating average human GC content (~40%). To limit PCR sequencing bias and to accommodate for the potential heterogeneity of HIV sequences, we fractionated whole sample directly with tagmentation provided in the Rapid PCR-Barcoding kit (ONT), as opposed to PCR-barcoding select amplicons. Tagmentation in this work used transposon-mediated cleavage and ligation of barcode adapters for later PCR amplification. A consequence of this fractionation was a distribution of reads (<strong><a href="#figure-1">Figure 1E</a></strong>) shorter than longer reads reported elsewhere for ONT experiments (Payne et al. 2018). Based on this distribution and the level of coverage, it was expected that HIV might be covered from end to end, but this would have been exceptional. That said, an example is presented here (<strong><a href="#figure-2">Figure 2</a></strong>). The provirus status of pHXB2_D is supported by recovery of both upstream and downstream homology arms which map to a single human integration site.</p>
+<h4 id="long-reads-enable-ltr-phasing-and-hiv-haplotype-definition">Long reads enable LTR phasing and HIV haplotype definition<a class="headerlink" href="#long-reads-enable-ltr-phasing-and-hiv-haplotype-definition" title="Permanent link">&para;</a></h4>
+<p>We created 6 assemblies for pHXB2_D from ONT-only data (<strong><a href="#supplemental-figure-4a">Supplemental Figure 4</a></strong>), each with a common set of 20 SNVs (11 in LTRs), and final assemblies (a single HIV-1 HXB2_D haplotype; a single HIV-1 NL4-3_gag-pol(Δ1443-4553)_EGFP haplotype) leveraging long- and short-read data. The external core’s <em>de novo</em> assembly pipeline identified the same 20 SNVs, and variants in the LTRs were supported by ONT unambiguously. That the core’s assembler was able to phase LTR variants in these samples may have been because the samples had high amounts of the same upstream and downstream sequences because of coming from one plasmid. The core’s assembler thus may have had additional sequencing information at the edges of HXB2, helping it to map deeper into each LTR. This approach would likely fail in samples with multiple integrations, such as in various animal models of HIV disease (Rosenstiel et al. 2009), which have unknown upstream and downstream sequences, or in samples from natural human infection, which is well known to exhibit multiple pseudo-random integration sites between cells (Kvaratskhelia et al. 2014; Marini et al. 2015), but with mostly single integration events per cell (Ito et al. 2017). Inverse PCR (iPCR) is an alternative method (Ochman, Gerber, and Hartl 1988) with its own issues (e.g., PCR biases, HIV concatemers, host repeats). While current PCR reagents have extended the range of what can be seen with iPCR, current approaches are likewise limited by long DNA extraction methods, sample amount, and remain to be optimized. If coverage is sufficient (≥10 reads in non-homopolymers and non-dimer runs), long-read sequencing can provide linked variant information to individual integration sites. Identical 5’ and ‘3 LTRs (<strong><a href="#figure-3a">Figure 3</a></strong>) in the context of a single integration event (<strong><a href="#figure-4a">Figure 4A</a></strong>) support this integrant being a <em>bona fide</em> provirus (Hu and Hughes 2012). Other proviruses also had identical LTR pairs (<strong><a href="#supplemental-table-2">Supplemental Table 2</a></strong>). Technical limitations such as PCR errors before earlier sequencing may explain the variability in the HXB2 reference LTRs. These were sequenced at a time before paired-end 150 or long-read DNA-seq were available to phase LTRs, raising the possibility that these LTRs were incorrectly annotated by depositors assuming identity and copy-and-pasting the sequence of one LTR for both without being able to unambiguously resolve each LTR.</p>
+<h4 id="mutations-in-a-reference-hiv-1-plasmid-illustrate-the-need-for-reagent-verification">Mutations in a reference HIV-1 plasmid illustrate the need for reagent verification<a class="headerlink" href="#mutations-in-a-reference-hiv-1-plasmid-illustrate-the-need-for-reagent-verification" title="Permanent link">&para;</a></h4>
+<p>Up until 2020, HIV had been the most studied human pathogen, but HIV reagents are not routinely re(verified). The pHXB2_D sequenced was allegedly a reference plasmid, with unknown divergence between the published reference HXB2. Three independent experiments were: two long-read with PCR-barcoded libraries made with regular and long-amplicon Taq master mixes, one short-read. These yielded at least 20 single nucleotide variants in pHXB2_D which differed from the HXB2 reference sequence (<strong><a href="#table-1">Table 1</a>, <a href="#supplemental-figure-3a">Supplemental Figure 3</a></strong>), which were also concordant across the three basecallers used (<strong><a href="#supplemental-table-3">Supplemental Table 3</a></strong>) and are therefore not PCR errors. By leveraging long reads with the MinION, we were able to find mutations in highly repetitive LTRs relative to HXB2 Genbank:K03455.1 which are often assumed (but until now never proven) to be identical (<strong><a href="#table-1">Table 1</a></strong>, <strong><a href="#figure-1">Figure 1</a></strong>, <strong><a href="#supplemental-figure-1">Supplemental Figures 1</a>, 3E</strong>), as well as mutations in protein-coding regions (<strong><a href="#table-1">Table 1</a></strong>). We were also able to confirm that the backbone of this plasmid is from pSP62 (Fisher et al. 1985), a pBR322 derivative with the SP6 promoter (Green, Maniatis, and Melton 1983), aiding in the continued use of this important reagent, and illustrating the need of full-length reagent validation moving forward. We suggest that all clinical reagents (e.g., vectors) be sequence-verified at the level of single-molecule sequencing as standard quality control to protect against sample heterogeneity.</p>
+<h4 id="improvement-in-ont-basecallers-over-time">Improvement in ONT basecallers over time<a class="headerlink" href="#improvement-in-ont-basecallers-over-time" title="Permanent link">&para;</a></h4>
+<p>Albacore, Guppy, and FlipFlop basecallers were compared. Each produced reads of similar length distributions relative to polymerase used, while Guppy and FlipFlop produced improved and best performance relative to quality score distributions (<strong><a href="#figure-1">Figure 1D</a></strong>). Interestingly, while read length distributions were affected by fidelity of polymerases evaluated in this work, mean quality distributions were not. This is important because of the differences in cost between higher fidelity Taq and classic Taq enzymes. That said, higher fidelity LA Taq produced much higher coverage compared to Taq (<strong>Supplemental</strong> <strong><a href="#figure-1">Figure 1</a></strong>). In consideration of library prep, choice of enzyme used should be based on the desired read-length distribution and coverage. Regarding read mapping, the increase in mean quality score between these basecallers improved overall mapping, in part by facilitating demultiplexing, resulting in approximately ~10% increases number of reads in barcoded libraries before mapping, in other words a shift in reads from unclassified to a given barcode. FlipFlop tended to handle homopolymers better than previous basecallers (<strong><a href="#supplemental-figure-5">Supplemental Figures 5</a>,6</strong>). Homopolymers in HXB2 tended to exhibit apparent deletions near 5’ ends of homopolymers. These appeared arbitrarily upstream due to technical artifact from mapping. However, because consensus was conserved, and because short-read data lacks INDELS at these sites, it was unlikely that any of these homopolymer deletions are real in these experiments. Here consensus was defined as at least 80% of called bases at a given position were identical to reference. Dimer runs – stretches of repeating 2-mers (pronounced “two-mers”) – proved challenging regardless of basecaller. Mapping as above may be used to aid in manually calling these when they occur. Albacore is currently deprecated, and current versions of Guppy now incorporate a version of FlipFlop called Guppy High-ACcuracy (HAC). Guppy HAC and subsequence versions were not evaluated in this work. Polishing is becoming standard practice for processing assemblies from ONT data because it redresses most homopolymer errors propagated into long-read-only assemblies. The best manually finished and polished contig had 1 error out of 16,722 bases, illustrating the utility of ONT hardware when paired with burgeoning software.</p>
+<h3 id="conclusions">Conclusions<a class="headerlink" href="#conclusions" title="Permanent link">&para;</a></h3>
+<p>HIV informatics, the study of HIV sequence information, has been limited by the common assumption that sequence fidelity exists between reference genomes available in sequence databases and similarly named HIV clones. Modern DNA sequencing methods, such as long- and short-read sequencing, are available to redress this issue. Long-read sequencing fills in gaps left behind by short-read interrogation of HIV-1. Current limitations of the approaches used in the present work to study HIV are 1.) the cost of long-read sequencing, regardless of platform, compared to the cheaper short reads from sequencing-by-synthesis, 2.) long DNA extraction methods in diseased tissue, and 3.) the lower per-base accuracy (low-mid 90’s with ONT vs. 98-99% with ILMN or newer PacBio HiFi), including difficulty near homopolymers and dimer runs (<strong><a href="#supplemental-figure-5">Supplemental Figure 5</a></strong>). A nontrivial but redressable limitation is availability of personnel trained to prepare sequencing libraries, to run sequencing, and to analyze results. As the price of long-read sequencing decreases, hardware and software used in basecalling and library protocols improve, and with the advent of more user-friendly tools, the cost of obtaining usable data from long reads will become negligible compared to the ability to answer historically intractable questions. This work raises the possibility of being able to detect at least some recombination events, in a reference-free manner requiring only the comparison of LTRs from the same integrants (<strong><a href="#figure-6">Figure 6</a></strong>). We suggest that pHXB2_D and pNL4-3 constructs may be used as negative and positive controls for the development of such screens. While other HIV reference proviral clones were reported to have identical LTR pairs, this remains to be tested in other clones, since other clones were generated with shorter sequencing methods. For example, pNL4-3_gag-pol(del1443-4553)_EGFP had distinct LTRs as a plasmid. However, if an NL4-3 virus is made from pNL4-3, the LTR sequences would homogenize to pNL4-3’s 3’ LTR sequence. Future work will include optimizing DNA extraction protocols with the goal of capturing higher-coverage fuller glimpses of each HIV proviral integration site in <em>in vivo</em> HIV models and patient samples. This work has broad implications for all cells infected by both integrating and non-integrating viruses, and for the characterization of targeted regions in the genome which may be recalcitrant to previous sequencing methods. Long-read sequencing is an important emerging tool defining the post-scaffold genomic era, allowing for the characterization of anatomical landmarks of hosts and pathogens at the genomic scale.</p>
+<figure class="book-figure" id="figure-6">
+<p><img alt="Figure 6: Summary of long- vs. short-read mapping by ability to phase LTRs" loading="lazy" src="../assets/ch05/media/image9.png" /></p>
+<figcaption>
+<p><strong>Figure 6: Summary of long- vs. short-read mapping by ability to phase LTRs.</strong></p>
+</figcaption>
+</figure>
+<h3 id="declarations">Declarations<a class="headerlink" href="#declarations" title="Permanent link">&para;</a></h3>
+<p><strong>List of Abbreviations</strong></p>
+<blockquote>
+<p>HIV-1, human immunodeficiency virus.</p>
+<p>PCR, polymerase chain reaction.</p>
+<p>ONT, Oxford Nanopore Technologies; nanopore sequencing.</p>
+<p>RNA-seq, usually refers to cDNA sequencing, unless otherwise specified (e.g., native RNA-seq is not cDNA sequencing).</p>
+<p>cDNA, reverse-transcribed “copy” DNA from single-stranded RNA templates. cDNA is usually double-stranded DNA.</p>
+<p>DNA-seq, DNA sequencing.</p>
+<p>EGFP, enhanced green fluorescent protein.</p>
+<p>LTR, long terminal repeat.</p>
+<p>R, R repeat (a 97bp region in the LTR).</p>
+<p>STEM, science, technology, engineering, math.</p>
+<p>DNA, deoxyribonucleic acid.</p>
+<p>RNA, ribonucleic acid.</p>
+<p>LA, Long Amplicon.</p>
+<p>SNV, single nucleotide variant.</p>
+<p>AIDS, human acquired immunodeficiency syndrome.</p>
+<p>mRNA, messenger RNA. These are usually 5’ capped and polyadenylated in human tissues.</p>
+<p>BCM, Baylor College of Medicine.</p>
+<p>IGV, Integrative Genomics Viewer.</p>
+<p>bp, bases long.</p>
+<p>Kb, kilobases long.</p>
+<p>ASP, antisense protein.</p>
+<p>MGH CCIB, Center for Computational &amp; Integrative Biology DNA Core at Massachusetts General Hospital.</p>
+<p>2H, two hydrogen bonds, as in A-T, A-U.</p>
+<p>3H, three hydrogen bonds, as in G-C.</p>
+<p>iPCR, inverse PCR.</p>
+<p>INDELS, insertions and/or deletions.</p>
+<p>ILMN, Illumina short-read DNA sequencing-by-synthesis.</p>
+<p>HiFi, High-fidelity.</p>
+<p>Abs(), absolute value.</p>
+<p>RRE, rev-response element.</p>
+<p>LANL, Los Alamos National Laboratory.</p>
+</blockquote>
+<p><strong>Ethics Approval</strong></p>
+<p>This work did not include human or animal subjects. Nanopore libraries for this work were prepared in their entirety by ARG in a Biosafety Level 2 laboratory on main campus at Baylor College of Medicine (BCM). Nanopore sequencing was completed between April and May of 2018 as two of several control experiments included in the Student Genomics pilot run (<strong>Supplemental Information</strong>). Short-read sequencing was completed in April 2019.</p>
+<p><strong>Consent to publish</strong></p>
+<p>All authors give their consent to publish the current work, pending peer review and acceptance.</p>
+<p><strong>Availability of data and materials.</strong></p>
+<p>The sequence for pHXB2_D will be made available after publication with GenBank accession number MW079479 (embargoed until publication). We suggest this as a replacement for K03455.1 since MW079479 will have phased LTRs. pNL4-3_gag-pol(del1443-4553)_EGFP is deposited as accession number (MW928609). Both plasmids will be made available to the community through the AIDS Reagent Program. Sequencing data will be deposited into GEO. <strong>Available additional files:</strong> Albacore basecalled barcode 10, Guppy basecalled barcode 10, FlipFlop basecalled barcode 10, Albacore basecalled barcode 11, Guppy basecalled barcode 11, FlipFlop basecalled barcode 11, Minimap2 and BWA-MEM alignments (.bam and .bai), Clipboards from points of interest (verified SNVs; n=20), .dna files of contigs (n=6), MGH data (raw + contig), Supplemental Tables, Supplemental Figures.</p>
+<p><strong>Competing interests</strong></p>
+<p>ARG received travel bursaries from Oxford Nanopore Technologies (ONT). The present work was completed independently of ONT. Other authors declare no conflicts of interest.</p>
+<p><strong>Funding</strong></p>
+<p>This work was funded in part by institutional support from Baylor College of Medicine; the Human Genome Sequencing Center at Baylor College of Medicine; private funding by Bob Ostendorf, CEO of East Coast Oils, Inc., Jacksonville, Florida; ARG’s own private funding, including Student Genomics (manuscripts in prep). Compute resources from the Computational and Integrative Biomedical Research Center at BCM (“sphere” cluster managed by Dr. Steven Ludtke) and the Department of Molecular and Human Genetics at BCM (“taco” cluster managed by Mr. Tanner Beck and Dr. Charles Lin) greatly facilitated the completion of this work. ARG has also received the PFLAG of Jacksonville scholarship for multiple years.</p>
+<p><strong>Authors’ contributions</strong></p>
+<p>ARG conceived of this project, performed experiments, analyzed results, and drafted the manuscript. WZ rederived pNL4-3_gag-pol(del1443-4553)_EGFP. All authors discussed data and edited the manuscript. ARG and PK provided funding.</p>
+<p><strong>Acknowledgements</strong></p>
+<p>As part of a summer bioinformatics internship in the Paul E. Klotman Laboratory at Baylor College of Medicine, Akash Naik supervised by ARG performed <em>in silico</em> mapping analyses/experiments, generated and/or aided in the synthesis of <strong><a href="#supplemental-figure-4a">Supplemental Figure 4</a></strong>, and assisted in writing relevant portions, discussing, and editing this manuscript. During a second summer internship with American Physician Scientists Association Virtual Summer Research Program, the following students were supervised by ARG helped to create <strong><a href="#figure-1">Figure 1A</a></strong> and <strong><a href="#supplemental-table-1">Supplemental Table 1</a></strong>: Yini Liang, Kirk Niekamp, Maliha Jeba, Delmarie M. Rivera Rodríguez. Orthogonal sequence verification was performed as a service by staff at the Center for Computational &amp; Integrative Biology DNA Core at Massachusetts General Hospital, Boston, MA, USA.</p>
+<p>We would like to thank the staff at the DNA Core for their exceptional services, including expert analyses and rapid turnaround time. We would like to thank Drs. Steven Richards, Qingchang Meng and the staff of the Human Genome Sequencing Center Research (HGSC) and Development (R&amp;D) team for their earlier support in nanopore adoption. We would like to thank the team at Oxford Nanopore Technologies for their timely improvements and continued R&amp;D. I would also like to thank Ms. Taneasha Monique Washington (current) and former members of the Paul E. Klotman lab, Dr. Gokul C. Das and Alexander Batista. I would like to thank Dr. Alana Canupp and the late Dr. Jim Maruniak for their early interest in my scientific development, and for the passion that they show in everything that they do.</p>
+<h3 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h3>
+<p>Adachi, A., H. E. Gendelman, S. Koenig, T. Folks, R. Willey, A. Rabson, and M. A. Martin. 1986. “Production of Acquired Immunodeficiency Syndrome-Associated Retrovirus in Human and Nonhuman Cells Transfected with an Infectious Molecular Clone.” <em>Journal of Virology</em> 59(2):284–91.</p>
+<p>Afgan, Enis, Dannon Baker, Marius van den Beek, Daniel Blankenberg, Dave Bouvier, Martin Čech, John Chilton, Dave Clements, Nate Coraor, Carl Eberhard, Björn Grüning, Aysam Guerler, Jennifer Hillman-Jackson, Greg Von Kuster, Eric Rasche, Nicola Soranzo, Nitesh Turaga, James Taylor, Anton Nekrutenko, and Jeremy Goecks. 2016. “The Galaxy Platform for Accessible, Reproducible and Collaborative Biomedical Analyses: 2016 Update.” <em>Nucleic Acids Research</em> 44(W1):W3–10.</p>
+<p>Andrews, S. n.d. “FastQC A Quality Control Tool for High Throughput Sequence Data.”</p>
+<p>B, Chevreux, Wetter T, and Suhai S. n.d. “Genome Sequence Assembly Using Trace Signals and Additional Sequence Information.” <em>Computer Science and Biology: Proceedings of the German Conference on Bioinformatics (GCB)</em> 99:45–56.</p>
+<p>Banin, Andrew N., Michael Tuen, Jude S. Bimela, Marcel Tongo, Paul Zappile, Alireza Khodadadi-Jamayran, Aubin J. Nanfack, Josephine Meli, Xiaohong Wang, Dora Mbanya, Jeanne Ngogang, Adriana Heguy, Phillipe N. Nyambi, Charles Fokunang, and Ralf Duerr. 2019. “Development of a Versatile, Near Full Genome Amplification and Sequencing Approach for a Broad Variety of HIV-1 Group M Variants.” <em>Viruses</em> 11(4):317.</p>
+<p>Bankevich, Anton, Sergey Nurk, Dmitry Antipov, Alexey A. Gurevich, Mikhail Dvorkin, Alexander S. Kulikov, Valery M. Lesin, Sergey I. Nikolenko, Son Pham, Andrey D. Prjibelski, Alexey V Pyshkin, Alexander V Sirotkin, Nikolay Vyahhi, Glenn Tesler, Max A. Alekseyev, and Pavel A. Pevzner. 2012. “SPAdes: A New Genome Assembly Algorithm and Its Applications to Single-Cell Sequencing.” <em>Journal of Computational Biology</em> 19(5):455–77.</p>
+<p>Barré-Sinoussi, F., J. C. Chermann, F. Rey, M. T. Nugeyre, S. Chamaret, J. Gruest, C. Dauguet, C. Axler-Blin, F. Vézinet-Brun, C. Rouzioux, W. Rozenbaum, and L. Montagnier. 1983. “Isolation of a T-Lymphotropic Retrovirus from a Patient at Risk for Acquired Immune Deficiency Syndrome (AIDS).” <em>Science (New York, N.Y.)</em> 220(4599):868–71.</p>
+<p>Bonsall, D., T. Golubchik, B. Kosloff, M. Limbada, M. de Cesare, A. Schaap, M. Hall, C. Wymant, G. Macintyre-Cockett, A. Brown, M. A. Ansari, S. Floyd, R. Hayes, H. Ayles, S. Fidler, and C. Fraser. 2018. “THAA0101 - HIV Genotyping and Phylogenetics in the HPTN 071 (PopART) Study: Validation of a High-Throughput Sequencing Assay for Viral Load Quantification, Genotyping, Resistance Testing and High-Resolution Transmission Networking.” P. Oral Abstract in <em>22nd International AIDS Conference (AIDS2018)</em>.</p>
+<p>Bruner, Katherine M., Zheng Wang, Francesco R. Simonetti, Alexandra M. Bender, Kyungyoon J. Kwon, Srona Sengupta, Emily J. Fray, Subul A. Beg, Annukka A. R. Antar, Katharine M. Jenike, Lynn N. Bertagnolli, Adam A. Capoferri, Joshua T. Kufera, Andrew Timmons, Christopher Nobles, John Gregg, Nikolas Wada, Ya-Chi Ho, Hao Zhang, Joseph B. Margolick, Joel N. Blankson, Steven G. Deeks, Frederic D. Bushman, Janet D. Siliciano, Gregory M. Laird, and Robert F. Siliciano. 2019. “A Quantitative Approach for Measuring the Reservoir of Latent HIV-1 Proviruses.” <em>Nature</em> 566(7742):120–25.</p>
+<p>Cock, Peter J. A., Björn A. Grüning, Konrad Paszkiewicz, and Leighton Pritchard. 2013. “Galaxy Tools and Workflows for Sequence Analysis with Applications in Molecular Plant Pathology” edited by G. Lazo. <em>PeerJ</em> 1:e167.</p>
+<p>Cuccuru, Gianmauro, Massimiliano Orsini, Andrea Pinna, Andrea Sbardellati, Nicola Soranzo, Antonella Travaglione, Paolo Uva, Gianluigi Zanetti, and Giorgio Fotia. 2014. “Orione, a Web-Based Framework for NGS Analysis in Microbiology.” <em>Bioinformatics</em> 30(13):1928–29.</p>
+<p>Cuesta, Isabel, Ana Mari, Antonio Ocampo, Celia Miralles, Sonia Pérez-castro, and Michael M. Thomson. 2016. “Sequence Analysis of In Vivo -Expressed HIV-1 Spliced RNAs Reveals the Usage of New and Unusual Splice Sites by Viruses of Different Subtypes.” 1–24.</p>
+<p>Curreli, Sabrina, Selvi Krishnan, Marvin Reitz, Yanto Lunardi-Iskandar, Mark K. Lafferty, Alfredo Garzino-Demo, Davide Zella, Robert C. Gallo, and Joseph Bryant. 2013. “B Cell Lymphoma in HIV Transgenic Mice.” <em>Retrovirology</em> 10:92.</p>
+<p>Dickie, Peter, James Felser, Michael Eckhaus, Joseph Bryant, Jonathan Silver, Nancy Marinos, and Abner L. Notkins. 1991. “HIV-Associated Nephropathy in Transgenic Mice Expressing HIV-1 Genes.” <em>Virology</em> 109–19. Retrieved February 11, 2016 (http://ac.els-cdn.com/0042682291907595/1-s2.0-0042682291907595-main.pdf?_tid=8f811f10-d10c-11e5-82e8-00000aacb35e&amp;acdnat=1455228938_33d4226549c6410971ced1c4c3573a44).</p>
+<p>Einkauf, Kevin B., Xu G. Yu, Mathias Lichterfeld, Kevin B. Einkauf, Guinevere Q. Lee, Ce Gao, Radwa Sharaf, Xiaoming Sun, Stephane Hua, Samantha M. Y. Chen, Chenyang Jiang, Xiaodong Lian, Fatema Z. Chowdhury, Eric S. Rosenberg, Tae-wook Chun, Jonathan Z. Li, and Xu G. Yu. 2019. “Intact HIV-1 Proviruses Accumulate at Distinct Chromosomal Positions during Prolonged Antiretroviral Therapy Find the Latest Version : Intact HIV-1 Proviruses Accumulate at Distinct Chromosomal Positions during Prolonged Antiretroviral Therapy.” 129(3):988–98.</p>
+<p>Fisher, Amanda G., Enrico Collalti, Lee Ratner, Robert C. Gallo, and Flossie Wong-Staal. 1985. “A Molecular Clone of HTLV-III with Biological Activity.” <em>Nature</em> 316(6025):262–65.</p>
+<p>Gener, A., Y. Fan, G. C. Das, W. Zhang, D. P. Hyink, C. He, and P. E. Klotman. 2020. “PEA0011 - Insights from HIV-1 Transgene Insertions in the Murine Model of HIV-Associated Nephropathy.” in <em>23rd International AIDS Conference (AIDS2020)</em>. Vol. ePoster.</p>
+<p>Gener, A. R., T. Washington, D. Hyink, and P. Klotman. 2020. “3264 - The Multiple HIV-1 Transgenes in the Murine Model of HIV-Associated Nephropathy Fail to Segregate as Expected.” P. ePoster in <em>American Society of Human Genetics Annual Meeting</em>.</p>
+<p>Gener, Alejandro R. 2019. “Full-Coverage Sequencing of HIV-1 Provirus from a Reference Plasmid.” <em>BioRxiv</em> 611848.</p>
+<p>Gener, Alejandro R. and Jason T. Kimata. 2019. “Full-Coverage Native RNA Sequencing of HIV-1 Viruses.” <em>BioRxiv</em> 845610.</p>
+<p>Gener, Alejandro R., Yini Liang, Maliha Jeba, Delmarie M. Rivera Rodríguez, Kirk Niekamp, Lawrence Tan, Ashwarya S. Devason, Mayra Aucapina, Akash Naik, Taneasha Washington, Ying Fan, Gokul C. Das, Weijia Zhang, John Cijiang He, Deborah P. Hyink, and Paul E. Klotman. 2020. “P39 - Insights from Comprehensive Transcript Models of HIV-1.” P. ePoster in <em>Genome Informatics 2020</em>.</p>
+<p>Graf, Erin H., Angela M. Mexas, Jianqing J. Yu, Farida Shaheen, Megan K. Liszewski, Michele Di Mascio, Stephen A. Migueles, Mark Connors, and Una O’Doherty. 2011. “Elite Suppressors Harbor Low Levels of Integrated HIV DNA and High Levels of 2-LTR Circular HIV DNA Compared to HIV+ Patients on and off HAART.” <em>PLoS Pathogens</em> 7(2).</p>
+<p>Green, M. R., T. Maniatis, and D. A. Melton. 1983. “Human Beta-Globin Pre-MRNA Synthesized in Vitro Is Accurately Spliced in Xenopus Oocyte Nuclei.” <em>Cell</em> 32(3):681–94.</p>
+<p>Hu, Wei-Shau and Stephen H. Hughes. 2012. “HIV-1 Reverse Transcription.” <em>Cold Spring Harbor Perspectives in Medicine</em> 2(10).</p>
+<p>Husain, M. 2002. “HIV-1 Nef Induces Proliferation and Anchorage-Independent Growth in Podocytes.” <em>Journal of the American Society of Nephrology</em> 13(7):1806–15.</p>
+<p>Ito, Yusuke, Azaria Remion, Alexandra Tauzin, Keisuke Ejima, Shinji Nakaoka, Yoh Iwasa, Shingo Iwami, and Fabrizio Mammano. 2017. “Number of Infection Events per Cell during HIV-1 Cell-Free Infection.” <em>Scientific Reports</em> 7(1):6559.</p>
+<p>Katoh, Kazutaka, John Rozewicki, and Kazunori D. Yamada. 2017. “MAFFT Online Service: Multiple Sequence Alignment, Interactive Sequence Choice and Visualization.” <em>Briefings in Bioinformatics</em> 20(4):1160–66.</p>
+<p>Katoh, Kazutaka and Daron M. Standley. 2013. “MAFFT Multiple Sequence Alignment Software Version 7: Improvements in Performance and Usability.” <em>Molecular Biology and Evolution</em> 30(4):772–80.</p>
+<p>Kent, W. James, Charles W. Sugnet, Terrence S. Furey, Krishna M. Roskin, Tom H. Pringle, Alan M. Zahler, and and David Haussler. 2002. “The Human Genome Browser at UCSC.” <em>Genome Research</em> 12(6):996–1006.</p>
+<p>Krupovic, Mart, Jonas Blomberg, John M. Coffin, Indranil Dasgupta, Hung Fan, Andrew D. Geering, Robert Gifford, Balázs Harrach, Roger Hull, Welkin Johnson, Jan F. Kreuze, Dirk Lindemann, Carlos Llorens, Ben Lockhart, Jens Mayer, Emmanuelle Muller, Neil E. Olszewski, Hanu R. Pappu, Mikhail M. Pooggin, Katja R. Richert-Pöggeler, Sead Sabanadzovic, Hélène Sanfaçon, James E. Schoelz, Susan Seal, Livia Stavolone, Jonathan P. Stoye, Pierre-Yves Teycheney, Michael Tristem, Eugene V Koonin, and Jens H. Kuhn. 2018. “Ortervirales: New Virus Order Unifying Five Families of Reverse-Transcribing Viruses.” <em>Journal of Virology</em> 92(12):e00515-18.</p>
+<p>Kvaratskhelia, Mamuka, Amit Sharma, Ross C. Larue, Erik Serrao, and Alan Engelman. 2014. “Molecular Mechanisms of Retroviral Integration Site Selection.” <em>Nucleic Acids Research</em> 42(16):gku769-.</p>
+<p>Li, Heng. 2018. “Minimap2: Pairwise Alignment for Nucleotide Sequences.” <em>Bioinformatics</em> 34(18):3094–3100.</p>
+<p>Li, Heng and Richard Durbin. 2010. “Fast and Accurate Long-Read Alignment with Burrows – Wheeler Transform.” 26(5):589–95.</p>
+<p>Li, Huilin, Weijia Zhang, Fang Zhong, Gokul C. Das, Yifan Xie, Zhengzhe Li, Weijing Cai, Gengru Jiang, Jae Choi, Mohamad Sidani, Deborah P. Hyink, Kyung Lee, Paul E. Klotman, and John Cijiang He. 2018. “Epigenetic Regulation of RCAN1 Expression in Kidney Disease and Its Role in Podocyte Injury.” <em>Kidney International</em> 94(6):1160–76.</p>
+<p>Loman, Nicholas J., Joshua Quick, and Jared T. Simpson. 2015. “A Complete Bacterial Genome Assembled de Novo Using Only Nanopore Sequencing Data.” <em>Nature Methods</em> 12(8):733–35.</p>
+<p>Lucic, Bojana, Heng-Chang Chen, Maja Kuzman, Eduard Zorita, Julia Wegner, Vera Minneker, Vassilis Roukos, Wei Wang, Raffaele Fronza, Manfred Schmidt, Monsef Benkirane, Ralph Stadhouders, Kristian Vlahovicek, Guillaume J. Filion, and Marina Lusic. 2018. “Spatially Clustered Loci with Multiple Enhancers Are Frequent Targets of HIV-1.” <em>BioRxiv</em>.</p>
+<p>Lyons, Daniel M. and Adam S. Lauring. 2017. “Evidence for the Selective Basis of Transition-to-Transversion Substitution Bias in Two RNA Viruses.” <em>Molecular Biology and Evolution</em> 34(12):3205–15.</p>
+<p>Marini, Bruna, Attila Kertesz-Farkas, Hashim Ali, Bojana Lucic, Kamil Lisek, Lara Manganaro, Sandor Pongor, Roberto Luzzati, Alessandra Recchia, Fulvio Mavilio, Mauro Giacca, and Marina Lusic. 2015. “Nuclear Architecture Dictates HIV-1 Integration Site Selection.” <em>Nature</em> 521:227–33.</p>
+<p>Nguyen Quang, Nam, Sophie Goudey, Emmanuel Ségéral, Ammara Mohammad, Sophie Lemoine, Corinne Blugeon, Margaux Versapuech, Jean-Christophe Paillart, Clarisse Berlioz-Torrent, Stéphane Emiliani, and Sarah Gallois-Montbrun. 2020. “Dynamic Nanopore Long-Read Sequencing Analysis of HIV-1 Splicing Events during the Early Steps of Infection.” <em>Retrovirology</em> 17(1):25.</p>
+<p>Ochman, H., A. S. Gerber, and D. L. Hartl. 1988. “Genetic Applications of an Inverse Polymerase Chain Reaction.” <em>Genetics</em> 120(3):621–23.</p>
+<p>Payne, Alexander, Nadine Holmes, Vardhman Rakyan, and Matthew Loose. 2018. “Whale Watching with BulkVis: A Graphical Viewer for Oxford Nanopore Bulk Fast5 Files.” <em>BioRxiv</em> 312256.</p>
+<p>Peng, Yu, Henry C. M. Leung, S. M. Yiu, and Francis Y. L. Chin. 2010. “IDBA – A Practical Iterative de Bruijn Graph De Novo Assembler BT - Research in Computational Molecular Biology.” Pp. 426–40 in, edited by B. Berger. Berlin, Heidelberg: Springer Berlin Heidelberg.</p>
+<p>Pinzone, Marilia Rita and Una O’Doherty. 2018. “Measuring Integrated HIV DNA Ex Vivo and in Vitro Provides Insights about How Reservoirs Are Formed and Maintained.” <em>Retrovirology</em> 15(1):1–12.</p>
+<p>Ratner, L., W. Haseltine, R. Patarca, K. J. Livak, B. Starcich, S. F. Josephs, E. R. Doran, J. A. Rafalski, E. A. Whitehorn, and K. Baumeister. 1985. “Complete Nucleotide Sequence of the AIDS Virus, HTLV-III.” <em>Nature</em> 313(6000):277–84.</p>
+<p>Robinson, James T., Helga Thorvaldsdóttir, Wendy Winckler, Mitchell Guttman, Eric S. Lander, Gad Getz1, and Jill P. Mesirov1. 2011. “Integrative Genomics Viewer.” <em>Nat Biotechnol</em> 29(1):24–26.</p>
+<p>Rosenstiel, Paul, Ali Gharavi, Vivette D’Agati, and Paul Klotman. 2009. “Transgenic and Infectious Animal Models of HIV-Associated Nephropathy.” <em>Journal of the American Society of Nephrology : JASN</em> 20(11):2296–2304.</p>
+<p>Shaw, G. M., B. H. Hahn, S. K. Arya, J. E. Groopman, R. C. Gallo, and F. Wong-Staal. 1984. “Molecular Characterization of Human T-Cell Leukemia (Lymphotropic) Virus Type III in the Acquired Immune Deficiency Syndrome.” <em>Science (New York, N.Y.)</em> 226(4679):1165–71.</p>
+<p>Wain-Hobson, S., J. P. Vartanian, M. Henry, N. Chenciner, R. Cheynier, S. Delassus, L. P. Martins, M. Sala, M. T. Nugeyre, and D. Guétard. 1991. “LAV Revisited: Origins of the Early HIV-1 Isolates from Institut Pasteur.” <em>Science (New York, N.Y.)</em> 252(5008):961–65.</p>
+<p>Walenz, Brian P., Sergey Koren, Nicholas H. Bergman, Adam M. Phillippy, Jason R. Miller, and Konstantin Berlin. 2017. “Canu: Scalable and Accurate Long-Read Assembly via Adaptive k -Mer Weighting and Repeat Separation.” <em>Genome Research</em> 27(5):722–36.</p>
+<p>Warren, René L., Granger G. Sutton, Steven J. M. Jones, and Robert A. Holt. 2007. “Assembling Millions of Short DNA Sequences Using SSAKE.” <em>Bioinformatics</em> 23(4):500–501.</p>
+<p>Wymant, Chris, François Blanquart, Tanya Golubchik, Astrid Gall, Margreet Bakker, Daniela Bezemer, Nicholas J. Croucher, Matthew Hall, Mariska Hillebregt, Swee Hoe Ong, Oliver Ratmann, Jan Albert, Norbert Bannert, Jacques Fellay, Katrien Fransen, Annabelle Gourlay, M. Kate Grabowski, Barbara Gunsenheimer-Bartmeyer, Huldrych F. Günthard, Pia Kivelä, Roger Kouyos, Oliver Laeyendecker, Kirsi Liitsola, Laurence Meyer, Kholoud Porter, Matti Ristola, Ard van Sighem, Ben Berkhout, Marion Cornelissen, Paul Kellam, Peter Reiss, and Christophe Fraser. 2018. “Easy and Accurate Reconstruction of Whole HIV Genomes from Short-Read Sequence Data with Shiver.” <em>Virus Evolution</em> 4(1):1–13.</p>
+<h3 id="supplemental-information">Supplemental Information<a class="headerlink" href="#supplemental-information" title="Permanent link">&para;</a></h3>
+<h4 id="data-exploration-with-long-and-short-read-mapping">Data exploration with long- and short-read mapping<a class="headerlink" href="#data-exploration-with-long-and-short-read-mapping" title="Permanent link">&para;</a></h4>
+<p>To assemble pHXB2_D, we tried the following short read assemblers on short-read data from the external core: IDBA (Peng et al. 2010), MIRA (B, T, and S n.d.; Cock et al. 2013), SPAdes (Bankevich et al. 2012), and SSAKE (Cuccuru et al. 2014; Warren et al. 2007). These were chosen as a convenience because they were already stably implemented in Galaxy (specifically usegalaxy.eu). Of these, SSAKE produced discontinuous assemblies with default parameters. The discontinuous contigs did however map to the core’s assembly (not shown).</p>
+<h4 id="enabling-stem-outreach">Enabling STEM outreach<a class="headerlink" href="#enabling-stem-outreach" title="Permanent link">&para;</a></h4>
+<p>This work was performed as two control experiments with identically prepared libraries for a STEM outreach initiative, Student Genomics (Gener, et al., manuscript in prep). Given the constraints of the Student Genomics pilot, a rapid sequencing kit with tagmentation (explained below) with PCR barcoding was used to pool samples for ONT sequencing, with the consequence of fragmenting plasmid DNA more than what would have been ideal for capturing full-length HIV. That said, these controls could have been just as easily replaced by any samples/experiments benefiting from long-read sequencing at moderate-to-high coverage.</p>
+<h3 id="supplemental-tables">Supplemental Tables<a class="headerlink" href="#supplemental-tables" title="Permanent link">&para;</a></h3>
+<figure class="book-table" id="supplemental-table-1">
+<figcaption>
+<p><strong>Supplemental Table 1: HXB2 is still a common HIV clone.</strong></p>
+<p>See <strong>Supplemental Digital Content.</strong></p>
+<p>See also <strong>Figure 1A</strong>.</p>
+</figcaption>
+</figure>
+<figure class="book-table" id="supplemental-table-2">
+<figcaption>
+<p><strong>Supplemental Table 2: HIV provirus clones.</strong></p>
+<p>See <strong>Supplemental Digital Content.</strong></p>
+<p>Of the HIV clones available through ARP, the table represents the only validated proviruses with both upstream and downstream homology arms mapping to the same integration sites. pNL4-3 is included as a known chimera with two integration half-sites. Other clones were made with cDNA cloning, usually TA cloning (per ARP entries). Note: Reference hg38. Aligner: minimap2 with "Long Assembly" mapping settings. All homology arms had Alignment quality = 60. Upstream = host plus strand; independent of integration orientation. Coordinates reported from UCSC. ARP = NIH AIDS Reagent and Reference Program. IS = integration site.</p>
+</figcaption>
+</figure>
+<figure class="book-table" id="supplemental-table-3">
+<figcaption>
+<p><strong>Supplemental Table 3: Variation in assemblies at the feature level.</strong></p>
+<p>Assembled with Canu. NA denotes features which may not have matched exactly, but which were collapsed with adjacent features to facilitate counting. Variants called manually by mapping assemblies over HXB2 features with SnapGene.</p>
+</figcaption>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Mismatches</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th>Gaps (INDEL)</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>Taq</td>
+<td></td>
+<td></td>
+<td>LA Taq</td>
+<td></td>
+<td></td>
+<td>Taq</td>
+<td></td>
+<td></td>
+<td>LA Taq</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Albacore</td>
+<td>Guppy</td>
+<td>FlipFlop</td>
+<td>Albacore</td>
+<td>Guppy</td>
+<td>FlipFlop</td>
+<td>Albacore</td>
+<td>Guppy</td>
+<td>FlipFlop</td>
+<td>Albacore</td>
+<td>Guppy</td>
+<td>FlipFlop</td>
+</tr>
+<tr>
+<td>5' LTR</td>
+<td>NA</td>
+<td>9</td>
+<td>9</td>
+<td>9</td>
+<td>9</td>
+<td>9</td>
+<td>NA</td>
+<td>NA</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>gag</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>12</td>
+<td>10</td>
+<td>9</td>
+<td>9</td>
+<td>8</td>
+<td>8</td>
+</tr>
+<tr>
+<td>5' LTR+ψ</td>
+<td>10</td>
+<td>10</td>
+<td>ΝΑ</td>
+<td>ΝΑ</td>
+<td>ΝΑ</td>
+<td>ΝΑ</td>
+<td>5</td>
+<td>2</td>
+<td>ΝΑ</td>
+<td>ΝΑ</td>
+<td>ΝΑ</td>
+<td>ΝΑ</td>
+</tr>
+<tr>
+<td>pol</td>
+<td>7</td>
+<td>6</td>
+<td>6</td>
+<td>6</td>
+<td>6</td>
+<td>6</td>
+<td>26</td>
+<td>22</td>
+<td>9</td>
+<td>18</td>
+<td>11</td>
+<td>10</td>
+</tr>
+<tr>
+<td>vif</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td>3</td>
+<td>2</td>
+<td>3</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>vpr</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>tat</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>10</td>
+<td>6</td>
+<td>3</td>
+<td>7</td>
+<td>4</td>
+<td>5</td>
+</tr>
+<tr>
+<td>rev</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>10</td>
+<td>7</td>
+<td>4</td>
+<td>7</td>
+<td>4</td>
+<td>5</td>
+</tr>
+<tr>
+<td>vpu</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>gp160</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>11</td>
+<td>7</td>
+<td>4</td>
+<td>8</td>
+<td>4</td>
+<td>5</td>
+</tr>
+<tr>
+<td>nef</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>3</td>
+<td>2</td>
+<td>2</td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3' LTR</td>
+<td>2</td>
+<td>2</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>2</td>
+<td>0</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+</tr>
+<tr>
+<td>nef+3' LTR</td>
+<td>NA</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>NA</td>
+<td>2</td>
+<td>2</td>
+<td>5</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>HXB2</td>
+<td>22</td>
+<td>20</td>
+<td>20</td>
+<td>20</td>
+<td>20</td>
+<td>20</td>
+<td>61</td>
+<td>46</td>
+<td>28</td>
+<td>47</td>
+<td>27</td>
+<td>25</td>
+</tr>
+<tr>
+<td>Downstream bridge</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>4</td>
+<td>5</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>pBR322-related</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>19</td>
+<td>19</td>
+<td>13</td>
+<td>18</td>
+<td>19</td>
+<td>15</td>
+</tr>
+<tr>
+<td>Upstream bridge</td>
+<td>2</td>
+<td>2</td>
+<td>3</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>8</td>
+<td>6</td>
+<td>5</td>
+<td>7</td>
+<td>7</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+</figure>
+<h3 id="supplemental-figures">Supplemental Figures<a class="headerlink" href="#supplemental-figures" title="Permanent link">&para;</a></h3>
+<figure class="book-figure" id="supplemental-figure-1a">
+<p><img alt="Supplemental Figure 1A: Unbiased nanopore DNA sequencing coverage over HXB2 depends on DNA polymerase and mapper. ONT basecaller = Albacore (worst)." loading="lazy" src="../assets/ch05/media/image10.png" /></p>
+<figcaption>
+<p><strong>Supplemental Figure 1A: Unbiased nanopore DNA sequencing coverage over HXB2 depends on DNA polymerase and mapper. ONT basecaller = Albacore (worst).</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="supplemental-figure-1b">
+<p><img alt="Supplemental Figure 1B: Unbiased nanopore DNA sequencing coverage over HXB2 depends on DNA polymerase and mapper. ONT basecaller = Guppy." loading="lazy" src="../assets/ch05/media/image11.png" /></p>
+<figcaption>
+<p><strong>Supplemental Figure 1B: Unbiased nanopore DNA sequencing coverage over HXB2 depends on DNA polymerase and mapper. ONT basecaller = Guppy.</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="supplemental-figure-1c">
+<p><img alt="Supplemental Figure 1C: Unbiased nanopore DNA sequencing coverage over HXB2 depends on DNA polymerase and mapper. ONT basecaller = FlipFlop (best)." loading="lazy" src="../assets/ch05/media/image12.png" /></p>
+<figcaption>
+<p><strong>Supplemental Figure 1C: Unbiased nanopore DNA sequencing coverage over HXB2 depends on DNA polymerase and mapper. ONT basecaller = FlipFlop (best).</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="supplemental-figure-1">
+<figcaption>
+<p><strong>Supplemental Figure 1: Unbiased nanopore DNA sequencing coverage over HXB2 depends on DNA polymerase and mapper.</strong></p>
+<p>Top two Coverage and Alignment panels from barcoded library 10 (bar10 = LA Taq). Bottom two from Barcode 11 (bar11 = Taq). Minimap2 and BWA-MEM were used to map reads basecalled with Albacore (worst), Guppy, or FlipFlop (best) to HXB2. Color-coding: Red below genome scale marks 20 SNVs across the HIV segment of pHXB2_D. Purple is an insertion in a given read relative to reference. White is either a deletion in a given read or space between two aligned reads. Gray in alignment field means base same as reference, and in coverage field means major allele is at least 95% the same as reference. Per-read “insertions” and “deletions” do not necessarily represent true insertions or deletions actually present in the sample, because each read is likely an imperfect independent observation. Automated assembly followed by manual consensus building converts these overlapping reads into approximations of the ground truth. “Unbiased” refers to not amplifying a given region (e.g., pol) before ligating ONT sequencing adapters. In the present approach, the tagmentation process randomly cuts DNA, creating ~2000 bp pieces. Tagmented DNA is then amplified based on tagmentation adapters.</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="supplemental-figure-2">
+<p><img alt="Supplemental Figure 2: Reads map well to HIV-1 NL4-3 segment of pNL4-3 assembly because NL4-3 LTRs are distinct." loading="lazy" src="../assets/ch05/media/image13.png" /></p>
+<figcaption>
+<p><strong>Supplemental Figure 2: Reads map well to HIV-1 NL4-3 segment of pNL4-3 assembly because NL4-3 LTRs are distinct.</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="supplemental-figure-3a">
+<p><img alt="Supplemental Figure 3A: HIV single nucleotide variants (SNVs) in pHXB2_D. ONT basecaller = Albacore (worst)." loading="lazy" src="../assets/ch05/media/image14.png" /></p>
+<figcaption>
+<p><strong>Supplemental Figure 3A: HIV single nucleotide variants (SNVs) in pHXB2_D. ONT basecaller = Albacore (worst).</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="supplemental-figure-3b">
+<p><img alt="Supplemental Figure 3B: HIV single nucleotide variants (SNVs) in pHXB2_D. ONT basecaller = Guppy." loading="lazy" src="../assets/ch05/media/image15.png" /></p>
+<figcaption>
+<p><strong>Supplemental Figure 3B: HIV single nucleotide variants (SNVs) in pHXB2_D. ONT basecaller = Guppy.</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="supplemental-figure-3c">
+<p><img alt="Supplemental Figure 3C: HIV single nucleotide variants (SNVs) in pHXB2_D. ONT basecaller = FlipFlop (best)." loading="lazy" src="../assets/ch05/media/image16.png" /></p>
+<figcaption>
+<p><strong>Supplemental Figure 3C: HIV single nucleotide variants (SNVs) in pHXB2_D. ONT basecaller = FlipFlop (best).</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="supplemental-figure-3d">
+<p><img alt="Supplemental Figure 3D: HIV single nucleotide variants (SNVs) in pHXB2_D, long vs. short reads (HIV genome)." loading="lazy" src="../assets/ch05/media/image17.png" /></p>
+<figcaption>
+<p><strong>Supplemental Figure 3D: HIV single nucleotide variants (SNVs) in pHXB2_D, long vs. short reads (HIV genome).</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="supplemental-figure-3e">
+<p><img alt="Supplemental Figure 3E: HIV single nucleotide variants (SNVs) in pHXB2_D, long vs. short reads (20 SNV-focused)." loading="lazy" src="../assets/ch05/media/image18.png" /></p>
+<figcaption>
+<p><strong>Supplemental Figure 3E: HIV single nucleotide variants (SNVs) in pHXB2_D, long vs. short reads (20 SNV-focused).</strong></p>
+<p><strong>HIV single nucleotide variants (SNVs) in pHXB2_D, long vs. short reads (SNV-focused).</strong></p>
+<p><strong>Supplemental Figure 3A: HIV single nucleotide variants (SNVs) in pHXB2_D.</strong> ONT basecaller = Albacore (worst). Gray indicates per-base consensus accuracy ≥ 80%. These alignments are the noisiest (less gray and most divergent from reference) between Supplemental Figures 3A, 3B, and 3C.</p>
+<p><strong>Supplemental Figure 3B: HIV single nucleotide variants (SNVs) in pHXB2_D.</strong> ONT basecaller = Guppy.</p>
+<p><strong>Supplemental Figure 3C: HIV single nucleotide variants (SNVs) in pHXB2_D.</strong> ONT basecaller = FlipFlop (best). These alignments are the least noisy (most gray and like reference) between Supplemental Figures 3A, 3B, and 3C.</p>
+<p><strong>Supplemental Figure 3D: HIV single nucleotide variants (SNVs) in pHXB2_D, long vs. short reads (HIV genome).</strong> Long reads outperform short reads at HIV-1 LTRs. ONT basecaller = FlipFlop. Short read as single-end 150, clipped to 142, provided by external core. Mappers = Minimap2 (better), BWA-MEM.</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="supplemental-figure-4a">
+<p><img alt="Supplemental Figure 4A: Assembling pHXB2_D from long reads only, varying basecaller and polymerase." loading="lazy" src="../assets/ch05/media/image19.png" /></p>
+<figcaption>
+<p><strong>Supplemental Figure 4A: Assembling pHXB2_D from long reads only, varying basecaller and polymerase.</strong></p>
+<p>Each pane (n=6) summarizes the results of contig curation. Divergence from reference decreases with newer basecallers, and with long amplicon DNA polymerase (Sigma-Aldrich Taq vs. LA Taq by Takara). Errors in assembly occurred at homopolymers (most often deletions not visible at this resolution; see <strong>Supplemental Figure 6</strong>), dimer or trimer runs. bar10 = LA Taq library. bar11 = Taq library. pHXB2_D Genbank:MW079479. Best contigs presented, manually curated to match pHXB2_D coordinates. Note LTRs (beginning and terminal 634 bp of red bar) are resolved in almost all assemblies. See <strong>Supplemental Table 3</strong> for differences between assemblies and the reference (left red). Plasmid backbone (right) differences are not reported.</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="supplemental-figure-4b">
+<p><img alt="Supplemental Figure 4B: ONT errors corrected by polishing ONT-only assemblies." loading="lazy" src="../assets/ch05/media/image20.png" /></p>
+<p><img alt="Supplemental Figure 4B: ONT errors corrected by polishing ONT-only assemblies." loading="lazy" src="../assets/ch05/media/image21.png" /></p>
+<figcaption>
+<p><strong>Supplemental Figure 4B: ONT errors corrected by polishing ONT-only assemblies.</strong></p>
+<p>Assemblies polished with Medaka (ONT). Top: pHXB2_D genome. Bottom: HIV-only segment. The best polished assembly had one error in the entire plasmid (1 error out of 16,722 bases), with a corresponding consensus accuracy of 99.99402%. This happened to be in HIV segment (HIV-1 between position 1 and 9719; 1 error out of 9719 bases ), with corresponding accuracy of 99.989711%. Note the conserved 52 bp gap in the backbone of pHXB2_D was redundant sequence included in the short-read assembly from the core. It was not supported by long-read data, and therefor was validated as a technical artifact from the core’s pipeline. Reference: short-read assembly. LTRs (beginning and terminal 634 bp of red bar) are resolved in polished assemblies.</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="supplemental-figure-4c">
+<p><img alt="Supplemental Figure 4C: Mappability of long reads over contigs during assembly quality control." loading="lazy" src="../assets/ch05/media/image22.png" /></p>
+<figcaption>
+<p><strong>Supplemental Figure 4C: Mappability of long reads over contigs during assembly quality control.</strong></p>
+<p>Coverage depends on context. Abrupt changes in coverage from terminal regions of HXB2 (<strong>Figure 1F, Supplemental Figures 1 and 3)</strong> were artifacts from supplying mappers with an HIV reference without a plasmid backbone. Long reads from barcode 10 (LA Taq) mapped with minimap2 (Li 2018) and “reference” contig from assembly (Canu v1.8) with basecalled data (FlipFlop). Stripes in this figure are not SNVs. They represent technical variability at homopolymers. Assemblies were manually curated to start with 5’ LTR in the sense orientation, leaving the plasmid backbone on the left. Because there were not real insertions in the HIV segment, the HIV coordinates are the same as HXB2 (both 9719 bp long). Compare with 52 bp technical artifact from the core’s short read assembly in <strong>Supplemental Figure 4A, 4B</strong>.</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="supplemental-figure-5">
+<p><img alt="Supplemental Figure 5: Homopolymers and dimer runs are ONT artifacts in unpolished assemblies." loading="lazy" src="../assets/ch05/media/image23.png" /></p>
+<figcaption>
+<p><strong>Supplemental Figure 5: Homopolymers and dimer runs are ONT artifacts in unpolished assemblies.</strong></p>
+<p><strong>Supplemental Figure 5A: A set of homopolymer tracks from HXB2 plasmid.</strong> Alignments with BWA-MEM shown from FlipFlop (top) and Albacore (bottom) basecalled reads. Mapping is pre-assembly.</p>
+<p><strong>Supplemental Figure 5B: Continuous 2H counts in unpolished assemblies.</strong> 2H = A or T homodimers.</p>
+</figcaption>
+</figure>
+<h5 id="supplemental-figure-5c-continuous-2h-absolute-difference">Supplemental Figure 5C: Continuous 2H Absolute Difference.<a class="headerlink" href="#supplemental-figure-5c-continuous-2h-absolute-difference" title="Permanent link">&para;</a></h5>
+<h6 id="supplemental-figure-5d-discontinuous-2h-counts-in-unpolished-assemblies">Supplemental Figure 5D: Discontinuous 2H counts in unpolished assemblies.<a class="headerlink" href="#supplemental-figure-5d-discontinuous-2h-counts-in-unpolished-assemblies" title="Permanent link">&para;</a></h6>
+<figure class="book-figure" id="supplemental-figure-5e">
+<figcaption>
+<p><strong>Supplemental Figure 5E: Discontinuous 2H Absolute Difference.</strong></p>
+<p><strong>Supplemental Figure 5F: Continuous 3H counts in unpolished assemblies.</strong> 3H = C or G homodimers.</p>
+</figcaption>
+</figure>
+<h6 id="supplemental-figure-5g-continuous-3h-absolute-difference">Supplemental Figure 5G: Continuous 3H Absolute Difference.<a class="headerlink" href="#supplemental-figure-5g-continuous-3h-absolute-difference" title="Permanent link">&para;</a></h6>
+<h6 id="supplemental-figure-5h-discontinuous-3h-counts-in-unpolished-assemblies">Supplemental Figure 5H: Discontinuous 3H counts in unpolished assemblies.<a class="headerlink" href="#supplemental-figure-5h-discontinuous-3h-counts-in-unpolished-assemblies" title="Permanent link">&para;</a></h6>
+<h6 id="supplemental-figure-5i-discontinuous-3h-absolute-difference">Supplemental Figure 5I: Discontinuous 3H Absolute Difference.<a class="headerlink" href="#supplemental-figure-5i-discontinuous-3h-absolute-difference" title="Permanent link">&para;</a></h6>
+<figure class="book-figure" id="supplemental-figure-5j">
+<figcaption>
+<p><strong>Supplemental Figure 5J: Dimer run counts in unpolished assemblies.</strong></p>
+<p><strong>Supplemental Figure 5K: Dimer run Absolute Difference.</strong> Dimer runs as pairs are the most problematic, with runs as triplets being resolvable by ONT.</p>
+<p><strong>Supplemental Figure 5L: The ratio of deletions to insertions is higher at mismatches both adjacent to homopolymers and similar to neighbor bases.</strong> Box plot shows median (“x” is mean) and quartile ranges. Y-axis is ratio. HPA: homopolymer-adjacent. ==: same as neighbor base. Δ: different than neighbor base. Higher coverage (above ~10) usually makes up for current error profile. Above true for Albacore, Guppy, and FlipFlop.</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="supplemental-figure-6">
+<p><img alt="Supplemental Figure 6: Assembly partially resolved homopolymers, which are improved by polishing" loading="lazy" src="../assets/ch05/media/image24.png" /></p>
+<p><img alt="Supplemental Figure 6: Assembly partially resolved homopolymers, which are improved by polishing" loading="lazy" src="../assets/ch05/media/image25.png" /></p>
+<figcaption>
+<p><strong>Supplemental Figure 6: Assembly partially resolved homopolymers, which are improved by polishing.</strong></p>
+<p>Top: Six ONT-only assemblies. Bottom: polished ONT-only assemblies, varying Medaka models. Deletions at 5’ of G homopolymers were not corrected, regardless of basecaller or Taq isoform. Note that polishing was not performed. IGV window is Linear:4,781-4,820. Bottom: polishing canu assemblies with medaka abrogated most ONT artifacts. Best medaka setting tested: r941_min_high_g330.</p>
+</figcaption>
+</figure>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../04-problems-and-challenges/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 4. Problems and Challenges addressed by HIV Informatics">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                4. Problems and Challenges addressed by HIV Informatics
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../06-rna-space-mrna-models/" class="md-footer__link md-footer__link--next" aria-label="Next: 6. Advancing HIV informatics in the RNA space: HIV mRNA models">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                6. Advancing HIV informatics in the RNA space: HIV mRNA models
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <span class="footer-wordmark" role="img" aria-label="Heelbent"></span> &copy; 2021&ndash;2026 Alejandro Rafael Gener. All rights reserved. &middot; Text and figures licensed <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "navigation.tracking", "toc.follow", "search.highlight", "search.suggest", "search.share", "content.action.edit"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "default": "latest", "provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

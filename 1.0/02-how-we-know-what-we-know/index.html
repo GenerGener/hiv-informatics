@@ -1,0 +1,1322 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="HIV Informatics: a framework unifying HIV models, nucleic acid (re)sequencing, bioinformatics, and validation to maximize HIV information from samples.">
+      
+      
+        <meta name="author" content="Alejandro Rafael Gener">
+      
+      
+        <link rel="canonical" href="https://genergener.github.io/hiv-informatics/1.0/02-how-we-know-what-we-know/">
+      
+      
+        <link rel="prev" href="../01-what-we-believe-about-hiv/">
+      
+      
+        <link rel="next" href="../03-hiv-informatics-framework/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/brand/logo-mark.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>2. How we know what we know about HIV - HIV Informatics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-2-how-we-know-what-we-know-about-hiv" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="HIV Informatics" class="md-header__button md-logo" aria-label="HIV Informatics" data-md-component="logo">
+      
+  <img src="../assets/brand/logo-mark.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            HIV Informatics
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2. How we know what we know about HIV
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/GenerGener/hiv-informatics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GenerGener/hiv-informatics
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="HIV Informatics" class="md-nav__button md-logo" aria-label="HIV Informatics" data-md-component="logo">
+      
+  <img src="../assets/brand/logo-mark.png" alt="logo">
+
+    </a>
+    HIV Informatics
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/GenerGener/hiv-informatics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GenerGener/hiv-informatics
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part One: HIV, HIV (re)sequencing, and a new framework to maximize HIV information from samples
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part One: HIV, HIV (re)sequencing, and a new framework to maximize HIV information from samples
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-what-we-believe-about-hiv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. What we believe about HIV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. How we know what we know about HIV
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. How we know what we know about HIV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-reading-hiv-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction – reading HIV information
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-pre-sequencing-era-of-hiv-informatics-is-marked-by-qualitative-datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The pre-sequencing era of HIV informatics is marked by qualitative datasets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-post-sequencing-era-of-hiv-informatics-is-marked-by-quantitative-datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The post-sequencing era of HIV informatics is marked by quantitative datasets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hiv-expression-in-select-hiv-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HIV expression in select HIV models
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hiv-tropism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HIV tropism
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clinical-hiv-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clinical HIV testing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development-of-diagnostic-hiv-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Development of diagnostic HIV testing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hiv-viral-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HIV viral load
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hiv-genotyping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HIV Genotyping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#writing-hiv-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Writing HIV information
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-hiv-informatics-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. HIV Informatics is a framework to advance the study of HIV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-problems-and-challenges/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Problems and Challenges addressed by HIV Informatics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part Two: Maximizing HIV sequencing information from control samples and model systems
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part Two: Maximizing HIV sequencing information from control samples and model systems
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-dna-space/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Advancing HIV informatics in the DNA space
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-rna-space-mrna-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Advancing HIV informatics in the RNA space: HIV mRNA models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-rna-space-virion-mrna/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Advancing HIV informatics in the RNA space: HIV virion mRNA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-rna-space-transductions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Advancing HIV informatics in the RNA space: On “transductions”
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part Three: Maximizing HIV sequence information from heterogeneous samples
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part Three: Maximizing HIV sequence information from heterogeneous samples
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-heterogeneous-samples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Maximizing HIV sequence information from heterogeneous samples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-conclusions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Conclusions and future directions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-reading-hiv-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction – reading HIV information
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-pre-sequencing-era-of-hiv-informatics-is-marked-by-qualitative-datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The pre-sequencing era of HIV informatics is marked by qualitative datasets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-post-sequencing-era-of-hiv-informatics-is-marked-by-quantitative-datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The post-sequencing era of HIV informatics is marked by quantitative datasets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hiv-expression-in-select-hiv-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HIV expression in select HIV models
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hiv-tropism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HIV tropism
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clinical-hiv-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clinical HIV testing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development-of-diagnostic-hiv-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Development of diagnostic HIV testing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hiv-viral-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HIV viral load
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hiv-genotyping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HIV Genotyping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#writing-hiv-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Writing HIV information
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/GenerGener/hiv-informatics/edit/main/docs/02-how-we-know-what-we-know.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="chapter-2-how-we-know-what-we-know-about-hiv">Chapter 2: How we know what we know about HIV<a class="headerlink" href="#chapter-2-how-we-know-what-we-know-about-hiv" title="Permanent link">&para;</a></h1>
+<h2 id="abstract">Abstract<a class="headerlink" href="#abstract" title="Permanent link">&para;</a></h2>
+<p>What we know about HIV is directly tied to how we know what we know. In <strong>Chapter 2</strong> I summarize select methods used in key papers throughout the past 40 years of HIV research. These methods were used to detect HIV, to measure HIV gene expression by way of mRNA or protein abundances, and to measure HIV sequence heterogeneity. Clinical interrogation of HIV information is also discussed. Points to consider:</p>
+<ul>
+<li>
+<p>how much information is recovered with a given method,</p>
+</li>
+<li>
+<p>how many samples can be processed at a given time, and</p>
+</li>
+<li>
+<p>how progressively newer methods improved on pervious methods.</p>
+</li>
+</ul>
+<h2 id="introduction-reading-hiv-information">Introduction – reading HIV information<a class="headerlink" href="#introduction-reading-hiv-information" title="Permanent link">&para;</a></h2>
+<p>The methods used to study HIV have changed drastically over the last 40 years since the first AIDS case report (CDC 1981). Progress came from parallel advances in both computing hardware, nucleic acid sequencing and computer software methods to analyze and handle progressively larger sequencing datasets. Details of the computational hardware side of these advances are outside the scope of this dissertation. Regarding nucleic acid sequencing, this time can be very roughly divided into pre-sequencing and post-sequencing eras. Protein sequencing falls outside of the scope of the present dissertation and so is not discussed.</p>
+<h2 id="the-pre-sequencing-era-of-hiv-informatics-is-marked-by-qualitative-datasets">The pre-sequencing era of HIV informatics is marked by qualitative datasets<a class="headerlink" href="#the-pre-sequencing-era-of-hiv-informatics-is-marked-by-qualitative-datasets" title="Permanent link">&para;</a></h2>
+<p>The pre-sequencing era was a time around the discovery of HIV, but before the wide adoption of nucleic acid sequencing methods to directly interrogate experimental systems or clinical samples. However, it is important to understand that the major advances in the pre-sequencing era were founded on the growing availability of high-quality HIV-1 and related viral genomes. These were part of several disjointed HIV genome projects, and here these are explicitly called HIV sequencing projects, after the technical usage of a biological entity’s genome sequencing project (Shendure et al. 2017). Shortly after one of the first HIV genomes was stabilized as a molecular clone (Hahn et al. 1984), the first HIV-1 reference genome was completed in 1985 (Ratner et al. 1985). It is represented as either GenBank:K03455.1 or RefSeq:NC_001802.1. Lower-throughput qualitative assays were founded on this seminal HIV sequence information.</p>
+<h4 id="polymerase-chain-reaction-pcr">Polymerase chain reaction (PCR)<a class="headerlink" href="#polymerase-chain-reaction-pcr" title="Permanent link">&para;</a></h4>
+<p>Polymerase chain reaction (PCR) is a method used to amplify targeted regions of DNA. It was one of the first molecular methods used to interrogate HIV as HIV proviral sequences. Most often, prior information is necessary to optimize each PCR. The user can select which sequences of DNA to amplify based off known sequence. Short (approximately 20 nucleotides long) homologous sequences in the forward and reverse orientation are used to prime DNA polymerization. These form a primer window, which allows for the amplification of everything between the ends of the inward facing primers and copying of the primer spanning region. This is analogous to a pair of binoculars which enable the user to view everything within the field of view, not including the black field of view taken up by the binoculars.</p>
+<p>The advent of thermostable Taq (Saiki et al. 1988) and thermocyclers helped bring PCR into labs across the world. For his work and for inventing the PCR method, Kary B Mullis was awarded half of a Nobel Prize in Chemistry in 1993. Benefits of PCR include sensitivity to detect low copy number target sequences, as well as specificity for sequences with homology to primers used. Limitations of PCR include if a target is in an area with extremely low or high GC content, which may hinder amplification. Example, GC-rich sequences do not amplify, while AT-rich sequences amplify (sometimes too) well. Areas with secondary structure may not amplify well, although this is not believed to be a major problem for most DNA sequences. PCR using commercially available kits can amplify ACGT-containing sequences because kits include dA, dC, dG, and dT. Base modifications like A methylation, C methylation or C hydroxymethylation are effectively erased when a target region is amplified. DNA damage might be overwritten, which may affect validity of downstream applications. The DNA polymerases used for PCR have an intrinsic fidelity and processivity. Fidelity in the context of a nucleic acid polymerase refers to how faithfully information encoded in a template is copied to newly synthesized strands. Procesivity refers to the ability of an enzyme to remain on its template, enabling continued synthesis. The first available DNA polymerases had lower fidelity and processivity, and these limited the ability to amplify sequences longer than 5-10 kilobase (kb). Newer polymerases can amplify DNA to &gt;40kb. In contrast to cellular genomic DNA replication, <em>in vitro</em> DNA polymerases lack proofreading, and so they can introduce errors into sequences during PCR. Errors are subsequently amplified with progressive PCR cycles. While experiments can be designed around most of PCR’s limitations, such avoidance has precluded work vital to the study of HIV.</p>
+<p>Nested PCR combines at least two pairs of primers approximating the target window to be amplified, and two sets of cycles to increase sensitivity of detecting specific analytes (Green and Sambrook 2019). This has been important for detecting HIV in clinical samples, especially in the context of antiretroviral therapy and low plasma viral load. Until relatively recently it was not tractable to amplify nearly full-length HIV. Newer protocols leveraging improved Taq and RT isoforms and nested PCR have redressed this successfully.</p>
+<h4 id="reverse-transcription-with-reverse-transcriptase-rt">Reverse transcription with reverse transcriptase (RT)<a class="headerlink" href="#reverse-transcription-with-reverse-transcriptase-rt" title="Permanent link">&para;</a></h4>
+<p>Importantly, PCR can efficiently amplify DNA targets. This is because DNA has less secondary structure compared to RNA. DNA is also less susceptible to degradation in normal laboratory conditions. Until recently, to sequence RNA, one needed to convert RNA to DNA. This was done with viral reverse transcriptase enzymes. The importance of this work was recognized as Howard Martin Temin, David Baltimore, and Renato Dulbecco split the Nobel prize in Physiology or Medicine in 1975 "for their discoveries concerning the interaction between tumor viruses and the genetic material of the cell." An important tumor virus studied was Moloney murine leukemia virus (MMLV), a retrovirus with reverse transcriptase (RT) enzymatic activity. Commercial RT has been mostly MMLV (Zucha et al. 2020). An important technical limitation of RT is the relatively high error rate compared to DNA polymerase in PCR. RT error rates in different viruses can vary between about 1 in 10,000 to 1 in 100,000 (Menéndez-Arias 2009). cDNA made from RT could be subjected to subsequent PCR.</p>
+<p>RT PCR protocols can differ, but they can generally be divided into two flavors: one-step and two-step. One-step combines RT with PCR in a single tube. Users must supply target-specific primers. This is better suited for detecting a single target from a given sample. Two-step RT PCR, which is better for detecting multiple targets in a sample, separates the RT step and the PCR step. Primers may include oligo-dT, random hexamer, or target-specific primers. Random primers can have more off-target amplification artifacts. RT qPCR (q is for “quantitative”) offered a semiquantitative improvement but is similarly limited by primer specificity which limits target sequence amplification.</p>
+<p>These methods are all endpoint assays. The measurand is the intensity of a band or fluorescence at one or multiple timepoints. You never directly evaluate sequence info. Instead, you deduce sequence homology based on ability to detect amplification products at expected weights in absence of other non-specific bands. There remains no way to differentiate between a true positive and a false positive which happens to amplify near a given weight on a gel. qPCR is more sensitive, but remains an indirect endpoint assay.</p>
+<h2 id="the-post-sequencing-era-of-hiv-informatics-is-marked-by-quantitative-datasets">The post-sequencing era of HIV informatics is marked by quantitative datasets<a class="headerlink" href="#the-post-sequencing-era-of-hiv-informatics-is-marked-by-quantitative-datasets" title="Permanent link">&para;</a></h2>
+<p>The post-sequencing era is defined by the growing adoption of increasingly higher-throughput and cheaper sequencing methods to detect HIV across various sample matrices (e.g., plasma, venous blood, tissue), usually paired with mapping derivative sequences back to an HIV reference genome (HXB2). This is explicitly called resequencing (Shendure et al. 2017), and here I call it HIV resequencing v1.0 to distinguish this as work done prior to the advent of HIV Informatics. The post-sequencing era proceeded roughly sequentially:</p>
+<ol>
+<li>
+<p>Pairing reverse transcription with PCR with short-read sequencing</p>
+</li>
+<li>
+<p>Pairing reverse transcription with PCR with multiplexed short-read sequencing</p>
+</li>
+<li>
+<p>Pairing reverse transcription with PCR with long-read sequencing (my work and others’)</p>
+</li>
+<li>
+<p>Pairing reverse transcription with PCR with multiplexed long-read sequencing (my work and others’)</p>
+</li>
+</ol>
+<p>In addition to basic and translational science, HIV sequence heterogeneity has also been used to track HIV transmission with emerging molecular epidemiology methods. HIV transmission was demonstrated in a forensic case by Metzker et al. 2002 (Metzker et al. 2002). Because of the risk of perpetrating HIV stigma, concern of community members about HIV criminalization by overextending scientific results has been expressed (https://www.aidsmap.com/news/jan-2021/molecular-hiv-surveillance-friend-or-foe).</p>
+<h2 id="hiv-expression-in-select-hiv-models">HIV expression in select HIV models<a class="headerlink" href="#hiv-expression-in-select-hiv-models" title="Permanent link">&para;</a></h2>
+<p>Measuring HIV is challenging due to HIV’s myriad forms, reviewed in Chapter 7 (Gener 2021b). “HIV gene expression” as a concept can be problematic because of the phrase’s relative ambiguity. Investigators might mean to describe abundance of HIV mRNA, HIV DNA, HIV protein. In this dissertation I focused on measuring HIV sequence information and/or HIV mRNA abundance.</p>
+<p>Early work, for example Schwartz et al. elaborated important cell culture models for studying HIV mRNA expression. Human immunodeficiency virus type 1 HLtat cells (ARP-1293) are cells which stably express a truncated version of Tat, sometimes called Tat-1. (This will be revisited in Chapter 6 (Gener 2021a) with GENER13). This cell line was important to be able to easily study gene expression of proteins driven by the HIV-1 LTR promoter. Another cell line, Human immunodeficiency virus type 1 HLfB cells (ARP-1300) - (Hadzopoulou-Cladaras et al. 1989; Mermer et al. 1990) (<a href="https://www.hivreagentprogram.org/Catalog/cellBanks/ARP-1300.aspx">https://www.hivreagentprogram.org/Catalog/cellBanks/ARP-1300.aspx</a>) was used to demonstrate that mRNAs containing a Rev Response Element (RRE) (<strong>Chapter 1</strong> <strong><a href="../01-what-we-believe-about-hiv/#figure-5">Chapter 1 Figure 5</a>: HIV-1 NL4-3 Rev Response element</strong>) were positively modulated by Rev protein. Products of non-RRE mRNAs were negatively regulated by Rev.</p>
+<p>Transfecting cells (HeLa, CD4+ T cells, others) with HIV cDNA clones was a common way to study the effects of the first HIV proteins studied. A limitation of this approach was susceptibility of cloned mRNAs’ transcripts to additional splicing which might not be physiological. This highlights the difficulty in distinguishing between co-transcriptional and post-transcriptional splicing. I did not address this relationship in this dissertation, but it is relevant for the splicing patterns described in Chapter 6.</p>
+<p>Once an HIV genome was available, primers could be designed to amplify and detect HIV. Such HIV PCR was more useful in experimental systems which began with infection of an HIV-negative sample with a known HIV strain, for example, NL4-3. Partly because of HIV’s inherent sequence variability, the use of PCR amplification to measure HIV in clinical samples was limited. Other considerations include fidelity and processivity of both RT and DNA polymerases used in RT PCR, as well as the availability and cost of sequencing methods.</p>
+<h2 id="hiv-tropism">HIV tropism<a class="headerlink" href="#hiv-tropism" title="Permanent link">&para;</a></h2>
+<p>Methods used to study HIV tropism <em>in vitro</em> include cell culture and HIV infection determined by reverse transcriptase activity, p24 antigen detection, and PCR. Methods used to study HIV tropism <em>in vivo</em> included immunohistochemistry and <em>in situ</em> hybridization. (Table 3.8 (Levy 2007)). Importantly, sequencing has only recently been used to follow HIV across different potential reservoirs.</p>
+<h2 id="clinical-hiv-testing">Clinical HIV testing<a class="headerlink" href="#clinical-hiv-testing" title="Permanent link">&para;</a></h2>
+<p>While the detailed clinical management of HIV/AIDS patients falls outside the scope of this dissertation, HIV diagnosis is within the scope of HIV information. As such, I will describe how HIV diagnostics and monitoring have developed and relate them back to the kinds of information measured in more basic studies of HIV.</p>
+<p>Pre-sequencing era tests relied on a patient’s immune responses to HIV by detecting a patient’s humoral responses in the form of antibodies against HIV antigens, and later incorporated detection of HIV antigens. Prior to addition of p24, tests in the context of AIDS were more likely to be false negative. This was because immunosuppressed patients sometimes lost their antibody responses.</p>
+<p>Sequencing is not generally used for HIV diagnosis. However, HIV mRNA information is assayed during HIV treatment. These areas of overlap include viral load measurement (which is not sequencing) and HIV genotyping (which is sequencing).</p>
+<h2 id="development-of-diagnostic-hiv-testing">Development of diagnostic HIV testing<a class="headerlink" href="#development-of-diagnostic-hiv-testing" title="Permanent link">&para;</a></h2>
+<p>Concurrent with the isolation of a putative AIDS-causing virus (Barré-Sinoussi et al. 1983; Gallo et al. 1983) and the naming of HIV (AP 1986), there was high demand for an “AIDS test” for at least a couple of reasons. One was to diagnose AIDS in patients to prevent the spread of the AIDS virus. Another was to protect healthcare systems’ blood supplies from contamination. A clinical test for AIDS based on measuring analytes would ultimately never be developed because of the need to integrate acute clinical information with a patient’s past medical history to ascertain a patient’s risk factor(s) for acquiring HIV with measurable analyte(s). However, tests could be developed for an AIDS virus (Alexander 2016).</p>
+<p>Once the biomedical community realized that such a deadly bloodborne pathogen could be transmitted in unscreened blood/blood products, there was an immediate need to screen pooled blood/blood products for the AIDS-causing virus. Tests were developed to screen pooled blood/blood products. They worked by detecting antibodies against immobilized HIV antigens. These first assays were sensitive, but not specific. While there were some false positives, the benefit of removing contaminated blood products outweighed the harm of delivering a false positive to a patient at risk of acquiring AIDS. Positive results were given to blood donors, and these people were prohibited from future donations. Since the first HIV tests were not clinical tests, physicians could not order them for their patients at risk of developing or suspected of having AIDS. At that time there was no treatment for HIV to prevent AIDS, however some AIDS-defining conditions could be treated.</p>
+<p>HIV diagnostic tests were developed, progressing through multiple iterations. The first iterations focused on detecting HIV-1 M B HTLV-III/HXB2/LAV sequence only, then HIV-2 was added, and next HIV-2 and HIV-1 O. Today, fourth-generation enzyme immunoassays detect antibodies and HIV-1 p24 antigen. Alternative testing includes rapid third-generation enzyme immunoassays that detect antibodies only (Ghosn et al. 2018). Rapid tests are lateral flow assays which give results in 10-20 minutes, and can be done practically anywhere (as opposed to in the confines of a lab). Other assays require specialized equipment running multiple samples a a time and can only be done in specialized labs. A shortcoming of rapid HIV tests is an inability to detect HIV during the acute phase before sufficient production of antibodies (Ghosn et al. 2018). While 4<sup>th</sup> generation assays are more expensive, their utility in at risk populations can justify their use. Serology and antigen detection is generally preferred for screening adults. In the context of neonatal HIV diagnosis and need for viral load as diagnosis instead. This is because of maternal anti-HIV antibodies for the first several months postpartum which might be detected as false positive neonate. In 2006, the CDC recommended that HIV testing be considered as part of routine care (Alexander 2016).</p>
+<h2 id="hiv-viral-load">HIV viral load<a class="headerlink" href="#hiv-viral-load" title="Permanent link">&para;</a></h2>
+<p>HIV viral load (VL) is used for initial assessment after HIV diagnosis in adults and for subsequence monitoring. VL is generally not used for adult or pediatric HIV diagnosis. However, VL is used in <em>newborn</em> HIV diagnosis. Current methods to measure HIV viral load are diverse, reviewed elsewhere (Ginocchio 2001). TaqMan probes are used for some VL assays. These probes can tolerate some heterogeneity, and until recently have been a preferred method to determine HIV VL in clinical samples. PCR may also be used. Sequencing is generally not used to assess VL. Commercial HIV VL assays are generally specific for HIV-1 (Dube MP. , Stein JH. 2018).</p>
+<p>HIV VL is important for initial assessment because 1.) a patient's pre-ART viral load level and 2.) the magnitude of viral load decline after initiation of ART both provide prognostic information about the probability of disease progression (Murray et al. 1999). Decreases in HIV VL after initiating antiretroviral therapy were associated with decreased risk of progression to AIDS (Marschner et al. 1998; Murray et al. 1999; Thiébaut et al. 2000).</p>
+<h2 id="hiv-genotyping">HIV Genotyping<a class="headerlink" href="#hiv-genotyping" title="Permanent link">&para;</a></h2>
+<p>In resource-rich settings, one of the first things that is done after a person is diagnosed with HIV is that ART drug resistance profiling is ordered. This is usually done by way of virus (HIV) genotyping. Genotypic resistance testing may be used to stage HIV disease and to assist in the selection of ART regimens (Dube MP. , Stein JH. 2018). (Grading scheme: Strength of Recommendation + Quality of Evidence for Recommendation. AII “A2”, where A is Strong recommendation for the statement; and 2 or <strong>II is</strong> “One or more well-designed, non-randomized trials or observational cohort studies with long-term clinical outcomes”. HIV genotyping is indicated prior to treatment initiation or change, treatment failure, if ART initiation is delayed, or if genotyping is otherwise clinically indicated. (<a href="https://clinicalinfo.hiv.gov/en/table/table-3-laboratory-testing-schedule-monitoring-people-hiv-and-after-initiation-antiretroviral">https://clinicalinfo.hiv.gov/en/table/table-3-laboratory-testing-schedule-monitoring-people-hiv-and-after-initiation-antiretroviral</a>) (Dube MP. , Stein JH. 2018). Genotyping is based on sequencing cDNA from RT PCR of partial HIV-1 pol, (PR, RT) and more recently complete pol (PR + RT + IN).</p>
+<p>HIV genotyping has its limitations and advantages. To be successful at HIV genotyping, there must be enough HIV mRNA analyte in the sample matrix. This usually means HIV RNA levels greater than 500 to 1,000 copies/mL. Otherrwise, viral amplification for resistance testing may not be successful <strong>(BII)</strong>.” Source: <a href="https://clinicalinfo.hiv.gov/en/guidelines/adult-and-adolescent-arv/baseline-evaluation?view=full">https://clinicalinfo.hiv.gov/en/guidelines/adult-and-adolescent-arv/baseline-evaluation?view=full</a> (Dube MP. , Stein JH. 2018). Access to sequencing facilities in many settings currently limits the implementation of HIV genotyping clinically. When Sanger sequencing is used, Sanger is known to be insensitive to variants occurring less than 10-20% of the time (https://aidsinfo.nih.gov/guidelines/html/1/adult-and-adolescent-arv/6/drug-resistance-testing). An advantage of Sanger though is relative cheap cost per sample when processed one at a time (as opposed to multiplexed with NGS/2<sup>nd</sup> generation sequencing or 3<sup>rd</sup> generation sequencing). Limitations from PCR include primers biasing resistance profiling to the window of observation between the primers. Variations on PCR including nested PCR are often used to amplify HIV sequences for sequencing. Because HIV exhibits formidable sequence heterogeneity even over relatively conserved regions in its genome, the use of PCR primers selects against sequences which differ markedly from primer-complimentary sequences. As mentioned before, a nontrivial consideration for HIV genotyping is sequencing samples with sufficient analytes (HIV genome equivalents) to yield sequence. Acute cases of HIV infection generally have more than enough HIV to recover sequence. Chronic cases of HIV may or may not depending on the amount of latency in the patient when sampled. Other potential PCR concerns of GC bias are not immediately relevant for HIV-1, because the average GC content across the HIV genome approximates that seen in the host genome (Gener, unpublished). Proviral DNA testing is performed rarely (source: <a href="https://clinicalinfo.hiv.gov/en/table/table-3-laboratory-testing-schedule-monitoring-people-hiv-and-after-initiation-antiretroviral">https://clinicalinfo.hiv.gov/en/table/table-3-laboratory-testing-schedule-monitoring-people-hiv-and-after-initiation-antiretroviral</a>) (Dube MP. , Stein JH. 2018).</p>
+<p>An important consideration in NGS-based HIV genotyping is the risk of averaging out HIV heterogeneity for the sake of a complete genome assembly. Often, consensus sequences derived from individual patient samples collected at a given time are provided, and variants are called for subsequence resistance analyses (e.g., comparing to the Stanford HIV Drug Resistance database). Reads mapping to a region might be filtered out if they don’t contribute to the most common sequences. These might still represent viable virus subpopulations which may contribute to a patient’s HIV drug resistance. This limitation can be redressed by applying a second mapping step after the first assembly to collect secondary variability.</p>
+<p>Treatment success for first-line ART is defined as reaching undetectable viral load by 48 weeks after ART initiation, where undetectable is defined as a plasma viral load below 50 copies per mL (Ghosn et al. 2018). Functionally, sustained viral loads &lt;200 copies per mL are another commonly used threshold.</p>
+<h2 id="writing-hiv-information">Writing HIV information<a class="headerlink" href="#writing-hiv-information" title="Permanent link">&para;</a></h2>
+<p>It is important to note that cloning each of the first 9 HIV gene products (Gag, Gag-Pol as Pol, Vif, Vpr, Vpu, Env, Nef, and spliced Tat and Rev) and subsequent drug and vaccine development began during the pre-sequencing era. Efforts generally did not consider additional HIV sequence heterogeneity beyond the initial information in HXB2-like HIV-1s. A notable exception was when considering resistance to fusion inhibitor maraviroc, which is limited to HIV patients with R5-tropic HIV-1s, which is often seen earlier during the natural course of infection (see <strong>Chapter 1</strong>). Another exception included the discovery and concurrent justification of HIV’s 10<sup>th</sup> gene product: antisense protein (Cassan et al. 2016). In that study, an open reading frame (ORF) which appeared to be a relatively new addition to some HIV-1 M group B subgroup strains was noted.</p>
+<p>HIV RT generated HIV cDNA which could be cloned into bacterial or other expression vectors. Attention to promoter selection and codon optimization in the case of protein expression in non-mammalian systems was necessary. The availability of more and more restriction enzymes over time increased the ability of molecular biologists to manipulate HIV clones. As such, the synthetic clone NL4-3 has become a molecular biology staple and is still commonly used in lentivirus vectors and mammalian expression vectors. An issue with HIV-based plasmids is the repetitive LTR sequences bordering the internal HIV genes. These repetitive regions offer <em>E. coli</em> the opportunity to excise internal sequences while preserving resistance cassettes, for example, the beta lactamase ORF on the NL4-3 backbone. Engineered bacterial strains able to carry repetitive elements like LTRs have enabled easier cloning. New approaches like CRISPR/Cas9 have showed promise in the case of manipulating HIV <em>in vitro</em> an <em>in vivo</em> (Dash et al. 2019; Kaminski et al. 2016; Wang et al. 2016; Yin et al. 2017).</p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<p>Alexander, Thomas S. 2016. “Human Immunodeficiency Virus Diagnostic Testing: 30 Years of Evolution.” <em>Clinical and Vaccine Immunology</em> 23(4):249–53.</p>
+<p>AP. 1986. “New Name Is Proposed For the Cause of AIDS.” <em>The New York Times</em>, May 1, 21.</p>
+<p>Barré-Sinoussi, F., J. C. Chermann, F. Rey, M. T. Nugeyre, S. Chamaret, J. Gruest, C. Dauguet, C. Axler-Blin, F. Vézinet-Brun, C. Rouzioux, W. Rozenbaum, and L. Montagnier. 1983. “Isolation of a T-Lymphotropic Retrovirus from a Patient at Risk for Acquired Immune Deficiency Syndrome (AIDS).” <em>Science (New York, N.Y.)</em> 220(4599):868–71.</p>
+<p>Cassan, Elodie, Anne-Muriel Arigon-Chifolleau, Jean-Michel Mesnard, Antoine Gross, and Olivier Gascuel. 2016. “Concomitant Emergence of the Antisense Protein Gene of HIV-1 and of the Pandemic.” <em>Proceedings of the National Academy of Sciences - PNAS</em> 113(41):11537–42.</p>
+<p>CDC. 1981. “Pneumocystis Pneumonia--Los Angeles.” <em>MMWR. Morbidity and Mortality Weekly Report</em> 30(21):250–52.</p>
+<p>Dash, Prasanta K., Rafal Kaminski, Ramona Bella, Hang Su, Saumi Mathews, Taha M. Ahooyi, Chen Chen, Pietro Mancuso, Rahsan Sariyer, Pasquale Ferrante, Martina Donadoni, Jake A. Robinson, Brady Sillman, Zhiyi Lin, James R. Hilaire, Mary Banoub, Monalisha Elango, Nagsen Gautam, R. Lee Mosley, Larisa Y. Poluektova, JoEllyn McMillan, Aditya N. Bade, Santhi Gorantla, Ilker K. Sariyer, Tricia H. Burdo, Won-Bin Young, Shohreh Amini, Jennifer Gordon, Jeffrey M. Jacobson, Benson Edagwa, Kamel Khalili, and Howard E. Gendelman. 2019. “Sequential LASER ART and CRISPR Treatments Eliminate HIV-1 in a Subset of Infected Humanized Mice.” <em>Nature Communications</em> 10(1):2753.</p>
+<p>Dube MP. , Stein JH., Aberg JA. 2018. “Panel on Antiretroviral Guidelines for Adults and Adolescents. Guidelines for the Use of Antiretroviral Agents in Adults and Adolescents with HIV.” <em>Department of Health and Human Services</em> 40(Build 29393).</p>
+<p>Gallo, R. C., P. S. Sarin, E. P. Gelmann, M. Robert-Guroff, E. Richardson, V. S. Kalyanaraman, D. Mann, G. D. Sidhu, R. E. Stahl, S. Zolla-Pazner, J. Leibowitch, and M. Popovic. 1983. “Isolation of Human T-Cell Leukemia Virus in Acquired Immune Deficiency Syndrome (AIDS).” <em>Science (New York, N.Y.)</em> 220(4599):865–67.</p>
+<p>Gener, Alejandro R. 2021a. “Chapter 6 - Advancing HIV Informatics in the RNA Space: HIV MRNA Models.” Baylor College of Medicine.</p>
+<p>Gener, Alejandro R. 2021b. “Chapter 7 - Advancing HIV Informatics in the RNA Space: HIV Virion MRNA.” Baylor College of Medicine.</p>
+<p>Ghosn, Jade, Babafemi Taiwo, Soraya Seedat, Brigitte Autran, and Christine Katlama. 2018. “HIV (Seminar Lancet 2018).” <em>The Lancet</em> 392(10148):685–97.</p>
+<p>Ginocchio, Christine C. 2001. “HIV-1 Viral Load Testing.” <em>Laboratory Medicine</em> 32(3):142–52.</p>
+<p>Green, Michael R. and Joseph Sambrook. 2019. “Nested Polymerase Chain Reaction (PCR).” <em>Cold Spring Harbor Protocols</em> 2019(2):pdb.prot095182.</p>
+<p>Hadzopoulou-Cladaras, M., B. K. Felber, C. Cladaras, A. Athanassopoulos, A. Tse, and G. N. Pavlakis. 1989. “The Rev (Trs/Art) Protein of Human Immunodeficiency Virus Type 1 Affects Viral MRNA and Protein Expression via a Cis-Acting Sequence in the Env Region.” <em>Journal of Virology</em> 63(3):1265–74.</p>
+<p>Hahn, Beatrice H., George M. Shaw, Suresh K. Arya, Mikulas Popovic, Robert C. Gallo, and Flossie Wong-Staal. 1984. “Molecular Cloning and Characterization of the HTLV-III Virus Associated with AIDS.” <em>Nature</em> 312(5990):166–69.</p>
+<p>Kaminski, Rafal, Yilan Chen, Tracy Fischer, Ellen Tedaldi, Alessandro Napoli, Yonggang Zhang, Jonathan Karn, Wenhui Hu, and Kamel Khalili. 2016. “Elimination of HIV-1 Genomes from Human T-Lymphoid Cells by CRISPR/Cas9 Gene Editing.” <em>Scientific Reports</em> 6(February):22555.</p>
+<p>Levy, Jay A. 2007. <em>HIV and the Pathogenesis of AIDS</em>. 3rd ed. Washington: ASM Press.</p>
+<p>Marschner, I. C., A. C. Collier, R. W. Coombs, R. T. D’Aquila, V. DeGruttola, M. A. Fischl, S. M. Hammer, M. D. Hughes, V. A. Johnson, D. A. Katzenstein, D. D. Richman, L. M. Smeaton, S. A. Spector, and M. S. Saag. 1998. “Use of Changes in Plasma Levels of Human Immunodeficiency Virus Type 1 RNA to Assess the Clinical Benefit of Antiretroviral Therapy.” <em>The Journal of Infectious Diseases</em> 177(1):40–47.</p>
+<p>Menéndez-Arias, Luis. 2009. “Mutation Rates and Intrinsic Fidelity of Retroviral Reverse Transcriptases.” <em>Viruses</em> 1(3):1137–65.</p>
+<p>Mermer, B., B. K. Felber, M. Campbell, and G. N. Pavlakis. 1990. “Identification of Trans-Dominant HIV-1 Rev Protein Mutants by Direct Transfer of Bacterially Produced Proteins into Human Cells.” <em>Nucleic Acids Research</em> 18(8):2037–44.</p>
+<p>Metzker, Michael L., David P. Mindell, Xiao-Mei Liu, Roger G. Ptak, Richard A. Gibbs, and David M. Hillis. 2002. “Molecular Evidence of HIV-1 Transmission in a Criminal Case.” <em>Proceedings of the National Academy of Sciences</em> 99(22):14292 LP – 14297.</p>
+<p>Murray, J. S., M. R. Elashoff, L. C. Iacono-Connors, T. A. Cvetkovich, and K. A. Struble. 1999. “The Use of Plasma HIV RNA as a Study Endpoint in Efficacy Trials of Antiretroviral Drugs.” <em>AIDS (London, England)</em> 13(7):797–804.</p>
+<p>Ratner, L., W. Haseltine, R. Patarca, K. J. Livak, B. Starcich, S. F. Josephs, E. R. Doran, J. A. Rafalski, E. A. Whitehorn, and K. Baumeister. 1985. “Complete Nucleotide Sequence of the AIDS Virus, HTLV-III.” <em>Nature</em> 313(6000):277–84.</p>
+<p>Saiki, R. K., D. H. Gelfand, S. Stoffel, S. J. Scharf, R. Higuchi, G. T. Horn, K. B. Mullis, and H. A. Erlich. 1988. “Primer-Directed Enzymatic Amplification of DNA with a Thermostable DNA Polymerase.” <em>Science</em> 239(4839):487 LP – 491.</p>
+<p>Shendure, Jay, Shankar Balasubramanian, George M. Church, Walter Gilbert, Jane Rogers, Jeffery A. Schloss, and Robert H. Waterston. 2017. “DNA Sequencing at 40: Past, Present and Future.” <em>Nature</em> 550(7676):345–53.</p>
+<p>Thiébaut, R., P. Morlat, H. Jacqmin-Gadda, D. Neau, P. Mercié, F. Dabis, and G. Chêne. 2000. “Clinical Progression of HIV-1 Infection According to the Viral Response during the First Year of Antiretroviral Treatment. Groupe d’Epidémiologie Du SIDA En Aquitaine (GECSA).” <em>AIDS (London, England)</em> 14(8):971–78.</p>
+<p>Wang, Zhen, Qinghua Pan, Patrick Gendron, Weijun Zhu, Fei Guo, Shan Cen, Mark A. Wainberg, and Chen Liang. 2016. “CRISPR/Cas9-Derived Mutations Both Inhibit HIV-1 Replication and Accelerate Viral Escape.” <em>Cell Reports</em> 15(3):481–89.</p>
+<p>Yin, Chaoran, Ting Zhang, Xiying Qu, Yonggang Zhang, Raj Putatunda, Xiao Xiao, Fang Li, Weidong Xiao, Huaqing Zhao, Shen Dai, Xuebin Qin, Xianming Mo, Won Bin Young, Kamel Khalili, and Wenhui Hu. 2017. “In Vivo Excision of HIV-1 Provirus by SaCas9 and Multiplex Single-Guide RNAs in Animal Models.” <em>Molecular Therapy</em> 25(5):1168–86.</p>
+<p>Zucha, Daniel, Peter Androvic, Mikael Kubista, and Lukas Valihrach. 2020. “Performance Comparison of Reverse Transcriptases for Single-Cell Studies.” <em>Clinical Chemistry</em> 66(1):217–28.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../01-what-we-believe-about-hiv/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 1. What we believe about HIV">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                1. What we believe about HIV
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../03-hiv-informatics-framework/" class="md-footer__link md-footer__link--next" aria-label="Next: 3. HIV Informatics is a framework to advance the study of HIV">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                3. HIV Informatics is a framework to advance the study of HIV
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <span class="footer-wordmark" role="img" aria-label="Heelbent"></span> &copy; 2021&ndash;2026 Alejandro Rafael Gener. All rights reserved. &middot; Text and figures licensed <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "navigation.tracking", "toc.follow", "search.highlight", "search.suggest", "search.share", "content.action.edit"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "default": "latest", "provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

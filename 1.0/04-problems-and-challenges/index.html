@@ -1,0 +1,1099 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="HIV Informatics: a framework unifying HIV models, nucleic acid (re)sequencing, bioinformatics, and validation to maximize HIV information from samples.">
+      
+      
+        <meta name="author" content="Alejandro Rafael Gener">
+      
+      
+        <link rel="canonical" href="https://genergener.github.io/hiv-informatics/1.0/04-problems-and-challenges/">
+      
+      
+        <link rel="prev" href="../03-hiv-informatics-framework/">
+      
+      
+        <link rel="next" href="../05-dna-space/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/brand/logo-mark.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>4. Problems and Challenges addressed by HIV Informatics - HIV Informatics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-4-problems-and-challenges-addressed-by-hiv-informatics" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="HIV Informatics" class="md-header__button md-logo" aria-label="HIV Informatics" data-md-component="logo">
+      
+  <img src="../assets/brand/logo-mark.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            HIV Informatics
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              4. Problems and Challenges addressed by HIV Informatics
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/GenerGener/hiv-informatics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GenerGener/hiv-informatics
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="HIV Informatics" class="md-nav__button md-logo" aria-label="HIV Informatics" data-md-component="logo">
+      
+  <img src="../assets/brand/logo-mark.png" alt="logo">
+
+    </a>
+    HIV Informatics
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/GenerGener/hiv-informatics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GenerGener/hiv-informatics
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part One: HIV, HIV (re)sequencing, and a new framework to maximize HIV information from samples
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part One: HIV, HIV (re)sequencing, and a new framework to maximize HIV information from samples
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-what-we-believe-about-hiv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. What we believe about HIV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-how-we-know-what-we-know/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. How we know what we know about HIV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-hiv-informatics-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. HIV Informatics is a framework to advance the study of HIV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Problems and Challenges addressed by HIV Informatics
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Problems and Challenges addressed by HIV Informatics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validating-hiv-1-reference-genomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validating HIV-1 reference genome(s)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redressing-overly-simplified-hiv-1-mrna-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Redressing overly simplified HIV-1 mRNA models
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-new-hiv-1-virion-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A new HIV-1 virion model
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part Two: Maximizing HIV sequencing information from control samples and model systems
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part Two: Maximizing HIV sequencing information from control samples and model systems
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-dna-space/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Advancing HIV informatics in the DNA space
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-rna-space-mrna-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Advancing HIV informatics in the RNA space: HIV mRNA models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-rna-space-virion-mrna/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Advancing HIV informatics in the RNA space: HIV virion mRNA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-rna-space-transductions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Advancing HIV informatics in the RNA space: On “transductions”
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part Three: Maximizing HIV sequence information from heterogeneous samples
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part Three: Maximizing HIV sequence information from heterogeneous samples
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-heterogeneous-samples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Maximizing HIV sequence information from heterogeneous samples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-conclusions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Conclusions and future directions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validating-hiv-1-reference-genomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validating HIV-1 reference genome(s)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redressing-overly-simplified-hiv-1-mrna-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Redressing overly simplified HIV-1 mRNA models
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-new-hiv-1-virion-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A new HIV-1 virion model
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/GenerGener/hiv-informatics/edit/main/docs/04-problems-and-challenges.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="chapter-4-problems-and-challenges-addressed-by-hiv-informatics">Chapter 4: Problems and Challenges addressed by HIV Informatics<a class="headerlink" href="#chapter-4-problems-and-challenges-addressed-by-hiv-informatics" title="Permanent link">&para;</a></h1>
+<p><strong>Chapter Abstract</strong></p>
+<p>Chapter 4 explicitly introduces the problems I addressed with HIV Informatics by my papers and/or meeting abstracts included in my dissertation.</p>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>Identifying AIDS as a clinical syndrome in 1981 was seminal. Identifying HIV as the cause of AIDS in 1983 was the next key event in the HIV/AIDS epidemic, now an established pandemic. A third key event was the completion of the first HIV-1 reference genome in 1985 (Ratner et al. 1985). This watershed event enabled screening and later diagnostic tests, molecular dissection of the virus, and improved drug development.</p>
+<p>HIV/AIDS was not just an immunodeficiency. Many tissues could become infected by HIV, and patients presented heterogeneously. For example, elite controllers rarely got sick despite being demonstrably HIV-positive, or if they did, their immune decline took on a much more indolent course. As more HIV sequences were collected from patients, investigators began to better appreciate HIV sequence heterogeneity. This heterogeneity became apparent as viral evolution occurred in earlier treatment regimens with fewer, often more toxic, drugs were used prior to the advent of multi-drug regimens. Investigators began to try to model heterogeneous sequences within patients as quasispecies, focusing on clinically relevant segments of the <em>pol</em> gene: reverse transcriptase, protease, and later integrase. However, technological limitations prevented such HIV information from making it into patient diagnostics and monitoring until very recently. Instead, combination therapy was developed empirically, one clinical trial at a time. Today we rely on viral load as a clinical endpoint instead of capturing HIV sequence information directly. Exceptions are viral genotyping which is performed in resource-rich settings either before antiretroviral therapy initiation and/or in the event of a need for treatment interruption or reinitiation. Independently of HIV genotyping, molecular epidemiologists sequenced <em>env</em> genes to track the spread of HIV. All of this was done as new methods became available, and over many years. Since sequencing was not available earlier in the HIV/AIDS pandemic, HIV heterogeneity was never assessed as a contributing factor for differential progression of HIV. However, some evidence supports differences in infecting virus and differences in clinical outcome. For example, it is well known that patients infected with HIV-2, a distantly related virus believed to be caused by the entry of another primate immunodeficiency virus into the human population, usually causes a much less severe AIDS-like illness.</p>
+<p>People living with HIV/AIDS (PLWHA) are living longer (Alejandro R Gener 2021), and to maintain this progress it remains important to determine which tissues can serve as reservoirs for HIV replication. Beyond preventing HIV replication, HIV treatment does not prevent HIV mRNA transcription or translation into HIV proteins (together: HIV gene expression). This is because in the context of viral suppression, HIV gene expression continues in these reservoir cells populations. It remains important to be able to recover HIV sequence information and to distinguish between HIV’s myriad nucleic acid forms (Gener and Kimata 2019) to be able to track HIV across the human body.</p>
+<p>We now have the tools to address HIV heterogeneity in clinical samples. However, it serves to reason that it is beneficial to revisit defined key reagents before exploring HIV in heterogeneous clinical samples. HIV Informatics is a framework unifying HIV models, nucleic acid (re)sequencing, bioinformatics, and validation to maximize the HIV information gained from assays.</p>
+<p>In Chapter 5 (Alejandro R. Gener 2021a), 6 (Alejandro R. Gener 2021b), 7 (Alejandro R. Gener 2021c), and 8 (Alejandro R. Gener 2021d) I revisited basic historical models of HIV-1 previously taken for granted with new methods. Reference reagents like HIV-1 plasmids or virus preparations (preps) are rarely routinely sequence (re)verified/(re)validated. That “re” is important to prevent a game of biological telephone from propagating into costly experimental error. Until recently, repetitive sequences in the 5’ and 3’ LTRs were ignored because of cost to validate them between <em>in silico</em> reference genomes and physical copies available through the AIDs Reagent Program (ARP; and more recently Addgene) or across individual labs. There is no standard annotation for HIV reference genomes. Annotation is a problem with HIV sequences. For example, the ones in Chapter 7 (Alejandro R. Gener 2021c) Table 1 lack <em>gag-pol</em>, and many complete HIV and HIV-related genomes lack feature annotations altogether. Many papers and textbooks fail to even include the <em>gag-pol</em> gene model, instead favoring out-of-date <em>gag</em> and <em>pol</em> as distinct. This may be a holdover from the study of endogenous retroviruses, or simple retroviruses<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. That said, HIV is far from a simple retrovirus, and including molecular biologically relevant genes may facilitate better understanding.</p>
+<h3 id="validating-hiv-1-reference-genomes">Validating HIV-1 reference genome(s)<a class="headerlink" href="#validating-hiv-1-reference-genomes" title="Permanent link">&para;</a></h3>
+<p>Chapter 5 dealt with comparing new nanopore long-read DNA sequencing to validate pHXB2_D, the only known physical copy of <em>the</em> canonical HIV-1 reference genome strain HXB2 (<em>in silico</em> as GenBank:K03455.1 and RefSeq:NC_001802.1) which is currently not available in the ARP. A recently rederived plasmid based on pNL4-3 backbone was included as a positive control. Variants were noted in pHXB2_D. This was surprising because physical key reagents like molecular clones are assumed to be identical to their <em>in silico</em> genome accessions. The repetitive elements in both plasmids’ HIV-1 LTRs were phased and validated with 1.) current gold-standard short-read (SR) 150 base-long Illumina sequencing and assembly and 2.) new long-read (LR) ~2000 base-long Nanopore DNA sequencing, assembly, and polishing. The bioinformatics applied depended on which methods were used. For example, SR aligners can usually only take SR data as input. An exception is Minimap2, which recently implemented SR alignment (Heng Li, personal communication). However, the internal algorithms used depend on data type. As such, aligners are often not interchangeable. Downstream analyses may be flexible. An exception is transcript modelers, which rely on accuracy of mapped reads to make transcript models and to perform transcript profiling. Transcript profiling estimates transcript abundance based on premade (user-provided) or <em>de novo</em> transcript models. <em>De novo</em> in this context means transcript models generated from a given sample only, without prior feature (gene or transcript) information. Variants were called manually based on K03455.1, and as such this was a resequencing experiment. LANL HIV Sequence Database’s HXB2 K03455.1 is modeled as a provirus with likely incorrectly phased long-terminal repeats (my first paper) (Gener et al. 2021). As this was the first time LR and SR data was used to evaluate an HXB2 sequence, this pHXB2_D assembly is currently the highest quality HXB2 assembly to-date.</p>
+<h3 id="redressing-overly-simplified-hiv-1-mrna-models">Redressing overly simplified HIV-1 mRNA models<a class="headerlink" href="#redressing-overly-simplified-hiv-1-mrna-models" title="Permanent link">&para;</a></h3>
+<p>Previously, HIV-1 mRNA was modeled roughly as 3 different classes of mRNAs: unspliced 9kb, singly spliced 4 kb, and doubly spliced ~2 kb mRNAs (Purcell and Martin 1993). The HIV research community took Purcell and Martin’s results and ran with them, focusing on the most common isoforms to design PCR primers for reverse transcription (RT) PCR with a gel band readout. This was subsequently adapted to real-time RT qPCR, which is currently a staple in many labs. The HIV research community also ran with the assumption that the first open reading frame (ORF) was the sole or predominant protein product in each isoform. Singly vs. doubly spliced classifications ignore the heterogeneity revealed by Schwartz et al., Purcell and Martin, and others. Newcomers Ocwieja et al. in 2012 and Nguyen Quang et al. in 2020 attempted to capture HIV splice junctions comprehensively but fell short of providing usable models and tractable bioinformatic pipelines which accommodate high-throughput and/or next-generation sequencing data. Their work has not yet been adopted widely, in part because their tables of splice junctions cannot be easily integrated into public database which accept formats like FASTA, GenBank, Gene transfer format (.gtf), etc.</p>
+<p>HIV-1 review resources report discrepancies between earlier primary reports. For example, the ViralZone “HIV replication cycle” review says the following: “[HIV-1] mRNA transcripts are alternatively spliced into six mRNAs.” However, this review does not support this claim with specific citations, but I can deduce based on what I have seen so far in my readings. One isoform (#1) is unspliced HIV. That is believed to make Gag and Gag-pol. Another (#2) is <em>gag-pol</em> spliced out, yielding Vif. Another (#3) is <em>gag-pol</em> and <em>vif</em> spliced out, yielding Vpr. Another (#4) is <em>gag-pol</em>, <em>vif</em>, and <em>vpr</em> spliced out, yielding Vpu and Env. Another (#5) is <em>gag-pol</em>, <em>vif</em>, <em>vpr</em>, <em>vpu</em>, and <em>env</em> spliced out, yielding Tat and Rev. Last (#6), maximally spliced HIV can yield Nef only. Other reviews cite different numbers of isoforms (UCSF HIV InSite claims 30 (Schwartz et al. 1990)), and often stop short of linking isoforms with the open reading frames and therefore their HIV protein-coding capacity.</p>
+<p>Chapter 6 (Alejandro R. Gener 2021b) defined models of HIV-1 mRNA explicitly, which had not been defined comprehensively before. My work in Chapter 6 offers others the chance to build their own models from their experiments if their data are of sufficient coverage and high quality (read length and read quality). My methods are backwards-compatible with SR RNA-seq. However, LR data is better for capturing splice junctions present in HIV-1 mRNA.</p>
+<h3 id="a-new-hiv-1-virion-model">A new HIV-1 virion model<a class="headerlink" href="#a-new-hiv-1-virion-model" title="Permanent link">&para;</a></h3>
+<p>Chapter 7 (Alejandro R. Gener 2021c) explored HIV virion mRNA directly as native RNA for the first time. While Nguyen Quang et al. in 2020 produced the highest-quality LR dataset from infected cell lysates, they were unable to produce HIV virion mRNA. We sequenced virion mRNA directly without cDNA sequencing and compared our results with the transcript models we built in Chapter 6 (Alejandro R. Gener 2021b). This was an important example of cross-validation using datasets from multiple labs and some open datasets. Lack of open datasets had limited progress in this space previously. My HIV virion mRNA results challenge the dogmatic assumption that HIV mRNA includes two full-length unspliced HIV mRNA transcripts of approximately 9.7 kb. I proposed the Hybrid Segmented Retrovirus model (Gener and Kimata 2020), of which HIV is the index example.</p>
+<p>Chapter 8 (Alejandro R. Gener 2021d) revisited LR HIV mRNA datasets from Chapters 6 and 7 with LTR phasing from Chapter 5, with surprising results which challenge the current model of retroviral reverse transcription. Careful inspection of R variants across NL4-3 in Nguyen Quang et al. 2020’s and my native virion datasets show that LTRs do not homogenize as expected. This supports the model of HIV virion as a bag of heterogeneous HIV mRNAs as opposed to having two copies of full-length unspliced HIV mRNAs.</p>
+<p>In Chapter 9 (Alejandro R. Gener 2021e) I built on lessons learned from implementing HIV Informatics in control systems as I attempt to maximize the information extracted from HIV-infected cadaveric brain tissue to clarify the contributions of different cell populations toward HIV gene expression during HIV encephalopathy.</p>
+<p><strong>References</strong></p>
+<p>Gener, A. and J. T. Kimata. 2020. “LBPEA06 - Reanalysis of Native RNA Sequencing of HIV-1 Supports Spliced HIV MRNA Packaging into Virions as a New Hybrid Segmented Retrovirus Model.” P. ePoster in <em>23rd International AIDS Conference (AIDS2020)</em>.</p>
+<p>Gener, Alejandro R. 2021a. “Chapter 5 - Advancing HIV Informatics in the DNA Space.” Baylor College of Medicine.</p>
+<p>Gener, Alejandro R. 2021b. “Chapter 6 - Advancing HIV Informatics in the RNA Space: HIV MRNA Models.” Baylor College of Medicine.</p>
+<p>Gener, Alejandro R. 2021c. “Chapter 7 - Advancing HIV Informatics in the RNA Space: HIV Virion MRNA.” Baylor College of Medicine.</p>
+<p>Gener, Alejandro R. 2021d. “Chapter 8 - Advancing HIV Informatics in the RNA Space: On ‘Transductions’.” Baylor College of Medicine.</p>
+<p>Gener, Alejandro R. 2021e. “Chapter 9 - HIV Sequence Information in Heterogeneous Samples.” Baylor College of Medicine.</p>
+<p>Gener, Alejandro R. 2021. “Editorial Commentary on ‘the Other Side of Screening: Predictors of Treatment and Follow-up for Anal Precancers in a Large Health System.’” <em>AIDS</em> 35(In press.).</p>
+<p>Gener, Alejandro R. and Jason T. Kimata. 2019. “Full-Coverage Native RNA Sequencing of HIV-1 Viruses.” <em>BioRxiv</em> 845610.</p>
+<p>Gener, Alejandro R., Wei Zou, Brian T. Foley, Deborah P. Hyink, and Paul E. Klotman. 2021. “Reference Plasmid PHXB2_D Is an HIV-1 Molecular Clone That Exhibits Identical LTRs and a Single Integration Site Indicative of an HIV Provirus.” <em>BioRxiv</em> 611848.</p>
+<p>Purcell, Damian F. J. and Malcolm A. Martin. 1993. “Alternative Splicing of Human Immunodeficiency Virus Type 1 MRNA Modulates Viral Protein Expression , Replication , and Infectivity.” 67(11):6365–78.</p>
+<p>Ratner, L., W. Haseltine, R. Patarca, K. J. Livak, B. Starcich, S. F. Josephs, E. R. Doran, J. A. Rafalski, E. A. Whitehorn, and K. Baumeister. 1985. “Complete Nucleotide Sequence of the AIDS Virus, HTLV-III.” <em>Nature</em> 313(6000):277–84.</p>
+<p>Schwartz, Stefan, Barbara K. Felber, Donna M. Benko, Eva-maria Fenyo, and George N. Pavlakis. 1990. “Cloning and Functional Analysis of Multiply Spliced MRNA Species of Human Immunodeficiency Virus Type 1.” <em>Journal of Virology</em> 64(6):2519–29.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>A simple retrovirus is by common definition one that lacks accessory genes. Accessory genes are those besides <em>gag</em>, <em>pol</em>, and <em>env</em>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../03-hiv-informatics-framework/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 3. HIV Informatics is a framework to advance the study of HIV">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                3. HIV Informatics is a framework to advance the study of HIV
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../05-dna-space/" class="md-footer__link md-footer__link--next" aria-label="Next: 5. Advancing HIV informatics in the DNA space">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                5. Advancing HIV informatics in the DNA space
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <span class="footer-wordmark" role="img" aria-label="Heelbent"></span> &copy; 2021&ndash;2026 Alejandro Rafael Gener. All rights reserved. &middot; Text and figures licensed <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "navigation.tracking", "toc.follow", "search.highlight", "search.suggest", "search.share", "content.action.edit"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "default": "latest", "provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

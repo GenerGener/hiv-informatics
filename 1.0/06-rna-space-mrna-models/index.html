@@ -1,0 +1,3258 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="HIV Informatics: a framework unifying HIV models, nucleic acid (re)sequencing, bioinformatics, and validation to maximize HIV information from samples.">
+      
+      
+        <meta name="author" content="Alejandro Rafael Gener">
+      
+      
+        <link rel="canonical" href="https://genergener.github.io/hiv-informatics/1.0/06-rna-space-mrna-models/">
+      
+      
+        <link rel="prev" href="../05-dna-space/">
+      
+      
+        <link rel="next" href="../07-rna-space-virion-mrna/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/brand/logo-mark.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>6. Advancing HIV informatics in the RNA space: HIV mRNA models - HIV Informatics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-6-advancing-hiv-informatics-in-the-rna-space-hiv-mrna-models" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="HIV Informatics" class="md-header__button md-logo" aria-label="HIV Informatics" data-md-component="logo">
+      
+  <img src="../assets/brand/logo-mark.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            HIV Informatics
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              6. Advancing HIV informatics in the RNA space: HIV mRNA models
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/GenerGener/hiv-informatics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GenerGener/hiv-informatics
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="HIV Informatics" class="md-nav__button md-logo" aria-label="HIV Informatics" data-md-component="logo">
+      
+  <img src="../assets/brand/logo-mark.png" alt="logo">
+
+    </a>
+    HIV Informatics
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/GenerGener/hiv-informatics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GenerGener/hiv-informatics
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part One: HIV, HIV (re)sequencing, and a new framework to maximize HIV information from samples
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part One: HIV, HIV (re)sequencing, and a new framework to maximize HIV information from samples
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-what-we-believe-about-hiv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. What we believe about HIV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-how-we-know-what-we-know/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. How we know what we know about HIV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-hiv-informatics-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. HIV Informatics is a framework to advance the study of HIV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-problems-and-challenges/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Problems and Challenges addressed by HIV Informatics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part Two: Maximizing HIV sequencing information from control samples and model systems
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part Two: Maximizing HIV sequencing information from control samples and model systems
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-dna-space/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Advancing HIV informatics in the DNA space
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Advancing HIV informatics in the RNA space: HIV mRNA models
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Advancing HIV informatics in the RNA space: HIV mRNA models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter abstract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#an-hiv-1-nl4-3-mrna-atlas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        An HIV-1 NL4-3 mRNA Atlas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="An HIV-1 NL4-3 mRNA Atlas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utr-class-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTR class definitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utr-class-a-5utrsl1-4-n11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTR Class A 5UTR+ψSL1-4 (n=11)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utr-class-b-n1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTR Class B (n=1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utr-class-c-n3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTR Class C (n=3)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utr-class-d-n2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTR Class D (n=2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utr-class-e-n2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTR Class E (n=2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utr-class-f-n2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTR Class F (n=2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utr-class-g-n2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTR Class G (n=2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utr-class-h-n2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTR Class H (n=2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utr-class-i-n2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTR Class I (n=2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utr-class-j-n2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTR Class J (n=2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utr-class-k-n2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTR Class K (n=2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utr-class-l-n2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTR Class L (n=2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utr-class-m-n2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTR Class M (n=2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utr-class-n-n1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTR Class N (n=1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utr-class-o-n1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTR Class O (n=1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utr-class-p-n2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTR Class P (n=2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utr-class-q-n1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTR Class Q (n=1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-hiv-1-isoform-naming-convention-prototype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New HIV-1 isoform naming convention (prototype)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discussion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discussion-continued" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discussion (continued)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#article-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Article types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permission-to-reuse-and-copyright" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permission to reuse and Copyright
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#author-contributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Author Contributions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conflict-of-interest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conflict of Interest
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Funding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-availability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data availability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acknowledgments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acknowledgments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supplemental-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supplemental Tables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-rna-space-virion-mrna/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Advancing HIV informatics in the RNA space: HIV virion mRNA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-rna-space-transductions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Advancing HIV informatics in the RNA space: On “transductions”
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part Three: Maximizing HIV sequence information from heterogeneous samples
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part Three: Maximizing HIV sequence information from heterogeneous samples
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-heterogeneous-samples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Maximizing HIV sequence information from heterogeneous samples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-conclusions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Conclusions and future directions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter abstract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#an-hiv-1-nl4-3-mrna-atlas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        An HIV-1 NL4-3 mRNA Atlas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="An HIV-1 NL4-3 mRNA Atlas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utr-class-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTR class definitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utr-class-a-5utrsl1-4-n11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTR Class A 5UTR+ψSL1-4 (n=11)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utr-class-b-n1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTR Class B (n=1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utr-class-c-n3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTR Class C (n=3)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utr-class-d-n2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTR Class D (n=2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utr-class-e-n2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTR Class E (n=2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utr-class-f-n2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTR Class F (n=2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utr-class-g-n2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTR Class G (n=2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utr-class-h-n2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTR Class H (n=2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utr-class-i-n2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTR Class I (n=2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utr-class-j-n2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTR Class J (n=2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utr-class-k-n2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTR Class K (n=2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utr-class-l-n2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTR Class L (n=2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utr-class-m-n2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTR Class M (n=2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utr-class-n-n1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTR Class N (n=1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utr-class-o-n1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTR Class O (n=1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utr-class-p-n2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTR Class P (n=2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utr-class-q-n1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTR Class Q (n=1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-hiv-1-isoform-naming-convention-prototype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New HIV-1 isoform naming convention (prototype)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discussion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discussion-continued" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discussion (continued)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#article-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Article types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permission-to-reuse-and-copyright" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permission to reuse and Copyright
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#author-contributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Author Contributions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conflict-of-interest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conflict of Interest
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Funding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-availability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data availability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acknowledgments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acknowledgments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supplemental-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supplemental Tables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/GenerGener/hiv-informatics/edit/main/docs/06-rna-space-mrna-models.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="chapter-6-advancing-hiv-informatics-in-the-rna-space-hiv-mrna-models">Chapter 6: Advancing HIV informatics in the RNA space: HIV mRNA models<a class="headerlink" href="#chapter-6-advancing-hiv-informatics-in-the-rna-space-hiv-mrna-models" title="Permanent link">&para;</a></h1>
+<h2 id="chapter-abstract">Chapter abstract<a class="headerlink" href="#chapter-abstract" title="Permanent link">&para;</a></h2>
+<p>Previously, in <strong>Chapter 5</strong> we used HIV Informatics to explore control samples of HIV DNA as plasmids. We found 20 variants in pHXB2_D, the only known physical copy of <em>the</em> HIV-1 reference genome HXB2. We were able to easily phase HXB2 and NL4-3 LTRs when sequencing reads were longer than these proviral repetitive elements.</p>
+<p><strong>Chapter 6</strong> explores HIV in the RNA space, and reports important advances made possible by revisiting HIV-1 with HIV-1 Informatics. This chapter includes a defined <strong>HIV-1 mRNA atlas</strong> based on reanalysis of the highest-quality NL4-3 dataset. NL4-3 is the most common lab strain of HIV-1 and is an important backbone for common lentiviral vectors. The 3’ half is historically related to HXB2 and/or LAV. This atlas is currently unpublished, however I have been working with collaborators at the Los Alamos National Laboratory’s HIV Sequence Database and the National Library of Medicine, National Center for Biotechnology Information, National Institutes of Health to integrate HIV-1 mRNA models into existing HIV-1 RefSeq record, as well as GenBank. We presented this work recently:</p>
+<p>A. R. Gener, D. P. Hyink, P. E. Klotman, J. T. Kimata. 2021. “A-LB-IAS2021-02444 - HIV-1 segmentation-based transcript models define 5' Untranslated Region (UTR) and Open Reading Frame (ORF) Classes, elucidate total viral protein-coding capacity, and are summarized by a new HIV-1 mRNA naming convention.” P. ePoster in <em>24<sup>th</sup> International AIDS Conference (AIDS2021)</em>. July 17-20, 2021.</p>
+<p>A. R. Gener, D. P. Hyink, P. E. Klotman, J. T. Kimata. “HIV-1 transcript models supported by long-read sequencing bridge viral and proviral genomic states.” London Calling 2021, London, UK. May 19-21, 2021.</p>
+<p>We collaborated on evaluating closely related simian immunodeficiency viruses (SIVs) for similar new ORFs with the help of Dr. Brian T Foley.</p>
+<h2 id="an-hiv-1-nl4-3-mrna-atlas">An HIV-1 NL4-3 mRNA Atlas<a class="headerlink" href="#an-hiv-1-nl4-3-mrna-atlas" title="Permanent link">&para;</a></h2>
+<p><strong>Alejandro R. GENER<sup>1,2,3,4*</sup>, Brian T. FOLEY<sup>5</sup>, Deborah P. HYINK<sup>2</sup>, Jason T. KIMATA<sup>6</sup></strong></p>
+<p><sup>1</sup>Integrative Molecular and Biomedical Sciences Program, Graduate School of Biomedical Sciences, Baylor College of Medicine, Houston, Texas, USA</p>
+<p><sup>2</sup>Margaret M. and Albert B. Alkek Department of Medicine, Nephrology, Baylor College of Medicine, Houston, Texas, USA</p>
+<p><sup>3</sup>Department of Genetics, MD Anderson Cancer Center, Houston, Texas, USA</p>
+<p><sup>4</sup>School of Medicine, Universidad Central del Caribe, Bayamón, Puerto Rico, USA</p>
+<p><sup>5</sup>Theoretical Biology and Biophysics Group T-6, Los Alamos National Laboratory, Los Alamos, New Mexico, USA</p>
+<p><sup>6</sup>Department of Molecular Virology and Microbiology, Baylor College of Medicine, Houston, Texas, USA</p>
+<p>* Correspondence:<br />
+Alejandro R. Gener</p>
+<p><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#103;&#101;&#110;&#101;&#114;&#64;&#98;&#99;&#109;&#46;&#101;&#100;&#117;">&#103;&#101;&#110;&#101;&#114;&#64;&#98;&#99;&#109;&#46;&#101;&#100;&#117;</a> ; <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#105;&#116;&#115;&#112;&#114;&#111;&#110;&#111;&#117;&#110;&#99;&#101;&#100;&#104;&#101;&#110;&#110;&#101;&#114;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#105;&#116;&#115;&#112;&#114;&#111;&#110;&#111;&#117;&#110;&#99;&#101;&#100;&#104;&#101;&#110;&#110;&#101;&#114;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></p>
+<p>Keywords: HIV-1, NL4-3, nanopore, transcript modeling, transcript profiling, SIV</p>
+<h3 id="abstract">Abstract<a class="headerlink" href="#abstract" title="Permanent link">&para;</a></h3>
+<p>As an obligate human pathogen, the human immunodeficiency virus type 1 (HIV-1) may be considered a model human genomic locus. Previous attempts at defining the transcriptional landscape of cells infected with HIV-1 prioritized collecting splice sites over identifying all relevant HIV-1 splice isoforms. Lack of HIV-1 transcript models hindered transcript profiling: the accurate measurement of HIV-1 mRNA abundance. Here we describe a tractable method to model HIV-1 NL4-3 isoforms from public high-quality long-read (cDNA-ONT) datasets. We discovered 15 new HIV-1 open reading frames (ORFs), encoding new putative HIV-1 proteins. New ORFs retained start/stop codons and relative synonymous codon usage compared to the 10 previously described HIV-1 NL4-3 ORFS and were conserved across all human HIV-1s and most gorilla and chimpanzee simian immunodeficiency (SIVs). Insights from high-quality long-read HIV-1 datasets informed the generalizability of our plug-and-play bespoke and general HIV-1 transcript models to enable transcript profiling. We propose new untranslated region (UTR) and ORF classes to describe the most seen HIV-1 transcripts to define the transcriptional landscape of HIV-1, and we introduce a new locus segmentation nomenclature anchored on most common splice donors/acceptors to eliminate prior intron/exon ambiguity and focus attention on newly discovered HIV-1 protein candidates.</p>
+<h3 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h3>
+<p>The HIV-1 transcriptional landscape is poorly defined. The two main sources for information about the HIV-1 genome are the Los Alamos National Laboratory HIV Sequence Database and the National Center for Biotechnology Information. As of June 8<sup>th</sup>, 2021, these important repositories included sequence information from amplicons, occasionally near full-length assembled genomes, and occasionally gene model annotations in reference strains (Alejandro R Gener et al. 2021). Besides full-length unspliced HIV, isoform information is not recorded in LANL or NCBI. No resource exists to enable HIV isoform quantification from predominantly available short-read RNA-seq, or new longer read RNA-seqs.</p>
+<p>A consequence of the lack of isoform information in these two main repositories is the propagation of assumptions about HIV-1 mRNAs. While some HIV researchers recognize that HIV mRNAs are polycistronic (they contain the open reading frame of more than one protein), HIV mRNAs are commonly believed to express only a single gene product (Hope and Trono 2000). Several points of evidence argue against the single gene product simplification. Eukaryotic mRNAs may be polycistronic (Blumenthal 1998). Eukaryotic viral mRNAs may be polycistronic (e.g. coronavirus (Liu et al. 1991), human papillomavirus (Remm, Remm, and Ustav 1999). Specific to HIV-1, HIV-1 is a eukaryotic virus with high ORF density. Previously, Schwartz et al. described mono- and multicistronic HIV-1 expression in in vitro transcription and transfection studies (Schwartz, Felber, and Pavlakis 1992). HIV-1 bicistronic transcription was extended for Vpu/Env (S Schwartz et al. 1990) (Guatelli, Gingeras, and Richman 1990) (Borg et al. 1999) (Krummheuer et al. 2007), and Tat and Rev/Nef (Schwartz et al. 1992). These studies were limited by low fidelity PCR reagents, and low throughput cloning which involved chance isolation of cDNA products and success of subsequent cloning. Today it remains common to ignore protein-coding capacity to focus on limited set of transcripts. HIV-1 transcript space was partially defined by using semiquantitative reverse transcription PCR (RT-PCT) (Purcell and Martin 1993). The resulting HIV-1 transcript classification methods focused on first open reading frame (ORF) (Purcell and Martin 1993).</p>
+<p>Newer work continued to defined scope of HIV mRNAs (Ocwieja et al. 2012), (Nguyen Quang et al. 2020). However, these approaches, while sensitive, have served to limit the study of HIV by being too sensitive, indiscriminately picking up low-abundance isoforms. For example, the theoretical isoform space modeled by a given intron or exon’s expression may be modeled as 2^n = # possible isoforms. From a piece of RNA with 1 splice donor and one splice acceptor, one can have 3 parts, or segments. In that case, one would have 2^3 = 8 possible isoforms. Constitutive isoforms may be discounted from the exponent. In the case of HIV-1 NL4-3 below, an early source claimed up to ~20 segments (Purcell and Martin 1993). If random, 2^20=1,048,576 exon combinations are possible. There were believed to be 3 constitutive exons. 20-3=17. 2^17=131,072 possible HV-1 NL4-3 isoforms. (One could forgive researchers at the time for not following up ono so many potential isoforms!) Besides the enumeration of biologically relevant HIV isoforms, the complicated splicing seen in HIV challenges common splicing nomenclature. Exon nomenclature is confusing in the case of complicated splicing seen in HIV. Sometimes an exon is coding, sometimes it is not. Sometimes an exon is spliced out. As such, and despite historical preferences for naming certain introns like the gag-pol intron or the tat/rev intron, such naming loses utility once revisiting the splicing that earlier investigators started to catalogue.</p>
+<p>Lastly, smaller non-coding exons in HIV-1 were never explored for putative protein-coding capacity. Other retroviruses also have small “noncoding” exons (e.g., simian immunodeficiency virus SIV<sub>MAC</sub> (Colombini et al. 1989) (Viglianti, Sharma, and Mullins 1990) and visna virus (a sheep retrovirus) (Davis and Clements 1989) were known to exhibit smaller non-coding exons (Stefan Schwartz et al. 1990). Both SIVs and HIV have small allegedly non-coding exons. SIVs have been proposed to original source of prototype HIVs (Alluri 2018; Foley et al. 2016) As such, it remains unknown what splice variants mean for HIV-1 protein coding capacity and viral fitness. <strong>We sought to explicitly define HIV-1 mRNAs by identifying the highest quality datasets and developing a tractable bioinformatics approach for transcript modeling.</strong> Our goal was to develop a pipeline which may be used to develop more HIV mRNA models (transcript modeling), as well as used to estimate HIV mRNA abundance (transcript profiling).</p>
+<h3 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h3>
+<h4 id="transcript-modeling-and-profiling">Transcript Modeling and Profiling<a class="headerlink" href="#transcript-modeling-and-profiling" title="Permanent link">&para;</a></h4>
+<p>Data from Nguyen et al. 2020 was used to build HIV-1 transcript models. CD4+ T cells and/or PBMCs infected with VSVG-pseudotyped HIV-1 NL4-3 were sequenced with PCR-barcoded cDNA nanopore sequencing. Reads from CD4+ T cells were aligned with minimap2 -splice (Li 2018). As a quality control measure, variability was assessed visually in the Integrative Genomics Viewer (Robinson et al. 2011). Mapped reads lacked obvious single nucleotide variants. Mapped reads as BAM were fed into StringTie (Kovaka et al. 2019; Pertea et al. 2015), default settings + long reads and -f 0.0001. StringTie was repeated with -merge and -f 0.0001 and -i. MSTRG1, MSTRG3, MSTRG4 were artifacts. MSTRG.2 was a high-confidence real set as .gtf.</p>
+<p>GffRead (Pertea and Pertea 2020) was used to convert pNL4-3 sequence GenBank:AF324493.2 into synthetic transcripts encoded in DNA space or “ACGT” for subsequent annotation. pNL4-3 was used instead of a <em>de novo</em> assembly because the input sequences were nearly identical to input virus, which is expected when using virion prepared from pseudotyped HIV plasmid mRNA (model <em>in vitro</em> HIV infection system). The starting point of each mRNA model was trimmed to 5’ R, and 3’ R was manually added due to likely technical drop off from mostly polyA reads. The final set of curated merged isoforms model the most frequent HIV-1 transcripts seen in CD4+ T cells and/or PBMCs infected by pseudotyped NL4-3. StringTie output before -merge includes transcript quantification. Merged models were used to perform transcript profiling by repeating StringTie with these new models.</p>
+<p>ORFs were interrogated with multisequence alignments (MSAs) with SnapGene version 5.3.2 and MAFFT online server (Katoh, Rozewicki, and Yamada 2017) was used to generate MSAs with L-INS-i; neighbor-joining trees were made with Jukes Cantor selected (default settings). Trees were visualized with Dendroscope version 3.7.4.</p>
+<h4 id="conservation">Conservation<a class="headerlink" href="#conservation" title="Permanent link">&para;</a></h4>
+<p>Relative synonymous codon usage (RSCU) was calculated on the CAIcal server: <a href="http://genomes.urv.es/CAIcal/">http://genomes.urv.es/CAIcal/</a>. SnapGene includes a proprietary BLOSUM matrix implementation.</p>
+<h4 id="protein-prediction">Protein prediction<a class="headerlink" href="#protein-prediction" title="Permanent link">&para;</a></h4>
+<p>3D protein predictions were done with trRosetta (Yang et al. 2020). The size limit of trRosetta is 1000 amino acids.</p>
+<h3 id="results">Results<a class="headerlink" href="#results" title="Permanent link">&para;</a></h3>
+<h3 id="utr-class-definitions">UTR class definitions<a class="headerlink" href="#utr-class-definitions" title="Permanent link">&para;</a></h3>
+<p>We defined 40 isoforms. There were 39 complete isoforms, defined as having both R’ elements. One UTR classification (UTR17) system includes 17 distinct 5’ untranslated regions (UTR), designated UTR Class A-Q. UTRs are structural features of HIV-1 genomic mRNAs. UTR Classes are related, but distinct, from the open reading frames they contain, as evinced by most classes having at least two isoform members. This is because there may be additional splicing beyond the leading 5’ UTR. As such, ORF Classification was elaborated to capture this additional information. Figure key:</p>
+<ul>
+<li>
+<p>Preserved gene model segments are maroon.</p>
+</li>
+<li>
+<p>New proteins are red.</p>
+</li>
+<li>
+<p>GC content displayed above sequence scale black above feature annotations.</p>
+</li>
+</ul>
+<p>Another UTR classification may be based on UTR extending into the segment with the first predicted ORF. This would collapse UTR B, C, and O, while preserving other UTR17 classes.</p>
+<h3 id="utr-class-a-5utrsl1-4-n11">UTR Class A 5UTR+ψSL1-4 (n=11)<a class="headerlink" href="#utr-class-a-5utrsl1-4-n11" title="Permanent link">&para;</a></h3>
+<p>5UTR+ψSL1-4</p>
+<ul>
+<li>
+<p>MSTRG.2.4</p>
+</li>
+<li>
+<p>MSTRG.2.16</p>
+</li>
+<li>
+<p>MSTRG.2.32</p>
+</li>
+<li>
+<p>MSTRG.2.33</p>
+</li>
+<li>
+<p>MSTRG.2.38</p>
+</li>
+<li>
+<p>MSTRG.2.34</p>
+</li>
+<li>
+<p>MSTRG.2.37</p>
+</li>
+<li>
+<p>MSTRG.2.31</p>
+</li>
+<li>
+<p>MSTRG.2.35</p>
+</li>
+<li>
+<p>MSTRG.2.36</p>
+</li>
+<li>
+<p>MSTRG.2.40</p>
+</li>
+</ul>
+<p>Minimal 5’ UTR segment <u>underlined</u>:</p>
+<p>&gt;Class_A_MSTRG.2.4_5UTR+ψSL1-4</p>
+<p><u>GGGUCUCUCUGGUUAGACCAGAUCUGAGCCUGGGAGCUCUCUGGCUAACUAGGGAACCCACUGCUUAAGCCUCAAUAAAGCUUGCCUUGAGUGCUCAAAGUAGUGUGUGCCCGUCUGUUGUGUGACUCUGGUAACUAGAGAUCCCUCAGACCCUUUUAGUCAGUGUGGAAAAUCUCUAGCAGUGGCGCCCGAACAGGGACUUGAAAGCGAAAGUAAAGCCAGAGGAGAUCUCUCGACGCAGGACUCGGCUUGCUGAAGCGCGCACGGCAAGAGGCGAGGGGCGGCGACUG</u>GUGAGUACGCCAAAAAUUUUGACUAGCGGAGGCUAGAAGGAGAGAGAUGGGUGCGAGAGCGUCGGUA</p>
+<figure class="book-figure" id="figure-1">
+<p><img alt="Figure 1: UTR (A) predicted UTR RNA 2º structure" loading="lazy" src="../assets/ch06/media/image1.png" /></p>
+<figcaption>
+<p><strong>Figure 1: UTR (A) predicted UTR RNA 2º structure.</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-2">
+<p><img alt="Figure 2: MSTRG.2.4 (unspliced HIV-1 NL4-3 with new ORFs)" loading="lazy" src="../assets/ch06/media/image2.png" /></p>
+<figcaption>
+<p><strong>Figure 2: MSTRG.2.4 (unspliced HIV-1 NL4-3 with new ORFs).</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+<p>Compare with <strong>Table 1: HIV-1 NL4-3 transcript models, segment content, UTR and ORF classes, proposed naming convention</strong>. New HIV-1 NL4-3 segments with HIV gene models, new ORFs encode new putative proteins. Yellow segments are constitutively expressed. They are always present in completed HIV-1 transcripts. Note that open reading frame (ORF) prediction in SnapGene (below black reference scale) fails to detect known spliced ORFs of tat and rev. Tat and rev are coded on top of each other in different reading frames. Note 3’ R is homogenized to 5’ position. This occurs after NL4-3 re-infects cells. Virus from primary NL4-3 culture will have a mixture of 5’ R.</p>
+<p>Most ORFs with introns above are not expected to be expressed from full-length unspliced HIV-1 mRNA unless additionally spliced. For example, the protein product(s) expected from MSTRG.2.4 in absence of additional splicing are Gag and Gag-Pol (the original Gag-Pol).</p>
+<p>IMPORTANT NOTE: GENER1A, GENER1B, and GENER15 were ultimately removed from the latest version of the HIV-1 NL4-3 mRNA Atlas. The current version of the Atlas (v1.1) does not include incomplete mRNA models or their predicted protein products.</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-3">
+<p><img alt="Figure 3: MSTRG.2.16 (GENER1A, GENER1B, GENER13, GENER14, GENER15)" loading="lazy" src="../assets/ch06/media/image3.png" /></p>
+<figcaption>
+<p><strong>Figure 3: MSTRG.2.16 (GENER1A, GENER1B, GENER13, GENER14, GENER15).</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+<p>HIV-1 NL4-3 new ORF GENER1A. Env is also truncated at the C-terminus (GENER1B). This construct is incomplete (lacks 5’ and 3’ R) and would not be able to integrate via integrase.</p>
+<p>GENER1A encodes for a truncated p17. This protein would end prematurely on the c-terminus relative to the p17 from HIV protease (PR)-cleavage of gag polyprotein. It retains the rest of pol proteins (PR, RT, RT+RNAse, IN).</p>
+<p>GENER1A has first 103 bases similar to p17-coding bases but note that subsequent additions might not be in-frame.</p>
+<p>See MSTRG.2.5 for GENER13 and GENER14.</p>
+<p>IMPORTANT NOTE: GENER1A, GENER1B, and GENER15 were ultimately removed from the latest version of the HIV-1 NL4-3 mRNA Atlas. The current version of the Atlas (v1.1) does not include incomplete mRNA models or their predicted protein products.</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-4">
+<figcaption>
+<p><strong>Figure 4: GENER1A-p17 amino acid sequence.</strong></p>
+<p>&gt;HIV-1_NL4-3_GENER1A-p17</p>
+<p><span class="mark">MGARASVLSGGELDKWEKIRLRPGGKKQYKLKHIGGN</span>*</p>
+<p>&gt;HIV-1_NL4-3_Gag_p17</p>
+<p><span class="mark">MGARASVLSGGELDRWEKIRLRPGGKKKYKLKHI</span>VWASRELERFAVNPGLLETSEGCRQILGQLQPSLQTGSEELRSLYNTVATLYCVHQRIEIKDTKEALDKIEEEQNKSKKKAQQAAADTGHSNQVSQNY</p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+<p>FASTA naming convention below: virus_strain_orf-protein. <span class="mark">Green</span> amino acids are conserved. <span class="mark">Fuchsia</span> are new. +1 frame.</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-5">
+<p><img alt="Figure 5: GENER1A-p17 predicted protein structure." loading="lazy" src="../assets/ch06/media/image4.png" /></p>
+<figcaption>
+<p><strong>Figure 5: GENER1A-p17 predicted protein structure.</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-6">
+<figcaption>
+<p><strong>Figure 6: GENER15-Protease amino acid sequence.</strong></p>
+<p>&gt;HIV-1_NL4-3_GENER15-Protease</p>
+<p><span class="mark">MNLPGRWKPKMIGGIGGFIKVRQYDQILIEICGHKAIGTVLVGPTPVNIIGRNLLTQIGCTLNF</span></p>
+<p>&gt;HIV-1_NL4-3_Gag-Pol-Protease</p>
+<p>PQITLWQRPLVTIKIGGQLKEALLDTGADDTVLEE<span class="mark">MNLPGRWKPKMIGGIGGFIKVRQYDQILIEICGHKAIGTVLVGPTPVNIIGRNLLTQIGCTLNF</span></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+<p>FASTA naming convention below: virus_strain_orf-protein. <span class="mark">Yellow</span> amino acids are conserved. +1 frame.</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-7">
+<p><img alt="Figure 7: GENER15-Protease a predicted protein structure." loading="lazy" src="../assets/ch06/media/image5.png" /></p>
+<figcaption>
+<p><strong>Figure 7: GENER15-Protease a predicted protein structure.</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-8">
+<p><img alt="Figure 8: MSTRG.2.32" loading="lazy" src="../assets/ch06/media/image6.png" /></p>
+<figcaption>
+<p><strong>Figure 8: MSTRG.2.32.</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-9">
+<p><img alt="Figure 9: MSTRG.2.33 (GENER2)" loading="lazy" src="../assets/ch06/media/image7.png" /></p>
+<figcaption>
+<p><strong>Figure 9: MSTRG.2.33 (GENER2).</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-10">
+<figcaption>
+<p><strong>Figure 10: GENER2 amino acid sequence.</strong></p>
+<p>&gt;HIV-1_NL4-3_GENER2</p>
+<p><span class="mark">MENRWQVMIVWQVDRMRINTWKRLVKHHMYISRKAKDWFYRHHYESTNPKISSEVHIPLGDAKLVITTYWGLHTGERDWHLGQGVSIEWRKKRYSTQVDPDLADQLIHLHYFDCFSESAIRNTILGRIVSPRCEYQAGHNKNWVST</span>*</p>
+<p>&gt;HIV-1_NL4-3_Vif</p>
+<p><span class="mark">MENRWQVMIVWQVDRMRINTWKRLVKHHMYISRKAKDWFYRHHYESTNPKISSEVHIPLGDAKLVITTYWGLHTGERDWHLGQGVSIEWRKKRYSTQVDPDLADQLIHLHYFDCFSESAIRNTILGRIVSPRCEYQAGHNK</span>VGSLQYLALAALIKPKQIKPPLPSVRKLTEDRWNKPQKTKGHRGSHTMNGH*</p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+<p>FASTA naming convention below: virus_strain_orf-protein. <span class="mark">Green</span> amino acids are conserved. <span class="mark">Fuchsia</span> are new. +1 frame. GENER2 is a truncated vif with a novel c-terminus.</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-11">
+<p><img alt="Figure 11: GENER2 predicted protein structure." loading="lazy" src="../assets/ch06/media/image8.png" /></p>
+<figcaption>
+<p><strong>Figure 11: GENER2 predicted protein structure.</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-12">
+<p><img alt="Figure 12: MSTRG.2.38 (GENER3)" loading="lazy" src="../assets/ch06/media/image9.png" /></p>
+<figcaption>
+<p><strong>Figure 12: MSTRG.2.38 (GENER3).</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+<p>GENER3 is a vif fusion to a new c-terminus.</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-13">
+<figcaption>
+<p><strong>Figure 13: GENER3 amino acid sequence.</strong></p>
+<p>&gt;HIV-1_NL4-3_GENER3</p>
+<p><span class="mark">MENRWQVMIVWQVDRMRINTWKRLVKHHMYISRKAKDWFYRHHYESTNPKISSEVHIPLGDAKLVITTYWGLHTGERDWHLGQGVSIEWRKKRYSTQVDPDLADQLIHLHYFDCFSESAIRNTILGRIVSPRCEYQAGHNKEEAETATKSSSEQSDSSSFSIKAVSSTCNATYNSSNSSISSSNNNSNSCVVHSNHRI</span>*</p>
+<p>&gt;HIV-1_NL4-3_Vif</p>
+<p><span class="mark">MENRWQVMIVWQVDRMRINTWKRLVKHHMYISRKAKDWFYRHHYESTNPKISSEVHIPLGDAKLVITTYWGLHTGERDWHLGQGVSIEWRKKRYSTQVDPDLADQLIHLHYFDCFSESAIRNTILGRIVSPRCEYQAGHNK</span>VGSLQYLALAALIKPKQIKPPLPSVRKLTEDRWNKPQKTKGHRGSHTMNGH*</p>
+<p>&gt;HIV-1_NL4-3_Tat</p>
+<p>MEPVDPRLEPWKHPGSQPKTACTNCYCKKCCFHCQVCFMTKALGISYGRKKRRQRRRAHQNSQTHQASLSKQPTSQSRGDPTGPKE*</p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+<p>FASTA naming convention below: virus_strain_orf-protein. <span class="mark">Green</span> amino acids are conserved. <span class="mark">Fuchsia</span> are new. +1 frame.</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-14">
+<p><img alt="Figure 14: GENER3 predicted protein structure." loading="lazy" src="../assets/ch06/media/image10.png" /></p>
+<figcaption>
+<p><strong>Figure 14: GENER3 predicted protein structure.</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-15">
+<p><img alt="Figure 15: MSTRG.2.34 (GENER4) IN-rev-long" loading="lazy" src="../assets/ch06/media/image11.png" /></p>
+<figcaption>
+<p><strong>Figure 15: MSTRG.2.34 (GENER4) IN-rev-long.</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+<p>GENER4 is a <em>gag-pol-rev</em> fusion. IN interrupted at @209|210, fused with most of <em>rev</em>.</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-16">
+<figcaption>
+<p><strong>Figure 16: GENER4 amino acid sequence.</strong></p>
+<p>&gt;HIV-1_NL4-3_GENER4-Gag-Pol</p>
+<p><span class="mark"><u>MGARASVLSGGELDKWEKIRLRPGGKKQYKLKHIVWASRELERFAVNPGLLETSEGCRQILGQLQPSLQTGSEELRSLYNTIAVLYCVHQRIDVKDTKEALDKIEEEQNKSKKKAQQAAADTGNNSQVSQNYPIVQNLQGQMVHQAISPRTLNAWVKVVEEKAFSPEVIPMFSALSEGATPQDLNTMLNTVGGHQAAMQMLKETINEEAAEWDRLHPVHAGPIAPGQMREPRGSDIAGTTSTLQEQIGWMTHNPPIPVGEIYKRWIILGLNKIVRMYSPTSILDIRQGPKEPFRDYVDRFYKTLRAEQASQEVKNWMTETLLVQNANPDCKTILKALGPGATLEEMMTACQGVGGPGHKARVLAEAMSQVTNPATIMIQKGNFRNQRKTVKCFNCGKEGHIAKNCRAPRKKGCWKCGKEGHQMKDCTERQAN</u>FFREDLAFPQGKAREFSSEQTRANSPTRRELQVWGRDNNSLSEAGADRQGTVSFSFPQITLWQRPLVTIKIGGQLKEALLDTGADDTVLEEMNLPGRWKPKMIGGIGGFIKVRQYDQILIEICGHKAIGTVLVGPTPVNIIGRNLLTQIGCTLNFPISPIETVPVKLKPGMDGPKVKQWPLTEEKIKALVEICTEMEKEGKISKIGPENPYNTPVFAIKKKDSTKWRKLVDFRELNKRTQDFWEVQLGIPHPAGLKQKKSVTVLDVGDAYFSVPLDKDFRKYTAFTIPSINNETPGIRYQYNVLPQGWKGSPAIFQCSMTKILEPFRKQNPDIVIYQYMDDLYVGSDLEIGQHRTKIEELRQHLLRWGFTTPDKKHQKEPPFLWMGYELHPDKWTVQPIVLPEKDSWTVNDIQKLVGKLNWASQIYAGIKVRQLCKLLRGTKALTEVVPLTEEAELELAENREILKEPVHGVYYDPSKDLIAEIQKQGQGQWTYQIYQEPFKNLKTGKYARMKGAHTNDVKQLTEAVQKIATESIVIWGKTPKFKLPIQKETWEAWWTEYWQATWIPEWEFVNTPPLVKLWYQLEKEPIIGAETFYVDGAANRETKLGKAGYVTDRGRQKVVPLTDTTNQKTELQAIHLALQDSGLEVNIVTDSQYALGIIQAQPDKSESELVSQIIEQLIKKEKVYLAWVPAHKGIGGNEQVDKLVSAGIRKVL<strong>FLDGIDKAQEEHEKYHSNWRAMASDFNLPPVVAKEIVASCDKCQLKGEAMHGQVDCSPGIWQLDCTHLEGKVILVAVHVASGYIEAEVIPAETGQETAYFLLKLAGRWPVKTVHTDNGSNFTSTTVKAACWWAGIKQEFGIPYNPQSQGVIESMNKELKKIIGQVRDQAEHLKTAVQMAVFIHNFKRKGGIGGYSAGERIVDIIATDIQTKELQKQITKIQNFRVYYRDSRDPVWKGPAKLLWKGRSGDSDEELIRTVRLIKLLYQSNPPPNPEGTRQARRNRRRRWRERQRQIHSISERILSTYLGRSAEPVPLQLPPLERLTLDCNEDCGTSGTQGVGSPQILVESPTVLESGTKE</strong></span><strong>*</strong></p>
+<p>&gt;HIV-1_NL4-3_Gag-Pol</p>
+<p><span class="mark"><u>MGARASVLSGGELDKWEKIRLRPGGKKQYKLKHIVWASRELERFAVNPGLLETSEGCRQILGQLQPSLQTGSEELRSLYNTIAVLYCVHQRIDVKDTKEALDKIEEEQNKSKKKAQQAAADTGNNSQVSQNYPIVQNLQGQMVHQAISPRTLNAWVKVVEEKAFSPEVIPMFSALSEGATPQDLNTMLNTVGGHQAAMQMLKETINEEAAEWDRLHPVHAGPIAPGQMREPRGSDIAGTTSTLQEQIGWMTHNPPIPVGEIYKRWIILGLNKIVRMYSPTSILDIRQGPKEPFRDYVDRFYKTLRAEQASQEVKNWMTETLLVQNANPDCKTILKALGPGATLEEMMTACQGVGGPGHKARVLAEAMSQVTNPATIMIQKGNFRNQRKTVKCFNCGKEGHIAKNCRAPRKKGCWKCGKEGHQMKDCTERQAN</u>FFREDLAFPQGKAREFSSEQTRANSPTRRELQVWGRDNNSLSEAGADRQGTVSFSFPQITLWQRPLVTIKIGGQLKEALLDTGADDTVLEEMNLPGRWKPKMIGGIGGFIKVRQYDQILIEICGHKAIGTVLVGPTPVNIIGRNLLTQIGCTLNFPISPIETVPVKLKPGMDGPKVKQWPLTEEKIKALVEICTEMEKEGKISKIGPENPYNTPVFAIKKKDSTKWRKLVDFRELNKRTQDFWEVQLGIPHPAGLKQKKSVTVLDVGDAYFSVPLDKDFRKYTAFTIPSINNETPGIRYQYNVLPQGWKGSPAIFQCSMTKILEPFRKQNPDIVIYQYMDDLYVGSDLEIGQHRTKIEELRQHLLRWGFTTPDKKHQKEPPFLWMGYELHPDKWTVQPIVLPEKDSWTVNDIQKLVGKLNWASQIYAGIKVRQLCKLLRGTKALTEVVPLTEEAELELAENREILKEPVHGVYYDPSKDLIAEIQKQGQGQWTYQIYQEPFKNLKTGKYARMKGAHTNDVKQLTEAVQKIATESIVIWGKTPKFKLPIQKETWEAWWTEYWQATWIPEWEFVNTPPLVKLWYQLEKEPIIGAETFYVDGAANRETKLGKAGYVTDRGRQKVVPLTDTTNQKTELQAIHLALQDSGLEVNIVTDSQYALGIIQAQPDKSESELVSQIIEQLIKKEKVYLAWVPAHKGIGGNEQVDKLVSAGIRKVLFLDGIDKAQEEHEKYHSNWRAMASDFNLPPVVAKEIVASCDKCQLKGEAMHGQVDCSPGIWQLDCTHLEGKVILVAVHVASGYIEAEVIPAETGQETAYFLLKLAGRWPVKTVHTDNGSNFTSTTVKAACWWAGIKQEFGIPYNPQSQGVIESMNKELKKIIGQVRDQAEHLKTAVQMAVFIHNFKRKGGIGGYSAGERIVDIIATDIQTKELQKQITKIQNFRVYYRDSRDPVWKGPAKLLWK</span>GEGAVVIQDNSDIKVVPRRKAKIIRDYGKQMAGDDCVASRQDED*</p>
+<p>&gt;HIV-1_NL4-3_Rev</p>
+<p>MA<span class="mark">GRSGDSDEELIRTVRLIKLLYQSNPPPNPEGTRQARRNRRRRWRERQRQIHSISERILSTYLGRSAEPVPLQLPPLERLTLDCNEDCGTSGTQGVGSPQILVESPTVLESGTKE</span>*</p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+<p>FASTA naming convention below: virus_strain_orf-protein. <span class="mark">Green</span> and <span class="mark">Yellow</span> amino acids are conserved. <span class="mark">Fuchsia</span> are new. +1 frame. Conserved region in Gag <em>underlined</em>. GENER4-integrase in <strong>bold</strong>.</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-17">
+<p><img alt="Figure 17: GENER4-integrase predicted protein structure." loading="lazy" src="../assets/ch06/media/image12.png" /></p>
+<figcaption>
+<p><strong>Figure 17: GENER4-integrase predicted protein structure.</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-18">
+<p><img alt="Figure 18: MSTRG.2.37 (GENER5) IN-rev-short" loading="lazy" src="../assets/ch06/media/image13.png" /></p>
+<figcaption>
+<p><strong>Figure 18: MSTRG.2.37 (GENER5) IN-rev-short.</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+<p>GENER5 is a gag-pol-tat/rev fusion like GENER4 in this document. IN interrupted at @209|210, fused with an in-frame segment of rev, and small novel C-terminus.</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-19">
+<figcaption>
+<p><strong>Figure 19: GENER5-Gag-Pol amino acid sequence.</strong></p>
+<p><strong>GENER5 amino acid sequence.</strong></p>
+<p>&gt;HIV-1_NL4-3_GENER5-Gag-Pol</p>
+<p><span class="mark"><u>MGARASVLSGGELDKWEKIRLRPGGKKQYKLKHIVWASRELERFAVNPGLLETSEGCRQILGQLQPSLQTGSEELRSLYNTIAVLYCVHQRIDVKDTKEALDKIEEEQNKSKKKAQQAAADTGNNSQVSQNYPIVQNLQGQMVHQAISPRTLNAWVKVVEEKAFSPEVIPMFSALSEGATPQDLNTMLNTVGGHQAAMQMLKETINEEAAEWDRLHPVHAGPIAPGQMREPRGSDIAGTTSTLQEQIGWMTHNPPIPVGEIYKRWIILGLNKIVRMYSPTSILDIRQGPKEPFRDYVDRFYKTLRAEQASQEVKNWMTETLLVQNANPDCKTILKALGPGATLEEMMTACQGVGGPGHKARVLAEAMSQVTNPATIMIQKGNFRNQRKTVKCFNCGKEGHIAKNCRAPRKKGCWKCGKEGHQMKDCTERQAN</u>FFREDLAFPQGKAREFSSEQTRANSPTRRELQVWGRDNNSLSEAGADRQGTVSFSFPQITLWQRPLVTIKIGGQLKEALLDTGADDTVLEEMNLPGRWKPKMIGGIGGFIKVRQYDQILIEICGHKAIGTVLVGPTPVNIIGRNLLTQIGCTLNFPISPIETVPVKLKPGMDGPKVKQWPLTEEKIKALVEICTEMEKEGKISKIGPENPYNTPVFAIKKKDSTKWRKLVDFRELNKRTQDFWEVQLGIPHPAGLKQKKSVTVLDVGDAYFSVPLDKDFRKYTAFTIPSINNETPGIRYQYNVLPQGWKGSPAIFQCSMTKILEPFRKQNPDIVIYQYMDDLYVGSDLEIGQHRTKIEELRQHLLRWGFTTPDKKHQKEPPFLWMGYELHPDKWTVQPIVLPEKDSWTVNDIQKLVGKLNWASQIYAGIKVRQLCKLLRGTKALTEVVPLTEEAELELAENREILKEPVHGVYYDPSKDLIAEIQKQGQGQWTYQIYQEPFKNLKTGKYARMKGAHTNDVKQLTEAVQKIATESIVIWGKTPKFKLPIQKETWEAWWTEYWQATWIPEWEFVNTPPLVKLWYQLEKEPIIGAETFYVDGAANRETKLGKAGYVTDRGRQKVVPLTDTTNQKTELQAIHLALQDSGLEVNIVTDSQYALGIIQAQPDKSESELVSQIIEQLIKKEKVYLAWVPAHKGIGGNEQVDKLVSAGIRKVL<strong>FLDGIDKAQEEHEKYHSNWRAMASDFNLPPVVAKEIVASCDKCQLKGEAMHGQVDCSPGIWQLDCTHLEGKVILVAVHVASGYIEAEVIPAETGQETAYFLLKLAGRWPVKTVHTDNGSNFTSTTVKAACWWAGIKQEFGIPYNPQSQGVIESMNKELKKIIGQVRDQAEHLKTAVQMAVFIHNFKRKGGIGGYSAGERIVDIIATDIQTKELQKQITKIQNFRVYYRDSRDPVWKGPAKLLWKGRSGDSDEELIRTVRLIKLLYQSSK</strong></span>*</p>
+<p>&gt;HIV-1_NL4-3_Gag-Pol</p>
+<p><span class="mark"><u>MGARASVLSGGELDKWEKIRLRPGGKKQYKLKHIVWASRELERFAVNPGLLETSEGCRQILGQLQPSLQTGSEELRSLYNTIAVLYCVHQRIDVKDTKEALDKIEEEQNKSKKKAQQAAADTGNNSQVSQNYPIVQNLQGQMVHQAISPRTLNAWVKVVEEKAFSPEVIPMFSALSEGATPQDLNTMLNTVGGHQAAMQMLKETINEEAAEWDRLHPVHAGPIAPGQMREPRGSDIAGTTSTLQEQIGWMTHNPPIPVGEIYKRWIILGLNKIVRMYSPTSILDIRQGPKEPFRDYVDRFYKTLRAEQASQEVKNWMTETLLVQNANPDCKTILKALGPGATLEEMMTACQGVGGPGHKARVLAEAMSQVTNPATIMIQKGNFRNQRKTVKCFNCGKEGHIAKNCRAPRKKGCWKCGKEGHQMKDCTERQAN</u>FFREDLAFPQGKAREFSSEQTRANSPTRRELQVWGRDNNSLSEAGADRQGTVSFSFPQITLWQRPLVTIKIGGQLKEALLDTGADDTVLEEMNLPGRWKPKMIGGIGGFIKVRQYDQILIEICGHKAIGTVLVGPTPVNIIGRNLLTQIGCTLNFPISPIETVPVKLKPGMDGPKVKQWPLTEEKIKALVEICTEMEKEGKISKIGPENPYNTPVFAIKKKDSTKWRKLVDFRELNKRTQDFWEVQLGIPHPAGLKQKKSVTVLDVGDAYFSVPLDKDFRKYTAFTIPSINNETPGIRYQYNVLPQGWKGSPAIFQCSMTKILEPFRKQNPDIVIYQYMDDLYVGSDLEIGQHRTKIEELRQHLLRWGFTTPDKKHQKEPPFLWMGYELHPDKWTVQPIVLPEKDSWTVNDIQKLVGKLNWASQIYAGIKVRQLCKLLRGTKALTEVVPLTEEAELELAENREILKEPVHGVYYDPSKDLIAEIQKQGQGQWTYQIYQEPFKNLKTGKYARMKGAHTNDVKQLTEAVQKIATESIVIWGKTPKFKLPIQKETWEAWWTEYWQATWIPEWEFVNTPPLVKLWYQLEKEPIIGAETFYVDGAANRETKLGKAGYVTDRGRQKVVPLTDTTNQKTELQAIHLALQDSGLEVNIVTDSQYALGIIQAQPDKSESELVSQIIEQLIKKEKVYLAWVPAHKGIGGNEQVDKLVSAGIRKVLFLDGIDKAQEEHEKYHSNWRAMASDFNLPPVVAKEIVASCDKCQLKGEAMHGQVDCSPGIWQLDCTHLEGKVILVAVHVASGYIEAEVIPAETGQETAYFLLKLAGRWPVKTVHTDNGSNFTSTTVKAACWWAGIKQEFGIPYNPQSQGVIESMNKELKKIIGQVRDQAEHLKTAVQMAVFIHNFKRKGGIGGYSAGERIVDIIATDIQTKELQKQITKIQNFRVYYRDSRDPVWKGPAKLLWK</span>GEGAVVIQDNSDIKVVPRRKAKIIRDYGKQMAGDDCVASRQDED*</p>
+<p>&gt;HIV-1_NL4-3_Rev</p>
+<p>MA<span class="mark">GRSGDSDEELIRTVRLIKLLYQS</span>NPPPNPEGTRQARRNRRRRWRERQRQIHSISERILSTYLGRSAEPVPLQLPPLERLTLDCNEDCGTSGTQGVGSPQILVESPTVLESGTKE*</p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+<p>FASTA naming convention below: virus_strain_orf-protein. <span class="mark">Green</span> and <span class="mark">Yellow</span> amino acids are conserved. <span class="mark">Fuchsia</span> are new. +1 frame. Conserved region in Gag <em>underlined</em>. GENER5-integrase in <strong>bold</strong>.</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-20">
+<p><img alt="Figure 20: GENER5-integrase predicted protein structure." loading="lazy" src="../assets/ch06/media/image14.png" /></p>
+<figcaption>
+<p><strong>Figure 20: GENER5-integrase predicted protein structure.</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-21">
+<p><img alt="Figure 21: MSTRG.2.31 (GENER6: IN-vif; GENER13, GENER14)" loading="lazy" src="../assets/ch06/media/image15.png" /></p>
+<figcaption>
+<p><strong>Figure 21: MSTRG.2.31 (GENER6: IN-vif; GENER13, GENER14).</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+<p>GENER6 is a truncated gag-pol. IN interrupted at @209|210, fused with most of Vif. Same ORF as GENER8.</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-22">
+<figcaption>
+<p><strong>Figure 22: GENER6-Gag-Pol amino acid sequence.</strong></p>
+<p><strong>GENER6 amino acid sequence.</strong></p>
+<p>&gt;HIV-1_NL4-3_GENER6</p>
+<p><span class="mark"><u>MGARASVLSGGELDKWEKIRLRPGGKKQYKLKHIVWASRELERFAVNPGLLETSEGCRQILGQLQPSLQTGSEELRSLYNTIAVLYCVHQRIDVKDTKEALDKIEEEQNKSKKKAQQAAADTGNNSQVSQNYPIVQNLQGQMVHQAISPRTLNAWVKVVEEKAFSPEVIPMFSALSEGATPQDLNTMLNTVGGHQAAMQMLKETINEEAAEWDRLHPVHAGPIAPGQMREPRGSDIAGTTSTLQEQIGWMTHNPPIPVGEIYKRWIILGLNKIVRMYSPTSILDIRQGPKEPFRDYVDRFYKTLRAEQASQEVKNWMTETLLVQNANPDCKTILKALGPGATLEEMMTACQGVGGPGHKARVLAEAMSQVTNPATIMIQKGNFRNQRKTVKCFNCGKEGHIAKNCRAPRKKGCWKCGKEGHQMKDCTERQAN</u>FFREDLAFPQGKAREFSSEQTRANSPTRRELQVWGRDNNSLSEAGADRQGTVSFSFPQITLWQRPLVTIKIGGQLKEALLDTGADDTVLEEMNLPGRWKPKMIGGIGGFIKVRQYDQILIEICGHKAIGTVLVGPTPVNIIGRNLLTQIGCTLNFPISPIETVPVKLKPGMDGPKVKQWPLTEEKIKALVEICTEMEKEGKISKIGPENPYNTPVFAIKKKDSTKWRKLVDFRELNKRTQDFWEVQLGIPHPAGLKQKKSVTVLDVGDAYFSVPLDKDFRKYTAFTIPSINNETPGIRYQYNVLPQGWKGSPAIFQCSMTKILEPFRKQNPDIVIYQYMDDLYVGSDLEIGQHRTKIEELRQHLLRWGFTTPDKKHQKEPPFLWMGYELHPDKWTVQPIVLPEKDSWTVNDIQKLVGKLNWASQIYAGIKVRQLCKLLRGTKALTEVVPLTEEAELELAENREILKEPVHGVYYDPSKDLIAEIQKQGQGQWTYQIYQEPFKNLKTGKYARMKGAHTNDVKQLTEAVQKIATESIVIWGKTPKFKLPIQKETWEAWWTEYWQATWIPEWEFVNTPPLVKLWYQLEKEPIIGAETFYVDGAANRETKLGKAGYVTDRGRQKVVPLTDTTNQKTELQAIHLALQDSGLEVNIVTDSQYALGIIQAQPDKSESELVSQIIEQLIKKEKVYLAWVPAHKGIGGNEQVDKLVSAGIRKVL<strong>FLDGIDKAQEEHEKYHSNWRAMASDFNLPPVVAKEIVASCDKCQLKGEAMHGQVDCSPGIWQLDCTHLEGKVILVAVHVASGYIEAEVIPAETGQETAYFLLKLAGRWPVKTVHTDNGSNFTSTTVKAACWWAGIKQEFGIPYNPQSQGVIESMNKELKKIIGQVRDQAEHLKTAVQMAVFIHNFKRKGGIGGYSAGERIVDIIATDIQTKELQKQITKIQNFRVYYRDSRDPVWKGPAKLLWKESAIRNTILGRIVSPRCEYQAGHNKVGSLQYLALAALIKPKQIKPPLPSVRKLTEDRWNKPQKTKGHRGSHTMNGH</strong></span>*</p>
+<p>&gt;HIV-1_NL4-3_Gag-Pol</p>
+<p><span class="mark"><u>MGARASVLSGGELDKWEKIRLRPGGKKQYKLKHIVWASRELERFAVNPGLLETSEGCRQILGQLQPSLQTGSEELRSLYNTIAVLYCVHQRIDVKDTKEALDKIEEEQNKSKKKAQQAAADTGNNSQVSQNYPIVQNLQGQMVHQAISPRTLNAWVKVVEEKAFSPEVIPMFSALSEGATPQDLNTMLNTVGGHQAAMQMLKETINEEAAEWDRLHPVHAGPIAPGQMREPRGSDIAGTTSTLQEQIGWMTHNPPIPVGEIYKRWIILGLNKIVRMYSPTSILDIRQGPKEPFRDYVDRFYKTLRAEQASQEVKNWMTETLLVQNANPDCKTILKALGPGATLEEMMTACQGVGGPGHKARVLAEAMSQVTNPATIMIQKGNFRNQRKTVKCFNCGKEGHIAKNCRAPRKKGCWKCGKEGHQMKDCTERQAN</u>FFREDLAFPQGKAREFSSEQTRANSPTRRELQVWGRDNNSLSEAGADRQGTVSFSFPQITLWQRPLVTIKIGGQLKEALLDTGADDTVLEEMNLPGRWKPKMIGGIGGFIKVRQYDQILIEICGHKAIGTVLVGPTPVNIIGRNLLTQIGCTLNFPISPIETVPVKLKPGMDGPKVKQWPLTEEKIKALVEICTEMEKEGKISKIGPENPYNTPVFAIKKKDSTKWRKLVDFRELNKRTQDFWEVQLGIPHPAGLKQKKSVTVLDVGDAYFSVPLDKDFRKYTAFTIPSINNETPGIRYQYNVLPQGWKGSPAIFQCSMTKILEPFRKQNPDIVIYQYMDDLYVGSDLEIGQHRTKIEELRQHLLRWGFTTPDKKHQKEPPFLWMGYELHPDKWTVQPIVLPEKDSWTVNDIQKLVGKLNWASQIYAGIKVRQLCKLLRGTKALTEVVPLTEEAELELAENREILKEPVHGVYYDPSKDLIAEIQKQGQGQWTYQIYQEPFKNLKTGKYARMKGAHTNDVKQLTEAVQKIATESIVIWGKTPKFKLPIQKETWEAWWTEYWQATWIPEWEFVNTPPLVKLWYQLEKEPIIGAETFYVDGAANRETKLGKAGYVTDRGRQKVVPLTDTTNQKTELQAIHLALQDSGLEVNIVTDSQYALGIIQAQPDKSESELVSQIIEQLIKKEKVYLAWVPAHKGIGGNEQVDKLVSAGIRKVLFLDGIDKAQEEHEKYHSNWRAMASDFNLPPVVAKEIVASCDKCQLKGEAMHGQVDCSPGIWQLDCTHLEGKVILVAVHVASGYIEAEVIPAETGQETAYFLLKLAGRWPVKTVHTDNGSNFTSTTVKAACWWAGIKQEFGIPYNPQSQGVIESMNKELKKIIGQVRDQAEHLKTAVQMAVFIHNFKRKGGIGGYSAGERIVDIIATDIQTKELQKQITKIQNFRVYYRDSRDPVWKGPAKLLWK</span>GEGAVVIQDNSDIKVVPRRKAKIIRDYGKQMAGDDCVASRQDED*</p>
+<p>&gt;HIV-1_NL4-3_Vif</p>
+<p><span class="mark">MENRWQVMIVWQVDRMRINTWKRLVKHHMYISRKAKDWFYRHHYESTNPKISSEVHIPLGDAKLVITTYWGLHTGERDWHLGQGVSIEWRKKRYSTQVDPDLADQLIHLHYFDCFSESAIRNTILGRIVSPRCEYQAGHNKVGSLQYLALAALIKPKQIKPPLPSVRKLTEDRWNKPQKTKGHRGSHTMNGH</span>*</p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+<p>FASTA naming convention below: virus_strain_orf-protein. <span class="mark">Green</span> and <span class="mark">Yellow</span> amino acids are conserved. +1 frame. Conserved region in Gag <em>underlined</em>. GENER6-integrase in <strong>bold</strong>. Note GENER6 and GENER8 are ORFs which share the same sequences across on different mRNA models. GENER6-integrase (GENER6-IN) is identical to GENER8-integrase (GENER8-IN).</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-23">
+<p><img alt="Figure 23: GENER6-integrase predicted protein structure." loading="lazy" src="../assets/ch06/media/image16.png" /></p>
+<figcaption>
+<p><strong>Figure 23: GENER6-integrase predicted protein structure.</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-24">
+<p><img alt="Figure 24: MSTRG.2.35 (GENER7) IN-vif-novel" loading="lazy" src="../assets/ch06/media/image17.png" /></p>
+<figcaption>
+<p><strong>Figure 24: MSTRG.2.35 (GENER7) IN-vif-novel.</strong></p>
+<p>GENER7 is a gag-pol-env terminal fusion.</p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-25">
+<figcaption>
+<p><strong>Figure 25: GENER7-Gag-Pol amino acid sequence.</strong></p>
+<p>&gt;HIV-1_NL4-3_GENER7</p>
+<p><span class="mark"><u>MGARASVLSGGELDKWEKIRLRPGGKKQYKLKHIVWASRELERFAVNPGLLETSEGCRQILGQLQPSLQTGSEELRSLYNTIAVLYCVHQRIDVKDTKEALDKIEEEQNKSKKKAQQAAADTGNNSQVSQNYPIVQNLQGQMVHQAISPRTLNAWVKVVEEKAFSPEVIPMFSALSEGATPQDLNTMLNTVGGHQAAMQMLKETINEEAAEWDRLHPVHAGPIAPGQMREPRGSDIAGTTSTLQEQIGWMTHNPPIPVGEIYKRWIILGLNKIVRMYSPTSILDIRQGPKEPFRDYVDRFYKTLRAEQASQEVKNWMTETLLVQNANPDCKTILKALGPGATLEEMMTACQGVGGPGHKARVLAEAMSQVTNPATIMIQKGNFRNQRKTVKCFNCGKEGHIAKNCRAPRKKGCWKCGKEGHQMKDCTERQAN</u>FFREDLAFPQGKAREFSSEQTRANSPTRRELQVWGRDNNSLSEAGADRQGTVSFSFPQITLWQRPLVTIKIGGQLKEALLDTGADDTVLEEMNLPGRWKPKMIGGIGGFIKVRQYDQILIEICGHKAIGTVLVGPTPVNIIGRNLLTQIGCTLNFPISPIETVPVKLKPGMDGPKVKQWPLTEEKIKALVEICTEMEKEGKISKIGPENPYNTPVFAIKKKDSTKWRKLVDFRELNKRTQDFWEVQLGIPHPAGLKQKKSVTVLDVGDAYFSVPLDKDFRKYTAFTIPSINNETPGIRYQYNVLPQGWKGSPAIFQCSMTKILEPFRKQNPDIVIYQYMDDLYVGSDLEIGQHRTKIEELRQHLLRWGFTTPDKKHQKEPPFLWMGYELHPDKWTVQPIVLPEKDSWTVNDIQKLVGKLNWASQIYAGIKVRQLCKLLRGTKALTEVVPLTEEAELELAENREILKEPVHGVYYDPSKDLIAEIQKQGQGQWTYQIYQEPFKNLKTGKYARMKGAHTNDVKQLTEAVQKIATESIVIWGKTPKFKLPIQKETWEAWWTEYWQATWIPEWEFVNTPPLVKLWYQLEKEPIIGAETFYVDGAANRETKLGKAGYVTDRGRQKVVPLTDTTNQKTELQAIHLALQDSGLEVNIVTDSQYALGIIQAQPDKSESELVSQIIEQLIKKEKVYLAWVPAHKGIGGNEQVDKLVSAGIRKVLFLDGIDKAQEEHEKYHSNWRAMASDFNLPPVVAKEIVASCDKCQLKGEAMHGQVDCSPGIWQLDCTHLEGKVILVAVHVASGYIEAEVIPAETGQETAYFLLKLAGRWPVKTVHTDNGSNFTSTTVKAACWWAGIKQEFGIPYNPQSQGVIESMNKELKKIIGQVRDQAEHLKTAVQMAVFIHNFKRKGGIGGYSAGERIVDIIATDIQTKELQKQITKIQNFRVYYRDSRDPVWKGPAKLLWKESAIRNTILGRIVSPRCEYQAGHNK<strong>EEAETATKSSSEQSDSSSFSIKA</strong><u>THLPIPRGPDRPEGIEEEGGERDRDRSIRLVNGSLALIWDDLRSLCLFSYHRLRDLLLIVTRIVELLGRRGWEALKYWWNLLQYWSQELKNSAVNLLNATAIAVAEGTDRVIEVLQAAYRAIRHIPRRIRQGLERILL</u></span>* (Alejandro R. Gener et al. 2021)</p>
+<p>&gt;HIV-1_NL4-3_Gag-Pol</p>
+<p><span class="mark"><u>MGARASVLSGGELDKWEKIRLRPGGKKQYKLKHIVWASRELERFAVNPGLLETSEGCRQILGQLQPSLQTGSEELRSLYNTIAVLYCVHQRIDVKDTKEALDKIEEEQNKSKKKAQQAAADTGNNSQVSQNYPIVQNLQGQMVHQAISPRTLNAWVKVVEEKAFSPEVIPMFSALSEGATPQDLNTMLNTVGGHQAAMQMLKETINEEAAEWDRLHPVHAGPIAPGQMREPRGSDIAGTTSTLQEQIGWMTHNPPIPVGEIYKRWIILGLNKIVRMYSPTSILDIRQGPKEPFRDYVDRFYKTLRAEQASQEVKNWMTETLLVQNANPDCKTILKALGPGATLEEMMTACQGVGGPGHKARVLAEAMSQVTNPATIMIQKGNFRNQRKTVKCFNCGKEGHIAKNCRAPRKKGCWKCGKEGHQMKDCTERQAN</u>FFREDLAFPQGKAREFSSEQTRANSPTRRELQVWGRDNNSLSEAGADRQGTVSFSFPQITLWQRPLVTIKIGGQLKEALLDTGADDTVLEEMNLPGRWKPKMIGGIGGFIKVRQYDQILIEICGHKAIGTVLVGPTPVNIIGRNLLTQIGCTLNFPISPIETVPVKLKPGMDGPKVKQWPLTEEKIKALVEICTEMEKEGKISKIGPENPYNTPVFAIKKKDSTKWRKLVDFRELNKRTQDFWEVQLGIPHPAGLKQKKSVTVLDVGDAYFSVPLDKDFRKYTAFTIPSINNETPGIRYQYNVLPQGWKGSPAIFQCSMTKILEPFRKQNPDIVIYQYMDDLYVGSDLEIGQHRTKIEELRQHLLRWGFTTPDKKHQKEPPFLWMGYELHPDKWTVQPIVLPEKDSWTVNDIQKLVGKLNWASQIYAGIKVRQLCKLLRGTKALTEVVPLTEEAELELAENREILKEPVHGVYYDPSKDLIAEIQKQGQGQWTYQIYQEPFKNLKTGKYARMKGAHTNDVKQLTEAVQKIATESIVIWGKTPKFKLPIQKETWEAWWTEYWQATWIPEWEFVNTPPLVKLWYQLEKEPIIGAETFYVDGAANRETKLGKAGYVTDRGRQKVVPLTDTTNQKTELQAIHLALQDSGLEVNIVTDSQYALGIIQAQPDKSESELVSQIIEQLIKKEKVYLAWVPAHKGIGGNEQVDKLVSAGIRKVLFLDGIDKAQEEHEKYHSNWRAMASDFNLPPVVAKEIVASCDKCQLKGEAMHGQVDCSPGIWQLDCTHLEGKVILVAVHVASGYIEAEVIPAETGQETAYFLLKLAGRWPVKTVHTDNGSNFTSTTVKAACWWAGIKQEFGIPYNPQSQGVIESMNKELKKIIGQVRDQAEHLKTAVQMAVFIHNFKRKGGIGGYSAGERIVDIIATDIQTKELQKQITKIQNFRVYYRDSRDPVWKGPAKLLWK</span>GEGAVVIQDNSDIKVVPRRKAKIIRDYGKQMAGDDCVASRQDED*</p>
+<p>&gt;HIV-1_NL4-3_Vif</p>
+<p>MENRWQVMIVWQVDRMRINTWKRLVKHHMYISRKAKDWFYRHHYESTNPKISSEVHIPLGDAKLVITTYWGLHTGERDWHLGQGVSIEWRKKRYSTQVDPDLADQLIHLHYFDCFS<span class="mark">ESAIRNTILGRIVSPRCEYQAGHNK</span>VGSLQYLALAALIKPKQIKPPLPSVRKLTEDRWNKPQKTKGHRGSHTMNGH*</p>
+<p>FASTA naming convention below: virus_strain_orf-protein. <span class="mark">Green</span> and <span class="mark">Yellow</span> amino acids are conserved. <span class="mark">Fuchsia</span> are new. +1 frame. Conserved region in Gag <em>underlined</em>. <u>Specific to this figure, underlined</u> segment has been seen before. Example: Sequence ID/Genbank accession: AAR05829.1. It is part of <em>env</em>. <strong>Bold</strong> is <em>tat/rev</em> NA sequence, but in a different frame than NL4-3 <em>tat</em> or <em>rev</em>. CCD30481.1. The reference (CCD30481.1) incorrectly calls a similar sequence <em>tat</em>.</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-26">
+<p><img alt="Figure 26: GENER7-integrase predicted protein structure." loading="lazy" src="../assets/ch06/media/image18.png" /></p>
+<figcaption>
+<p><strong>Figure 26: GENER7-integrase predicted protein structure.</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-27">
+<p><img alt="Figure 27: MSTRG.2.36 (GENER8) = GENER6; IN-vif" loading="lazy" src="../assets/ch06/media/image19.png" /></p>
+<figcaption>
+<p><strong>Figure 27: MSTRG.2.36 (GENER8) = GENER6; IN-vif.</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+<p>GENER8 is a truncated gag-pol. Same ORF as GENER6. MSTRG.2.36 was not supported by pooled mapping. However, this transcript might still be represented in the dataset. Difficulty with mapping repetitive full-length mRNAs has precluded ruling out this from the set of possible HIV-1 NL4-3 mRNAs.</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-28">
+<figcaption>
+<p><strong>Figure 28: GENER8-Gag-Pol amino acid sequence.</strong></p>
+<p><strong>GENER8 amino acid sequence.</strong></p>
+<p>&gt;HIV-1_NL4-3_GENER8</p>
+<p><span class="mark"><u>MGARASVLSGGELDKWEKIRLRPGGKKQYKLKHIVWASRELERFAVNPGLLETSEGCRQILGQLQPSLQTGSEELRSLYNTIAVLYCVHQRIDVKDTKEALDKIEEEQNKSKKKAQQAAADTGNNSQVSQNYPIVQNLQGQMVHQAISPRTLNAWVKVVEEKAFSPEVIPMFSALSEGATPQDLNTMLNTVGGHQAAMQMLKETINEEAAEWDRLHPVHAGPIAPGQMREPRGSDIAGTTSTLQEQIGWMTHNPPIPVGEIYKRWIILGLNKIVRMYSPTSILDIRQGPKEPFRDYVDRFYKTLRAEQASQEVKNWMTETLLVQNANPDCKTILKALGPGATLEEMMTACQGVGGPGHKARVLAEAMSQVTNPATIMIQKGNFRNQRKTVKCFNCGKEGHIAKNCRAPRKKGCWKCGKEGHQMKDCTERQAN</u>FFREDLAFPQGKAREFSSEQTRANSPTRRELQVWGRDNNSLSEAGADRQGTVSFSFPQITLWQRPLVTIKIGGQLKEALLDTGADDTVLEEMNLPGRWKPKMIGGIGGFIKVRQYDQILIEICGHKAIGTVLVGPTPVNIIGRNLLTQIGCTLNFPISPIETVPVKLKPGMDGPKVKQWPLTEEKIKALVEICTEMEKEGKISKIGPENPYNTPVFAIKKKDSTKWRKLVDFRELNKRTQDFWEVQLGIPHPAGLKQKKSVTVLDVGDAYFSVPLDKDFRKYTAFTIPSINNETPGIRYQYNVLPQGWKGSPAIFQCSMTKILEPFRKQNPDIVIYQYMDDLYVGSDLEIGQHRTKIEELRQHLLRWGFTTPDKKHQKEPPFLWMGYELHPDKWTVQPIVLPEKDSWTVNDIQKLVGKLNWASQIYAGIKVRQLCKLLRGTKALTEVVPLTEEAELELAENREILKEPVHGVYYDPSKDLIAEIQKQGQGQWTYQIYQEPFKNLKTGKYARMKGAHTNDVKQLTEAVQKIATESIVIWGKTPKFKLPIQKETWEAWWTEYWQATWIPEWEFVNTPPLVKLWYQLEKEPIIGAETFYVDGAANRETKLGKAGYVTDRGRQKVVPLTDTTNQKTELQAIHLALQDSGLEVNIVTDSQYALGIIQAQPDKSESELVSQIIEQLIKKEKVYLAWVPAHKGIGGNEQVDKLVSAGIRKVL<strong>FLDGIDKAQEEHEKYHSNWRAMASDFNLPPVVAKEIVASCDKCQLKGEAMHGQVDCSPGIWQLDCTHLEGKVILVAVHVASGYIEAEVIPAETGQETAYFLLKLAGRWPVKTVHTDNGSNFTSTTVKAACWWAGIKQEFGIPYNPQSQGVIESMNKELKKIIGQVRDQAEHLKTAVQMAVFIHNFKRKGGIGGYSAGERIVDIIATDIQTKELQKQITKIQNFRVYYRDSRDPVWKGPAKLLWKESAIRNTILGRIVSPRCEYQAGHNKVGSLQYLALAALIKPKQIKPPLPSVRKLTEDRWNKPQKTKGHRGSHTMNGH</strong></span>*</p>
+<p>&gt;HIV-1_NL4-3_Gag-Pol</p>
+<p><span class="mark"><u>MGARASVLSGGELDKWEKIRLRPGGKKQYKLKHIVWASRELERFAVNPGLLETSEGCRQILGQLQPSLQTGSEELRSLYNTIAVLYCVHQRIDVKDTKEALDKIEEEQNKSKKKAQQAAADTGNNSQVSQNYPIVQNLQGQMVHQAISPRTLNAWVKVVEEKAFSPEVIPMFSALSEGATPQDLNTMLNTVGGHQAAMQMLKETINEEAAEWDRLHPVHAGPIAPGQMREPRGSDIAGTTSTLQEQIGWMTHNPPIPVGEIYKRWIILGLNKIVRMYSPTSILDIRQGPKEPFRDYVDRFYKTLRAEQASQEVKNWMTETLLVQNANPDCKTILKALGPGATLEEMMTACQGVGGPGHKARVLAEAMSQVTNPATIMIQKGNFRNQRKTVKCFNCGKEGHIAKNCRAPRKKGCWKCGKEGHQMKDCTERQAN</u>FFREDLAFPQGKAREFSSEQTRANSPTRRELQVWGRDNNSLSEAGADRQGTVSFSFPQITLWQRPLVTIKIGGQLKEALLDTGADDTVLEEMNLPGRWKPKMIGGIGGFIKVRQYDQILIEICGHKAIGTVLVGPTPVNIIGRNLLTQIGCTLNFPISPIETVPVKLKPGMDGPKVKQWPLTEEKIKALVEICTEMEKEGKISKIGPENPYNTPVFAIKKKDSTKWRKLVDFRELNKRTQDFWEVQLGIPHPAGLKQKKSVTVLDVGDAYFSVPLDKDFRKYTAFTIPSINNETPGIRYQYNVLPQGWKGSPAIFQCSMTKILEPFRKQNPDIVIYQYMDDLYVGSDLEIGQHRTKIEELRQHLLRWGFTTPDKKHQKEPPFLWMGYELHPDKWTVQPIVLPEKDSWTVNDIQKLVGKLNWASQIYAGIKVRQLCKLLRGTKALTEVVPLTEEAELELAENREILKEPVHGVYYDPSKDLIAEIQKQGQGQWTYQIYQEPFKNLKTGKYARMKGAHTNDVKQLTEAVQKIATESIVIWGKTPKFKLPIQKETWEAWWTEYWQATWIPEWEFVNTPPLVKLWYQLEKEPIIGAETFYVDGAANRETKLGKAGYVTDRGRQKVVPLTDTTNQKTELQAIHLALQDSGLEVNIVTDSQYALGIIQAQPDKSESELVSQIIEQLIKKEKVYLAWVPAHKGIGGNEQVDKLVSAGIRKVLFLDGIDKAQEEHEKYHSNWRAMASDFNLPPVVAKEIVASCDKCQLKGEAMHGQVDCSPGIWQLDCTHLEGKVILVAVHVASGYIEAEVIPAETGQETAYFLLKLAGRWPVKTVHTDNGSNFTSTTVKAACWWAGIKQEFGIPYNPQSQGVIESMNKELKKIIGQVRDQAEHLKTAVQMAVFIHNFKRKGGIGGYSAGERIVDIIATDIQTKELQKQITKIQNFRVYYRDSRDPVWKGPAKLLWK</span>GEGAVVIQDNSDIKVVPRRKAKIIRDYGKQMAGDDCVASRQDED*</p>
+<p>&gt;HIV-1_NL4-3_vif</p>
+<p>MENRWQVMIVWQVDRMRINTWKRLVKHHMYISRKAKDWFYRHHYESTNPKISSEVHIPLGDAKLVITTYWGLHTGERDWHLGQGVSIEWRKKRYSTQVDPDLADQLIHLHYFDCFS<span class="mark">ESAIRNTILGRIVSPRCEYQAGHNKVGSLQYLALAALIKPKQIKPPLPSVRKLTEDRWNKPQKTKGHRGSHTMNGH</span>*</p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+<p>FASTA naming convention below: virus_strain_orf-protein. <span class="mark">Green</span> and <span class="mark">Yellow</span> amino acids are conserved. +1 frame. Conserved region in Gag <em>underlined</em>. GENER8-integrase in <strong>bold</strong>. Note GENER6 and GENER8 are ORFs which share the same sequences across on different mRNA models. GENER6-integrase (GENER6-IN) is identical to GENER8-integrase (GENER8-IN).</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-29">
+<p><img alt="Figure 29: MSTRG.2.40 (GENER9)" loading="lazy" src="../assets/ch06/media/image20.png" /></p>
+<figcaption>
+<p><strong>Figure 29: MSTRG.2.40 (GENER9).</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-30">
+<figcaption>
+<p><strong>Figure 30: GENER9-Gag-Pol amino acid sequence.</strong></p>
+<p>&gt;HIV-1_NL4-3_GENER9</p>
+<p><span class="mark"><u>MGARASVLSGGELDKWEKIRLRPGGKKQYKLKHIVWASRELERFAVNPGLLETSEGCRQILGQLQPSLQTGSEELRSLYNTIAVLYCVHQRIDVKDTKEALDKIEEEQNKSKKKAQQAAADTGNNSQVSQNYPIVQNLQGQMVHQAISPRTLNAWVKVVEEKAFSPEVIPMFSALSEGATPQDLNTMLNTVGGHQAAMQMLKETINEEAAEWDRLHPVHAGPIAPGQMREPRGSDIAGTTSTLQEQIGWMTHNPPIPVGEIYKRWIILGLNKIVRMYSPTSILDIRQGPKEPFRDYVDRFYKTLRAEQASQEVKNWMTETLLVQNANPDCKTILKALGPGATLEEMMTACQGVGGPGHKARVLAEAMSQVTNPATIMIQKGNFRNQRKTVKCFNCGKEGHIAKNCRAPRKKGCWKCGKEGHQMKDCTERQAN</u>FFREDLAFPQGKAREFSSEQTRANSPTRRELQVWGRDNNSLSEAGADRQGTVSFSFPQITLWQRPLVTIKIGGQLKEALLDTGADDTVLEEMNLPGRWKPKMIGGIGGFIKVRQYDQILIEICGHKAIGTVLVGPTPVNIIGRNLLTQIGCTLNFPISPIETVPVKLKPGMDGPKVKQWPLTEEKIKALVEICTEMEKEGKISKIGPENPYNTPVFAIKKKDSTKWRKLVDFRELNKRTQDFWEVQLGIPHPAGLKQKKSVTVLDVGDAYFSVPLDKDFRKYTAFTIPSINNETPGIRYQYNVLPQGWKGSPAIFQCSMTKILEPFRKQNPDIVIYQYMDDLYVGSDLEIGQHRTKIEELRQHLLRWGFTTPDKKHQKEPPFLWMGYELHPDKWTVQPIVLPEKDSWTVNDIQKLVGKLNWASQIYAGIKVRQLCKLLRGTKALTEVVPLTEEAELELAENREILKEPVHGVYYDPSKDLIAEIQKQGQGQWTYQIYQEPFKNLKTGKYARMKGAHTNDVKQLTEAVQKIATESIVIWGKTPKFKLPIQKETWEAWWTEYWQATWIPEWEFVNTPPLVKLWYQLEKEPIIGAETFYVDGAANRETKLGKAGYVTDRGRQKVVPLTDTTNQKTELQAIHLALQDSGLEVNIVTDSQYALGIIQAQPDKSESELVSQIIEQLIKKEKVYLAWVPAHKGIGGNEQVDKLVSAGIRKVLFLDGIDKAQEEHEKYHSNWRAMASDFNLPPVVAKEIVASCDKCQLKGEAMHGQVDCSPGIWQLDCTHLEGKVILVAVHVASGYIEAEVIPAETGQETAYFLLKLAGRWPVKTVHTDNGSNFTSTTVKAACWWAGIKQEFGIPYNPQSQGVIESMNKELKKIIGQVRDQAEHLKTAVQMAVFIHNFKRKGGIGGYSAGERIVDIIATDIQTKELQKQITKIQNFRVYYRDSRDPVWKGPAKLLWKGEGAVVIQDNSDIKVVPRRKAKIIRDYGKQMAELGVDIAE</span>*</p>
+<p>&gt;HIV-1_NL4-3_Gag-Pol</p>
+<p><span class="mark"><u>MGARASVLSGGELDKWEKIRLRPGGKKQYKLKHIVWASRELERFAVNPGLLETSEGCRQILGQLQPSLQTGSEELRSLYNTIAVLYCVHQRIDVKDTKEALDKIEEEQNKSKKKAQQAAADTGNNSQVSQNYPIVQNLQGQMVHQAISPRTLNAWVKVVEEKAFSPEVIPMFSALSEGATPQDLNTMLNTVGGHQAAMQMLKETINEEAAEWDRLHPVHAGPIAPGQMREPRGSDIAGTTSTLQEQIGWMTHNPPIPVGEIYKRWIILGLNKIVRMYSPTSILDIRQGPKEPFRDYVDRFYKTLRAEQASQEVKNWMTETLLVQNANPDCKTILKALGPGATLEEMMTACQGVGGPGHKARVLAEAMSQVTNPATIMIQKGNFRNQRKTVKCFNCGKEGHIAKNCRAPRKKGCWKCGKEGHQMKDCTERQAN</u>FFREDLAFPQGKAREFSSEQTRANSPTRRELQVWGRDNNSLSEAGADRQGTVSFSFPQITLWQRPLVTIKIGGQLKEALLDTGADDTVLEEMNLPGRWKPKMIGGIGGFIKVRQYDQILIEICGHKAIGTVLVGPTPVNIIGRNLLTQIGCTLNFPISPIETVPVKLKPGMDGPKVKQWPLTEEKIKALVEICTEMEKEGKISKIGPENPYNTPVFAIKKKDSTKWRKLVDFRELNKRTQDFWEVQLGIPHPAGLKQKKSVTVLDVGDAYFSVPLDKDFRKYTAFTIPSINNETPGIRYQYNVLPQGWKGSPAIFQCSMTKILEPFRKQNPDIVIYQYMDDLYVGSDLEIGQHRTKIEELRQHLLRWGFTTPDKKHQKEPPFLWMGYELHPDKWTVQPIVLPEKDSWTVNDIQKLVGKLNWASQIYAGIKVRQLCKLLRGTKALTEVVPLTEEAELELAENREILKEPVHGVYYDPSKDLIAEIQKQGQGQWTYQIYQEPFKNLKTGKYARMKGAHTNDVKQLTEAVQKIATESIVIWGKTPKFKLPIQKETWEAWWTEYWQATWIPEWEFVNTPPLVKLWYQLEKEPIIGAETFYVDGAANRETKLGKAGYVTDRGRQKVVPLTDTTNQKTELQAIHLALQDSGLEVNIVTDSQYALGIIQAQPDKSESELVSQIIEQLIKKEKVYLAWVPAHKGIGGNEQVDKLVSAGIRKVLFLDGIDKAQEEHEKYHSNWRAMASDFNLPPVVAKEIVASCDKCQLKGEAMHGQVDCSPGIWQLDCTHLEGKVILVAVHVASGYIEAEVIPAETGQETAYFLLKLAGRWPVKTVHTDNGSNFTSTTVKAACWWAGIKQEFGIPYNPQSQGVIESMNKELKKIIGQVRDQAEHLKTAVQMAVFIHNFKRKGGIGGYSAGERIVDIIATDIQTKELQKQITKIQNFRVYYRDSRDPVWKGPAKLLWK</span>GEGAVVIQDNSDIKVVPRRKAKIIRDYGKQMAGDDCVASRQDED*</p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+<p>FASTA naming convention below: virus_strain_orf-protein. <span class="mark">Green</span> amino acids are conserved. <span class="mark">Fuchsia</span> are new. +1 frame. Conserved region in Gag <em>underlined</em>. GENER9 shares homology with Pol variant AYX77407.1.</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-31">
+<p><img alt="Figure 31: GENER9-integrase predicted protein structure." loading="lazy" src="../assets/ch06/media/image21.png" /></p>
+<figcaption>
+<p><strong>Figure 31: GENER9-integrase predicted protein structure.</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<h3 id="utr-class-b-n1">UTR Class B (n=1)<a class="headerlink" href="#utr-class-b-n1" title="Permanent link">&para;</a></h3>
+<p>Min5UTR+ pol 1<strong>,</strong> pol 2, vif 2, tat/rev. 1<sup>st</sup> ORF starts at pol 2.</p>
+<ul>
+<li>MSTRG.2.26</li>
+</ul>
+<p>&gt;Class_B_MSTRG.2.26_min5UTR+pol,pol/vif,vif,tat/rev</p>
+<p><u>GGGUCUCUCUGGUUAGACCAGAUCUGAGCCUGGGAGCUCUCUGGCUAACUAGGGAACCCACUGCUUAAGCCUCAAUAAAGCUUGCCUUGAGUGCUCAAAGUAGUGUGUGCCCGUCUGUUGUGUGACUCUGGUAACUAGAGAUCCCUCAGACCCUUUUAGUCAGUGUGGAAAAUCUCUAGCAGUGGCGCCCGAACAGGGACUUGAAAGCGAAAGUAAAGCCAGAGGAGAUCUCUCGACGCAGGACUCGGCUUGCUGAAGCGCGCACGGCAAGAGGCGAGGGGCGGCGACUG</u>GGACAGCAGAGAUCCAGUUUGGAAAGGACCAGCAAAGCUCCUCUGGAAAGGUGAAGGGGCAGUAGUAAUACAAGAUAAUAGUGACAUAAAAGUAGUGCCAAGAAGAAAAGCAAAGAUCAUCAGGGAUUAUGGAAAACAGAUGGCAGAAUCUGCUAUAAGAAAUACCAUAUUAGGACGUAUAGUUAGUCCUAGGUGUGAAUAUCAAGCAGGACAUAACAAGGAAGAAGCGGAGACAGCGACGAAGAGCUCAUCAGAACAGUCAGACUCAUCAAGCUUCUCUAUCAAAGCA</p>
+<figure class="book-figure" id="figure-32">
+<p><img alt="Figure 32: UTR (B) predicted UTR RNA 2º structure" loading="lazy" src="../assets/ch06/media/image22.png" /></p>
+<figcaption>
+<p><strong>Figure 32: UTR (B) predicted UTR RNA 2º structure.</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-33">
+<p><img alt="Figure 33: MSTRG.2.26 (GENER10)" loading="lazy" src="../assets/ch06/media/image23.png" /></p>
+<figcaption>
+<p><strong>Figure 33: MSTRG.2.26 (GENER10).</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-34">
+<figcaption>
+<p><strong>Figure 34: GENER10 amino acid sequence.</strong></p>
+<p>&gt;HIV-1_NL4-3_GENER10</p>
+<p><span class="mark">MAESAIRNTILGRIVSPRCEYQAGHNKEEAETATKSSSEQSDSSSFSIKATHLPIPRGPDRPEGIEEEGGERDRDRSIRLVNGSLALIWDDLRSLCLFSYHRLRDLLLIVTRIVELLGRRGWEALKYWWNLLQYWSQELKNSAVNLLNATAIAVAEGTDRVIEVLQAAYRAIRHIPRRIRQGLERILL</span>*</p>
+<p>&gt;HIV-1_NL4-3_Env-gp41</p>
+<p>AVGIGALFLGFLGAAGSTMGAASMTLTVQARQLLSDIVQQQNNLLRAIEAQQHLLQLTVWGIKQLQARILAVERYLKDQQLLGIWGCSGKLICTTAVPWNASWSNKSLEQIWNNMTWMEWDREINNYTSLIHSLIEESQNQQEKNEQELLELDKWASLWNWFNITNWLWYIKLFIMIVGGLVGLRIVFAVLSIVNRVRQGYSPLSFQ<span class="mark">THLPIPRGPDRPEGIEEEGGERDRDRSIRLVNGSLALIWDDLRSLCLFSYHRLRDLLLIVTRIVELLGRRGWEALKYWWNLLQYWSQELKNSAVNLLNATAIAVAEGTDRVIEVLQAAYRAIRHIPRRIRQGLERILL</span>*</p>
+<p>&gt;HIV-1_NL4-3_Vif</p>
+<p>MENRWQVMIVWQVDRMRINTWKRLVKHHMYISRKAKDWFYRHHYESTNPKISSEVHIPLGDAKLVITTYWGLHTGERDWHLGQGVSIEWRKKRYSTQVDPDLADQLIHLHYFDCFS<span class="mark">ESAIRNTILGRIVSPRCEYQAGHNK</span>VGSLQYLALAALIKPKQIKPPLPSVRKLTEDRWNKPQKTKGHRGSHTMNGH*</p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+<p>FASTA naming convention below: virus_strain_orf-protein. <span class="mark">Green</span> and <span class="mark">Yellow</span> amino acids are conserved. <span class="mark">Fuchsia</span> are new. +1 frame. GENER10 is a pol-vif-tat/rev-env splice product.</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-35">
+<p><img alt="Figure 35: GENER10 predicted protein structure." loading="lazy" src="../assets/ch06/media/image24.png" /></p>
+<figcaption>
+<p><strong>Figure 35: GENER10 predicted protein structure.</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+<p>GENER10 is the only Vif-containing ORF which disrupts the “grumpy” domain in the most stable trRosetta model.</p>
+</figcaption>
+</figure>
+<h3 id="utr-class-c-n3">UTR Class C (n=3)<a class="headerlink" href="#utr-class-c-n3" title="Permanent link">&para;</a></h3>
+<p>Min5UTR+pol 1<strong>,</strong> pol 2, vif 1, vif 2, vif-vpr, tat/rev. 1<sup>st</sup> ORF starts at pol 2.</p>
+<ul>
+<li>
+<p>MSTRG.2.5</p>
+</li>
+<li>
+<p>MSTRG.2.19</p>
+</li>
+<li>
+<p>MSTRG.2.39</p>
+</li>
+</ul>
+<p>&gt;Class_C_MSTRG.2.5_min5UTR+pol,pol/vif</p>
+<p><u>GGGUCUCUCUGGUUAGACCAGAUCUGAGCCUGGGAGCUCUCUGGCUAACUAGGGAACCCACUGCUUAAGCCUCAAUAAAGCUUGCCUUGAGUGCUCAAAGUAGUGUGUGCCCGUCUGUUGUGUGACUCUGGUAACUAGAGAUCCCUCAGACCCUUUUAGUCAGUGUGGAAAAUCUCUAGCAGUGGCGCCCGAACAGGGACUUGAAAGCGAAAGUAAAGCCAGAGGAGAUCUCUCGACGCAGGACUCGGCUUGCUGAAGCGCGCACGGCAAGAGGCGAGGGGCGGCGACUG</u>GGACAGCAGAGAUCCAGUUUGGAAAGGACCAGCAAAGCUCCUCUGGAAAGGUGAAGGGGCAGUAGUAAUACAAGAUAAUAGUGACAUAAAAGUAGUGCCAAGAAGAAAAGCAAAGAUCAUCAGGGAUUAUGGAAAACAGAUGGCAG</p>
+<figure class="book-figure" id="figure-36">
+<p><img alt="Figure 36: UTR (C) predicted UTR RNA 2º structure" loading="lazy" src="../assets/ch06/media/image25.png" /></p>
+<figcaption>
+<p><strong>Figure 36: UTR (C) predicted UTR RNA 2º structure.</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-37">
+<p><img alt="Figure 37: MSTRG.2.5 (GENER13, GENER14)" loading="lazy" src="../assets/ch06/media/image26.png" /></p>
+<figcaption>
+<p><strong>Figure 37: MSTRG.2.5 (GENER13, GENER14).</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-38">
+<figcaption>
+<p><strong>Figure 38: GENER13 and GENER14 amino acid sequences.</strong></p>
+<p>&gt;HIV-1_NL4-3_GENER13/Tat-1</p>
+<p><span class="mark">MEPVDPRLEPWKHPGSQPKTACTNCYCKKCCFHCQVCFMTKALGISYGRKKRRQRRRAHQNSQTHQASLSKQ*</span></p>
+<p>&gt;HIV-1_NL4-3_Tat/Tat-2</p>
+<p><span class="mark">MEPVDPRLEPWKHPGSQPKTACTNCYCKKCCFHCQVCFMTKALGISYGRKKRRQRRRAHQNSQTHQASLSKQ</span>PTSQSRGDPTGPKE*</p>
+<p>&gt;HIV-1_NL4-3_GENER14</p>
+<p><span class="mark">MAGRSGDSDEELIRTVRLIKLLYQSSK*</span></p>
+<p>&gt;HIV-1_NL4-3_rev</p>
+<p><span class="mark">MAGRSGDSDEELIRTVRLIKLLYQS</span>NPPPNPEGTRQARRNRRRRWRERQRQIHSISERILSTYLGRSAEPVPLQLPPLERLTLDCNEDCGTSGTQGVGSPQILVESPTVLESGTKE*</p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-39">
+<p><img alt="Figure 39: GENER13 and GENER14 predicted protein structure." loading="lazy" src="../assets/ch06/media/image27.png" /></p>
+<figcaption>
+<p><strong>Figure 39: GENER13 and GENER14 predicted protein structure.</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-40">
+<p><img alt="Figure 40: MSTRG.2.19" loading="lazy" src="../assets/ch06/media/image28.png" /></p>
+<figcaption>
+<p><strong>Figure 40: MSTRG.2.19.</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-41">
+<p><img alt="Figure 41: MSTRG.2.39 (GENER11)" loading="lazy" src="../assets/ch06/media/image29.png" /></p>
+<figcaption>
+<p><strong>Figure 41: MSTRG.2.39 (GENER11).</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-42">
+<figcaption>
+<p><strong>Figure 42: GENER11 amino acid sequence.</strong></p>
+<p>&gt;HIV-1_NL4-3_GENER11</p>
+<p><span class="mark">MENRWQVMIVWQVDRMRINTWKRLVKHHMYISRKAKDWFYRHHYESTNPKISSEVHIPLGDAKLVITTYWGLHTGERDWHLGQGVSIEWRKKRYSTQVDPDLADQLIHLHYFDCFSESAIRNTILGRIVSPRCEYQAGHNKEEAETATKSSSEQSDSSSFSIKATHLPIPRGPDRPEGIEEEGGERDRDRSIRLVNGSLALIWDDLRSLCLFSYHRLRDLLLIVTRIVELLGRRGWEALKYWWNLLQYWSQELKNSAVNLLNATAIAVAEGTDRVIEVLQAAYRAIRHIPRRIRQGLERILL</span>*</p>
+<p>&gt;HIV-1_NL4-3_Vif</p>
+<p><span class="mark">MENRWQVMIVWQVDRMRINTWKRLVKHHMYISRKAKDWFYRHHYESTNPKISSEVHIPLGDAKLVITTYWGLHTGERDWHLGQGVSIEWRKKRYSTQVDPDLADQLIHLHYFDCFSESAIRNTILGRIVSPRCEYQAGHNK</span>VGSLQYLALAALIKPKQIKPPLPSVRKLTEDRWNKPQKTKGHRGSHTMNGH*</p>
+<p>&gt;HIV-1_NL4-3_Env-gp41</p>
+<p>AVGIGALFLGFLGAAGSTMGAASMTLTVQARQLLSDIVQQQNNLLRAIEAQQHLLQLTVWGIKQLQARILAVERYLKDQQLLGIWGCSGKLICTTAVPWNASWSNKSLEQIWNNMTWMEWDREINNYTSLIHSLIEESQNQQEKNEQELLELDKWASLWNWFNITNWLWYIKLFIMIVGGLVGLRIVFAVLSIVNRVRQGYSPLSFQ<span class="mark">THLPIPRGPDRPEGIEEEGGERDRDRSIRLVNGSLALIWDDLRSLCLFSYHRLRDLLLIVTRIVELLGRRGWEALKYWWNLLQYWSQELKNSAVNLLNATAIAVAEGTDRVIEVLQAAYRAIRHIPRRIRQGLERILL</span>*</p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+<p>FASTA naming convention below: virus_strain_orf-protein. <span class="mark">Green</span> and <span class="mark">Yellow</span> amino acids are conserved. <span class="mark">Fuchsia</span> are new. +1 frame. GENER11 is a pol vif-tat/rev-env splice product.</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-43">
+<p><img alt="Figure 43: GENER11 predicted protein structure." loading="lazy" src="../assets/ch06/media/image30.png" /></p>
+<figcaption>
+<p><strong>Figure 43: GENER11 predicted protein structure.</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<h3 id="utr-class-d-n2">UTR Class D (n=2)<a class="headerlink" href="#utr-class-d-n2" title="Permanent link">&para;</a></h3>
+<p>Min5UTR+tat/rev. 1<sup>st</sup> ORF starts after tat/rev.</p>
+<ul>
+<li>
+<p>MSTRG.2.1</p>
+</li>
+<li>
+<p>MSTRG.2.2</p>
+</li>
+</ul>
+<p>&gt;Class_D_MSTRG.2.1_min5UTR+tat/rev</p>
+<p><u>GGGUCUCUCUGGUUAGACCAGAUCUGAGCCUGGGAGCUCUCUGGCUAACUAGGGAACCCACUGCUUAAGCCUCAAUAAAGCUUGCCUUGAGUGCUCAAAGUAGUGUGUGCCCGUCUGUUGUGUGACUCUGGUAACUAGAGAUCCCUCAGACCCUUUUAGUCAGUGUGGAAAAUCUCUAGCAGUGGCGCCCGAACAGGGACUUGAAAGCGAAAGUAAAGCCAGAGGAGAUCUCUCGACGCAGGACUCGGCUUGCUGAAGCGCGCACGGCAAGAGGCGAGGGGCGGCGACUG</u>GAAGAAGCGGAGACAGCGACGAAGAGCUCAUCAGAACAGUCAGACUCAUCAAGCUUCUCUAUCAAAGCA</p>
+<figure class="book-figure" id="figure-44">
+<p><img alt="Figure 44: UTR (D) predicted UTR RNA 2º structure" loading="lazy" src="../assets/ch06/media/image31.png" /></p>
+<figcaption>
+<p><strong>Figure 44: UTR (D) predicted UTR RNA 2º structure.</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-45">
+<p><img alt="Figure 45: UTR (D) contains a predicted pseudoknot" loading="lazy" src="../assets/ch06/media/image32.png" /></p>
+<figcaption>
+<p><strong>Figure 45: UTR (D) contains a predicted pseudoknot.</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-46">
+<p><img alt="Figure 46: MSTRG.2.1" loading="lazy" src="../assets/ch06/media/image33.png" /></p>
+<figcaption>
+<p><strong>Figure 46: MSTRG.2.1.</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-47">
+<p><img alt="Figure 47: MSTRG.2.2" loading="lazy" src="../assets/ch06/media/image34.png" /></p>
+<figcaption>
+<p><strong>Figure 47: MSTRG.2.2.</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<h3 id="utr-class-e-n2">UTR Class E (n=2)<a class="headerlink" href="#utr-class-e-n2" title="Permanent link">&para;</a></h3>
+<p>Min5UTR+pol 1<strong>,</strong> vif 2, tat/rev. 1<sup>st</sup> ORF starts after tat/rev.</p>
+<ul>
+<li>
+<p>MSTRG.2.9</p>
+</li>
+<li>
+<p>MSTRG.2.17</p>
+</li>
+</ul>
+<p>&gt;Class_E_MSTRG.2.9_min5UTR+pol,vif,tat/rev</p>
+<p><u>GGGUCUCUCUGGUUAGACCAGAUCUGAGCCUGGGAGCUCUCUGGCUAACUAGGGAACCCACUGCUUAAGCCUCAAUAAAGCUUGCCUUGAGUGCUCAAAGUAGUGUGUGCCCGUCUGUUGUGUGACUCUGGUAACUAGAGAUCCCUCAGACCCUUUUAGUCAGUGUGGAAAAUCUCUAGCAGUGGCGCCCGAACAGGGACUUGAAAGCGAAAGUAAAGCCAGAGGAGAUCUCUCGACGCAGGACUCGGCUUGCUGAAGCGCGCACGGCAAGAGGCGAGGGGCGGCGACUG</u>GGACAGCAGAGAUCCAGUUUGGAAAGGACCAGCAAAGCUCCUCUGGAAAGAAUCUGCUAUAAGAAAUACCAUAUUAGGACGUAUAGUUAGUCCUAGGUGUGAAUAUCAAGCAGGACAUAACAAGGAAGAAGCGGAGACAGCGACGAAGAGCUCAUCAGAACAGUCAGACUCAUCAAGCUUCUCUAUCAAAGCA</p>
+<figure class="book-figure" id="figure-48">
+<p><img alt="Figure 48: UTR (E) predicted UTR RNA 2º structure" loading="lazy" src="../assets/ch06/media/image35.png" /></p>
+<figcaption>
+<p><strong>Figure 48: UTR (E) predicted UTR RNA 2º structure.</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-49">
+<p><img alt="Figure 49: MSTRG.2.9" loading="lazy" src="../assets/ch06/media/image36.png" /></p>
+<figcaption>
+<p><strong>Figure 49: MSTRG.2.9.</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-50">
+<p><img alt="Figure 50: MSTRG.2.17" loading="lazy" src="../assets/ch06/media/image37.png" /></p>
+<figcaption>
+<p><strong>Figure 50: MSTRG.2.17.</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<h3 id="utr-class-f-n2">UTR Class F (n=2)<a class="headerlink" href="#utr-class-f-n2" title="Permanent link">&para;</a></h3>
+<p>Min5UTR+vif 2, tat/rev. 1<sup>st</sup> ORF starts after tat/rev.</p>
+<ul>
+<li>
+<p>MSTRG.2.6</p>
+</li>
+<li>
+<p>MSTRG.2.7</p>
+</li>
+</ul>
+<p>&gt;Class_F_MSTRG.2.6_min5UTR+vif,tat/rev</p>
+<p><u>GGGUCUCUCUGGUUAGACCAGAUCUGAGCCUGGGAGCUCUCUGGCUAACUAGGGAACCCACUGCUUAAGCCUCAAUAAAGCUUGCCUUGAGUGCUCAAAGUAGUGUGUGCCCGUCUGUUGUGUGACUCUGGUAACUAGAGAUCCCUCAGACCCUUUUAGUCAGUGUGGAAAAUCUCUAGCAGUGGCGCCCGAACAGGGACUUGAAAGCGAAAGUAAAGCCAGAGGAGAUCUCUCGACGCAGGACUCGGCUUGCUGAAGCGCGCACGGCAAGAGGCGAGGGGCGGCGACUG</u>AAUCUGCUAUAAGAAAUACCAUAUUAGGACGUAUAGUUAGUCCUAGGUGUGAAUAUCAAGCAGGACAUAACAAGGAAGAAGCGGAGACAGCGACGAAGAGCUCAUCAGAACAGUCAGACUCAUCAAGCUUCUCUAUCAAAGCA</p>
+<figure class="book-figure" id="figure-51">
+<p><img alt="Figure 51: UTR (F) predicted UTR RNA 2º structure" loading="lazy" src="../assets/ch06/media/image38.png" /></p>
+<figcaption>
+<p><strong>Figure 51: UTR (F) predicted UTR RNA 2º structure.</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-52">
+<p><img alt="Figure 52: MSTRG.2.6" loading="lazy" src="../assets/ch06/media/image39.png" /></p>
+<figcaption>
+<p><strong>Figure 52: MSTRG.2.6.</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-53">
+<p><img alt="Figure 53: MSTRG.2.7" loading="lazy" src="../assets/ch06/media/image40.png" /></p>
+<figcaption>
+<p><strong>Figure 53: MSTRG.2.7.</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<h3 id="utr-class-g-n2">UTR Class G (n=2)<a class="headerlink" href="#utr-class-g-n2" title="Permanent link">&para;</a></h3>
+<p>Min5UTR+pol 1, pol 2, vif 2, vpr-tat/rev. 1<sup>st</sup> ORF starts in vpr-tat/rev.</p>
+<ul>
+<li>
+<p>MSTRG.2.25</p>
+</li>
+<li>
+<p>MSTRG.2.30</p>
+</li>
+</ul>
+<p>&gt;Class_G_MSTRG.2.25_min5UTR+pol,pol/vif,vif,vpr</p>
+<p><u>GGGUCUCUCUGGUUAGACCAGAUCUGAGCCUGGGAGCUCUCUGGCUAACUAGGGAACCCACUGCUUAAGCCUCAAUAAAGCUUGCCUUGAGUGCUCAAAGUAGUGUGUGCCCGUCUGUUGUGUGACUCUGGUAACUAGAGAUCCCUCAGACCCUUUUAGUCAGUGUGGAAAAUCUCUAGCAGUGGCGCCCGAACAGGGACUUGAAAGCGAAAGUAAAGCCAGAGGAGAUCUCUCGACGCAGGACUCGGCUUGCUGAAGCGCGCACGGCAAGAGGCGAGGGGCGGCGACUG</u>GGACAGCAGAGAUCCAGUUUGGAAAGGACCAGCAAAGCUCCUCUGGAAAGGUGAAGGGGCAGUAGUAAUACAAGAUAAUAGUGACAUAAAAGUAGUGCCAAGAAGAAAAGCAAAGAUCAUCAGGGAUUAUGGAAAACAGAUGGCAGAAUCUGCUAUAAGAAAUACCAUAUUAGGACGUAUAGUUAGUCCUAGGUGUGAAUAUCAAGCAGGACAUAACAAGAAUUGGGUGUCGACAUAGCAGAAUAGGCGUUACUCGACAGAGGAGAGCAAGAA</p>
+<figure class="book-figure" id="figure-54">
+<p><img alt="Figure 54: UTR (G) predicted UTR RNA 2º structure" loading="lazy" src="../assets/ch06/media/image41.png" /></p>
+<figcaption>
+<p><strong>Figure 54: UTR (G) predicted UTR RNA 2º structure.</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-55">
+<p><img alt="Figure 55: MSTRG.2.25" loading="lazy" src="../assets/ch06/media/image42.png" /></p>
+<figcaption>
+<p><strong>Figure 55: MSTRG.2.25.</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-56">
+<p><img alt="Figure 56: MSTRG.2.30 (GENER13, GENER14)" loading="lazy" src="../assets/ch06/media/image43.png" /></p>
+<figcaption>
+<p><strong>Figure 56: MSTRG.2.30 (GENER13, GENER14).</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<h3 id="utr-class-h-n2">UTR Class H (n=2)<a class="headerlink" href="#utr-class-h-n2" title="Permanent link">&para;</a></h3>
+<p>Min5UTR+vif 2, vif-vpr. 1<sup>st</sup> ORF starts in vif-vpr.</p>
+<ul>
+<li>
+<p>MSTRG.2.3</p>
+</li>
+<li>
+<p>MSTRG.2.18</p>
+</li>
+</ul>
+<p>&gt;Class_H_MSTRG.2.3_min5UTR+vif</p>
+<p><u>GGGUCUCUCUGGUUAGACCAGAUCUGAGCCUGGGAGCUCUCUGGCUAACUAGGGAACCCACUGCUUAAGCCUCAAUAAAGCUUGCCUUGAGUGCUCAAAGUAGUGUGUGCCCGUCUGUUGUGUGACUCUGGUAACUAGAGAUCCCUCAGACCCUUUUAGUCAGUGUGGAAAAUCUCUAGCAGUGGCGCCCGAACAGGGACUUGAAAGCGAAAGUAAAGCCAGAGGAGAUCUCUCGACGCAGGACUCGGCUUGCUGAAGCGCGCACGGCAAGAGGCGAGGGGCGGCGACUG</u>AAUCUGCUAUAAGAAAUACCAUAUUAGGACGUAUAGUUAGUCCUAGGUGUGAAUAUCAAGCAGGACAUAACAAG</p>
+<figure class="book-figure" id="figure-57">
+<p><img alt="Figure 57: UTR (H) predicted UTR RNA 2º structure" loading="lazy" src="../assets/ch06/media/image44.png" /></p>
+<figcaption>
+<p><strong>Figure 57: UTR (H) predicted UTR RNA 2º structure.</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-58">
+<p><img alt="Figure 58: MSTRG.2.3 (GENER13, GENER14)" loading="lazy" src="../assets/ch06/media/image45.png" /></p>
+<figcaption>
+<p><strong>Figure 58: MSTRG.2.3 (GENER13, GENER14).</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-59">
+<p><img alt="Figure 59: MSTRG.2.18" loading="lazy" src="../assets/ch06/media/image46.png" /></p>
+<figcaption>
+<p><strong>Figure 59: MSTRG.2.18.</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<h3 id="utr-class-i-n2">UTR Class I (n=2)<a class="headerlink" href="#utr-class-i-n2" title="Permanent link">&para;</a></h3>
+<p>Min5UTR+vif 2, vpr-tat/rev. 1<sup>st</sup> ORF starts in vpr-tat/rev.</p>
+<ul>
+<li>
+<p>MSTRG.2.15</p>
+</li>
+<li>
+<p>MSTRG.2.24<br />
+  &gt;Class_I_MSTRG.2.15_min5UTR+vif,vpr</p>
+</li>
+</ul>
+<p><u>GGGUCUCUCUGGUUAGACCAGAUCUGAGCCUGGGAGCUCUCUGGCUAACUAGGGAACCCACUGCUUAAGCCUCAAUAAAGCUUGCCUUGAGUGCUCAAAGUAGUGUGUGCCCGUCUGUUGUGUGACUCUGGUAACUAGAGAUCCCUCAGACCCUUUUAGUCAGUGUGGAAAAUCUCUAGCAGUGGCGCCCGAACAGGGACUUGAAAGCGAAAGUAAAGCCAGAGGAGAUCUCUCGACGCAGGACUCGGCUUGCUGAAGCGCGCACGGCAAGAGGCGAGGGGCGGCGACUG</u>AAUCUGCUAUAAGAAAUACCAUAUUAGGACGUAUAGUUAGUCCUAGGUGUGAAUAUCAAGCAGGACAUAACAAGAAUUGGGUGUCGACAUAGCAGAAUAGGCGUUACUCGACAGAGGAGAGCAAGAA</p>
+<figure class="book-figure" id="figure-60">
+<p><img alt="Figure 60: UTR (I) predicted UTR RNA 2º structure" loading="lazy" src="../assets/ch06/media/image47.png" /></p>
+<figcaption>
+<p><strong>Figure 60: UTR (I) predicted UTR RNA 2º structure.</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-61">
+<p><img alt="Figure 61: MSTRG.2.15" loading="lazy" src="../assets/ch06/media/image48.png" /></p>
+<figcaption>
+<p><strong>Figure 61: MSTRG.2.15.</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-62">
+<p><img alt="Figure 62: MSTRG.2.24 (GENER13, GENER14)" loading="lazy" src="../assets/ch06/media/image49.png" /></p>
+<figcaption>
+<p><strong>Figure 62: MSTRG.2.24 (GENER13, GENER14).</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<h3 id="utr-class-j-n2">UTR Class J (n=2)<a class="headerlink" href="#utr-class-j-n2" title="Permanent link">&para;</a></h3>
+<p>Min5UTR+vpr-tat/rev. 1<sup>st</sup> ORF starts in vpr-tat/rev.</p>
+<ul>
+<li>
+<p>MSTRG.2.11</p>
+</li>
+<li>
+<p>MSTRG.2.14</p>
+</li>
+</ul>
+<p>&gt;Class_J_MSTRG.2.11_min5UTR+vpr</p>
+<p><u>GGGUCUCUCUGGUUAGACCAGAUCUGAGCCUGGGAGCUCUCUGGCUAACUAGGGAACCCACUGCUUAAGCCUCAAUAAAGCUUGCCUUGAGUGCUCAAAGUAGUGUGUGCCCGUCUGUUGUGUGACUCUGGUAACUAGAGAUCCCUCAGACCCUUUUAGUCAGUGUGGAAAAUCUCUAGCAGUGGCGCCCGAACAGGGACUUGAAAGCGAAAGUAAAGCCAGAGGAGAUCUCUCGACGCAGGACUCGGCUUGCUGAAGCGCGCACGGCAAGAGGCGAGGGGCGGCGACUG</u>AAUUGGGUGUCGACAUAGCAGAAUAGGCGUUACUCGACAGAGGAGAGCAAGAA</p>
+<figure class="book-figure" id="figure-63">
+<p><img alt="Figure 63: UTR (J) predicted UTR RNA 2º structure" loading="lazy" src="../assets/ch06/media/image50.png" /></p>
+<figcaption>
+<p><strong>Figure 63: UTR (J) predicted UTR RNA 2º structure.</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-64">
+<p><img alt="Figure 64: MSTRG.2.11" loading="lazy" src="../assets/ch06/media/image51.png" /></p>
+<figcaption>
+<p><strong>Figure 64: MSTRG.2.11.</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-65">
+<p><img alt="Figure 65: MSTRG.2.14 (GENER13, GENER14)" loading="lazy" src="../assets/ch06/media/image52.png" /></p>
+<figcaption>
+<p><strong>Figure 65: MSTRG.2.14 (GENER13, GENER14).</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<h3 id="utr-class-k-n2">UTR Class K (n=2)<a class="headerlink" href="#utr-class-k-n2" title="Permanent link">&para;</a></h3>
+<p>Min5UTR+pol 1, pol 2, vpr-tat/rev. 1<sup>st</sup> ORF starts in vpr-tat/rev.</p>
+<ul>
+<li>
+<p>MSTRG.2.23</p>
+</li>
+<li>
+<p>MSTRG.2.29</p>
+</li>
+</ul>
+<p>&gt;Class_K_MSTRG.2.23_min5UTR+pol,pol/vif,vpr</p>
+<p><u>GGGUCUCUCUGGUUAGACCAGAUCUGAGCCUGGGAGCUCUCUGGCUAACUAGGGAACCCACUGCUUAAGCCUCAAUAAAGCUUGCCUUGAGUGCUCAAAGUAGUGUGUGCCCGUCUGUUGUGUGACUCUGGUAACUAGAGAUCCCUCAGACCCUUUUAGUCAGUGUGGAAAAUCUCUAGCAGUGGCGCCCGAACAGGGACUUGAAAGCGAAAGUAAAGCCAGAGGAGAUCUCUCGACGCAGGACUCGGCUUGCUGAAGCGCGCACGGCAAGAGGCGAGGGGCGGCGACUG</u>GGACAGCAGAGAUCCAGUUUGGAAAGGACCAGCAAAGCUCCUCUGGAAAGGUGAAGGGGCAGUAGUAAUACAAGAUAAUAGUGACAUAAAAGUAGUGCCAAGAAGAAAAGCAAAGAUCAUCAGGGAUUAUGGAAAACAGAUGGCAGAAUUGGGUGUCGACAUAGCAGAAUAGGCGUUACUCGACAGAGGAGAGCAAGAA</p>
+<figure class="book-figure" id="figure-66">
+<p><img alt="Figure 66: UTR (K) predicted UTR RNA 2º structure" loading="lazy" src="../assets/ch06/media/image53.png" /></p>
+<figcaption>
+<p><strong>Figure 66: UTR (K) predicted UTR RNA 2º structure.</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-67">
+<p><img alt="Figure 67: MSTRG.2.23" loading="lazy" src="../assets/ch06/media/image54.png" /></p>
+<figcaption>
+<p><strong>Figure 67: MSTRG.2.23.</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-68">
+<p><img alt="Figure 68: MSTRG.2.29 (GENER13, GENER14)" loading="lazy" src="../assets/ch06/media/image55.png" /></p>
+<figcaption>
+<p><strong>Figure 68: MSTRG.2.29 (GENER13, GENER14).</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<h3 id="utr-class-l-n2">UTR Class L (n=2)<a class="headerlink" href="#utr-class-l-n2" title="Permanent link">&para;</a></h3>
+<p>Min5UTR+pol 1, vpr-tat/rev. 1<sup>st</sup> ORF starts in vpr-tat/rev.</p>
+<ul>
+<li>
+<p>MSTRG.2.12</p>
+</li>
+<li>
+<p>MSTRG.2.21</p>
+</li>
+</ul>
+<p>&gt;Class_L_MSTRG.2.12_min5UTR+pol,vpr</p>
+<p><u>GGGUCUCUCUGGUUAGACCAGAUCUGAGCCUGGGAGCUCUCUGGCUAACUAGGGAACCCACUGCUUAAGCCUCAAUAAAGCUUGCCUUGAGUGCUCAAAGUAGUGUGUGCCCGUCUGUUGUGUGACUCUGGUAACUAGAGAUCCCUCAGACCCUUUUAGUCAGUGUGGAAAAUCUCUAGCAGUGGCGCCCGAACAGGGACUUGAAAGCGAAAGUAAAGCCAGAGGAGAUCUCUCGACGCAGGACUCGGCUUGCUGAAGCGCGCACGGCAAGAGGCGAGGGGCGGCGACUG</u>GGACAGCAGAGAUCCAGUUUGGAAAGGACCAGCAAAGCUCCUCUGGAAAGAAUUGGGUGUCGACAUAGCAGAAUAGGCGUUACUCGACAGAGGAGAGCAAGAA</p>
+<figure class="book-figure" id="figure-69">
+<p><img alt="Figure 69: UTR (L) predicted UTR RNA 2º structure" loading="lazy" src="../assets/ch06/media/image56.png" /></p>
+<figcaption>
+<p><strong>Figure 69: UTR (L) predicted UTR RNA 2º structure.</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-70">
+<p><img alt="Figure 70: MSTRG.2.12" loading="lazy" src="../assets/ch06/media/image57.png" /></p>
+<figcaption>
+<p><strong>Figure 70: MSTRG.2.12.</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-71">
+<p><img alt="Figure 71: MSTRG.2.21 (GENER13, GENER14)" loading="lazy" src="../assets/ch06/media/image58.png" /></p>
+<figcaption>
+<p><strong>Figure 71: MSTRG.2.21 (GENER13, GENER14).</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<h3 id="utr-class-m-n2">UTR Class M (n=2)<a class="headerlink" href="#utr-class-m-n2" title="Permanent link">&para;</a></h3>
+<p>Min5UTR+pol 1, tat/rev. 1<sup>st</sup> ORF starts after tat/rev.</p>
+<ul>
+<li>
+<p>MSTRG.2.8</p>
+</li>
+<li>
+<p>MSTRG.2.10</p>
+</li>
+</ul>
+<p>&gt;Class_M_MSTRG.2.8_min5UTR+pol,tat/rev</p>
+<p><u>GGGUCUCUCUGGUUAGACCAGAUCUGAGCCUGGGAGCUCUCUGGCUAACUAGGGAACCCACUGCUUAAGCCUCAAUAAAGCUUGCCUUGAGUGCUCAAAGUAGUGUGUGCCCGUCUGUUGUGUGACUCUGGUAACUAGAGAUCCCUCAGACCCUUUUAGUCAGUGUGGAAAAUCUCUAGCAGUGGCGCCCGAACAGGGACUUGAAAGCGAAAGUAAAGCCAGAGGAGAUCUCUCGACGCAGGACUCGGCUUGCUGAAGCGCGCACGGCAAGAGGCGAGGGGCGGCGACUG</u>GGACAGCAGAGAUCCAGUUUGGAAAGGACCAGCAAAGCUCCUCUGGAAAGGAAGAAGCGGAGACAGCGACGAAGAGCUCAUCAGAACAGUCAGACUCAUCAAGCUUCUCUAUCAAAGCA</p>
+<figure class="book-figure" id="figure-72">
+<p><img alt="Figure 72: UTR (M) predicted UTR RNA 2º structure" loading="lazy" src="../assets/ch06/media/image59.png" /></p>
+<figcaption>
+<p><strong>Figure 72: UTR (M) predicted UTR RNA 2º structure.</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-73">
+<p><img alt="Figure 73: UTR (M) contains a predicted pseudoknot" loading="lazy" src="../assets/ch06/media/image60.png" /></p>
+<figcaption>
+<p><strong>Figure 73: UTR (M) contains a predicted pseudoknot.</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-74">
+<p><img alt="Figure 74: MSTRG.2.8" loading="lazy" src="../assets/ch06/media/image61.png" /></p>
+<figcaption>
+<p><strong>Figure 74: MSTRG.2.8.</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-75">
+<p><img alt="Figure 75: MSTRG.2.10" loading="lazy" src="../assets/ch06/media/image62.png" /></p>
+<figcaption>
+<p><strong>Figure 75: MSTRG.2.10.</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<h3 id="utr-class-n-n1">UTR Class N (n=1)<a class="headerlink" href="#utr-class-n-n1" title="Permanent link">&para;</a></h3>
+<p>Min5UTR+pol 1, vif 2, <strong>vif-vpr</strong>. 1<sup>st</sup> ORF starts in vif-vpr.</p>
+<ul>
+<li>MSTRG.2.13</li>
+</ul>
+<p>&gt;Class_N_MSTRG.2.13_min5UTR+pol,vif,tat/rev</p>
+<p><u>GGGUCUCUCUGGUUAGACCAGAUCUGAGCCUGGGAGCUCUCUGGCUAACUAGGGAACCCACUGCUUAAGCCUCAAUAAAGCUUGCCUUGAGUGCUCAAAGUAGUGUGUGCCCGUCUGUUGUGUGACUCUGGUAACUAGAGAUCCCUCAGACCCUUUUAGUCAGUGUGGAAAAUCUCUAGCAGUGGCGCCCGAACAGGGACUUGAAAGCGAAAGUAAAGCCAGAGGAGAUCUCUCGACGCAGGACUCGGCUUGCUGAAGCGCGCACGGCAAGAGGCGAGGGGCGGCGACUG</u>GGACAGCAGAGAUCCAGUUUGGAAAGGACCAGCAAAGCUCCUCUGGAAAGAAUCUGCUAUAAGAAAUACCAUAUUAGGACGUAUAGUUAGUCCUAGGUGUGAAUAUCAAGCAGGACAUAACAAG</p>
+<figure class="book-figure" id="figure-76">
+<p><img alt="Figure 76: UTR (N) predicted UTR RNA 2º structure" loading="lazy" src="../assets/ch06/media/image63.png" /></p>
+<figcaption>
+<p><strong>Figure 76: UTR (N) predicted UTR RNA 2º structure.</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-77">
+<p><img alt="Figure 77: MSTRG.2.13 (GENER13, GENER14)" loading="lazy" src="../assets/ch06/media/image64.png" /></p>
+<figcaption>
+<p><strong>Figure 77: MSTRG.2.13 (GENER13, GENER14).</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<h3 id="utr-class-o-n1">UTR Class O (n=1)<a class="headerlink" href="#utr-class-o-n1" title="Permanent link">&para;</a></h3>
+<p>Min5UTR+pol 1, pol 2, vif 2). 1<sup>st</sup> ORF starts in pol 2.</p>
+<ul>
+<li>MSTRG.2.28</li>
+</ul>
+<p>&gt;Class_O_MSTRG.2.28_min5UTR+NCE (pol,pol/vif,vif)</p>
+<p><u>GGGUCUCUCUGGUUAGACCAGAUCUGAGCCUGGGAGCUCUCUGGCUAACUAGGGAACCCACUGCUUAAGCCUCAAUAAAGCUUGCCUUGAGUGCUCAAAGUAGUGUGUGCCCGUCUGUUGUGUGACUCUGGUAACUAGAGAUCCCUCAGACCCUUUUAGUCAGUGUGGAAAAUCUCUAGCAGUGGCGCCCGAACAGGGACUUGAAAGCGAAAGUAAAGCCAGAGGAGAUCUCUCGACGCAGGACUCGGCUUGCUGAAGCGCGCACGGCAAGAGGCGAGGGGCGGCGACUG</u>GGACAGCAGAGAUCCAGUUUGGAAAGGACCAGCAAAGCUCCUCUGGAAAGGUGAAGGGGCAGUAGUAAUACAAGAUAAUAGUGACAUAAAAGUAGUGCCAAGAAGAAAAGCAAAGAUCAUCAGGGAUUAUGGAAAACAGAUGGCAGAAUCUGCUAUAAGAAAUACCAUAUUAGGACGUAUAGUUAGUCCUAGGUGUGAAUAUCAAGCAGGACAUAACAAG</p>
+<figure class="book-figure" id="figure-78">
+<p><img alt="Figure 78: UTR (O) predicted UTR RNA 2º structure" loading="lazy" src="../assets/ch06/media/image65.png" /></p>
+<figcaption>
+<p><strong>Figure 78: UTR (O) predicted UTR RNA 2º structure.</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-79">
+<p><img alt="Figure 79: MSTRG.2.28 (GENER12)" loading="lazy" src="../assets/ch06/media/image66.png" /></p>
+<figcaption>
+<p><strong>Figure 79: MSTRG.2.28 (GENER12).</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-80">
+<figcaption>
+<p><strong>Figure 80: GENER12 amino acid sequence.</strong></p>
+<p>&gt;HIV-1_NL4-3_GENER12</p>
+<p><span class="mark">MAESAIRNTILGRIVSPRCEYQAGHNKVGSLQYLALAALIKPKQIKPPLPSVRKLTEDRWNKPQKTKGHRGSHTMNGH</span>*</p>
+<p>&gt;HIV-1_NL4-3_Vif</p>
+<p>MENRWQVMIVWQVDRMRINTWKRLVKHHMYISRKAKDWFYRHHYESTNPKISSEVHIPLGDAKLVITTYWGLHTGERDWHLGQGVSIEWRKKRYSTQVDPDLADQLIHLHYFDCFS<span class="mark">ESAIRNTILGRIVSPRCEYQAGHNKVGSLQYLALAALIKPKQIKPPLPSVRKLTEDRWNKPQKTKGHRGSHTMNGH</span>*</p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+<p>FASTA naming convention below: virus_strain_orf-protein. <span class="mark">Green</span> amino acids are conserved. <span class="mark">Fuchsia</span> are new. +1 frame. GENER12 is a truncated Vif with c-terminus is intact.</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-81">
+<p><img alt="Figure 81: GENER12 predicted protein structure." loading="lazy" src="../assets/ch06/media/image67.png" /></p>
+<figcaption>
+<p><strong>Figure 81: GENER12 predicted protein structure.</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<h3 id="utr-class-p-n2">UTR Class P (n=2)<a class="headerlink" href="#utr-class-p-n2" title="Permanent link">&para;</a></h3>
+<p>Min5UTR+pol 1, vif 2, vpr-tat/rev. 1<sup>st</sup> ORF starts in vpr-tat/rev.</p>
+<ul>
+<li>
+<p>MSTRG.2.20</p>
+</li>
+<li>
+<p>MSTRG.2.27</p>
+</li>
+</ul>
+<p>&gt;Class_P_MSTRG.2.20_min5UTR+pol,vif,vpr</p>
+<p><u>GGGUCUCUCUGGUUAGACCAGAUCUGAGCCUGGGAGCUCUCUGGCUAACUAGGGAACCCACUGCUUAAGCCUCAAUAAAGCUUGCCUUGAGUGCUCAAAGUAGUGUGUGCCCGUCUGUUGUGUGACUCUGGUAACUAGAGAUCCCUCAGACCCUUUUAGUCAGUGUGGAAAAUCUCUAGCAGUGGCGCCCGAACAGGGACUUGAAAGCGAAAGUAAAGCCAGAGGAGAUCUCUCGACGCAGGACUCGGCUUGCUGAAGCGCGCACGGCAAGAGGCGAGGGGCGGCGACUG</u>GGACAGCAGAGAUCCAGUUUGGAAAGGACCAGCAAAGCUCCUCUGGAAAGAAUCUGCUAUAAGAAAUACCAUAUUAGGACGUAUAGUUAGUCCUAGGUGUGAAUAUCAAGCAGGACAUAACAAGAAUUGGGUGUCGACAUAGCAGAAUAGGCGUUACUCGACAGAGGAGAGCAAGAA</p>
+<figure class="book-figure" id="figure-82">
+<p><img alt="Figure 82: UTR (P) predicted UTR RNA 2º structure" loading="lazy" src="../assets/ch06/media/image68.png" /></p>
+<figcaption>
+<p><strong>Figure 82: UTR (P) predicted UTR RNA 2º structure.</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-83">
+<p><img alt="Figure 83: MSTRG.2.20" loading="lazy" src="../assets/ch06/media/image69.png" /></p>
+<figcaption>
+<p><strong>Figure 83: MSTRG.2.20.</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-84">
+<p><img alt="Figure 84: MSTRG.2.27 (GENER13, GENER14)" loading="lazy" src="../assets/ch06/media/image70.png" /></p>
+<figcaption>
+<p><strong>Figure 84: MSTRG.2.27 (GENER13, GENER14).</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<h3 id="utr-class-q-n1">UTR Class Q (n=1)<a class="headerlink" href="#utr-class-q-n1" title="Permanent link">&para;</a></h3>
+<p>Min5UTR+pol 1, vif 2, vif-vpr. 1<sup>st</sup> ORF starts in vif-vpr.</p>
+<ul>
+<li>MSTRG.2.22</li>
+</ul>
+<p>&gt;Class_Q_MSTRG.2.22_min5UTR+pol,vif</p>
+<p><u>GGGUCUCUCUGGUUAGACCAGAUCUGAGCCUGGGAGCUCUCUGGCUAACUAGGGAACCCACUGCUUAAGCCUCAAUAAAGCUUGCCUUGAGUGCUCAAAGUAGUGUGUGCCCGUCUGUUGUGUGACUCUGGUAACUAGAGAUCCCUCAGACCCUUUUAGUCAGUGUGGAAAAUCUCUAGCAGUGGCGCCCGAACAGGGACUUGAAAGCGAAAGUAAAGCCAGAGGAGAUCUCUCGACGCAGGACUCGGCUUGCUGAAGCGCGCACGGCAAGAGGCGAGGGGCGGCGACUG</u>GGACAGCAGAGAUCCAGUUUGGAAAGGACCAGCAAAGCUCCUCUGGAAAGAAUCUGCUAUAAGAAAUACCAUAUUAGGACGUAUAGUUAGUCCUAGGUGUGAAUAUCAAGCAGGACAUAACAAG</p>
+<figure class="book-figure" id="figure-85">
+<p><img alt="Figure 85: UTR (Q) predicted UTR RNA 2º structure" loading="lazy" src="../assets/ch06/media/image71.png" /></p>
+<figcaption>
+<p><strong>Figure 85: UTR (Q) predicted UTR RNA 2º structure.</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-86">
+<p><img alt="Figure 86: MSTRG.2.22" loading="lazy" src="../assets/ch06/media/image72.png" /></p>
+<figcaption>
+<p><strong>Figure 86: MSTRG.2.22.</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+</figure>
+<h3 id="new-hiv-1-isoform-naming-convention-prototype">New HIV-1 isoform naming convention (prototype)<a class="headerlink" href="#new-hiv-1-isoform-naming-convention-prototype" title="Permanent link">&para;</a></h3>
+<p>The way the Nguyen et al. 2020 group defined their transcripts is not easily adaptable to other HIV-1 strains. They also do not define ORFs or identify putative proteins.</p>
+<p>For the time being, we recommend keeping the MSTRG.n.m names for shorthand, where n and m are isoform groups and subgroups. These names are StringTie -merge default outputs and will be distinct if another user applies our method to different data. However, the MSTRG names are ambiguous once one considers isoforms from multiple viral strains or isolates. To redress such ambiguity, we propose a formal mRNA naming convention: HIV-1_NL4-3_UTR-CLASS_ORF-CLASS_segment-string (1 representing if a given segment is expressed; 0 if not)_variantinfo. E,g., the full-length unspliced isoform (currently MSTRG.2.4) would be:</p>
+<p>VIR(HIV-1)_ISO(NL4-3)_UTR(A)_ORF(A)_(1,1,1,1,1,1,1,1,1,1,1).</p>
+<p>This nomenclature provides unambiguous info in a compact name string. Better than "<em>nef</em>", which has 4 identical ORFs across 4 distinct mRNAs:</p>
+<ul>
+<li>
+<p>MSTRG.2.8 (UTR M) </p>
+</li>
+<li>
+<p>MSTRG.2.9 (UTR E) </p>
+</li>
+<li>
+<p>MSTRG.2.6 (UTR F) </p>
+</li>
+<li>
+<p>MSTRG.2.2 (UTR D) </p>
+</li>
+</ul>
+<p>The <em>nef</em> gene is important because it is attached to every complete HIV transcript. Those four <em>nef</em>-only mRNAs would be:</p>
+<ul>
+<li>
+<p>VIR(HIV-1)_ISO(NL4-3)_UTR(M)_ORF(H)_(1,0,1,0,0,0,0,0,1,0,1)</p>
+</li>
+<li>
+<p>VIR(HIV-1)_ISO(NL4-3)_UTR(E)_ORF(H)_(1,0,1,0,0,1,0,0,1,0,1)</p>
+</li>
+<li>
+<p>VIR(HIV-1)_ISO(NL4-3)_UTR(F)_ORF(H) (1,0,0,0,0,1,0,0,1,0,1)</p>
+</li>
+<li>
+<p>VIR(HIV-1)_ISO(NL4-3)_UTR(D)_ORF(H)_(1,0,0,0,0,0,0,0,1,0,1)</p>
+</li>
+</ul>
+<p>These would all make Nef protein.</p>
+<figure class="book-table" id="table-1">
+<figcaption>
+<p><strong>Table 1: HIV-1 NL4-3 transcript models, segment content, UTR and ORF classes, proposed naming convention.</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+<p><img alt="Table 1: HIV-1 NL4-3 transcript models, segment content, UTR and ORF classes, proposed naming convention" loading="lazy" src="../assets/ch06/media/image73.png" /></p>
+</figure>
+<figure class="book-figure" id="figure-87">
+<p><img alt="Figure 87: HIV-1 NL4-3 UTRs exhibit RNA binding protein motifs" loading="lazy" src="../assets/ch06/media/image74.png" /></p>
+<figcaption>
+<p><strong>Figure 87: HIV-1 NL4-3 UTRs exhibit RNA binding protein motifs.</strong></p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+<p>Threshold = 0.8 or 80% (range 0-1 or 0-100%). Returns hits &gt; 0.8 or 80%. <a href="http://rbpdb.ccbr.utoronto.ca/index.php">http://rbpdb.ccbr.utoronto.ca/index.php</a> (Cook et al. 2011). Right now, we don't know if UTRs do anything. This may be updated once further studies are performed. It is important to know what real HIV isoforms look like. These UTRs are the main parts of the HIV-1 mRNAS that help StringTie uses to distinguish between isoforms. Working document “RNA binding protein prediction HIV RNA.xlsx.”</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-88">
+<p><img alt="Figure 88: HIV-1 mRNAs are polycistronic" loading="lazy" src="../assets/ch06/media/image75.png" /></p>
+<figcaption>
+<p><strong>Figure 88: HIV-1 mRNAs are polycistronic.</strong></p>
+<p>It is important to consider that HIV-1 mRNAs are polycistronic when attempting transcript profiling. Positional effects may limit the expression of downstream ORFs HIV-1 (e.g., Vpu/Env (S Schwartz et al. 1990) and Tat and Rev/Nef (Schwartz et al. 1992)).</p>
+</figcaption>
+</figure>
+<h4 id="figure-transcript-profiling-of-hiv-1-nl4-3-mrna-with-bespoke-transcript-models">FIGURE : Transcript profiling of HIV-1 NL4-3 mRNA with bespoke transcript models<a class="headerlink" href="#figure-transcript-profiling-of-hiv-1-nl4-3-mrna-with-bespoke-transcript-models" title="Permanent link">&para;</a></h4>
+<p><img alt="FIGURE : Transcript profiling of HIV-1 NL4-3 mRNA with bespoke transcript models" loading="lazy" src="../assets/ch06/media/image76.png" /></p>
+<h3 id="discussion">Discussion<a class="headerlink" href="#discussion" title="Permanent link">&para;</a></h3>
+<p>Five new integrases (GENER4-integrase, GENER5-integrase, GENER6/8-integrase, GENER7-integrase, GENER9-integrase) were identified. In theory, most integrase (IN) antibodies should be able to pick up GENER-Gag-Pols (GENER4-Gag-Pol, GENER5-Gag-Pol, GENER6/8-Gag-Pol, GENER7-Gag-Pol, GENER9-Gag-Pol) or their protease cleavage products GENER4-integrase, GENER5-integrase, GENER6/8-integrase, GENER7-integrase, GENER9-integrase if in infected human cells or samples with sufficient mature virion. Past evidence for new integrases include western blots from AIDS Reagent integrase (IN) antibodies (Nilsen et al. 1996). However, earlier methods such as radio immunoassays lacked the resolving power and dynamic range to detect many products (Gorny et al. 1989). Unfortunately, blots were also often run for lower molecular weights (Gorny et al. 1989). Protein blots (e.g., (Simm et al. 1995)) generally have low resolving power compared to nucleic acid sequencing, but the two are not directly comparable. Protein work is therefore currently limited.</p>
+<p>In the following case (Sakai et al. 1991), we might expect to see a signal from Vif, GENER6/8-Gag-Pol, GENER6/8-IN, and GENER12. Considering (<strong><a href="#supplemental-table-3">Supplemental Table 3</a>: HIV-1 NL4-3 gene product metrics and their predicted locations</strong>), these might have molecular weights of 22.7 kilodalton (kDa), 165.6 kDa, 35.9 kDa, and 8.7 kDa, respectively. These share the <strong><u>bold underlined</u></strong> segment:</p>
+<p>&gt;GENER6/8-integrase = FLDGIDKAQEEHEKYHSNWRAMASDFNLPPVVAKEIVASCDKCQLKGEAMHGQVDCSPGIWQLDCTHLEGKVILVAVHVASGYIEAEVIPAETGQETAYFLLKLAGRWPVKTVHTDNGSNFTSTTVKAACWWAGIKQEFGIPYNPQSQGVIESMNKELKKIIGQVRDQAEHLKTAVQMAVFIHNFKRKGGIGGYSAGERIVDIIATDIQTKELQKQITKIQNFRVYYRDSRDPVWKGPAKLLWKESAIRNTILGRIVSPRCEYQAGHNKVGSLQYLALAALIKPKQIKPPLPSVRKL<strong><u>TEDRWNKPQKTKGHR</u></strong>GSHTMNGH*</p>
+<p>It is also common practice to show only individual bands. For example, in Anti-HIV-1 Vif Antibody (319): sc-69731 <a href="https://datasheets.scbt.com/sc-69731.pdf">https://datasheets.scbt.com/sc-69731.pdf</a>, the following sources are cited:</p>
+<ol>
+<li>
+<p>Valera, M.S., de Armas-Rillo, L., Barroso-González, J., Ziglio, S., Batisse, J., Dubois, N., Marrero-Hernández, S., Borel, S., García-Expósito, L., Biard- Piechaczyk, M., Paillart, J.C. and Valenzuela-Fernández, A. 2015. The HDAC6/APOBEC3G complex regulates HIV-1 infectiveness by inducing Vif autophagic degradation. Retrovirology 12: 53.</p>
+</li>
+<li>
+<p>Augustine, T., Chaudhary, P., Gupta, K., Islam, S., Ghosh, P., Santra, M.K. and Mitra, D. 2017. Cyclin F/FBXO1 interacts with HIV-1 viral infectivity factor (Vif) and restricts progeny virion infectivity by ubiquitination and proteasomal degradation of Vif protein through SCFcyclin F E3 ligase machinery. J. Biol. Chem. 292: 5349-5363.</p>
+</li>
+<li>
+<p>Evans, E.L., Becker, J.T., Fricke, S.L., Patel, K. and Sherer, N.M. 2018. HIV-1 Vif’s capacity to manipulate the cell cycle is species specific. J. Virol. 92. pii: e02102-e02117.</p>
+</li>
+<li>
+<p><strong>Marrero-Hernández, S., Márquez-Arce, D., Cabrera-Rodríguez, R., Estévez- Herrera, J., Pérez-Yanes, S., Barroso-González, J., Madrid, R., Machado, J.D., Blanco, J. and Valenzuela-Fernández, A. 2019. HIV-1 Nef targets HDAC6 to assure viral production and virus infection. Front. Microbiol. 10: 2437</strong>.</p>
+</li>
+</ol>
+<p>Only 1-3 show predicted band. Likely for sake of space, but at expense of any “nonspecific” bands which might be vif-containing HIV-1 protein isoforms. However, occasionally you can find multiple bands. For example, <a href="#figure-6">Figure 6</a> in Marrero-Hernández et al.</p>
+<figure class="book-table" id="table-2">
+<figcaption>
+<p><strong>Table 2: Predicted protein domains conserved across in new HIV-1 NL4-3 putative open reading frames.</strong></p>
+<p>trRosetta (Yang et al. 2020).</p>
+</figcaption>
+<p><img alt="Table 2: Predicted protein domains conserved across in new HIV-1 NL4-3 putative open reading frames." loading="lazy" src="../assets/ch06/media/image77.png" /></p>
+</figure>
+<figure class="book-figure" id="figure-89">
+<p><img alt="Figure 89: Putative ORFs retain relative synonymous codon usage" loading="lazy" src="../assets/ch06/media/image78.png" /></p>
+<figcaption>
+<p><strong>Figure 89: Putative ORFs retain relative synonymous codon usage.</strong></p>
+</figcaption>
+</figure>
+<figure class="book-table" id="table-3">
+<figcaption>
+<p><strong>Table 3: HIV-1, SIV<sub>cpz</sub>, and SIV<sub>gor</sub> genomic sequences used to evaluate conservation of HIV-1 NL4-3 ORFs.</strong></p>
+<p>(Sievers et al. 2011)</p>
+<p>“SnapGene Clustal Omega Conservation Scores (0-100, 100 is perfect).xlsx”</p>
+</figcaption>
+<p><img alt="Table 3: HIV-1, SIV&lt;sub&gt;cpz&lt;/sub&gt;, and SIV&lt;sub&gt;gor&lt;/sub&gt; genomic sequences used to evaluate conservation of HIV-1 NL4-3 ORFs." loading="lazy" src="../assets/ch06/media/image79.png" /></p>
+</figure>
+<figure class="book-figure" id="figure-90">
+<p><img alt="Figure 90: GENER1A-p17 is conserved across HIV-1, SIV&lt;sub&gt;cpz&lt;/sub&gt;, and SIV&lt;sub&gt;gor&lt;/sub&gt;." loading="lazy" src="../assets/ch06/media/image80.png" /></p>
+<figcaption>
+<p><strong>Figure 90: GENER1A-p17 is conserved across HIV-1, SIV<sub>cpz</sub>, and SIV<sub>gor</sub>.</strong></p>
+<p><strong>GENER1A-p17 is conserved across HIV-1, SIVcpz and SIVgor.</strong></p>
+<p>The GENER1A-p17 amino acid sequence was too small to produce a meaningful tree (Katoh et al. 2017). Three A3 sequences were clipped from the above multisequence alignment cartoon because they were incidentally out of frame. This brought the total number of primate immunodeficiency virus sequences down from 94 to 91. The resulting figure summarizes the homogeneity of the sample, evidenced by consistent vertical stripes.</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-91">
+<p><img alt="Figure 91: GENER2 is conserved across HIV-1, SIV&lt;sub&gt;cpz&lt;/sub&gt; and SIV&lt;sub&gt;gor&lt;/sub&gt;." loading="lazy" src="../assets/ch06/media/image81.png" /></p>
+<figcaption>
+<p><strong>Figure 91: GENER2 is conserved across HIV-1, SIV<sub>cpz</sub> and SIV<sub>gor</sub>.</strong></p>
+<p>Unrooted tree. Gray bar is substitutions per site (bar length 0.1). Insert represents MSA cartoon. Number of sequences = 94.</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-92">
+<p><img alt="Figure 92: GENER3 is conserved across HIV-1, SIV&lt;sub&gt;cpz&lt;/sub&gt; and SIV&lt;sub&gt;gor&lt;/sub&gt;." loading="lazy" src="../assets/ch06/media/image82.png" /></p>
+<figcaption>
+<p><strong>Figure 92: GENER3 is conserved across HIV-1, SIV<sub>cpz</sub> and SIV<sub>gor</sub>.</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-93">
+<p><img alt="Figure 93: p31 integrase (IN) is conserved across HIV-1, SIV&lt;sub&gt;cpz&lt;/sub&gt; and SIV&lt;sub&gt;gor&lt;/sub&gt;." loading="lazy" src="../assets/ch06/media/image83.png" /></p>
+<figcaption>
+<p><strong>Figure 93: p31 integrase (IN) is conserved across HIV-1, SIV<sub>cpz</sub> and SIV<sub>gor</sub>.</strong></p>
+<p>Three sequences were removed due to a frameshift proximal to the translation initiation site: A2_CD_97, CPZ_CM_98, K_CD_97. C_BR_92 was retained despite a distal frame shift. N=91.</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-94">
+<p><img alt="Figure 94: GENER4-IN is conserved across HIV-1, SIV&lt;sub&gt;cpz&lt;/sub&gt; and SIV&lt;sub&gt;gor&lt;/sub&gt;." loading="lazy" src="../assets/ch06/media/image84.png" /></p>
+<figcaption>
+<p><strong>Figure 94: GENER4-IN is conserved across HIV-1, SIV<sub>cpz</sub> and SIV<sub>gor</sub>.</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-95">
+<p><img alt="Figure 95: GENER5-IN is conserved across HIV-1, SIV&lt;sub&gt;cpz&lt;/sub&gt; and SIV&lt;sub&gt;gor&lt;/sub&gt;." loading="lazy" src="../assets/ch06/media/image85.png" /></p>
+<figcaption>
+<p><strong>Figure 95: GENER5-IN is conserved across HIV-1, SIV<sub>cpz</sub> and SIV<sub>gor</sub>.</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-96">
+<p><img alt="Figure 96: GENER6/8-IN is conserved across HIV-1, SIV&lt;sub&gt;cpz&lt;/sub&gt; and SIV&lt;sub&gt;gor&lt;/sub&gt;." loading="lazy" src="../assets/ch06/media/image86.png" /></p>
+<figcaption>
+<p><strong>Figure 96: GENER6/8-IN is conserved across HIV-1, SIV<sub>cpz</sub> and SIV<sub>gor</sub>.</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-97">
+<p><img alt="Figure 97: GENER7-IN is conserved across HIV-1, SIV&lt;sub&gt;cpz&lt;/sub&gt; and SIV&lt;sub&gt;gor&lt;/sub&gt;." loading="lazy" src="../assets/ch06/media/image87.png" /></p>
+<figcaption>
+<p><strong>Figure 97: GENER7-IN is conserved across HIV-1, SIV<sub>cpz</sub> and SIV<sub>gor</sub>.</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-98">
+<p><img alt="Figure 98: GENER9-IN is conserved across HIV-1, SIV&lt;sub&gt;cpz&lt;/sub&gt; and SIV&lt;sub&gt;gor&lt;/sub&gt;." loading="lazy" src="../assets/ch06/media/image88.png" /></p>
+<figcaption>
+<p><strong>Figure 98: GENER9-IN is conserved across HIV-1, SIV<sub>cpz</sub> and SIV<sub>gor</sub>.</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-99">
+<p><img alt="Figure 99: GENER10 is conserved across HIV-1, SIV&lt;sub&gt;cpz&lt;/sub&gt; and SIV&lt;sub&gt;gor&lt;/sub&gt;." loading="lazy" src="../assets/ch06/media/image89.png" /></p>
+<figcaption>
+<p><strong>Figure 99: GENER10 is conserved across HIV-1, SIV<sub>cpz</sub> and SIV<sub>gor</sub>.</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-100">
+<p><img alt="Figure 100: GENER11 is conserved across HIV-1, SIV&lt;sub&gt;cpz&lt;/sub&gt; and SIV&lt;sub&gt;gor&lt;/sub&gt;." loading="lazy" src="../assets/ch06/media/image90.png" /></p>
+<figcaption>
+<p><strong>Figure 100: GENER11 is conserved across HIV-1, SIV<sub>cpz</sub> and SIV<sub>gor</sub>.</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-101">
+<p><img alt="Figure 101: GENER12 is conserved across HIV-1, SIV&lt;sub&gt;cpz&lt;/sub&gt; and SIV&lt;sub&gt;gor&lt;/sub&gt;." loading="lazy" src="../assets/ch06/media/image91.png" /></p>
+<figcaption>
+<p><strong>Figure 101: GENER12 is conserved across HIV-1, SIV<sub>cpz</sub> and SIV<sub>gor</sub>.</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-102">
+<p><img alt="Figure 102: GENER13 is conserved across HIV-1, SIV&lt;sub&gt;cpz&lt;/sub&gt; and SIV&lt;sub&gt;gor&lt;/sub&gt;." loading="lazy" src="../assets/ch06/media/image92.png" /></p>
+<figcaption>
+<p><strong>Figure 102: GENER13 is conserved across HIV-1, SIV<sub>cpz</sub> and SIV<sub>gor</sub>.</strong></p>
+<p>The GENER13 amino acid sequence was too small to produce a meaningful tree (Katoh et al. 2017). The resulting figure summarizes the homogeneity of the sample, evidenced by consistent vertical stripes. The following were removed from the figure because they were out of frame: CPZ_TZ_06_TAN5_JN091691, CPZ_TZ_00_TAN1_AF447763, CPZ_TZ_01_TAN2_EF394357, CPZ_TZ_02_TAN3_1_DQ374658, CPZ_TZ_06_SIVcpzTAN13_JQ768416, CPZ_TZ_09_UG38_JN091690. They were retained for the conservation score reported elsewhere.</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-103">
+<p><img alt="Figure 103: GENER14 is conserved across HIV-1, SIV&lt;sub&gt;cpz&lt;/sub&gt; and SIV&lt;sub&gt;gor&lt;/sub&gt;." loading="lazy" src="../assets/ch06/media/image93.png" /></p>
+<figcaption>
+<p><strong>Figure 103: GENER14 is conserved across HIV-1, SIV<sub>cpz</sub> and SIV<sub>gor</sub>.</strong></p>
+<p>The GENER14 amino acid sequence was too small to produce a meaningful tree (Katoh et al. 2017). The resulting figure summarizes the homogeneity of the sample, evidenced by consistent vertical stripes. Rev exon 2 sequence is present in GENER4-Gag-Pol and GENER4-IN.</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-104">
+<p><img alt="Figure 104: GENER15-PR is conserved across HIV-1, SIV&lt;sub&gt;cpz&lt;/sub&gt; and SIV&lt;sub&gt;gor&lt;/sub&gt;." loading="lazy" src="../assets/ch06/media/image94.png" /></p>
+<figcaption>
+<p><strong>Figure 104: GENER15-PR is conserved across HIV-1, SIV<sub>cpz</sub> and SIV<sub>gor</sub>.</strong></p>
+<p>The GENER15-PR amino acid sequence was too small to produce a meaningful tree (Katoh et al. 2017). The resulting figure summarizes the homogeneity of the sample, evidenced by consistent vertical stripes.</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-105">
+<p><img alt="Figure 105: Gag is conserved across HIV-1, SIV&lt;sub&gt;cpz&lt;/sub&gt; and SIV&lt;sub&gt;gor&lt;/sub&gt;." loading="lazy" src="../assets/ch06/media/image95.png" /></p>
+<figcaption>
+<p><strong>Figure 105: Gag is conserved across HIV-1, SIV<sub>cpz</sub> and SIV<sub>gor</sub>.</strong></p>
+<p>Three A3 sequences and D_TZ_01 were clipped from the above multisequence alignment cartoon because they were incidentally out of frame. This brought the total number of primate immunodeficiency virus sequences down from 94 to 90. Several gorilla sequences have structural variants which are not present in chimpanzee or human.</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-106">
+<p><img alt="Figure 106: Vif is conserved across HIV-1, SIV&lt;sub&gt;cpz&lt;/sub&gt; and SIV&lt;sub&gt;gor&lt;/sub&gt;." loading="lazy" src="../assets/ch06/media/image96.png" /></p>
+<figcaption>
+<p><strong>Figure 106: Vif is conserved across HIV-1, SIV<sub>cpz</sub> and SIV<sub>gor</sub>.</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-107">
+<p><img alt="Figure 107: Vpr is conserved across HIV-1, SIV&lt;sub&gt;cpz&lt;/sub&gt; and SIV&lt;sub&gt;gor&lt;/sub&gt;." loading="lazy" src="../assets/ch06/media/image97.png" /></p>
+<figcaption>
+<p><strong>Figure 107: Vpr is conserved across HIV-1, SIV<sub>cpz</sub> and SIV<sub>gor</sub>.</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-108">
+<p><img alt="Figure 108: Vpu is conserved across HIV-1, SIV&lt;sub&gt;cpz&lt;/sub&gt; and SIV&lt;sub&gt;gor&lt;/sub&gt;." loading="lazy" src="../assets/ch06/media/image98.png" /></p>
+<figcaption>
+<p><strong>Figure 108: Vpu is conserved across HIV-1, SIV<sub>cpz</sub> and SIV<sub>gor</sub>.</strong></p>
+<p>The Vpu amino acid sequence was too small to produce a meaningful tree (Katoh et al. 2017). The resulting figure summarizes the heterogeneity of the sample, evidenced by inconsistent vertical stripes and many gaps. This is unlikely to be the result of frameshifts because upstream (Tat and Rev) and downstream (Env) ORFs are preserved.</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-109">
+<p><img alt="Figure 109: Env is conserved across HIV-1, SIV&lt;sub&gt;cpz&lt;/sub&gt; and SIV&lt;sub&gt;gor&lt;/sub&gt;." loading="lazy" src="../assets/ch06/media/image99.png" /></p>
+<figcaption>
+<p><strong>Figure 109: Env is conserved across HIV-1, SIV<sub>cpz</sub> and SIV<sub>gor</sub>.</strong></p>
+<p>Note gaps coincide with known hypervariable regions V1-V5.</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-110">
+<p><img alt="Figure 110: Nef is conserved across HIV-1, SIV&lt;sub&gt;cpz&lt;/sub&gt; and SIV&lt;sub&gt;gor&lt;/sub&gt;." loading="lazy" src="../assets/ch06/media/image100.png" /></p>
+<figcaption>
+<p><strong>Figure 110: Nef is conserved across HIV-1, SIV<sub>cpz</sub> and SIV<sub>gor</sub>.</strong></p>
+<p>Four sequences were removed from final figure (tree+MSA) because they were out of frame. These were P_FR_09, P_FR_x, GOR_CM_04, and CPZ_US_85.</p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-111">
+<p><img alt="Figure 111: ASP is conserved across HIV-1, SIV&lt;sub&gt;cpz&lt;/sub&gt; and SIV&lt;sub&gt;gor&lt;/sub&gt;." loading="lazy" src="../assets/ch06/media/image101.png" /></p>
+<figcaption>
+<p><strong>Figure 111: ASP is conserved across HIV-1, SIV<sub>cpz</sub> and SIV<sub>gor</sub>.</strong></p>
+<p>Antisense protein (ASP) generally conserved in HIV-1 M B, C, D, F1, F2, G, H, J. This is more apparent in the SnapGene Clustal Omega which uses “*” for stop codons. The vertical striping and default coloration of MAFFT View</p>
+</figcaption>
+</figure>
+<h3 id="discussion-continued">Discussion (continued)<a class="headerlink" href="#discussion-continued" title="Permanent link">&para;</a></h3>
+<h4 id="new-orfs-supported-by-non-specific-bands-in-old-western-blots">New ORFs supported by “non-specific” bands in old western blots.<a class="headerlink" href="#new-orfs-supported-by-non-specific-bands-in-old-western-blots" title="Permanent link">&para;</a></h4>
+<p>See examples above and “<strong><a href="#supplemental-table-5">Supplemental Table 5</a>: Putative HIV-1 GENER-Gag-Pol-integrase proteins supported in literature.</strong>”</p>
+<h4 id="evolutionary-comparison-supports-orfs">Evolutionary comparison supports ORFs<a class="headerlink" href="#evolutionary-comparison-supports-orfs" title="Permanent link">&para;</a></h4>
+<p>Most of the new ORFs above were about as conserved across the n=94 SIV dataset as the previously described 9 sense-encoded HIV genes: <em>gag</em>, <em>gag-pol</em>, <em>vif</em>, <em>vpr</em>, <em>vpu</em>, <em>env</em>, <em>nef</em>, <em>tat</em>, and <em>rev</em>. These ORFs also had similar relative synonymous codon usages (RCSU), consistent with being from the same regulatory unit (in this case, a virus). However, this may be less informative for shorter amino acids. See Figures above.</p>
+<h4 id="bespoke-vs-general-transcript-models">Bespoke vs. general transcript models<a class="headerlink" href="#bespoke-vs-general-transcript-models" title="Permanent link">&para;</a></h4>
+<p>To date, the best long-read sequencing dataset had been the NL4-3 cDNA PCR-barcoded experiments by Nguyen et al. from 2020. However, HIV splicing studies rarely if ever included explicit transcript models, limiting the studies’ utility. Thankfully, new tools such as StringTie (Kovaka et al. 2019; Pertea et al. 2015) can model transcription directly from reads. The accuracy of such models increases with long-read input. We constructed transcript models using empirically determined StringTie settings (Gener et al. 2020) and cross-validated by inspecting mapped reads in IGV. MSTRG.1, MSTRG.3, and MSTRG.4 were removed from the final model because of redundancy with other models and incorporation of shorter reads altering apparent TSS. MSTRG.2.41 and MSTG.2.42 were removed because of incorporation of sequences with homology to host flanking sequence in pNL4-3. Reads mapping to this area cannot be distinguished between pNL4-3 transcripts or host mRNA with similar homology. MSTRG.2.16 was removed because it lacked a full set of constitutive segments (segment numbers 1, 9, and 11). The real start site in NL4-3 is confirmed to be at the beginning of 5’ R, incorporating 3 “G”. This is incorrectly noted in the HXB2 reference K03455.1. MSTRG start and stop sites were modified to include full R elements. Note that the R sequence in NL4-3 differs. NL4-3 is a synthetic recombinant, with NY5 5’ R and LAV/HXB2 3’ R. Final models were not yet adjusted for this as GTF. They were adjusted as .dna. TSS = transcription start site. The resulting bespoke NL4-3 transcript model represents a “plug-and-play” transcript model set as .gtf file that is appropriate for use to aid in mRNA detection and quantification all NL4-3 RNA-seq experiments.</p>
+<h4 id="locus-segmentation-enables-generalizability-of-models">Locus Segmentation enables generalizability of models.<a class="headerlink" href="#locus-segmentation-enables-generalizability-of-models" title="Permanent link">&para;</a></h4>
+<p>Locus segments may be mapped onto non-NL4-3 sequences to create generalized models for a given HIV or HIV-like virus. Inputs for such an endeavor are 1.) HIV-1 NL4-3 mRNA Atlas v1.1’s 11 locus segments as nucleic acid FASTA, and 2.) a target HIV genome assembly. We present these new models as plug-and-play HIV-1 transcript models for future HIV-1 work in the time that deeper complete reference-specific HIV-1 transcript models and validated transcript sets are made. Importantly, NL4-3 systems do should not need further model optimization. However, nuances in experiments (for example, cell type or other experimental conditions) might alter the mRNA profile of an HIV-infected cell, including changing amount of mRNAs described here or creating new mRNAs which may have existed below the currently observed 1/1000 abundance threshold.</p>
+<h4 id="untranslated-region-utr-and-open-reading-frames-orf-classifications-define-normal-hiv-1-nl4-3-transcriptional-landscape-and-elucidate-novel-orfs-and-putative-protein-products">Untranslated region (UTR) and open reading frames (ORF) classifications define normal HIV-1 NL4-3 transcriptional landscape and elucidate novel ORFs and putative protein products.<a class="headerlink" href="#untranslated-region-utr-and-open-reading-frames-orf-classifications-define-normal-hiv-1-nl4-3-transcriptional-landscape-and-elucidate-novel-orfs-and-putative-protein-products" title="Permanent link">&para;</a></h4>
+<p>Based on our NL4-3 transcript models, we propose two new classification systems. The UTR Classification System includes 17 Classes, UTR Class A-Q (<strong><a href="#table-1">Table 1</a>: HIV-1 NL4-3 transcript models, segment content, UTR and ORF classes, proposed naming convention</strong>). While there does not yet appear to be a functional distinction between the UTR classes, these define structural features of real HIV-1 mRNA and are used to define transcript models based on most common splice sites. On closer inspection, regions in UTRs appeared modular, only occasionally seeming to interact with neighboring predicted RNA 2º structures (<strong><a href="#figure-1">Figure 1</a>: UTR (A) predicted UTR RNA 2º structure; <a href="#figure-32">Figure 32</a>: UTR (B) predicted UTR RNA 2º structure; <a href="#figure-36">Figure 36</a>: UTR (C) predicted UTR RNA 2º structure; <a href="#figure-44">Figure 44</a>: UTR (D) predicted UTR RNA 2º structure; <a href="#figure-48">Figure 48</a>: UTR (E) predicted UTR RNA 2º structure; <a href="#figure-51">Figure 51</a>: UTR (F) predicted UTR RNA 2º structure; <a href="#figure-54">Figure 54</a>: UTR (G) predicted UTR RNA 2º structure; <a href="#figure-57">Figure 57</a>: UTR (H) predicted UTR RNA 2º structure; <a href="#figure-60">Figure 60</a>: UTR (I) predicted UTR RNA 2º structure; <a href="#figure-63">Figure 63</a>: UTR (J) predicted UTR RNA 2º structure; <a href="#figure-66">Figure 66</a>: UTR (K) predicted UTR RNA 2º structure; <a href="#figure-69">Figure 69</a>: UTR (L) predicted UTR RNA 2º structure; <a href="#figure-72">Figure 72</a>: UTR (M) predicted UTR RNA 2º structure; <a href="#figure-76">Figure 76</a>: UTR (N) predicted UTR RNA 2º structure; <a href="#figure-78">Figure 78</a>: UTR (O) predicted UTR RNA 2º structure; <a href="#figure-82">Figure 82</a>: UTR (P) predicted UTR RNA 2º structure; <a href="#figure-85">Figure 85</a>: UTR (Q) predicted UTR RNA 2º structure</strong>).</p>
+<p>The second, and arguably more interesting classification scheme is the ORF Classification System. This includes fewer classes ORF Class A-H (<strong><a href="#table-1">Table 1</a>: HIV-1 NL4-3 transcript models, segment content, UTR and ORF classes, proposed naming convention</strong>) and clarifies the past assumption about HIV mRNA being monocistronic. Class A and other are heterogeneous because of splicing downstream of 5’ UTR. Past naming conventions focused on which ORF came first (Nguyen Quang et al. 2020; Ocwieja et al. 2012; Purcell and Martin 1993) when traversing from the 5’ end to the 3’ end. That practice ignored the polycistronic nature of HIV transcripts (<strong><a href="#figure-88">Figure 88</a>: HIV-1 mRNAs are polycistronic</strong>). We provide the first clear definitions of HIV-1 mRNA transcripts that are easily redeployed to other viruses. Our method elucidated 15 new ORFs which are likely to be made (<strong><a href="#figure-2">Figure 2</a>: MSTRG.2.4 (unspliced HIV-1 NL4-3 with new ORFs)</strong> into putative proteins which had not been described previously. Both of these new classification systems offer synergistic improvements over splice site detection and/or semiquantitation (Nguyen Quang et al. 2020; Ocwieja et al. 2012; Purcell and Martin 1993) which may have been sensitive, however past methods’ relevance may have been amplified artificially by PCR and observer biases.</p>
+<p>Future endeavors may focus on stabilizing these isoforms and cloning new ORFs to determine their function. Two-dimensional polyacrylamide gel electrophoresis on HIV-1 virions offers improvement on traditional one-dimensional western blots. Mass-spec on bands/spots from cells infected with nearly full-length HIV may be performed if care is taken to spare splice junctions during peptide fractionation (Anna Malovannaya, personal communication). Additionally, top-down protease-free mass spec methods are improving and may provide another avenue to validate these new targets. We can now appreciate the rest of HIV-1’s arsenal, and can continue our efforts to dissect, better treat, and maybe one day soon cure HIV infection.</p>
+<h3 id="article-types">Article types<a class="headerlink" href="#article-types" title="Permanent link">&para;</a></h3>
+<p>Original Research Article</p>
+<h3 id="permission-to-reuse-and-copyright">Permission to reuse and Copyright<a class="headerlink" href="#permission-to-reuse-and-copyright" title="Permanent link">&para;</a></h3>
+<h5 id="creative-commons-cc-by">Creative Commons CC-BY<a class="headerlink" href="#creative-commons-cc-by" title="Permanent link">&para;</a></h5>
+<h3 id="author-contributions">Author Contributions<a class="headerlink" href="#author-contributions" title="Permanent link">&para;</a></h3>
+<p>ARG conceived of this project and performed all reanalyses. BTF provided a curated SIV and HIV-1 dataset. ARG, BTF, DPH, and JTK analyzed results. ARG drafted the manuscript. ARG, BTF, DPH, and JTK edited the manuscript. ARG, and JTK provided funding.</p>
+<h3 id="conflict-of-interest">Conflict of Interest<a class="headerlink" href="#conflict-of-interest" title="Permanent link">&para;</a></h3>
+<p>ARG received travel bursaries from Oxford Nanopore Technologies (ONT), Oxford, UK in 2019. The present work was completed independently of ONT. Other authors declare no conflict of interest.</p>
+<h3 id="funding">Funding<a class="headerlink" href="#funding" title="Permanent link">&para;</a></h3>
+<p>This work was funded in part by institutional support from Baylor College of Medicine; private funding by East Coast Oils, Inc., Jacksonville, Florida, and ARG’s own private funding. ARG also received the PFLAG of Jacksonville scholarship for multiple years. The work was also supported in part by NIH grant AI116167 to JTK.</p>
+<h3 id="data-availability">Data availability<a class="headerlink" href="#data-availability" title="Permanent link">&para;</a></h3>
+<p>The datasets generated for this study are available in GenBank with the following accessions: MZ242720, MZ242721, MZ242722, MZ242719, MZ242723, MZ242724, MZ242725, MZ242726, MZ242727, MZ242728, MZ242729, MZ242730, MZ242731, MZ242732, MZ242733, MZ242735, MZ242736, MZ242737, MZ242738, MZ242739, MZ242740, MZ242741, MZ242742, MZ242743, MZ242744, MZ242745, MZ242746, MZ242747, MZ242748, MZ242749, MZ242750, MZ242751, MZ242752, MZ242753, MZ242754, MZ242755, MZ242756, MZ242757. Models as .gtf are available. These should be used with pNL4-3 (see Methods). The RefSeq HIV-1 reference NC_001802.1 is being updated to include new annotations.</p>
+<h3 id="acknowledgments">Acknowledgments<a class="headerlink" href="#acknowledgments" title="Permanent link">&para;</a></h3>
+<p>The authors would like to thank Dr. Mark Landry for carefully reviewing GenBank entries, and Dr. Eneida Hatcher at NCBI/NLM/NIH for help updating RefSeq:NC_001802.</p>
+<h3 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h3>
+<p>Alluri, Hari. 2018. “Origin Story.” <em>The Massachusetts Review</em> 59(4):672–74.</p>
+<p>Blumenthal, Thomas. 1998. “Gene Clusters and Polycistronic Transcription in Eukaryotes.” <em>BioEssays</em> 20(6):480–87.</p>
+<p>Borg, Keith M., Justin P. Favaro, Salvatore J. Arrigo, and Michael Schmidt. 1999. “Activation of a Cryptic Splice Donor in Human Immunodeficiency Virus Type-1.” <em>Journal of Biomedical Science</em> 6(1):45–52.</p>
+<p>Colombini, S., S. K. Arya, M. S. Reitz, L. Jagodzinski, B. Beaver, and F. Wong-Staal. 1989. “Structure of Simian Immunodeficiency Virus Regulatory Genes.” <em>Proceedings of the National Academy of Sciences of the United States of America</em> 86(13):4813–17.</p>
+<p>Cook, Kate B., Hilal Kazan, Khalid Zuberi, Quaid Morris, and Timothy R. Hughes. 2011. “RBPDB: A Database of RNA-Binding Specificities.” <em>Nucleic Acids Research</em> 39(suppl_1):D301–8.</p>
+<p>Davis, J. L. and J. E. Clements. 1989. “Characterization of a CDNA Clone Encoding the Visna Virus Transactivating Protein.” <em>Proceedings of the National Academy of Sciences of the United States of America</em> 86(2):414–18.</p>
+<p>Foley, Brian T., Thomas Leitner, Dimitrios Paraskevis, and Martine Peeters. 2016. “Primate Immunodeficiency Virus Classification and Nomenclature: Review.” <em>Infection, Genetics and Evolution : Journal of Molecular Epidemiology and Evolutionary Genetics in Infectious Diseases</em> 46:150–58.</p>
+<p>Gener, Alejandro R., Deborah P. Hyink, Paul E. Klotman, and Jason T. Kimata. 2021. “HIV-1 Segmentation-Based Transcript Models Define 5’ Untranslated Region (UTR) and Open Reading Frame (ORF) Classes, Elucidate Total Viral Protein-Coding Capacity, and Are Summarized by a New HIV-1 MRNA Naming Convention.” P. ePoster in <em>24th International AIDS Conference (IAS2021)</em>.</p>
+<p>Gener, Alejandro R., Yini Liang, Maliha Jeba, Delmarie M. Rivera Rodríguez, Kirk Niekamp, Lawrence Tan, Ashwarya S. Devason, Mayra Aucapina, Akash Naik, Taneasha Washington, Ying Fan, Gokul C. Das, Weijia Zhang, John Cijiang He, Deborah P. Hyink, and Paul E. Klotman. 2020. “P39 - Insights from Comprehensive Transcript Models of HIV-1.” P. ePoster in <em>Genome Informatics 2020</em>.</p>
+<p>Gener, Alejandro R, Wei Zou, Brian T. Foley, Deborah P. Hyink, and Paul E. Klotman. 2021. “Reference Plasmid PHXB2_D Is an HIV-1 Molecular Clone That Exhibits Identical LTRs and a Single Integration Site Indicative of an HIV Provirus.” <em>BioRxiv</em> 611848.</p>
+<p>Gorny, M. K., V. Gianakakos, S. Sharpe, and S. Zolla-Pazner. 1989. “Generation of Human Monoclonal Antibodies to Human Immunodeficiency Virus.” <em>Proceedings of the National Academy of Sciences of the United States of America</em> 86(5):1624–28.</p>
+<p>Guatelli, J. C., T. R. Gingeras, and D. D. Richman. 1990. “Alternative Splice Acceptor Utilization during Human Immunodeficiency Virus Type 1 Infection of Cultured Cells.” <em>Journal of Virology</em> 64(9):4093–98.</p>
+<p>Hope, Thomas J. and Didier Trono. 2000. “Structure, Expression, and Regulation of the HIV Genome.” <em>HIV InSite Knowledge Base Chapter</em>. Retrieved June 8, 2021 (http://hivinsite.ucsf.edu/InSite?page=kb-02-01-02).</p>
+<p>Katoh, Kazutaka, John Rozewicki, and Kazunori D. Yamada. 2017. “MAFFT Online Service: Multiple Sequence Alignment, Interactive Sequence Choice and Visualization.” <em>Briefings in Bioinformatics</em> 20(4):1160–66.</p>
+<p>Kovaka, Sam, Aleksey V Zimin, Geo M. Pertea, Roham Razaghi, Steven L. Salzberg, and Mihaela Pertea. 2019. “Transcriptome Assembly from Long-Read RNA-Seq Alignments with StringTie2.” <em>Genome Biology</em> 20(1):278.</p>
+<p>Krummheuer, Jörg, Adam T. Johnson, Ilona Hauber, Susanne Kammler, Jenny L. Anderson, Joachim Hauber, Damian F. J. Purcell, and Heiner Schaal. 2007. “A Minimal UORF within the HIV-1 Vpu Leader Allows Efficient Translation Initiation at the Downstream Env AUG.” <em>Virology</em> 363(2):261–71.</p>
+<p>Li, Heng. 2018. “Minimap2: Pairwise Alignment for Nucleotide Sequences.” <em>Bioinformatics</em> 34(18):3094–3100.</p>
+<p>Liu, D. X., D. Cavanagh, P. Green, and S. C. Inglis. 1991. “A Polycistronic MRNA Specified by the Coronavirus Infectious Bronchitis Virus.” <em>Virology</em> 184(2):531–44.</p>
+<p>Nguyen Quang, Nam, Sophie Goudey, Emmanuel Ségéral, Ammara Mohammad, Sophie Lemoine, Corinne Blugeon, Margaux Versapuech, Jean-Christophe Paillart, Clarisse Berlioz-Torrent, Stéphane Emiliani, and Sarah Gallois-Montbrun. 2020. “Dynamic Nanopore Long-Read Sequencing Analysis of HIV-1 Splicing Events during the Early Steps of Infection.” <em>Retrovirology</em> 17(1):25.</p>
+<p>Nilsen, B. M., I. R. Haugan, K. Berg, L. Olsen, P. O. Brown, and D. E. Helland. 1996. “Monoclonal Antibodies against Human Immunodeficiency Virus Type 1 Integrase: Epitope Mapping and Differential Effects on Integrase Activities in Vitro.” <em>Journal of Virology</em> 70(3):1580–87.</p>
+<p>Ocwieja, Karen E., Scott Sherrill-Mix, Rithun Mukherjee, Rebecca Custers-Allen, Patricia David, Michael Brown, Susana Wang, Darren R. Link, Jeff Olson, Kevin Travers, Eric Schadt, and Frederic D. Bushman. 2012. “Dynamic Regulation of HIV-1 MRNA Populations Analyzed by Single-Molecule Enrichment and Long-Read Sequencing.” <em>Nucleic Acids Research</em> 40(20):10345–55.</p>
+<p>Pertea, G. and M. Pertea. 2020. “GFF Utilities: GffRead and GffCompare [Version 2; Peer Review: 3 Approved].” <em>F1000Research</em> 9(304).</p>
+<p>Pertea, Mihaela, Geo M. Pertea, Corina M. Antonescu, Tsung-cheng Chang, Joshua T. Mendell, and Steven L. Salzberg. 2015. “StringTie Enables Improved Reconstruction of a Transcriptome from RNA-Seq Reads.” 33(3).</p>
+<p>Purcell, Damian F. J. and Malcolm A. Martin. 1993. “Alternative Splicing of Human Immunodeficiency Virus Type 1 MRNA Modulates Viral Protein Expression , Replication , and Infectivity.” 67(11):6365–78.</p>
+<p>Remm, Maido, Anu Remm, and Mart Ustav. 1999. “Human Papillomavirus Type 18 E1 Protein Is Translated from Polycistronic MRNA by a Discontinuous Scanning Mechanism.” <em>Journal of Virology</em> 73(4):3062–70.</p>
+<p>Robinson, James T., Helga Thorvaldsdóttir, Wendy Winckler, Mitchell Guttman, Eric S. Lander, Gad Getz1, and Jill P. Mesirov1. 2011. “Integrative Genomics Viewer.” <em>Nat Biotechnol</em> 29(1):24–26.</p>
+<p>Sakai, K., X. Y. Ma, I. Gordienko, and D. J. Volsky. 1991. “Recombinational Analysis of a Natural Noncytopathic Human Immunodeficiency Virus Type 1 (HIV-1) Isolate: Role of the Vif Gene in HIV-1 Infection Kinetics and Cytopathicity.” <em>Journal of Virology</em> 65(11):5765–73.</p>
+<p>Schwartz, S, B. K. Felber, E. M. Fenyö, and G. N. Pavlakis. 1990. “Env and Vpu Proteins of Human Immunodeficiency Virus Type 1 Are Produced from Multiple Bicistronic MRNAs.” <em>Journal of Virology</em> 64(11):5448 LP – 5456.</p>
+<p>Schwartz, S., B. K. Felber, and G. N. Pavlakis. 1991. “Expression of Human Immunodeficiency Virus Type 1 Vif and Vpr MRNAs Is Rev-Dependent and Regulated by Splicing.” <em>Virology</em> 183(2):677–86.</p>
+<p>Schwartz, S., B. K. Felber, and G. N. Pavlakis. 1992. “Mechanism of Translation of Monocistronic and Multicistronic Human Immunodeficiency Virus Type 1 MRNAs.” <em>Molecular and Cellular Biology</em> 12(1):207–19.</p>
+<p>Schwartz, Stefan, Barbara K. Felber, Donna M. Benko, Eva-maria Fenyo, and George N. Pavlakis. 1990. “Cloning and Functional Analysis of Multiply Spliced MRNA Species of Human Immunodeficiency Virus Type 1.” <em>Journal of Virology</em> 64(6):2519–29.</p>
+<p>Sievers, Fabian, Andreas Wilm, David Dineen, Toby J. Gibson, Kevin Karplus, Weizhong Li, Rodrigo Lopez, Hamish McWilliam, Michael Remmert, Johannes Söding, Julie D. Thompson, and Desmond G. Higgins. 2011. “Fast, Scalable Generation of High-Quality Protein Multiple Sequence Alignments Using Clustal Omega.” <em>Molecular Systems Biology</em> 7(539).</p>
+<p>Simm, M., M. Shahabuddin, W. Chao, J. S. Allan, and D. J. Volsky. 1995. “Aberrant Gag Protein Composition of a Human Immunodeficiency Virus Type 1 Vif Mutant Produced in Primary Lymphocytes.” <em>Journal of Virology</em> 69(7):4582–86.</p>
+<p>Viglianti, G. A., P. L. Sharma, and J. I. Mullins. 1990. “Simian Immunodeficiency Virus Displays Complex Patterns of RNA Splicing.” <em>Journal of Virology</em> 64(9):4207–16.</p>
+<p>Yang, Jianyi, Ivan Anishchenko, Hahnbeom Park, Zhenling Peng, Sergey Ovchinnikov, and David Baker. 2020. “Improved Protein Structure Prediction Using Predicted Interresidue Orientations.” <em>Proceedings of the National Academy of Sciences</em> 117(3):1496 LP – 1503.</p>
+<h3 id="supplemental-tables">Supplemental Tables<a class="headerlink" href="#supplemental-tables" title="Permanent link">&para;</a></h3>
+<figure class="book-table" id="supplemental-table-1">
+<figcaption>
+<p><strong>Supplemental Table 1: HIV-1 NL4-3 genes and their corresponding transcripts.</strong></p>
+<p>*There is one transcript model that supports a majority of gag spliced out, resulting in a truncated p17, and abnormal pol, resulting in a truncated protease.</p>
+<p>**Transcript models support pol having many integrase adducts.</p>
+</figcaption>
+<table>
+<thead>
+<tr>
+<th>HIV-1 genes, including new from this study</th>
+<th>Transcripts supporting mRNA expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>gag*, gag-pol**</em></td>
+<td>MSTRG.2.4, MSTRG.2.16, MSTRG.2.32, MSTRG.2.33, MSTRG.2.38, MSTRG.2.34, MSTRG.2.37, MSTRG.2.31, MSTRG.2.35, MSTRG.2.36, MSTRG.2.40</td>
+</tr>
+<tr>
+<td><em>GENER1A</em></td>
+<td>MSTRG.2.16</td>
+</tr>
+<tr>
+<td><em>GENER4-gag-pol**</em></td>
+<td>MSTRG.2.34</td>
+</tr>
+<tr>
+<td><em>GENER5-gag-pol**</em></td>
+<td>MSTRG.2.37</td>
+</tr>
+<tr>
+<td><em>GENER6/8-gag-pol**</em></td>
+<td>MSTRG.2.31 (GENER6-gag-pol), MSTRG.2.36 (GENER8-gag-pol)</td>
+</tr>
+<tr>
+<td><em>GENER7-gag-pol**</em></td>
+<td>MSTRG.2.35</td>
+</tr>
+<tr>
+<td><em>GENER9-gag-pol**</em></td>
+<td>MSTRG.2.40</td>
+</tr>
+<tr>
+<td><em>vif</em></td>
+<td>MSRG.2.4, MSTRG.2.5, MSTRG.2.19</td>
+</tr>
+<tr>
+<td><em>GENER2</em></td>
+<td>MSTRG.2.33</td>
+</tr>
+<tr>
+<td><em>GENER3</em></td>
+<td>MSTRG.2.38</td>
+</tr>
+<tr>
+<td><em>GENER11</em></td>
+<td>MSTRG.2.39</td>
+</tr>
+<tr>
+<td><em>GENER10</em></td>
+<td>MSTRG.2.26</td>
+</tr>
+<tr>
+<td><em>GENER12</em></td>
+<td>MSTRG.2.28</td>
+</tr>
+<tr>
+<td><em>vpr</em></td>
+<td>MSRG.2.4, MSTRG.2.28, MSTRG.2.5, MSTRG.2.19, MSTRG.2.13, MSTRG.2.3, MSTRG.2.22, MSTRG.2.18</td>
+</tr>
+<tr>
+<td><em>vpu/env</em></td>
+<td>MSRG.2.4, MSTRG.2.5, MSTRG.2.13, MSTRG.2.3, MSTRG.2.27, MSTRG.2.10, MSTRG.2.17, MSTRG.2.7, MSTRG.2.30, MSTRG.2.24, MSTRG 2.14, MSTRG.2.29, MSTRG.2.21, MSTRG.2.1</td>
+</tr>
+<tr>
+<td><em>tat/rev</em></td>
+<td>MSTRG.2.28, MSTRG.2.19, MSTRG.2.22, MSTRG.2.18, MSTRG.2.10, MSTRG.2.17, MSTRG.2.7, MSTRG.2.1, MSTRG.2.20, MSTRG.2.25, MSTRG.2.15, MSTRG.2.11, MSTRG.2.23, MSTRG.2.12</td>
+</tr>
+<tr>
+<td><em>GENER13/GENER14</em></td>
+<td>MSTRG.2.4, MSTRG.2.16, MSTRG.2.31, MSTRG.2.5, MSTRG.2.30, MSTRG.2.3, MSTRG.2.24, MSTRG.2.14, MSTRG.2.29, MSTRG.2.21, MSTRG.2.13, MSTRG.2.27</td>
+</tr>
+<tr>
+<td><em>nef</em></td>
+<td>Every complete transcript model contained nef.</td>
+</tr>
+</tbody>
+</table>
+</figure>
+<figure class="book-table" id="supplemental-table-2">
+<figcaption>
+<p><strong>Supplemental Table 2: HIV-1 NL4-3 genes and their corresponding products.</strong></p>
+<p>*There is one transcript model that supports a majority of gag spliced out, resulting in a truncated p17, and abnormal pol, resulting in a truncated protease.</p>
+<p>**Transcript models support pol having many integrase adducts.</p>
+</figcaption>
+<table>
+<colgroup>
+<col style="width: 34%" />
+<col style="width: 35%" />
+<col style="width: 29%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>HIV-1 genes, including new from this study</th>
+<th>HIV-1 protein, including putative</th>
+<th>Select references</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>gag*</em></td>
+<td>Gag prior to virion maturation. p17, p24, p7, p1, p2, p6</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><em>GENER1A</em></td>
+<td>GENER1A-p17, GENER15</td>
+<td>This study.</td>
+</tr>
+<tr class="odd">
+<td><em>gag-pol**</em></td>
+<td>Gag-Pol prior to virion maturation. p17, p24, p7, p1, Gag-Pol transframe peptide, protease (PR), p51 and p66 subunits of reverse transcriptase RT, integrase (IN)</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><em>GENER4-gag-pol**</em></td>
+<td>GENER4-Gag-Pol prior to virion maturation. p17, p24, p7, p1, Gag-Pol transframe peptide, protease (PR), p51 and p66 subunits of reverse transcriptase RT, GENER4-integrase</td>
+<td>This study.</td>
+</tr>
+<tr class="odd">
+<td><em>GENER5-gag-pol**</em></td>
+<td>GENER5-Gag-Pol prior to virion maturation. p17, p24, p7, p1, Gag-Pol transframe peptide, protease (PR), p51 and p66 subunits of reverse transcriptase RT, GENER5-integrase</td>
+<td>This study.</td>
+</tr>
+<tr class="even">
+<td><em>GENER6/8-gag-pol**</em></td>
+<td>GENER6/8-Gag-Pol prior to virion maturation. p17, p24, p7, p1, Gag-Pol transframe peptide, protease (PR), p51 and p66 subunits of reverse transcriptase RT, GENER6/8-integrase</td>
+<td>This study.</td>
+</tr>
+<tr class="odd">
+<td><em>GENER7-gag-pol**</em></td>
+<td>Gag-Pol: p17, p24, p7, p1, Gag-Pol transframe peptide, protease (PR), p51 and p66 subunits of reverse transcriptase RT, GENER7-integrase</td>
+<td>This study.</td>
+</tr>
+<tr class="even">
+<td><em>GENER9-gag-pol**</em></td>
+<td>Gag-Pol: p17, p24, p7, p1, Gag-Pol transframe peptide, protease (PR), p51 and p66 subunits of reverse transcriptase RT, GENER9-integrase</td>
+<td>This study.</td>
+</tr>
+<tr class="odd">
+<td><em>vif</em></td>
+<td>Vif</td>
+<td>(Schwartz, Felber, and Pavlakis 1991)</td>
+</tr>
+<tr class="even">
+<td><em>GENER2</em></td>
+<td>GENER2</td>
+<td>This study.</td>
+</tr>
+<tr class="odd">
+<td><em>GENER3</em></td>
+<td>GENER3</td>
+<td>This study.</td>
+</tr>
+<tr class="even">
+<td><em>GENER11</em></td>
+<td>GENER11</td>
+<td>This study.</td>
+</tr>
+<tr class="odd">
+<td><em>GENER10</em></td>
+<td>GENER10</td>
+<td>This study.</td>
+</tr>
+<tr class="even">
+<td><em>GENER12</em></td>
+<td>GENER12</td>
+<td>This study.</td>
+</tr>
+<tr class="odd">
+<td><em>vpr</em></td>
+<td>Vpr</td>
+<td>(Schwartz et al. 1991)</td>
+</tr>
+<tr class="even">
+<td><em>vpu</em></td>
+<td>Vpu</td>
+<td>
+<p>(S Schwartz et al. 1990)</p>
+<p>(Schwartz et al. 1992)</p>
+</td>
+</tr>
+<tr class="odd">
+<td><em>env</em></td>
+<td>Env, gp120, gp41</td>
+<td>
+<p>(S Schwartz et al. 1990)</p>
+<p>(Schwartz et al. 1992)</p>
+</td>
+</tr>
+<tr class="even">
+<td><em>tat</em></td>
+<td>Tat-1/GENER13 if unspliced; Tat-2 (“Tat”) if spliced.</td>
+<td>
+<p>Tat-1, Tat-2</p>
+<p>(Schwartz et al. 1992)</p>
+<p>This study.</p>
+</td>
+</tr>
+<tr class="odd">
+<td><em>rev</em></td>
+<td>GENER14 if unspliced; Rev if spliced.</td>
+<td>
+<p>(Schwartz et al. 1992)</p>
+<p>This study.</p>
+</td>
+</tr>
+<tr class="even">
+<td><em>nef</em></td>
+<td>Every complete transcript model contained nef.</td>
+<td>(Schwartz et al. 1992)</td>
+</tr>
+</tbody>
+</table>
+</figure>
+<figure class="book-table" id="supplemental-table-3">
+<figcaption>
+<p><strong>Supplemental Table 3: HIV-1 NL4-3 gene product metrics and their predicted locations.</strong></p>
+<p>Isoelectric point calculator: <a href="https://www.bioinformatics.org/sms2/protein_iep.html">https://www.bioinformatics.org/sms2/protein_iep.html</a>.</p>
+<p>(Alejandro R. Gener et al. 2021)</p>
+</figcaption>
+<p><img alt="Supplemental Table 3: HIV-1 NL4-3 gene product metrics and their predicted locations" loading="lazy" src="../assets/ch06/media/image102.png" /></p>
+</figure>
+<figure class="book-table" id="supplemental-table-4">
+<figcaption>
+<p><strong>Supplemental Table 4: HIV-1 NL4-3 segment to splice donor/acceptor conversion table.</strong></p>
+<p>NL4-3 splice donor/acceptor nomenclature adapted from (Purcell and Martin 1993). Inclusive is denoted by a bracket covering the included segment portion.</p>
+</figcaption>
+<p><img alt="Supplemental Table 4: HIV-1 NL4-3 segment to splice donor/acceptor conversion table." loading="lazy" src="../assets/ch06/media/image103.png" /></p>
+</figure>
+<figure class="book-table" id="supplemental-table-5">
+<figcaption>
+<p><strong>Supplemental Table 5: Putative HIV-1 GENER-Gag-Pol-integrase proteins supported in literature.</strong></p>
+<p>“HIV-1 NL4-3 protein molecular weights.xlsx”</p>
+</figcaption>
+<p><img alt="Supplemental Table 5: Putative HIV-1 GENER-Gag-Pol-integrase proteins supported in literature" loading="lazy" src="../assets/ch06/media/image104.png" /></p>
+</figure>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../05-dna-space/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 5. Advancing HIV informatics in the DNA space">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                5. Advancing HIV informatics in the DNA space
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../07-rna-space-virion-mrna/" class="md-footer__link md-footer__link--next" aria-label="Next: 7. Advancing HIV informatics in the RNA space: HIV virion mRNA">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                7. Advancing HIV informatics in the RNA space: HIV virion mRNA
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <span class="footer-wordmark" role="img" aria-label="Heelbent"></span> &copy; 2021&ndash;2026 Alejandro Rafael Gener. All rights reserved. &middot; Text and figures licensed <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "navigation.tracking", "toc.follow", "search.highlight", "search.suggest", "search.share", "content.action.edit"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "default": "latest", "provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

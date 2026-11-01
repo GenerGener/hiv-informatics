@@ -1,0 +1,1598 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="HIV Informatics: a framework unifying HIV models, nucleic acid (re)sequencing, bioinformatics, and validation to maximize HIV information from samples.">
+      
+      
+        <meta name="author" content="Alejandro Rafael Gener">
+      
+      
+        <link rel="canonical" href="https://genergener.github.io/hiv-informatics/1.0/01-what-we-believe-about-hiv/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../02-how-we-know-what-we-know/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/brand/logo-mark.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>1. What we believe about HIV - HIV Informatics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-1-what-we-know-believe-about-hiv" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="HIV Informatics" class="md-header__button md-logo" aria-label="HIV Informatics" data-md-component="logo">
+      
+  <img src="../assets/brand/logo-mark.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            HIV Informatics
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1. What we believe about HIV
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/GenerGener/hiv-informatics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GenerGener/hiv-informatics
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="HIV Informatics" class="md-nav__button md-logo" aria-label="HIV Informatics" data-md-component="logo">
+      
+  <img src="../assets/brand/logo-mark.png" alt="logo">
+
+    </a>
+    HIV Informatics
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/GenerGener/hiv-informatics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GenerGener/hiv-informatics
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part One: HIV, HIV (re)sequencing, and a new framework to maximize HIV information from samples
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part One: HIV, HIV (re)sequencing, and a new framework to maximize HIV information from samples
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. What we believe about HIV
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. What we believe about HIV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aids-and-the-discovery-of-hiv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AIDS, and the discovery of HIV
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hiv-replication-cycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HIV replication cycle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HIV replication cycle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hiv-virion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HIV virion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hiv-tropism-pre-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HIV tropism (pre-entry)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Post-entry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reverse-transcription" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reverse transcription
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-and-entry-into-latency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration and entry into latency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viral-reactivation-is-exit-from-latency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viral reactivation is exit from latency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hiv-mrna-expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HIV mRNA expression
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hiv-polyproteins-in-host-cells-and-immature-virions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HIV polyproteins in host cells and immature virions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virion-assembly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Virion assembly
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virion-maturation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Virion maturation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-hiv-1-genome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The HIV-1 genome
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The HIV-1 genome">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#information-conservation-across-the-hiv-genome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Information conservation across the HIV genome
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hiv-1-pharmacotherapy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HIV-1 pharmacotherapy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HIV-1 pharmacotherapy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hiv-1-drug-resistance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HIV-1 drug resistance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-how-we-know-what-we-know/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. How we know what we know about HIV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-hiv-informatics-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. HIV Informatics is a framework to advance the study of HIV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-problems-and-challenges/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Problems and Challenges addressed by HIV Informatics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part Two: Maximizing HIV sequencing information from control samples and model systems
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part Two: Maximizing HIV sequencing information from control samples and model systems
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-dna-space/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Advancing HIV informatics in the DNA space
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-rna-space-mrna-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Advancing HIV informatics in the RNA space: HIV mRNA models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-rna-space-virion-mrna/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Advancing HIV informatics in the RNA space: HIV virion mRNA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-rna-space-transductions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Advancing HIV informatics in the RNA space: On “transductions”
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part Three: Maximizing HIV sequence information from heterogeneous samples
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part Three: Maximizing HIV sequence information from heterogeneous samples
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-heterogeneous-samples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Maximizing HIV sequence information from heterogeneous samples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-conclusions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Conclusions and future directions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aids-and-the-discovery-of-hiv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AIDS, and the discovery of HIV
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hiv-replication-cycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HIV replication cycle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HIV replication cycle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hiv-virion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HIV virion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hiv-tropism-pre-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HIV tropism (pre-entry)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Post-entry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reverse-transcription" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reverse transcription
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-and-entry-into-latency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration and entry into latency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viral-reactivation-is-exit-from-latency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viral reactivation is exit from latency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hiv-mrna-expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HIV mRNA expression
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hiv-polyproteins-in-host-cells-and-immature-virions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HIV polyproteins in host cells and immature virions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virion-assembly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Virion assembly
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virion-maturation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Virion maturation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-hiv-1-genome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The HIV-1 genome
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The HIV-1 genome">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#information-conservation-across-the-hiv-genome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Information conservation across the HIV genome
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hiv-1-pharmacotherapy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HIV-1 pharmacotherapy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HIV-1 pharmacotherapy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hiv-1-drug-resistance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HIV-1 drug resistance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/GenerGener/hiv-informatics/edit/main/docs/01-what-we-believe-about-hiv.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="chapter-1-what-we-know-believe-about-hiv">Chapter 1: What we <del>know</del> believe about HIV<a class="headerlink" href="#chapter-1-what-we-know-believe-about-hiv" title="Permanent link">&para;</a></h1>
+<h2 id="abstract">Abstract<a class="headerlink" href="#abstract" title="Permanent link">&para;</a></h2>
+<p>Chapter 1 of <em>HIV Informatics</em> introduces select information about the known biology of the human immunodeficiency virus type 1 (HIV-1). All discussions of HIV in this dissertation pertain to HIV-1, unless otherwise specified. Also included is a brief discussion of acquired immunodeficiency syndrome (AIDS). Details of clinical management and psychosocial determinants of health (Ghosn et al. 2018) for people living with HIV/AIDS (PLWHA) or at risk of acquiring HIV fall outside the scope of this dissertation and are not discussed.</p>
+<h2 id="aids-and-the-discovery-of-hiv">AIDS, and the discovery of HIV<a class="headerlink" href="#aids-and-the-discovery-of-hiv" title="Permanent link">&para;</a></h2>
+<p>The first reported cases of acquired immunodeficiency syndrome (AIDS) came as a short case report describing opportunistic infections that seemed out of place (CDC 1981). Five young male patients all identified as “homosexual” had multiple opportunistic infections usually only seen in immunocompromised patients. Their infections included <em><u>P</u>neumocystis <u>c</u>arinii</em> <u>p</u>neumonia (PCP<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>) (Walzer et al. 1974), oral mucosal candidiasis, and cytomegalovirus (CMV) infections. These patients were believed to be immunocompromised due to lowered immune cell function, in absence of any obvious primary cause (e.g., a hematological cancer which might have directly affected immune cells). These 5 young men would unfortunately not be the last. AIDS soon appeared in heterosexual populations including but not limited to Haitian immigrants in New York, hemophiliacs, patients receiving blood-derived products, babies from mothers who would occasionally develop AIDS too. Patterns of spread were beginning to emerge with each new case report.</p>
+<p>The Editorial Note at the end of the first case report hypothesized that these men had an acquired cause of immune disfunction (CDC 1981). But with AIDS patients susceptible to so many pathogens, which one was the causative agent? It is helpful to understand how microbiologists went about proving an infectious agent was pathogenic. This was done by observing Koch’s Postulates. Koch’s Postulates, developed by Robert Koch, set the gold standard for establishing a microbiological etiology for infection and disease, summarized in a seminar prepared by Stanley Falkow in 1988 (Falkow 2004)). These included: 1.) the agent occurs in every individual with disease, and 2.) is not seen in healthy individuals, and 3.) the agent, when cultured, can recapitulate infection and disease in healthy individuals exposed to the agent. Originally based on Koch’s work with tuberculosis and anthrax, these postulates were later expanded to encompass non-bacterial pathogens, including viruses. For initial studies of suspected deadly pathogens, <em>in vitro</em> cell-culture infection models and <em>in vivo</em> disease models non-human infection models were acceptable surrogates to human studies which were not possible because of ethical reasons (e.g., the Nuremberg Code). During the early days of the AIDS epidemic, clinical samples from AIDS and pre-AIDS patients were the first sources of early material harboring potential AIDS-causing agent(s).</p>
+<p>The race was on to find the causative agent(s) of AIDS. Two important papers came out in the same issue of the journal <em>Science</em> on May 20, 1983. One from the Americans led by Robert Gallo at the National Cancer Center, and another from a group of French researchers at the Pasteur Institute. The Americans who had recently discovered Human T-Cell Leukemia Virus (HTLV-1) identified HTLV-1 in an AIDS patient (Gallo et al. 1983). This led them to believe that an HTLV-like virus might be the cause of AIDS. The French group provided strong evidence at the time that the virus they had found, which they called lymphadenopathy-associated virus (LAV), was not HTLV (Barré-Sinoussi et al. 1983). Then in 1984 four Science papers by Gallo and collaborators identified an HTLV-like virus in AIDS patients, and in patients at risk of AIDS who would later contract AIDS (termed pre-AIDS patients) (Popovic et al. 1984) (Sarngadharan et al. 1984) (Schüpbach et al. 1984) (Gallo et al. 1984). They believed this was a new virus, HTLV-III. However it was in fact HIV-1. The Americans were not the first to isolate HIV-1 (Cohen and Enserink 2008), but they did provide strong evidence that HIV-1 was the causative agent of AIDS (Marx 1984).</p>
+<p>The World Health Organization maintains statistics for HIV globally (<a href="https://www.who.int/data/gho/data/themes/hiv-aids">https://www.who.int/data/gho/data/themes/hiv-aids</a>). To date, 76 million people have contracted HIV, and 33 million people have died from HIV/AIDS. At the end of 2019, there were 38 million people living with HIV/AIDS (PLWHA). This represents the global prevalence of HIV. Africa remains most severely affected, accounting for more than two-thirds of HIV cases globally, with 1 in every 25 adults (3.7%) living with HIV. The number of new HIV cases in 2019 was 1.7 million. In the US, HIV stats are maintained by the Department of Health &amp; Human Services and supported by the Minority HIV/AIDS Fund on HIV.gov (https://www.hiv.gov/hiv-basics/overview/data-and-trends/statistics). About 1.2 million people were living with HIV in the US, and there were an estimated 36,400 new HIV infections in 2018.</p>
+<p>The United Nations currently has a “90-90-90” strategy with the following goals to end the AIDS epidemic. By 2020, 1.) at least 90% of PLWHA will know their HIV status, 2.) at least 90% of PLWHA will receive sustained combined antiretroviral therapy (cART), and 3.) 90% of PLWHA on cART will achieve viral suppression (UNAIDS). An important paradigm shift to facilitate 90-90-90 is test and treat, where people at risk of acquiring HIV are diagnosed if positive and are then linked to care (Ghosn et al. 2018). PLWHA are living longer thanks to earlier diagnosing and better medications (Lohse and Obel 2016; Samji et al. 2013). This has paradoxically led to PLWH having increased risk of having non-AIDS comorbidities such as cardiovascular disease and cancer (Ghosn et al. 2018), and renal disease (Wyatt and Klotman 2016), among others.</p>
+<h2 id="hiv-replication-cycle">HIV replication cycle<a class="headerlink" href="#hiv-replication-cycle" title="Permanent link">&para;</a></h2>
+<p>This section summarizes the HIV replication cycle, and wrote it considering several review sources, including ViralZone (Swiss South Africa Joint Research Programme. n.d.) (<a href="https://viralzone.expasy.org/5096">https://viralzone.expasy.org/5096</a>), the HIV InSite Knowledgebase (University of California, San Francisco) (<a href="http://hivinsite.ucsf.edu/InSite?page=KB">http://hivinsite.ucsf.edu/InSite?page=KB</a>), and the book <em>HIV and the Pathogenesis of AIDS</em> by Jay A. Levy (Levy 2007).</p>
+<h3 id="hiv-virion">HIV virion<a class="headerlink" href="#hiv-virion" title="Permanent link">&para;</a></h3>
+<p>We begin arbitrarily with the HIV virion. Mature HIV-1 virion particles are membrane-bound, with embedded viral glycoprotein gp120, and a non-covalently associated embedded viral protein gp41 (together called the HIV glycoprotein complex). Host proteins such as ICAM-1 are known to co-occur and are believed to contribute to cell tropism by interacting with target cell integrins. The HIV membrane is sensitive to detergent, desiccation, and changes in temperature, salt, and pH deviating from host physiology, rendering individual virions fragile compared to non-enveloped viruses. These weaknesses have been explored with microbicide development but have so far not been effective at reducing HIV transmission.</p>
+<p>Interior to the virion membrane, mature particles are believed to contain HIV protease-cleaved HIV gene products, two full-length unspliced HIV-1 mRNA viral genome equivalents, and rarely host RNAs. Well-characterized major cleavage products (mature peptides, or GenBank record tag “mat_peptide”) from Gag polyprotein include the structural proteins: capsid protein (p17; CA), matrix protein (p24; MA), and nucleocapsid (NC; p7). Minor cleavage products include p1, p2, p6. Cleavage products from the Gag-Pol polyprotein include those (except p6) with Gag-Pol transframe peptide, protease (PR; aspartic peptidase), p51 subunit of reverse transcriptase, and p66 subunit of reverse transcriptase with p15 RNAse H domain, and p31 integrase. A ribosomal frame shift occurs near the end of p1 and the beginning of p6 which causes a shift from gag<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> to pol reading frame, enabling the pol segment of Gag-Pol to be expressed instead of Gag. The Pol polyprotein is not believed to occur independently of Gag (which excludes Pol) or Gag-Pol. The HIV accessory proteins Vif, Vpr, Vpu, Rev, and Nef are also found in HIV virions. Accessory viral proteins are not essential for viral replication. They are reviewed in greater detail below.</p>
+<p>Each mature virion is commonly modeled as having two copies of full-length unspliced HIV-1 (+)-sense coding mRNA. This is believed to be a direct transcript from full-length replication-competent HIV-1 provirus. There is some evidence that diploidy need not be essential, or at least need not be tied to reverse transcription (Jones, Allan, and Temin 1994; Panganiban and Fiore 1988; van Wamel and Berkhout 1998). Another interpretation of the above is that virion diploidy is not essential, which leaves room for aneuploidy via stochastic packaging of viral mRNAs. The HIV genome, reference genomes, and gene models are discussed later in this dissertation.</p>
+<h3 id="hiv-tropism-pre-entry">HIV tropism (pre-entry)<a class="headerlink" href="#hiv-tropism-pre-entry" title="Permanent link">&para;</a></h3>
+<p>The mechanism of viral tropism, or how virions select cells to first attach to and then infect after entry, is well-studied. It is divided into roughly two kinds of tropism: receptor-mediated and receptor-independent. Receptor-mediated tropism includes interactions between HIV glycoprotein complexes, mediated by gp120, first binding to attachment receptors such as CD4 (Maddon et al. 1986), a major host-expressed HIV receptor. Host ICAM-1 on the HIV virion membrane may also interact with target cell integrins such as LFA1 (https://viralzone.expasy.org/247). Cells expressing CD4 include T-lymphocytes (“T cells”), macrophages, dendritic cells (https://viralzone.expasy.org/247). Other adhesion receptors and some of the cells which express them include: DC-SIGN expressed by dendritic cells (da Silva, Segat, and Crovella 2011); CLEC4M (also known as L-SIGN) expressed by liver sinusoidal endothelial cells and cells in the lymph node (probably dendritic cells) (da Silva et al. 2011); heparan sulfate expressed by many cell types (Crublet et al. 2008).</p>
+<p>Subsequent entry via membrane fusion is mediated by interaction between gp41 and with host cell-expressed co-receptors such as CCR5 (R5) and CXCR4 (X4). One hypothesized mechanism for entry is clathrin-mediated endocytosis (<a href="https://viralzone.expasy.org/957?outline=all_by_species">https://viralzone.expasy.org/957?outline=all_by_species</a>), although there is some evidence that this is not the only mechanism HIV-1 may use for entry (Permanyer, Ballana, and Esté 2010). After attachment of gp120 to CD4 or ICAM-1 to integrins, gp41 mediates fusion between virion and target cell membranes. The fusion inhibitor enfuvirtide (also called T-20) works by interfering with gp41 conformational changes necessary for membrane fusion (Arts et al. 2012) (Zhang et al. 2018). An important point to consider which limits the applicability of fusion inhibitors clinically is that HIV tropism often shifts during infection. This shift may have important prognostic consequence; X4-tropic trains are often seen later in the natural course of HV infection, and are considered worse (Verhofstede, Nijhuis, and Vandekerckhove 2012). Receptor-independent infection occurs by cytopathic effects such as HIV-mediated syncytia formed between cells infected with CXCR4-tropic HIV and neighboring cells.</p>
+<p>Several CD4- cell types have also been found to be susceptible to HIV infection <em>in vitro</em> (Table 3.8 (Levy 2007)). These included: fetal astrocytes, brain-derived capillary endothelial cells, brain microglia (which will be revisited in <strong>Chapter 8</strong>), NK cells, primary skin fibroblasts fetal adrenal cells, follicular dendritic cells, hepatic sinusoidal endothelial cells, trophoblast cells, cervical epithelial cell lines. Cancer cell lines such as the following have also been shown to be susceptible to infection independently of CD4 expression: the SK-N-Mc neuroblastoma cell line, the HOS osteosarcoma cell line, the RD rhabdomyosarcoma cell line, hepatocellular carcinoma cells, bowel adenocarcinoma cells. <em>In vivo</em> studies suggested that bowel epithelium, renal epithelium, dental pulp fibroblasts, astrocytes and oligodendrocytes (which will be revisit in <strong>Chapter 8</strong>) were all susceptible to HIV. The number of tissues purported to support various stages of HIV replication is ever growing. These reservoirs can be sources of low-level viral replication and re-seeding after discontinuation of antiviral therapy, and represent an important challenge to achieving a sterilizing cure (Fletcher et al. 2014) (Lorenzo-Redondo et al. 2016) (Ghosn et al. 2018). A sterilizing cure would mean elimination of HIV from the body and no need to continued antiviral therapy, as opposed to a functional cure which we have currently when HIV medications are given to patients earlier to prevent HIV replication and subsequent immune dysregulation. Despite promising gene therapy results to change expression of HIV co-receptors by introducing Δ32 mutations into the CCR5 co-receptors of allogenic hematopeotic stem cells in the context of separately indicated bone marrow transplants, there currently remains no sterilizing cure for HIV infection.</p>
+<h3 id="post-entry">Post-entry<a class="headerlink" href="#post-entry" title="Permanent link">&para;</a></h3>
+<p>Within 40 minutes of fusion (Swiss South Africa Joint Research Programme. n.d.), encapsidated viral mRNA is transported to the nucleus via dynein along microtubules (Gaudin et al. 2013; McDonald et al. 2002). Premature capsid destabilization (e.g., Cyp A inhibition, CPSF6 (Lee et al. 2010), Mx2 (Goujon et al. 2013), and TRIM5α expression in some non-human primates (Nakayama and Shioda 2010)) may lead to abortive infection. This exposes viral mRNA prematurely in the infected cell, stimulating host cell antiviral response. Appropriately timed uncoating delivers the RT complex (discussed below) to the nucleus for import, protecting nascent HIV cDNA from host antiviral sensors (Ambrose and Aiken 2014).</p>
+<h3 id="reverse-transcription">Reverse transcription<a class="headerlink" href="#reverse-transcription" title="Permanent link">&para;</a></h3>
+<p>The process of HIV-1 reverse transcription (RT) is well-studied, reviewed in (Hu and Hughes 2012) and at ViralZone (SIB Swiss Institute of Bioinformatics n.d.) (Add mobile elements III). Briefly, HIV-1 RT’s RNA-dependent DNA polymerase activity is primed by a lysine tRNA binding to the primer-binding site (PBS) in the forward/coding/(+)-sense mRNA in the reverse/reverse-complimentary/(-)-sense orientation (<strong><a href="#figure-2">Chapter 1 Figure 2</a>: HIV-1 reverse transcription and LTR homogenization</strong>). RT synthesizes the reverse-complimentary cDNA from the PBS to the end of the 5’ R repeat and reaches a minus strand strong stop. RNAse H activity from the p66 subunit of RT degrades the complimentary RNA in the RNA-DNA heteroduplex. The first strand transfer occurs when the synthesized cDNA finds complimentary R sequence at the 3’ end. The template, assumed to be the full-length unspliced genome, is copied by RT. RT RNAse H activity degrades most of the remaining HIV mRNA, except for essential sequences called poly-purine tracks (PPTs). These regions exhibit marginal resistance to initial RNAse H activity. Second strand synthesis by RT is primed by the remaining PPT(s). Once the positive strand strong stop occurs, the PPT(s) give way to RT RNAse H activity. The Lys-tRNA primer is also degraded. A second strand transfer occurs, this time leveraging the PBS (instead of the R). Both cDNA strands are then finished by RT’s DNA-dependent DNA polymerase activity.</p>
+<figure class="book-figure" id="figure-2">
+<p><img alt="Chapter 1 Figure 2: HIV-1 reverse transcription and LTR homogenization" loading="lazy" src="../assets/ch01/media/image1.png" /></p>
+<figcaption>
+<p><strong>Chapter 1 Figure 2: HIV-1 reverse transcription and LTR homogenization.</strong></p>
+<p>Homogenization is not exactly copying. It is a (3’ U3)-(5’ R)-(5’ U5) duplication. Consider replacing “copying” with “(3’ U3)-(5’ R)-(5’ U5) duplication”. Adapted from (SIB Swiss Institute of Bioinformatics n.d.).</p>
+</figcaption>
+</figure>
+<p>RT happens on microfilaments in the in the RT complex (RTC) (Greene and Peterlin 2006) and is believed to occur within 8-12 hours post-infection of a host cell (Iordanskiy et al. 2006). HIV cDNA is detectable within 4 hours post infection (hpi) (Hu and Hughes 2012). RT inhibitors exist in two broad classes nucleoside/nucleotide reverse transcriptase inhibitors (NRTI) and non-nucleoside/nucleotide reverse transcriptase inhibitors (NNRTI) (Arts et al. 2012). NRTIs are incorporated by RT into the nascent cDNA strands, leading to chain termination. NNRTIs also inhibit RT, however they do so by allosterically binding outside of RT active site, ultimately inhibiting RT activity. RT is the most error-prone step in HIV replication. Once the first strand of cDNA is made, it is vulnerable to cytidine deamination by host APOBECs (Salter, Bennett, and Smith 2016), which are often packaged in the virion (SIB Swiss Institute of Bioinformatics n.d.). The HIV accessory protein Vif, also known as viral infectivity factor or p23, inhibits APOBECs’ antiviral activity (Swiss South Africa Joint Research Programme. n.d.) (Barraud et al. 2008). RT completion is marked by double-stranded cDNA with identical LTRs. The template HIV genomic mRNA is presumably degraded. Distinguishing between primary HIV mRNAs (from either HIV molecular clones used to transfect virus-producing cells like human embryonic kidney 293T cells OR from reactivated HIV-infected cell lines), reverse-transcribed HIV cDNAs and/or secondary HIV mRNA from “infected” cells was a challenge prior to this dissertation. It was unknown how much primary HIV mRNAs contributed to HIV gene expression signatures in newly infected cells.</p>
+<h3 id="integration-and-entry-into-latency">Integration and entry into latency<a class="headerlink" href="#integration-and-entry-into-latency" title="Permanent link">&para;</a></h3>
+<p>Once RT is completed, the pre-integration complex (PIC) containing double-stranded cDNA is transported into the nucleus. Once inside the nucleus, but before integration, the HIV accessory protein Vpr (viral protein R, p15) inhibits antiviral responses like SMC5/6 complex compaction of viral cDNA designed to silence expression from foreign DNA (Dupont et al. 2021). Methylation of HIV cDNA represses further HIV transcription until the methylation is reversed (reviewed (Ruelas and Greene 2013)).</p>
+<p>During integration, the HIV cDNA ends are terminally processed by HIV integrase (Hu pharma review) (Arts et al. 2012) (Lesbats, Engelman, and Cherepanov 2016). Following end processing, strand transfer is the limiting factor of HIV integration and establishment of the HIV provirus. Subsequently, HIV proviral mRNA expression may occur, or expression may be silenced as is the case when HIV enters viral latency. Integration inhibitors (Arts et al. 2012) are a newer class of anti-HIV drugs that have become important first line agents used in current combination treatments. Raltegravir was the first FDA-approved integrase inhibitor. These drugs work by inhibiting strand transfer. HIV integration into the host genome, viral latency, and subsequent immune evasion remain the most challenging roadblocks of HIV biology preventing attainment of sterilizing cure (Ghosn et al. 2018). Integrase inhibitors will be discussed in more detail in the “HIV pharmacotherapy” section below.</p>
+<p>Discuss unintegrated.. (Meyerhans et al. 2003)</p>
+<h3 id="viral-reactivation-is-exit-from-latency">Viral reactivation is exit from latency<a class="headerlink" href="#viral-reactivation-is-exit-from-latency" title="Permanent link">&para;</a></h3>
+<p>The natural triggers for HIV reactivation, or exit from latency, remain poorly understood. This is in part due to technical limitations studying infected cells once transcription is turned on. For example, virus-producing cell lifespan is shortened to about 2 days (Wei et al. 1995). <em>In vitro</em> studies have found reactivation agents can stimulate HIV mRNA expression (Shirakawa et al. 2013). Pharmacological latency reversal has been explored as a treatment targeting the HIV reservoirs (Ghosn et al. 2018). Agents evaluated included vorinostat (Archin et al. 2012) (Elliott et al. 2014), panobinostat, disulfiram, or romidepsin (Søgaard et al. 2015), or with interleukin 7 (IL-7). Unfortunately, these failed to decrease HIV reservoirs (Ghosn et al. 2018). When paired with a functional immune system, latency reversal is an important part of the “shock and kill” strategy to purge the body’s HIV reservoirs (Katlama et al. 2013) (Deeks et al. 2016) (Bullen et al. 2014) (Ghosn et al. 2018).</p>
+<h3 id="hiv-mrna-expression">HIV mRNA expression<a class="headerlink" href="#hiv-mrna-expression" title="Permanent link">&para;</a></h3>
+<p>HIV mRNA expression begins with transcriptional initiation, which is often abortive. This has been studied extensively from the HIV proviral promoter, located in the U3 portion of the 5’ long terminal repeat (LTR). Host RNA polymerase II is recruited to the 5’ LTR. This process is facilitated when the 5’ LTR DNA is unmethylated. HIV-1 encodes a transactivating factor, Tat, which binds to the TAR element. The TAR element is an RNA hairpin located within the 5’ R repeat. TAR is part of the transcription start site and is present in all complete HIV mRNAs (Nguyen Quang et al. 2020; Ocwieja et al. 2012; Purcell and Martin 1993). The predominant form of Tat protein is believed to be the result of doubly spliced HIV, where two large introns are excised: 1.) the first large intron which would otherwise code for Gag and Gag-Pol, and 2.) the second large intron which would otherwise code for Vpu and Env. An important first functional switch is believed to occur when enough spliced HIV mRNA is made to produce enough Tat. Tat greatly enhances HIV transcription.</p>
+<p>Transcriptional initiation is followed by transcriptional elongation, which enables the transcription of full-length unspliced (FLUS) HIV mRNA. Processing of proviral mRNAs is believed to follow the conventions of other host genes. Five prime (5’) capping occurs, followed by intermittent splicing of introns of varying sizes. Splicing is believed to be co-transcriptional. If an intron is skipped, it is retained. Gag and Gag-Pol polyproteins are believed to be the products of unspliced HIV mRNA. When an intron containing gag-pol is spliced out, HIV accessory proteins are favored, occasionally with Vpu and Env polyproteins. This stage is commonly called singly spliced HIV. HIV proteins Tat and Rev are produced when an intron containing vpu and env are spliced out (commonly referred to as “multiply spliced”). Some reports suggested that Tat and Rev are made from different mRNAs. Another product of multiply spliced HIV is Nef. Spliced HIV-1 mRNAs are believed to be the preferred isoforms, however, and <strong>importantly, the exact rules governing HIV splicing remained undefined prior to this dissertation.</strong></p>
+<p>The functions of some of HIV-1’s proteins are known. The product of env, Env/gp160, is a polyprotein which will eventually become the HIV virion envelop glycoprotein, composed of proteolytic cleavage products gp120 and gp41. During Env/gp160 translation, a signal peptide locates Env/gp160 to the lumen of the Golgi, while maintaining Env/gp160’s membrane interaction. Env/gp160 is eventually processed into gp120 and gp41 by host proteases. Gp120 and gp41 eventually make their way onto the surface of infected cells expressing HIV mRNA.</p>
+<p>Parallel processes disrupt the host cell plasma membrane protein complex <em>milieux</em>. For example, Vpu and Nef are known to inhibit the cycling of host CD4 (Tokarev and Guatelli 2011), possibly contributing to decreased CD4 function. Nef was shown to downregulate major histocompatibility class I (MHC-I) expression in the HIV-infected cells (Dirk et al. 2016). This contributes to immune system evasion, which is a barrier to proviral elimination.</p>
+<p>Another HIV accessory protein viral protein R (Vpr) inhibits the cell cycle, causing it to stop at G2/M. This is believed to facilitate proviral gene expression by ensuring the presence of host factors normally present later in the cell cycle. Vpr has also been posited to help HIV redress some of the DNA damage induced by host APOBECs. This latter activity is believe to be due to Vpr’s preferential binding to host uracil DNA glycosylase 2 (UNG2) and more recently single-strand-selective monofunctional uracil-DNA glycosylase 1 (SMUG1), which leads to preferential incorporation of these host enzymes in HIV virions (Schröfelbauer et al. 2005). As mentioned previously, Vpr has also been show to prevent HIV cDNA silencing (Dupont et al. 2021).</p>
+<p><strong><a href="#figure-5">Chapter 1 Figure 5</a>: HIV-1 NL4-3 Rev Response Element</strong>). Rev binding to the RRE facilitates the nuclear export of HIV mRNAs containing the env intron/vpu-env segment. This is believed to be an important step to increase the availability of full-length unspliced (FLUS) HIV mRNAs for packaging into virions forming at the host cell plasma membrane (<strong><a href="#figure-6">Chapter 1 Figure 6</a>: HIV-1 mRNA expression, Rev switch, virion production</strong>).During viral reactivation, a second functional switch occurs when the concentration of HIV Rev protein increases past a certain threshold. Rev is an essential HIV protein that binds to a conserved 2º structure located between the gp120 and gp41 segments of the env intron (my new annotation: vpu-env segment). This Rev Response Element (RRE) is an essential structural feature of the HIV RNA genome (</p>
+<figure class="book-figure" id="figure-5">
+<p><img alt="Chapter 1 Figure 5: HIV-1 NL4-3 Rev Response Element (RRE)" loading="lazy" src="../assets/ch01/media/image4.png" /></p>
+<figcaption>
+<p><strong>Chapter 1 Figure 5: HIV-1 NL4-3 Rev Response Element (RRE).</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-6">
+<p><img alt="Chapter 1 Figure 6: HIV-1 mRNA expression, Rev switch, virion production" loading="lazy" src="../assets/ch01/media/image5.png" /></p>
+<figcaption>
+<p><strong>Chapter 1 Figure 6: HIV-1 mRNA expression, Rev switch, virion production.</strong></p>
+</figcaption>
+</figure>
+<p>Once there is enough FLUS HIV mRNA, Gag and Gag-Pol polyproteins coordinate recruitment of FLUS HIV mRNA to the site of virion assembly at the host plasma membrane. Accessory factors from the host which may be concurrently packaged into nascent HIV virion include host Lys-tRNA, Lysil-tRNA synthetase (LysRS), and Cyclophilin A (CypA). Cyclophilin A (CypA) is believed to stabilize the HIV virion capsid.</p>
+<h3 id="hiv-polyproteins-in-host-cells-and-immature-virions">HIV polyproteins in host cells and immature virions<a class="headerlink" href="#hiv-polyproteins-in-host-cells-and-immature-virions" title="Permanent link">&para;</a></h3>
+<p>The products of HIV mRNA expression are HIV structural polyproteins Gag (GenBank locus_tag: “HIV1gp2”) and Gag-Pol (locus_tag: “HIV1gp1”), as well as accessory proteins Vif (locus_tag: “HIV1gp3”), Vpr (locus_tag: “HIV1gp4”), Tat (locus_tag: “HIV1gp5”), Rev (locus_tag: “HIV1gp6”), Vpu (locus_tag: “HIV1gp7”), envelope precursor Env/gp160 (locus_tag: “HIV1gp8”), and lastly Nef (locus_tag: “HIV1gp9”). These are occasionally cleaved by several host proteases (for example, gp160 is cleaved into gp120 and gp41 by furin). However, the HIV structural polyproteins are believed to remain intact at least until they are packaged into nascent virion. Antisense protein (ASP) from the asp gene (locus_tag: “HIV1gp10”) is a 10<sup>th</sup> HIV-1 protein-coding gene has been proposed in the antisense orientation overlapping Env.</p>
+<p>Gag polyprotein protein concentration is about 10-20x higher than Gag-Pol. Gag-Pol is the product of a ribosomal frame shift occurring near a T homopolymer at the end of the region encoding p7 nucleocapsid (Source: LANL HIV Sequence Database). The result of this frameshift is that there is a one-out-of-ten or one-out-of-twenty chance that the ribosome slips, resulting in a Gag polyprotein shifted into the Pol reading frame to produce Gag-Pol. Importantly, the Gag-Pol open reading frame concludes as it crosses into overlapping Vif sequence. Gag-Pol and Vif are in distinct reading frames. <strong>Prior to this dissertation, additional splicing of the Gag-Pol was unknown.</strong> Protease inhibitors are an important class of antiretrovirals that helped to break HIV’s unchecked rampage in the late ‘90s (Arts et al. 2012). They were quickly paired with NRTI/NNRTIs in early antiretroviral therapy (ART) regimens and remain mainstays in HIV treatment regimens globally. These work by preventing virion maturation.</p>
+<h3 id="virion-assembly">Virion assembly<a class="headerlink" href="#virion-assembly" title="Permanent link">&para;</a></h3>
+<p>As Rev expression increases, it shifts the balance from more spliced HIV mRNAs like Tat/Rev/Nef-encoding mRNAs to less spliced products like Vif/Vpr-, Vpu/Env-, and Gag-Pol-encoding mRNAs reaching the cytoplasm (Felber, Drysdale, and Pavlakis 1990). These longer mRNAs are believed to be preferentially packaged into virion production zones at the infected cell’s plasma membrane. These interactions are mediated by the NC domain of Gag (D’Souza and Summers 2005; El Meshri et al. 2015). RNA hairpins in the 5’ end of the virus are believed to mediate HIV dimer “kissing,” or pairing of two HIV genome copies for incorporation into virion (Paillart et al. 1996). The process of Gag shell assembly takes about 10 minutes (Jouvenet, Bieniasz, and Simon 2008). Budding, or pinching off, of Gag-HIV gRNA complexes which will form immature virion, occurs within about 15 minutes later (Ivanchenko et al. 2009).</p>
+<h3 id="virion-maturation">Virion maturation<a class="headerlink" href="#virion-maturation" title="Permanent link">&para;</a></h3>
+<p>Budding virion progresses through a maturation process that is incompletely understood. However, it is believed that HIV protease spontaneously activates, and subsequently cleaves the HIV polyproteins into their final forms. This brings about p17, p24, p1, p2, p7, p6 from Gag, as well as p17, p24, p1, p2, p7, the Gag-Pol transframe peptide, PR, p55 and p61 RT, and p31 IN from Gag-Pol.</p>
+<h2 id="the-hiv-1-genome">The HIV-1 genome<a class="headerlink" href="#the-hiv-1-genome" title="Permanent link">&para;</a></h2>
+<p><strong><a href="#figure-4">Chapter 1 Figure 4</a>: HIV-1 viral genome</strong>). DNA basing (ACGT) is often preferred to RNA basing (ACGU); a holdover from older bioinformatics tools. <strong>Spliced HIV</strong> <strong>mRNAs are considered sub-genomic, and</strong> <strong>were</strong> <strong>not included in genome reference materials</strong> <strong>prior to this dissertation.</strong>All the previously mentioned HIV parts are encoded by the HIV genome. The HIV-1 genome used to be more commonly modeled as a 9.7 kb proviral sequence (<strong><a href="#figure-3">Chapter 1 Figure 3</a>: HIV-1 proviral genome</strong>), but now is most often modeled as an approximately 9.2 kilobase-long (kb) full-length unspliced (FLUS) mRNA entity (</p>
+<figure class="book-figure" id="figure-4">
+<p><img alt="Chapter 1 Figure 4: HIV-1 viral genome" loading="lazy" src="../assets/ch01/media/image3.png" /></p>
+<figcaption>
+<p><strong>Chapter 1 Figure 4: HIV-1 viral genome.</strong></p>
+<p><strong>Figure made in SnapGene.</strong></p>
+</figcaption>
+</figure>
+<figure class="book-figure" id="figure-3">
+<p><img alt="Chapter 1 Figure 3: HIV-1 proviral genome" loading="lazy" src="../assets/ch01/media/image2.png" /></p>
+<figcaption>
+<p><strong>Chapter 1 Figure 3: HIV-1 proviral genome.</strong></p>
+<p><strong>Figure made in SnapGene.</strong></p>
+</figcaption>
+</figure>
+<p>The two main HIV-1 reference genomes are K03455 and NC_001802. Both are based on HXB2, cloned from one of the earliest clinical isolates of HIV-1 (reviewed in (Gener et al. 2021). The Los Alamos National Laboratory’s HIV Sequence Database uses K03455 (Abfalterer et al. 2018). K03455 is represented in GenBank as K03455.1. This reference is organized as a proviral sequence, with full-length 5’ and 3’ LTRs.</p>
+<p><strong><a href="#figure-1">Chapter 1 Figure 1</a>: New HIV-1 Genomes by Sampling Year</strong>) and are also made available through the HIV Sequence Database The National Center for Biotechnology Information (NCBI) and National Library of Medicine (NLM) at the US National Institutes of Health (NIH) maintains a slightly different HIV-1 reference, the RefSeq entry for HIV NC_001802.1. NC_001802.1 differs from K03455.1 in two ways. K03455.1 is a proviral reference model and includes full-length LTRs. NC_001802.1 is modeled after HIV mRNA, and as such maintains an R-U5-HIV-U3-R structure. NC_001802.1 also has a point mutation in the HIV gene body (between the divided LTRs) (Gener and Kimata 2019). Breaking up the LTRs as 5’ leader and 3’ terminal segments is beneficial for short-read HIV sequencing. In addition to the main references, additional group and subgroup references are available. Full-length HIV-1 genomes are continually deposited into GeneBank ((Abfalterer et al. 2018). Obtaining HIV information from HIV sequencing is a major topic and will be discussed later in this dissertation.</p>
+<figure class="book-figure" id="figure-1">
+<p><img alt="New HIV-1 Genomes by Sampling Year" loading="lazy" src="../assets/ch01/media/figure1-new-genomes-by-year.png" /></p>
+<figcaption>
+<p><strong>Chapter 1 Figure 1: New HIV-1 Genomes by Sampling Year.</strong></p>
+<p>Source: LANL HIV Sequence Database. Figure made in Excel.  </p>
+</figcaption>
+</figure>
+<h3 id="information-conservation-across-the-hiv-genome">Information conservation across the HIV genome<a class="headerlink" href="#information-conservation-across-the-hiv-genome" title="Permanent link">&para;</a></h3>
+<p>Others have noted differences in relative information conservation across the HIV genome. Different parts are believed to be under different selective pressures. For example, essential enzyme activities are known to make up the most conserved loci in the HIV genome. As such, these are under strong negative selection. Conversely, hypervariable regions occur at variable loops, V1-V5 in gp160/gp120. These areas are under pressure to change to evade the hosts humoral immune system (strong positive selection).</p>
+<h2 id="hiv-1-pharmacotherapy">HIV-1 pharmacotherapy<a class="headerlink" href="#hiv-1-pharmacotherapy" title="Permanent link">&para;</a></h2>
+<p>The previous text in this chapter described select antiretroviral therapy (ART) agents and their mechanisms of action in isolation. However, it is important to understand the historical progress made developing each drug, as well as how each has been used in combination with other HIV medications (Arts et al. 2012).</p>
+<p>There have been four major revolutions in HIV/AIDS therapy since the causative agent of AIDS was given a name (Ghosn et al. 2018). The advent of protease inhibitors (PIs) in 1996 heralded the first revolution in HIV/AIDS care. PIs were tried in combination with one and then two nucleoside analogue reverse transcriptase (NRTI) inhibitors. This combination therapy was called highly active antiretroviral therapy (HAART) and improved the prognosis of PLWHA which had previously otherwise been grim (Palella et al. 1998).</p>
+<p>Riding the wave of effective viral suppression, observational studies (Donnell et al. 2010; Montaner et al. 2010; Quinn et al. 2000; Rodger et al. 2016) culminating in the HPTN 052 study (Cohen et al. 2011, 2016; Cohen, Gamble, and McCauley 2020) supported the extensibility of a new cART (multiple ART medicines with improved toxicity profiles physically combined into fewer pills) to both keep HIV+ people healthier longer, while decreasing their chance of transmission if viral suppression was achieved (Bavinton et al. 2018; Cohen et al. 2016; Rodger et al. 2019). In the HPTN 052 study, HIV serodiscordant couples (couples in which one partner had HIV, while the other did not) had a 96% reduction in the risk of HIV transmission (Cohen et al. 2016; Rodger et al. 2016). In the United States, ART is currently recommended for all patients with HIV regardless of viral load or CD4 count <strong>(level of evidence AI “A1”)</strong>  (Dube MP. , Stein JH. 2018).</p>
+<p>Prior to the third revolutionary step, patients with HIV had been left to wait until their immune systems had nearly failed. The rationalizations behind waiting included few available HIV medications earlier in the HIV pandemic, worry about developing drug resistance, and high cost of HIV medications. Earlier initiation of ART demonstrated the benefit of starting ART before 500 vs at 350 (Lundgren et al. 2015; O’Connor et al. 2017). Additional studies on the pathogenicity of related SIV seeding in rhesus monkeys (Whitney et al. 2014) and HIV seeding in humans (Abrahams et al. 2019; Henrich et al. 2017; Pankau et al. 2020) soon after infection justified limiting HIV spread within a patient’s body as early as possible. The added benefit of eliminating HIV transmission when viral loads are undetectable made rapid treatment initiation after HIV diagnosis – also known as test and treat (Garnett and Baggaley 2009) – the standard-of-care globally (Saag et al. 2018). A promising outcome of earlier ART initiation includes earlier ART recipients having more rapid decay in reservoir size over time (Massanella et al. 2021).</p>
+<p><u>IN</u>tegrase <u>S</u>trand <u>T</u>ransfer <u>I</u>nhibitors (INSTIs) are currently a mainstay of many clinical guidelines (Ghosn et al. 2018). INSTIs are often first-line in the US, while in the European Union and France, INSTIs are among first-line agents, including tenofovir disoproxil fumarate or tenofovir alafenamide (NRTIs) plus either rilpivirine (an NNRTI) or boosted darunavir (a ritonavir-boosted protease inhibitor). The WHO recommends an NNRTI-based strategy of tenofovir disoproxil fumarate plus emtricitabine (or lamivudine) plus efavirenz; dolutegravir or low-dose efavirenz are alternatives (World Health Organization 2016). The global trend favors the use of INSTIs (Ghosn et al. 2018). As such, it remains vitally important to anticipate how integrase resistance might develop.</p>
+<p>A fourth revolution came as a shift in thinking about patients with HIV to include people at risk of acquiring HIV. Those at risk include people with occupational exposure, exposure after intimate partner violence, and exposure after other high-risk activities. High-risk activities included injection drug use or sex with PLWH before it was known that virally suppressed PLWHA were not high-risk sexual contacts for their serodiscordant sexual partners. Post-exposure prophylaxis (PEP) was developed based on medications at low risk of drug resistance and quick bioavailability. Taken within 72 hours of potential exposure to HIV, cART such as emtricitabine and tenofovir protected against establishment of HIV infections (US Public Health Service 2017).</p>
+<p>Insights from treatment as prevention (www.cdc.gov/hiv/risk/art/index.html) and PEP (www.cdc.gov/hiv/risk/pep/index.html) were extended to trials giving people at risk of acquiring HIV access to ART prophylactically PrEP (www.cdc.gov/hiv/risk/prep/index.html), before becoming infected with HIV.</p>
+<h3 id="hiv-1-drug-resistance">HIV-1 drug resistance<a class="headerlink" href="#hiv-1-drug-resistance" title="Permanent link">&para;</a></h3>
+<p>Once HIV enters the body and establishes a persistent reservoir, the current best outcome for a patient is to achieve a functional cure with antiretroviral therapy (ART). The goal of ART is to achieve an undetectable HIV viral load. This is because decreased viral load is associated with improved immune function, as well as improved non-AIDS complications of HIV. While acquiring drug resistance can impact HIV viral fitness (Lloyd, Kent, and Winnall 2014), such resistance readily occurs in the context of no/inadequate ART or ART interruptions. As drugs against HIV started to come out in the early 90s, drug resistance began to develop. Earlier ART regimens were monotherapies, such as with zidovudine (AZT) alone. These were insufficient to prevent intrahost HIV replication and evolution. Drug resistance in 12 countries across the developing world is higher than 10% (Mega 2019). More worrisome still are reports of extensive multidrug resistant HIV in patients who have not used ART previously (Raymond et al. 2020).</p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<p>Abfalterer, Werner, Elena E. Giori, Will Fischer, Peter Hraber, Jennifer Macke, James J. Szinger, Kshitij Wagh, and Hyejin Yoon. 2018. “HIV Sequence Compendium 2018.” <em>Los Alamos National Laboratory HIV Sequence Database</em>.</p>
+<p>Abrahams, Melissa-Rose, Sarah B. Joseph, Nigel Garrett, Lynn Tyers, Matthew Moeser, Nancie Archin, Olivia D. Council, David Matten, Shuntai Zhou, Deelan Doolabh, Colin Anthony, Nilu Goonetilleke, Salim Abdool Karim, David M. Margolis, Sergei Kosakovsky Pond, Carolyn Williamson, and Ronald Swanstrom. 2019. “The Replication-Competent HIV-1 Latent Reservoir Is Primarily Established near the Time of Therapy Initiation.” <em>Science Translational Medicine</em> 11(513):eaaw5589.</p>
+<p>Ambrose, Zandrea and Christopher Aiken. 2014. “HIV-1 Uncoating: Connection to Nuclear Entry and Regulation by Host Proteins.” <em>Virology</em> 454–455:371–79.</p>
+<p>Archin, N. M., A. L. Liberty, A. D. Kashuba, S. K. Choudhary, J. D. Kuruc, A. M. Crooks, D. C. Parker, E. M. Anderson, M. F. Kearney, M. C. Strain, D. D. Richman, M. G. Hudgens, R. J. Bosch, J. M. Coffin, J. J. Eron, D. J. Hazuda, and D. M. Margolis. 2012. “Administration of Vorinostat Disrupts HIV-1 Latency in Patients on Antiretroviral Therapy.” <em>Nature</em> 487(7408):482–85.</p>
+<p>Arts, Eric J., Daria J. Hazuda, Editors Frederic D. Bushman, Gary J. Nabel, and Ronald Swanstrom. 2012. “HIV-1 Antiretroviral Drug Therapy.” <em>Cold Spring Harbor Perspectives in Medicine</em> 2(a007161):1–23.</p>
+<p>Barraud, Pierre, Jean-Christophe Paillart, Roland Marquet, and Carine Tisné. 2008. “Advances in the Structural Understanding of Vif Proteins.” <em>Current HIV Research</em> 6(2):91–99.</p>
+<p>Barré-Sinoussi, F., J. C. Chermann, F. Rey, M. T. Nugeyre, S. Chamaret, J. Gruest, C. Dauguet, C. Axler-Blin, F. Vézinet-Brun, C. Rouzioux, W. Rozenbaum, and L. Montagnier. 1983. “Isolation of a T-Lymphotropic Retrovirus from a Patient at Risk for Acquired Immune Deficiency Syndrome (AIDS).” <em>Science (New York, N.Y.)</em> 220(4599):868–71.</p>
+<p>Bavinton, Benjamin R., Angie N. Pinto, Nittaya Phanuphak, Beatriz Grinsztejn, Garrett P. Prestage, Iryna B. Zablotska-Manos, Fengyi Jin, Christopher K. Fairley, Richard Moore, Norman Roth, Mark Bloch, Catherine Pell, Anna M. McNulty, David Baker, Jennifer Hoy, Ban Kiem Tee, David J. Templeton, David A. Cooper, Sean Emery, Anthony Kelleher, and Andrew E. Grulich. 2018. “Viral Suppression and HIV Transmission in Serodiscordant Male Couples: An International, Prospective, Observational, Cohort Study.” <em>The Lancet. HIV</em> 5(8):e438–47.</p>
+<p>Bullen, C. Korin, Gregory M. Laird, Christine M. Durand, Janet D. Siliciano, and Robert F. Siliciano. 2014. “New Ex Vivo Approaches Distinguish Effective and Ineffective Single Agents for Reversing HIV-1 Latency in Vivo.” <em>Nature Medicine</em> 20(4):425–29.</p>
+<p>CDC. 1981. “Pneumocystis Pneumonia--Los Angeles.” <em>MMWR. Morbidity and Mortality Weekly Report</em> 30(21):250–52.</p>
+<p>Cohen, Jon and Martin Enserink. 2008. “Nobel Prize in Physiology or Medicine. HIV, HPV Researchers Honored, but One Scientist Is Left Out.” <em>Science (New York, N.Y.)</em> 322(5899):174–75.</p>
+<p>Cohen, Myron S., Ying Q. Chen, Marybeth McCauley, Theresa Gamble, Mina C. Hosseinipour, Nagalingeswaran Kumarasamy, James G. Hakim, Johnstone Kumwenda, Beatriz Grinsztejn, Jose H. S. Pilotto, Sheela V Godbole, Suwat Chariyalertsak, Breno R. Santos, Kenneth H. Mayer, Irving F. Hoffman, Susan H. Eshleman, Estelle Piwowar-Manning, Leslie Cottle, Xinyi C. Zhang, Joseph Makhema, Lisa A. Mills, Ravindre Panchia, Sharlaa Faesen, Joseph Eron, Joel Gallant, Diane Havlir, Susan Swindells, Vanessa Elharrar, David Burns, Taha E. Taha, Karin Nielsen-Saines, David D. Celentano, Max Essex, Sarah E. Hudelson, Andrew D. Redd, and Thomas R. Fleming. 2016. “Antiretroviral Therapy for the Prevention of HIV-1 Transmission.” <em>The New England Journal of Medicine</em> 375(9):830–39.</p>
+<p>Cohen, Myron S., Ying Q. Chen, Marybeth McCauley, Theresa Gamble, Mina C. Hosseinipour, Nagalingeswaran Kumarasamy, James G. Hakim, Johnstone Kumwenda, Beatriz Grinsztejn, Jose H. S. Pilotto, Sheela V Godbole, Sanjay Mehendale, Suwat Chariyalertsak, Breno R. Santos, Kenneth H. Mayer, Irving F. Hoffman, Susan H. Eshleman, Estelle Piwowar-Manning, Lei Wang, Joseph Makhema, Lisa A. Mills, Guy de Bruyn, Ian Sanne, Joseph Eron, Joel Gallant, Diane Havlir, Susan Swindells, Heather Ribaudo, Vanessa Elharrar, David Burns, Taha E. Taha, Karin Nielsen-Saines, David Celentano, Max Essex, and Thomas R. Fleming. 2011. “Prevention of HIV-1 Infection with Early Antiretroviral Therapy.” <em>The New England Journal of Medicine</em> 365(6):493–505.</p>
+<p>Cohen, Myron S., Theresa Gamble, and Marybeth McCauley. 2020. “Prevention of HIV Transmission and the HPTN 052 Study.” <em>Annual Review of Medicine</em> 71:347–60.</p>
+<p>Crublet, Elodie, Jean-Pierre Andrieu, Romain R. Vivès, and Hugues Lortat-Jacob. 2008. “The HIV-1 Envelope Glycoprotein Gp120 Features Four Heparan Sulfate Binding Domains, Including the Co-Receptor Binding Site.” <em>The Journal of Biological Chemistry</em> 283(22):15193–200.</p>
+<p>D’Souza, Victoria and Michael F. Summers. 2005. “How Retroviruses Select Their Genomes.” <em>Nature Reviews. Microbiology</em> 3(8):643–55.</p>
+<p>Deeks, Steven G., Sharon R. Lewin, Anna Laura Ross, Jintanat Ananworanich, Monsef Benkirane, Paula Cannon, Nicolas Chomont, Daniel Douek, Jeffrey D. Lifson, Ying-Ru Lo, Daniel Kuritzkes, David Margolis, John Mellors, Deborah Persaud, Joseph D. Tucker, Françoise Barre-Sinoussi, Galit Alter, Judith Auerbach, Brigitte Autran, Dan H. Barouch, Georg Behrens, Marina Cavazzana, Zhiwei Chen, Éric A. Cohen, Giulio Maria Corbelli, Serge Eholié, Nir Eyal, Sarah Fidler, Laurindo Garcia, Cynthia Grossman, Gail Henderson, Timothy J. Henrich, Richard Jefferys, Hans-Peter Kiem, Joseph McCune, Keymanthri Moodley, Peter A. Newman, Monique Nijhuis, Moses Supercharger Nsubuga, Melanie Ott, Sarah Palmer, Douglas Richman, Asier Saez-Cirion, Matthew Sharp, Janet Siliciano, Guido Silvestri, Jerome Singh, Bruno Spire, Jeffrey Taylor, Martin Tolstrup, Susana Valente, Jan van Lunzen, Rochelle Walensky, Ira Wilson, and Jerome Zack. 2016. “International AIDS Society Global Scientific Strategy: Towards an HIV Cure 2016.” <em>Nature Medicine</em> 22(8):839–50.</p>
+<p>Dirk, Brennan S., Emily N. Pawlak, Aaron L. Johnson, Logan R. Van Nynatten, Rajesh A. Jacob, Bryan Heit, and Jimmy D. Dikeakos. 2016. “HIV-1 Nef Sequesters MHC-I Intracellularly by Targeting Early Stages of Endocytosis and Recycling.” <em>Scientific Reports</em> 6(1):37021.</p>
+<p>Donnell, Deborah, Jared M. Baeten, James Kiarie, Katherine K. Thomas, Wendy Stevens, Craig R. Cohen, James McIntyre, Jairam R. Lingappa, and Connie Celum. 2010. “Heterosexual HIV-1 Transmission after Initiation of Antiretroviral Therapy: A Prospective Cohort Analysis.” <em>Lancet (London, England)</em> 375(9731):2092–98.</p>
+<p>Dube MP. , Stein JH., Aberg JA. 2018. “Panel on Antiretroviral Guidelines for Adults and Adolescents. Guidelines for the Use of Antiretroviral Agents in Adults and Adolescents with HIV.” <em>Department of Health and Human Services</em> 40(Build 29393).</p>
+<p>Dupont, Liane, Stuart Bloor, James C. Williamson, Sergio Martínez Cuesta, Raven Shah, Ana Teixeira-Silva, Adi Naamati, Edward J. D. Greenwood, Stefan G. Sarafianos, Nicholas J. Matheson, and Paul J. Lehner. 2021. “The SMC5/6 Complex Compacts and Silences Unintegrated HIV-1 DNA and Is Antagonized by Vpr.” <em>Cell Host &amp; Microbe</em> 1–14.</p>
+<p>Elliott, Julian H., Fiona Wightman, Ajantha Solomon, Khader Ghneim, Jeffrey Ahlers, Mark J. Cameron, Miranda Z. Smith, Tim Spelman, James McMahon, Pushparaj Velayudham, Gregor Brown, Janine Roney, Jo Watson, Miles H. Prince, Jennifer F. Hoy, Nicolas Chomont, Rémi Fromentin, Francesco A. Procopio, Joumana Zeidan, Sarah Palmer, Lina Odevall, Ricky W. Johnstone, Ben P. Martin, Elizabeth Sinclair, Steven G. Deeks, Daria J. Hazuda, Paul U. Cameron, Rafick-Pierre Sékaly, and Sharon R. Lewin. 2014. “Activation of HIV Transcription with Short-Course Vorinostat in HIV-Infected Patients on Suppressive Antiretroviral Therapy.” <em>PLoS Pathogens</em> 10(10):e1004473.</p>
+<p>Falkow, Stanley. 2004. “Molecular Koch’s Postulates Applied to Bacterial Pathogenicity — a Personal Recollection 15 Years Later.” <em>Nature Reviews Microbiology</em> 2(1):67–72.</p>
+<p>Felber, B. K., C. M. Drysdale, and G. N. Pavlakis. 1990. “Feedback Regulation of Human Immunodeficiency Virus Type 1 Expression by the Rev Protein.” <em>Journal of Virology</em> 64(8):3734–41.</p>
+<p>Fletcher, Courtney V, Kathryn Staskus, Stephen W. Wietgrefe, Meghan Rothenberger, Cavan Reilly, Jeffrey G. Chipman, Greg J. Beilman, Alexander Khoruts, Ann Thorkelson, Thomas E. Schmidt, Jodi Anderson, Katherine Perkey, Mario Stevenson, Alan S. Perelson, Daniel C. Douek, Ashley T. Haase, and Timothy W. Schacker. 2014. “Persistent HIV-1 Replication Is Associated with Lower Antiretroviral Drug Concentrations in Lymphatic Tissues.” <em>Proceedings of the National Academy of Sciences of the United States of America</em> 111(6):2307–12.</p>
+<p>Gallo, R. C., S. Z. Salahuddin, M. Popovic, G. M. Shearer, M. Kaplan, B. F. Haynes, T. J. Palker, R. Redfield, J. Oleske, and B. Safai. 1984. “Frequent Detection and Isolation of Cytopathic Retroviruses (HTLV-III) from Patients with AIDS and at Risk for AIDS.” <em>Science (New York, N.Y.)</em> 224(4648):500–503.</p>
+<p>Gallo, R. C., P. S. Sarin, E. P. Gelmann, M. Robert-Guroff, E. Richardson, V. S. Kalyanaraman, D. Mann, G. D. Sidhu, R. E. Stahl, S. Zolla-Pazner, J. Leibowitch, and M. Popovic. 1983. “Isolation of Human T-Cell Leukemia Virus in Acquired Immune Deficiency Syndrome (AIDS).” <em>Science (New York, N.Y.)</em> 220(4599):865–67.</p>
+<p>Garnett, Geoffrey P. and Rebecca F. Baggaley. 2009. “Treating Our Way out of the HIV Pandemic: Could We, Would We, Should We?” <em>Lancet (London, England)</em> 373(9657):9–11.</p>
+<p>Gaudin, Raphaël, Bruna Cunha de Alencar, Nathalie Arhel, and Philippe Benaroch. 2013. “HIV Trafficking in Host Cells: Motors Wanted!” <em>Trends in Cell Biology</em> 23(12):652–62.</p>
+<p>Gener, Alejandro R. and Jason T. Kimata. 2019. “Full-Coverage Native RNA Sequencing of HIV-1 Viruses.” <em>BioRxiv</em> 845610.</p>
+<p>Gener, Alejandro R., Wei Zou, Brian T. Foley, Deborah P. Hyink, and Paul E. Klotman. 2021. “Reference Plasmid PHXB2_D Is an HIV-1 Molecular Clone That Exhibits Identical LTRs and a Single Integration Site Indicative of an HIV Provirus.” <em>BioRxiv</em> 611848.</p>
+<p>Ghosn, Jade, Babafemi Taiwo, Soraya Seedat, Brigitte Autran, and Christine Katlama. 2018. “HIV (Seminar Lancet 2018).” <em>The Lancet</em> 392(10148):685–97.</p>
+<p>Goujon, Caroline, Olivier Moncorgé, Hélène Bauby, Tomas Doyle, Christopher C. Ward, Torsten Schaller, Stéphane Hué, Wendy S. Barclay, Reiner Schulz, and Michael H. Malim. 2013. “Human MX2 Is an Interferon-Induced Post-Entry Inhibitor of HIV-1 Infection.” <em>Nature</em> 502(7472):559–62.</p>
+<p>Greene, Warner C. and B. Matija Peterlin. 2006. “Molecular Insights Into HIV Biology.” <em>HIV InSite Knowledge Base Chapter</em>. Retrieved June 9, 2021 (http://hivinsite.ucsf.edu/InSite?page=kb-00&amp;doc=kb-02-01-01).</p>
+<p>Henrich, Timothy J., Hiroyu Hatano, Oliver Bacon, Louise E. Hogan, Rachel Rutishauser, Alison Hill, Mary F. Kearney, Elizabeth M. Anderson, Susan P. Buchbinder, Stephanie E. Cohen, Mohamed Abdel-Mohsen, Christopher W. Pohlmeyer, Remi Fromentin, Rebecca Hoh, Albert Y. Liu, Joseph M. McCune, Jonathan Spindler, Kelly Metcalf-Pate, Kristen S. Hobbs, Cassandra Thanh, Erica A. Gibson, Daniel R. Kuritzkes, Robert F. Siliciano, Richard W. Price, Douglas D. Richman, Nicolas Chomont, Janet D. Siliciano, John W. Mellors, Steven A. Yukl, Joel N. Blankson, Teri Liegler, and Steven G. Deeks. 2017. “HIV-1 Persistence Following Extremely Early Initiation of Antiretroviral Therapy (ART) during Acute HIV-1 Infection: An Observational Study.” <em>PLoS Medicine</em> 14(11):e1002417.</p>
+<p>Hu, Wei-Shau and Stephen H. Hughes. 2012. “HIV-1 Reverse Transcription.” <em>Cold Spring Harbor Perspectives in Medicine</em> 2(10).</p>
+<p>Iordanskiy, Sergey, Reem Berro, Maria Altieri, Fatah Kashanchi, and Michael Bukrinsky. 2006. “Intracytoplasmic Maturation of the Human Immunodeficiency Virus Type 1 Reverse Transcription Complexes Determines Their Capacity to Integrate into Chromatin.” <em>Retrovirology</em> 3:4.</p>
+<p>Ivanchenko, Sergey, William J. Godinez, Marko Lampe, Hans-Georg Kräusslich, Roland Eils, Karl Rohr, Christoph Bräuchle, Barbara Müller, and Don C. Lamb. 2009. “Dynamics of HIV-1 Assembly and Release.” <em>PLOS Pathogens</em> 5(11):e1000652.</p>
+<p>Jones, J. S., R. W. Allan, and H. M. Temin. 1994. “One Retroviral RNA Is Sufficient for Synthesis of Viral DNA.” <em>Journal of Virology</em> 68(1):207–16.</p>
+<p>Jouvenet, Nolwenn, Paul D. Bieniasz, and Sanford M. Simon. 2008. “Imaging the Biogenesis of Individual HIV-1 Virions in Live Cells.” <em>Nature</em> 454(7201):236–40.</p>
+<p>Katlama, Christine, Steven G. Deeks, Brigitte Autran, Javier Martinez-Picado, Jan van Lunzen, Christine Rouzioux, Michael Miller, Stefano Vella, Joern E. Schmitz, Jeffrey Ahlers, Douglas D. Richman, and Rafick P. Sekaly. 2013. “Barriers to a Cure for HIV: New Ways to Target and Eradicate HIV-1 Reservoirs.” <em>Lancet (London, England)</em> 381(9883):2109–17.</p>
+<p>Lee, KyeongEun, Zandrea Ambrose, Thomas D. Martin, Ilker Oztop, Alok Mulky, John G. Julias, Nick Vandegraaff, Joerg G. Baumann, Rui Wang, Wendy Yuen, Taichiro Takemura, Kenneth Shelton, Ichiro Taniuchi, Yuan Li, Joseph Sodroski, Dan R. Littman, John M. Coffin, Stephen H. Hughes, Derya Unutmaz, Alan Engelman, and Vineet N. KewalRamani. 2010. “Flexible Use of Nuclear Import Pathways by HIV-1.” <em>Cell Host &amp; Microbe</em> 7(3):221–33.</p>
+<p>Lesbats, Paul, Alan N. Engelman, and Peter Cherepanov. 2016. “Retroviral DNA Integration.” <em>Chemical Reviews</em> 116(20):12730–57.</p>
+<p>Levy, Jay A. 2007. <em>HIV and the Pathogenesis of AIDS</em>. 3rd ed. Washington: ASM Press.</p>
+<p>Lloyd, Sarah B., Stephen J. Kent, and Wendy R. Winnall. 2014. “The High Cost of Fidelity.” <em>AIDS Research and Human Retroviruses</em> 30(1):8–16.</p>
+<p>Lohse, Nicolai and Niels Obel. 2016. “Update of Survival for Persons With HIV Infection in Denmark.” <em>Annals of Internal Medicine</em> 165(10):749–50.</p>
+<p>Lorenzo-Redondo, Ramon, Helen R. Fryer, Trevor Bedford, Eun-Young Kim, John Archer, Sergei L. Kosakovsky Pond, Yoon-Seok Chung, Sudhir Penugonda, Jeffrey Chipman, Courtney V Fletcher, Timothy W. Schacker, Michael H. Malim, Andrew Rambaut, Ashley T. Haase, Angela R. McLean, and Steven M. Wolinsky. 2016. “Persistent HIV-1 Replication Maintains the Tissue Reservoir during Therapy.” <em>Nature</em> 530(7588):51–56.</p>
+<p>Lundgren, Jens D., Abdel G. Babiker, Fred Gordin, Sean Emery, Birgit Grund, Shweta Sharma, Anchalee Avihingsanon, David A. Cooper, Gerd Fätkenheuer, Josep M. Llibre, Jean-Michel Molina, Paula Munderi, Mauro Schechter, Robin Wood, Karin L. Klingman, Simon Collins, H. Clifford Lane, Andrew N. Phillips, and James D. Neaton. 2015. “Initiation of Antiretroviral Therapy in Early Asymptomatic HIV Infection.” <em>The New England Journal of Medicine</em> 373(9):795–807.</p>
+<p>Maddon, P. J., A. G. Dalgleish, J. S. McDougal, P. R. Clapham, R. A. Weiss, and R. Axel. 1986. “The T4 Gene Encodes the AIDS Virus Receptor and Is Expressed in the Immune System and the Brain.” <em>Cell</em> 47(3):333–48.</p>
+<p>Marx, J. L. 1984. “Strong New Candidate for AIDS Agent.” <em>Science</em> 224(4648):475 LP – 477.</p>
+<p>Massanella, Marta, Rachel A. Bender Ignacio, Javier R. Lama, Amélie Pagliuzza, Sayan Dasgupta, Ricardo Alfaro, Jessica Rios, Carmela Ganoza, Delia Pinto-Santini, Trupti Gilada, Ann Duerr, and Nicolas Chomont. 2021. “Long-Term Effects of Early Antiretroviral Initiation on HIV Reservoir Markers: A Longitudinal Analysis of the MERLIN Clinical Study.” <em>The Lancet Microbe</em> 2(5):e198–209.</p>
+<p>McDonald, David, Marie A. Vodicka, Ginger Lucero, Tatyana M. Svitkina, Gary G. Borisy, Michael Emerman, and Thomas J. Hope. 2002. “Visualization of the Intracellular Behavior of HIV in Living Cells.” <em>The Journal of Cell Biology</em> 159(3):441–52.</p>
+<p>Mega, Emiliano Rodríguez. 2019. “Alarming Surge in Drug-Resistant HIV Uncovered.” <em>Nature</em>.</p>
+<p>El Meshri, Salah Edin, Denis Dujardin, Julien Godet, Ludovic Richert, Christian Boudier, Jean Luc Darlix, Pascal Didier, Yves Mély, and Hugues de Rocquigny. 2015. “Role of the Nucleocapsid Domain in HIV-1 Gag Oligomerization and Trafficking to the Plasma Membrane: A Fluorescence Lifetime Imaging Microscopy Investigation.” <em>Journal of Molecular Biology</em> 427(6 Pt B):1480–94.</p>
+<p>Meyerhans, Andreas, Tanja Breinig, Jean-Pierre Vartanian, and Simon Wain-Hobson. 2003. “Forms and Function of Intracellular HIV DNA.” Pp. 14–21 in <em>The Human Retroviruses and AIDS 2003 Compendium</em>, edited by T. Leitner, F. Brian, B. Hahn, P. Marx, F. McCutchan, J. W. Mellors, S. Wolinsky, and B. Korber.</p>
+<p>Montaner, Julio S. G., Viviane D. Lima, Rolando Barrios, Benita Yip, Evan Wood, Thomas Kerr, Kate Shannon, P. Richard Harrigan, Robert S. Hogg, Patricia Daly, and Perry Kendall. 2010. “Association of Highly Active Antiretroviral Therapy Coverage, Population Viral Load, and Yearly New HIV Diagnoses in British Columbia, Canada: A Population-Based Study.” <em>Lancet (London, England)</em> 376(9740):532–39.</p>
+<p>Nakayama, Emi E. and Tatsuo Shioda. 2010. “Anti-Retroviral Activity of TRIM5 Alpha.” <em>Reviews in Medical Virology</em> 20(2):77–92.</p>
+<p>Nguyen Quang, Nam, Sophie Goudey, Emmanuel Ségéral, Ammara Mohammad, Sophie Lemoine, Corinne Blugeon, Margaux Versapuech, Jean Christophe Paillart, Clarisse Berlioz-Torrent, Stéphane Emiliani, and Sarah Gallois-Montbrun. 2020. “Dynamic Nanopore Long-Read Sequencing Analysis of HIV-1 Splicing Events during the Early Steps of Infection.” <em>Retrovirology</em> 17(1):1–24.</p>
+<p>O’Connor, Jemma, Michael J. Vjecha, Andrew N. Phillips, Brian Angus, David Cooper, Beatriz Grinsztejn, Gustavo Lopardo, Satyajit Das, Robin Wood, Aimee Wilkin, Hartwig Klinker, Pacharee Kantipong, Karin L. Klingman, David Jilich, Elbushra Herieka, Eileen Denning, Ibrahim Abubakar, Fred Gordin, and Jens D. Lundgren. 2017. “Effect of Immediate Initiation of Antiretroviral Therapy on Risk of Severe Bacterial Infections in HIV-Positive People with CD4 Cell Counts of More than 500 Cells per ΜL: Secondary Outcome Results from a Randomised Controlled Trial.” <em>The Lancet. HIV</em> 4(3):e105–12.</p>
+<p>Ocwieja, Karen E., Scott Sherrill-Mix, Rithun Mukherjee, Rebecca Custers-Allen, Patricia David, Michael Brown, Susana Wang, Darren R. Link, Jeff Olson, Kevin Travers, Eric Schadt, and Frederic D. Bushman. 2012. “Dynamic Regulation of HIV-1 MRNA Populations Analyzed by Single-Molecule Enrichment and Long-Read Sequencing.” <em>Nucleic Acids Research</em> 40(20):10345–55.</p>
+<p>Paillart, Jean-christophe, Eugene Skripkin, Bernard Ehresmann, Chantal Ehresmann, and Roland Marquet. 1996. “A Loop-Loop ‘Kissing’ Complex Is the Essential Part of the Dimer Linkage of Genomic HIV-1 RNA.” <em>Biochemistry</em> 93(May):5572–77.</p>
+<p>Palella, F. J. Jr, K. M. Delaney, A. C. Moorman, M. O. Loveless, J. Fuhrer, G. A. Satten, D. J. Aschman, S. D. Holmberg, and HIV Outpatient Study Investigators. 1998. “Declining Morbidity and Mortality among Patients with Advanced Human Immunodeficiency Virus Infection.” <em>The New England Journal of Medicine</em> 338(13):853–60.</p>
+<p>Panganiban, A. T. and D. Fiore. 1988. “Ordered Interstrand and Intrastrand DNA Transfer during Reverse Transcription.” <em>Science (New York, N.Y.)</em> 241(4869):1064–69.</p>
+<p>Pankau, Mark D., Daniel B. Reeves, Elias Harkins, Keshet Ronen, Walter Jaoko, Kishor Mandaliya, Susan M. Graham, R. Scott McClelland, Frederick A. Matsen Iv, Joshua T. Schiffer, Julie Overbaugh, and Dara A. Lehman. 2020. “Dynamics of HIV DNA Reservoir Seeding in a Cohort of Superinfected Kenyan Women.” <em>PLoS Pathogens</em> 16(2):e1008286–e1008286.</p>
+<p>Permanyer, Marc, Ester Ballana, and José A. Esté. 2010. “Endocytosis of HIV: Anything Goes.” <em>Trends in Microbiology</em> 18(12):543–51.</p>
+<p>Popovic, M., M. G. Sarngadharan, E. Read, and R. C. Gallo. 1984. “Detection, Isolation, and Continuous Production of Cytopathic Retroviruses (HTLV-III) from Patients with AIDS and Pre-AIDS.” <em>Science (New York, N.Y.)</em> 224(4648):497–500.</p>
+<p>Purcell, Damian F. J. and Malcolm A. Martin. 1993. “Alternative Splicing of Human Immunodeficiency Virus Type 1 MRNA Modulates Viral Protein Expression , Replication , and Infectivity.” 67(11):6365–78.</p>
+<p>Quinn, T. C., M. J. Wawer, N. Sewankambo, D. Serwadda, C. Li, F. Wabwire-Mangen, M. O. Meehan, T. Lutalo, R. H. Gray, and Rakai Project Study Group. 2000. “Viral Load and Heterosexual Transmission of Human Immunodeficiency Virus Type 1.” <em>The New England Journal of Medicine</em> 342(13):921–29.</p>
+<p>Raymond, Stéphanie, Marie Piffaut, Jonathan Bigot, Michelle Cazabat, Brigitte Montes, Kevin Bertrand, Guillaume Martin-Blondel, Jacques Izopet, and Pierre Delobel. 2020. “Sexual Transmission of an Extensively Drug-Resistant HIV-1 Strain.” <em>The Lancet HIV</em> 7(8):e529–30.</p>
+<p>Rodger, Alison J., Valentina Cambiano, Tina Bruun, Pietro Vernazza, Simon Collins, Olaf Degen, Giulio Maria Corbelli, Vicente Estrada, Anna Maria Geretti, Apostolos Beloukas, Dorthe Raben, Pep Coll, Andrea Antinori, Nneka Nwokolo, Armin Rieger, Jan M. Prins, Anders Blaxhult, Rainer Weber, Arne Van Eeden, Norbert H. Brockmeyer, Amanda Clarke, Jorge Del Romero Guerrero, Francois Raffi, Johannes R. Bogner, Gilles Wandeler, Jan Gerstoft, Felix Gutiérrez, Kees Brinkman, Maria Kitchen, Lars Ostergaard, Agathe Leon, Matti Ristola, Heiko Jessen, Hans-Jürgen Stellbrink, Andrew N. Phillips, and Jens Lundgren. 2019. “Risk of HIV Transmission through Condomless Sex in Serodifferent Gay Couples with the HIV-Positive Partner Taking Suppressive Antiretroviral Therapy (PARTNER): Final Results of a Multicentre, Prospective, Observational Study.” <em>Lancet (London, England)</em> 393(10189):2428–38.</p>
+<p>Rodger, Alison J., Valentina Cambiano, Tina Bruun, Pietro Vernazza, Simon Collins, Jan van Lunzen, Giulio Maria Corbelli, Vicente Estrada, Anna Maria Geretti, Apostolos Beloukas, David Asboe, Pompeyo Viciana, Félix Gutiérrez, Bonaventura Clotet, Christian Pradier, Jan Gerstoft, Rainer Weber, Katarina Westling, Gilles Wandeler, Jan M. Prins, Armin Rieger, Marcel Stoeckle, Tim Kümmerle, Teresa Bini, Adriana Ammassari, Richard Gilson, Ivanka Krznaric, Matti Ristola, Robert Zangerle, Pia Handberg, Antonio Antela, Sris Allan, Andrew N. Phillips, and Jens Lundgren. 2016. “Sexual Activity Without Condoms and Risk of HIV Transmission in Serodifferent Couples When the HIV-Positive Partner Is Using Suppressive Antiretroviral Therapy.” <em>JAMA</em> 316(2):171–81.</p>
+<p>Ruelas, Debbie S. and Warner C. Greene. 2013. “An Integrated Overview of HIV-1 Latency.” <em>Cell</em> 155(3):519–29.</p>
+<p>Saag, Michael S., Constance A. Benson, Rajesh T. Gandhi, Jennifer F. Hoy, Raphael J. Landovitz, Michael J. Mugavero, Paul E. Sax, Davey M. Smith, Melanie A. Thompson, Susan P. Buchbinder, Carlos Del Rio, Joseph J. Jr Eron, Gerd Fätkenheuer, Huldrych F. Günthard, Jean-Michel Molina, Donna M. Jacobsen, and Paul A. Volberding. 2018. “Antiretroviral Drugs for Treatment and Prevention of HIV Infection in Adults: 2018 Recommendations of the International Antiviral Society-USA Panel.” <em>JAMA</em> 320(4):379–96.</p>
+<p>Salter, Jason D., Ryan P. Bennett, and Harold C. Smith. 2016. “The APOBEC Protein Family: United by Structure, Divergent in Function.” <em>Trends in Biochemical Sciences</em> 41(7):578–94.</p>
+<p>Samji, Hasina, Angela Cescon, Robert S. Hogg, Sharada P. Modur, Keri N. Althoff, Kate Buchacz, Ann N. Burchell, Mardge Cohen, Kelly A. Gebo, M. John Gill, Amy Justice, Gregory Kirk, Marina B. Klein, P. Todd Korthuis, Jeff Martin, Sonia Napravnik, Sean B. Rourke, Timothy R. Sterling, Michael J. Silverberg, Stephen Deeks, Lisa P. Jacobson, Ronald J. Bosch, Mari M. Kitahata, James J. Goedert, Richard Moore, and Stephen J. Gange. 2013. “Closing the Gap: Increases in Life Expectancy among Treated HIV-Positive Individuals in the United States and Canada.” <em>PloS One</em> 8(12):e81355.</p>
+<p>Sarngadharan, M. G., M. Popovic, L. Bruch, J. Schüpbach, and R. C. Gallo. 1984. “Antibodies Reactive with Human T-Lymphotropic Retroviruses (HTLV-III) in the Serum of Patients with AIDS.” <em>Science (New York, N.Y.)</em> 224(4648):506–8.</p>
+<p>Schröfelbauer, Bärbel, Qin Yu, Samantha G. Zeitlin, and Nathaniel R. Landau. 2005. “Human Immunodeficiency Virus Type 1 Vpr Induces the Degradation of the UNG and SMUG Uracil-DNA Glycosylases.” <em>Journal of Virology</em> 79(17):10978–87.</p>
+<p>Schüpbach, J., M. Popovic, R. V Gilden, M. A. Gonda, M. G. Sarngadharan, and R. C. Gallo. 1984. “Serological Analysis of a Subgroup of Human T-Lymphotropic Retroviruses (HTLV-III) Associated with AIDS.” <em>Science (New York, N.Y.)</em> 224(4648):503–5.</p>
+<p>Shirakawa, Kotaro, Leonard Chavez, Shweta Hakre, Vincenzo Calvanese, and Eric Verdin. 2013. “Reactivation of Latent HIV by Histone Deacetylase Inhibitors.” <em>Trends in Microbiology</em> 21(6):277–85.</p>
+<p>SIB Swiss Institute of Bioinformatics. n.d. “SsRNA(RT) Replication/Transcription.” <em>ViralZone</em>. Retrieved June 14, 2021 (https://viralzone.expasy.org/1937).</p>
+<p>da Silva, Ronaldo Celerino, Ludovica Segat, and Sergio Crovella. 2011. “Role of DC-SIGN and L-SIGN Receptors in HIV-1 Vertical Transmission.” <em>Human Immunology</em> 72(4):305–11.</p>
+<p>Søgaard, Ole S., Mette E. Graversen, Steffen Leth, Rikke Olesen, Christel R. Brinkmann, Sara K. Nissen, Anne Sofie Kjaer, Mariane H. Schleimann, Paul W. Denton, William J. Hey-Cunningham, Kersten K. Koelsch, Giuseppe Pantaleo, Kim Krogsgaard, Maja Sommerfelt, Remi Fromentin, Nicolas Chomont, Thomas A. Rasmussen, Lars Østergaard, and Martin Tolstrup. 2015. “The Depsipeptide Romidepsin Reverses HIV-1 Latency In Vivo.” <em>PLoS Pathogens</em> 11(9):e1005142.</p>
+<p>Stringer, James R., Charles B. Beard, Robert F. Miller, and Ann E. Wakefield. 2002. “A New Name for &lt;em&gt;Pneumocystis&lt;/Em&gt; from Humans and New Perspectives on the Host-Pathogen Relationship.” <em>Emerging Infectious Disease Journal</em> 8(9):891.</p>
+<p>Swiss South Africa Joint Research Programme. n.d. “HIV Replication Cycle.” <em>ViralZone</em>. Retrieved June 9, 2021 (https://viralzone.expasy.org/5096).</p>
+<p>Tokarev, Andrey and John Guatelli. 2011. “Misdirection of Membrane Trafficking by HIV-1 Vpu and Nef: Keys to Viral Virulence and Persistence.” <em>Cellular Logistics</em> 1(3):90–102.</p>
+<p>US Public Health Service. 2017. <em>Preexposure Prophylaxis for the Prevention of HIV Infection in the United States - 2017 Update Clinical Practice Guideline</em>.</p>
+<p>Verhofstede, Chris, Monique Nijhuis, and Linos Vandekerckhove. 2012. “Correlation of Coreceptor Usage and Disease Progression.” <em>Current Opinion in HIV and AIDS</em> 7(5):432–39.</p>
+<p>Walzer, P. D., D. P. Perl, D. J. Krogstad, P. G. Rawson, and M. G. Schultz. 1974. “Pneumocystis Carinii Pneumonia in the United States. Epidemiologic, Diagnostic, and Clinical Features.” <em>Annals of Internal Medicine</em> 80(1):83–93.</p>
+<p>van Wamel, J. L. and B. Berkhout. 1998. “The First Strand Transfer during HIV-1 Reverse Transcription Can Occur Either Intramolecularly or Intermolecularly.” <em>Virology</em> 244(2):245–51.</p>
+<p>Wei, Xiping, Sajal K. Ghosh, Maria E. Taylor, Victoria A. Johnson, Emilio A. Emini, Paul Deutsch, Jeffrey D. Lifson, Sebastian Bonhoeffer, Martin A. Nowak, Beatrice H. Hahn, Michael S. Saag, and George M. Shaw. 1995. “Viral Dynamics in Human Immunodeficiency Virus Type 1 Infection.” <em>Nature</em> 373(6510):117–22.</p>
+<p>Whitney, James B., Alison L. Hill, Srisowmya Sanisetty, Pablo Penaloza-MacMaster, Jinyan Liu, Mayuri Shetty, Lily Parenteau, Crystal Cabral, Jennifer Shields, Stephen Blackmore, Jeffrey Y. Smith, Amanda L. Brinkman, Lauren E. Peter, Sheeba I. Mathew, Kaitlin M. Smith, Erica N. Borducchi, Daniel I. S. Rosenbloom, Mark G. Lewis, Jillian Hattersley, Bei Li, Joseph Hesselgesser, Romas Geleziunas, Merlin L. Robb, Jerome H. Kim, Nelson L. Michael, and Dan H. Barouch. 2014. “Rapid Seeding of the Viral Reservoir Prior to SIV Viraemia in Rhesus Monkeys.” <em>Nature</em> 512(7512):74–77.</p>
+<p>World Health Organization. 2016. <em>Consolidated Guidelines on the Use of Antiretroviral Drugs for Treating and Preventing HIV Infection: Recommendations for a Public Health Approach.</em> 2nd ed. Geneva, Geneva: World Health Organization.</p>
+<p>Wyatt, Christina M. and Paul E. Klotman. 2016. “HIV-Associated Nephropathy (HIVAN).” <em>UpToDate</em> 1–21.</p>
+<p>Zhang, Xiujuan, Yuanmei Zhu, Hao Hu, Senyan Zhang, Pengfei Wang, Huihui Chong, Jinsheng He, Xinquan Wang, and Yuxian He. 2018. “Structural Insights into the Mechanisms of Action of Short-Peptide HIV-1 Fusion Inhibitors Targeting the Gp41 Pocket.” <em>Frontiers in Cellular and Infection Microbiology</em> 8:51.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Note: <em>Pneumocystis carinii</em> was renamed <em>Pneumocystis jiroveci</em> Frenkel 1999 (Stringer et al. 2002), and the disease <em><u>P</u>neumo<u>c</u>ystis <u>p</u>neumonia</em> retains the acronym PCP, but with nuanced different meaning.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>For clarity, I follow the following convention for HIV genes and their products. HIV genes described before my dissertation are usually written in lower case (e.g., gag). Genes are stretches of nucleic acid which may code for a protein product. Non-coding nucleic acids include but are not limited to promoters in circularized cDNA and/or linear integrated proviral DNA sequences and RNA segments, which may exhibit secondary (2º) structure. These non-coding elements have names which follow sentence case (e.g., long terminal repeats (LTRs)). HIV protein products are written capitalized but not in all-caps (e.g., Gag). Note that gene definitions evolve with time. See text discussion about the gag-pol gene and how its ribosomal frameshift site enables translation of previously described Gag and Gag-Pol products.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Home
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../02-how-we-know-what-we-know/" class="md-footer__link md-footer__link--next" aria-label="Next: 2. How we know what we know about HIV">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                2. How we know what we know about HIV
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <span class="footer-wordmark" role="img" aria-label="Heelbent"></span> &copy; 2021&ndash;2026 Alejandro Rafael Gener. All rights reserved. &middot; Text and figures licensed <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "navigation.tracking", "toc.follow", "search.highlight", "search.suggest", "search.share", "content.action.edit"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "default": "latest", "provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
